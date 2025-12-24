@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+
+# Neovim
+.config/nvim/lazy-lock.json
+.config/nvim/.claude/
+
+# Claude Code local cache
+.claude/.claude/
+
+# Local settings
+*.local
+!.claude/settings.local.json
+
+# Backup files
+*~
+*.bak
+*.swp
