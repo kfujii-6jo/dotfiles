@@ -15,6 +15,7 @@ alias repo='cd $(ghq root)/$(ghq list | fzf)'
 # PATH
 export PATH=$HOME/.local/bin:$PATH
 {{- if eq .chezmoi.os "linux" }}
+export TERM=xterm-256color
 export PATH=$PATH:/opt/nvim-linux-x86_64/bin
 {{- end }}
 
