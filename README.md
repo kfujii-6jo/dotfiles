@@ -7,6 +7,23 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 - [chezmoi](https://www.chezmoi.io/install/)
 - [mise](https://mise.jdx.dev/) (for runtime version management)
 
+## Setup
+
+```bash
+git clone https://github.com/kfujii-6jo/dotfiles.git
+cd dotfiles
+
+# Ubuntu
+./scripts/setup-ubuntu.sh
+
+# macOS
+./scripts/setup-macos.sh
+```
+
+**Ubuntu:** git, tmux, vim, xclip, Neovim (nightly), mise
+
+**macOS:** Homebrew, git, tmux, vim, neovim, mise
+
 ## Installation
 
 ```bash
