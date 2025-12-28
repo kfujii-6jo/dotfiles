@@ -11,7 +11,9 @@ alias pbpaste='xclip -selection clipboard -o'
 {{- end }}
 alias vim="nvim"
 alias repo='cd $(ghq root)/$(ghq list | fzf)'
-
+alias trel="tmux source-file ~/.tmux.conf && echo 'Reloaded!'"
+alias taf='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
+alias tkf='tmux kill-session -t $(tmux list-sessions -F "#{session_name}" | fzf)'
 # PATH
 export PATH=$HOME/.local/bin:$PATH
 {{- if eq .chezmoi.os "linux" }}
