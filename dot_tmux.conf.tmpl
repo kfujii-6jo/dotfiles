@@ -1,6 +1,8 @@
 # prefixキーをC-qに変更
+{{- if eq .chezmoi.os "darwin" }}
 unbind C-b
 set -g prefix C-q
+{{- end}}
 
 # 基本設定
 set -g escape-time 10
@@ -43,12 +45,11 @@ set -g visual-activity off
 
 # クリップボード連携
 set -g set-clipboard on
-if-shell 'which xsel' {
-  set-option -s copy-command 'xsel -i'
-}
-if-shell 'which pbcopy' {
-  set-option -s copy-command 'pbcopy'
-}
+{{- if eq .chezmoi.os "darwin" }}
+set-option -s copy-command 'pbcopy'
+{{- else }}
+set-option -s copy-command 'xsel -i'
+{{- end }}
 bind-key -T copy-mode-vi v { send-keys -X begin-selection }
 bind-key -T copy-mode-vi C-v { send-keys -X rectangle-toggle }
 bind-key -T copy-mode-vi y { send-keys -X copy-pipe }

@@ -1,0 +1,22 @@
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="agnoster"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+# Aliases
+{{- if eq .chezmoi.os "linux" }}
+alias open="nautilus"
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+{{- end }}
+alias vim="nvim"
+alias repo='cd $(ghq root)/$(ghq list | fzf)'
+
+# PATH
+export PATH=$HOME/.local/bin:$PATH
+{{- if eq .chezmoi.os "linux" }}
+export PATH=$PATH:/opt/nvim-linux-x86_64/bin
+{{- end }}
+
+# mise
+eval "$($HOME/.local/bin/mise activate zsh)"
