@@ -1,57 +1,64 @@
 # dotfiles
 
-Personal dotfiles for macOS.
+Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
+
+## Requirements
+
+- [chezmoi](https://www.chezmoi.io/install/)
+- [mise](https://mise.jdx.dev/) (for runtime version management)
+
+## Installation
+
+```bash
+chezmoi init https://github.com/kfujii-6jo/dotfiles.git
+chezmoi apply
+```
 
 ## Structure
 
 ```
 dotfiles/
-├── .claude/
-│   ├── agents/             # Claude Code custom agents
-│   │   ├── performance-reviewer.md
-│   │   └── security-reviewer.md
-│   ├── commands/           # Claude Code slash commands
-│   │   ├── commit.md
-│   │   ├── debug.md
-│   │   ├── explain.md
-│   │   ├── quick-review.md
-│   │   └── refactor.md
-│   └── skills/             # Claude Code skills
-│       ├── clean-code/
-│       └── git-workflow/
-├── .config/
-│   └── nvim/               # Neovim configuration
-├── .tmux.conf              # tmux configuration
-└── README.md
+├── dot_claude/                 # ~/.claude
+│   ├── agents/
+│   ├── commands/
+│   └── skills/
+├── dot_tmux.conf.tmpl          # ~/.tmux.conf (template)
+├── dot_zshrc.tmpl              # ~/.zshrc (template)
+└── private_dot_config/         # ~/.config
+    ├── mise/
+    └── nvim/
 ```
 
 ## What's included
 
-### Claude Code (.claude)
+### zsh (dot_zshrc.tmpl)
 
-Custom configurations for Claude Code CLI:
+- oh-my-zsh with agnoster theme
+- OS-specific aliases (Linux: open, pbcopy, pbpaste)
+- Common aliases (vim→nvim, repo navigation with ghq/fzf)
+- mise integration
 
-- **agents/**: Custom agents for specialized tasks
-  - `security-reviewer.md`: Security review agent
-  - `performance-reviewer.md`: Performance review agent
-- **commands/**: Slash commands for quick actions
-  - `/commit`: Generate commit messages
-  - `/debug`: Debug assistance
-  - `/explain`: Code explanation
-  - `/quick-review`: Quick code review
-  - `/refactor`: Refactoring suggestions
-- **skills/**: Reusable skills
-  - `clean-code`: Clean code practices
-  - `git-workflow`: Git workflow patterns
+### tmux (dot_tmux.conf.tmpl)
 
-### Neovim (.config/nvim)
+- Prefix key: `C-q` (macOS only)
+- vi-mode key bindings
+- OS-specific clipboard integration
+- Custom status bar
+
+### Neovim (private_dot_config/nvim)
 
 - Lazy.nvim plugin manager
-- LSP support
+- LSP support (mason, lspconfig)
 - fzf integration
+- Claude Code integration
 - Custom keymaps
 
-### tmux (.tmux.conf)
+### mise (private_dot_config/mise)
 
-- Custom key bindings
-- Status bar configuration
+- Runtime version management configuration
+
+### Claude Code (dot_claude)
+
+- **agents/**: Custom agents (security-reviewer, performance-reviewer)
+- **commands/**: Slash commands (/commit, /debug, /explain, /quick-review, /refactor)
+- **skills/**: Reusable skills (clean-code, git-workflow)
