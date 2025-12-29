@@ -39,6 +39,9 @@ dotfiles/
 │   ├── agents/
 │   ├── commands/
 │   └── skills/
+├── dot_local/bin/              # ~/.local/bin
+│   ├── claude.d/
+│   └── launchws
 ├── dot_tmux.conf.tmpl          # ~/.tmux.conf (template)
 ├── dot_zshrc.tmpl              # ~/.zshrc (template)
 └── private_dot_config/         # ~/.config
@@ -73,6 +76,15 @@ dotfiles/
 ### mise (private_dot_config/mise)
 
 - Runtime version management configuration
+
+### .local/bin (dot_local/bin)
+
+- **launchws**: tmux workspace launcher (ghq/fzf integration)
+- **claude.d/**: Claude CLI helper scripts
+  - `commit`: Generate commit message and commit staged changes
+  - `flow`: Review → commit workflow
+  - `pr`: PR review helper
+  - `review`: Code review helper
 
 ### Claude Code (dot_claude)
 
