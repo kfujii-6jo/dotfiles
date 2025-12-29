@@ -16,6 +16,10 @@ return {
           horizontal = "right:60%",
         },
       },
+      files = {
+        cwd_prompt = false,
+        path_shorten = false,
+      },
       keymap = {
         builtin = {
           ["<F1>"] = "toggle-help",
