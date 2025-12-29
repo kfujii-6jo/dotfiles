@@ -1,0 +1,26 @@
+#!/bin/bash
+# claude.d/flow - Review then commit workflow
+# Uses dot_claude/commands/quick-review.md and commit.md
+
+set -euo pipefail
+
+# Error if no staged changes
+if git diff --staged --quiet; then
+    echo "Error: No staged changes"
+    echo "Usage: git add <files> then run this command"
+    exit 1
+fi
+
+echo "=== Step 1: Code Review ==="
+claude -p "/quick-review $(git diff --staged)"
+
+echo ""
+read -p "Proceed with commit? (y/N): " confirm
+if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
+    echo "Cancelled"
+    exit 0
+fi
+
+echo ""
+echo "=== Step 2: Commit ==="
+claude -p "/commit $(git diff --staged)"

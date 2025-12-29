@@ -1,0 +1,13 @@
+#!/bin/bash
+# claude.d/review - Code review
+# Uses dot_claude/commands/quick-review.md
+
+set -euo pipefail
+
+# Pass arguments as review target if provided
+if [[ $# -gt 0 ]]; then
+    claude -p "/quick-review $*"
+else
+    # Review staged changes if no arguments
+    claude -p "/quick-review $(git diff --staged)"
+fi

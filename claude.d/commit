@@ -1,0 +1,15 @@
+#!/bin/bash
+# claude.d/commit - Generate commit message and commit
+# Uses dot_claude/commands/commit.md
+
+set -euo pipefail
+
+# Error if no staged changes
+if git diff --staged --quiet; then
+    echo "Error: No staged changes"
+    echo "Usage: git add <files> then run this command"
+    exit 1
+fi
+
+# Generate commit message and execute commit
+claude -p "/commit $(git diff --staged)"
