@@ -6,7 +6,7 @@
 .config/nvim/.claude/
 
 # Claude Code local cache
-.claude/.claude/
+.claude/
 
 # Local settings
 *.local
