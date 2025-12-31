@@ -22,5 +22,4 @@ return {
   require("plugins.which-key"),
   require("plugins.better-escape"),
   require("plugins.sidekick"),
-  -- require("plugins.claude-code"),
 }
