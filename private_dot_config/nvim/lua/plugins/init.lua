@@ -11,6 +11,7 @@ return {
   require("plugins.comment"),
   require("plugins.auto-pairs"),
   require("plugins.gitsigns"),
+  require("plugins.diffview"),
 
   -- LSP
   require("plugins.mason"),
