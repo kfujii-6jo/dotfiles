@@ -36,9 +36,11 @@ chezmoi apply
 ```
 dotfiles/
 ├── dot_claude/                 # ~/.claude
-│   ├── agents/
-│   ├── commands/
-│   └── skills/
+│   ├── agents/                 # カスタムエージェント
+│   │   └── reviewer/           # レビュー系エージェント
+│   ├── commands/               # スラッシュコマンド
+│   ├── skills/                 # 再利用可能スキル
+│   └── settings.json
 ├── dot_local/bin/              # ~/.local/bin
 │   ├── claude.d/
 │   └── launchws
@@ -88,6 +90,13 @@ dotfiles/
 
 ### Claude Code (dot_claude)
 
-- **agents/**: Custom agents (security-reviewer, performance-reviewer)
-- **commands/**: Slash commands (/commit, /debug, /explain, /quick-review, /refactor)
-- **skills/**: Reusable skills (clean-code, git-workflow)
+- **agents/**: カスタムエージェント
+  - api-designer, database-architect, devops-engineer
+  - documentation-expert, refactoring-advisor, test-strategist
+  - reviewer/ (architecture, maintainability, performance, security)
+- **commands/**: スラッシュコマンド
+  - /commit, /quick-review, /deep-review
+  - /docs-sync, /start-impl, /start-research
+- **skills/**: 再利用可能スキル
+  - clean-code, git-workflow
+  - error-handling, logging-observability, security-checklist
