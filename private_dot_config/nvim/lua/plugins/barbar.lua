@@ -12,8 +12,8 @@ return {
     clickable = true,
   },
   keys = {
-    { '<leader>h', '<Cmd>BufferPrevious<CR>', desc = 'BufferPrevious' },
-    { '<leader>l', '<Cmd>BufferNext<CR>', desc = 'BufferNext' },
+    { '<S-h>', '<Cmd>BufferPrevious<CR>', desc = 'BufferPrevious' },
+    { '<S-l>', '<Cmd>BufferNext<CR>', desc = 'BufferNext' },
     { '<leader>q', '<Cmd>BufferClose<CR>', desc = 'BufferClose' },
     { '<leader>Q', '<Cmd>BufferClose!<CR>', desc = 'BufferClose' },
   },
