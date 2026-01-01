@@ -1,0 +1,32 @@
+#!/bin/bash
+set -eu
+
+full_mode=false
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -f|--full) full_mode=true; shift ;;
+    *) shift ;;
+  esac
+done
+
+selected=$(ghq list | fzf)
+[[ -z "$selected" ]] && exit 0
+
+dir="$(ghq root)/$selected"
+session_name=$(basename "$selected" | tr '.' '_')
+
+if tmux has-session -t "$session_name" 2>/dev/null; then
+  tmux attach-session -t "$session_name"
+else
+  tmux new-session -d -s "$session_name" -c "$dir"
+  if $full_mode; then
+    tmux split-window -v -t "$session_name" -c "$dir"
+    tmux split-window -h -t "$session_name:0.0" -c "$dir"
+    tmux split-window -h -t "$session_name:0.2" -c "$dir"
+    tmux resize-pane -t "$session_name:0.0" -D 5
+    tmux resize-pane -t "$session_name:0.0" -R 20
+    tmux select-pane -t "$session_name:0.0"
+    tmux send-keys -t "$session_name:0.0" 'vim .' Enter
+  fi
+  tmux attach-session -t "$session_name"
+fi
