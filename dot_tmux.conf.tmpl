@@ -36,8 +36,8 @@ set -g status-bg "#2e3440"
 set -g status-fg "#d8dee9"
 set -g status-left '#[fg=#3b4252,bg=#a3be8c,bold]#{?client_prefix,#[bg=#ebcb8b],} tmux #[default] '
 set -g status-right ""
-setw -g window-status-format "#[fg=#4c566a,bold]#S:#P"
-setw -g window-status-current-format "#[fg=#3b4252,bg=#88c0d0,bold] #S:#P "
+setw -g window-status-format "#[fg=#4c566a,bold] #W "
+setw -g window-status-current-format "#[fg=#3b4252,bg=#88c0d0,bold] #W "
 
 # Pane/Window外観
 set -g window-active-style bg='#2e3440'
