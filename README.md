@@ -42,8 +42,8 @@ dotfiles/
 │   ├── skills/                 # 再利用可能スキル
 │   └── settings.json
 ├── dot_local/bin/              # ~/.local/bin
-│   ├── claude.d/
-│   └── launchws
+│   ├── repo
+│   └── wt
 ├── dot_tmux.conf.tmpl          # ~/.tmux.conf (template)
 ├── dot_zshrc.tmpl              # ~/.zshrc (template)
 └── private_dot_config/         # ~/.config
@@ -81,12 +81,8 @@ dotfiles/
 
 ### .local/bin (dot_local/bin)
 
-- **launchws**: tmux workspace launcher (ghq/fzf integration)
-- **claude.d/**: Claude CLI helper scripts
-  - `commit`: Generate commit message and commit staged changes
-  - `flow`: Review → commit workflow
-  - `pr`: PR review helper
-  - `review`: Code review helper
+- **repo**: リポジトリ選択・tmuxセッション起動 (ghq/fzf integration)
+- **wt**: git worktree管理 (新規作成/選択/削除、tmux連携)
 
 ### Claude Code (dot_claude)
 
