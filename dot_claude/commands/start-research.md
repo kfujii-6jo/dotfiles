@@ -1,5 +1,5 @@
 ---
-description: 調査セッション開始 (user)
+description: 調査セッション開始
 ---
 
 # 調査セッション開始

@@ -1,5 +1,5 @@
 ---
-description: 深層コードレビュー (user)
+description: 深層コードレビュー
 ---
 
 # 深層コードレビュー

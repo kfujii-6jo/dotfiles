@@ -1,5 +1,5 @@
 ---
-description: 簡易コードレビュー (user)
+description: 簡易コードレビュー
 ---
 
 # 簡易コードレビュー

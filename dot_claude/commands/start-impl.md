@@ -1,5 +1,5 @@
 ---
-description: 実装セッション開始 (user)
+description: 実装セッション開始
 ---
 
 # 実装セッション開始

@@ -1,5 +1,5 @@
 ---
-description: コミットメッセージ生成 (user)
+description: コミットメッセージ生成
 ---
 
 # コミットメッセージ生成
