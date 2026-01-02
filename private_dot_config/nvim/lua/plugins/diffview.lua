@@ -12,25 +12,8 @@ return {
     require("diffview").setup({
       view = {
         default = {
-          layout = "diff2_horizontal",
-        },
-        merge_tool = {
-          layout = "diff3_horizontal",
-        },
-        file_history = {
-          layout = "diff2_horizontal",
-        },
-      },
-      keymaps = {
-        view = {
-          { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } },
-        },
-        file_panel = {
-          { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } },
-        },
-        file_history_panel = {
-          { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } },
-        },
+          layout = "diff2_vertical"
+        }
       },
     })
   end,
