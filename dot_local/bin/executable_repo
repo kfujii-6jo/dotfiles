@@ -6,10 +6,14 @@ normalize_window_name() {
   echo "$1" | tr '/./' '_'
 }
 
-selected=$(ghq list | fzf)
+# worktree(.gitがファイル)を除外し、本体のリポジトリ(.gitがディレクトリ)のみ表示
+ghq_root=$(ghq root)
+selected=$(ghq list | while read -r repo; do
+  [[ -d "$ghq_root/$repo/.git" ]] && echo "$repo"
+done | fzf)
 [[ -z "$selected" ]] && exit 0
 
-dir="$(ghq root)/$selected"
+dir="$ghq_root/$selected"
 session_name=$(basename "$selected" | tr '.' '_')
 window_name=$(normalize_window_name "$(git -C "$dir" branch --show-current 2>/dev/null || echo "main")")
 
