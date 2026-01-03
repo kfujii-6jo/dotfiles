@@ -83,7 +83,9 @@ if $new_mode; then
     exit 1
   fi
 
-  worktree_path="$(dirname "$repo_root")/${repo_name}-${branch_name}"
+  # ブランチ名の/を-に置換してディレクトリ名に使用
+  dir_name=$(echo "$branch_name" | tr '/' '-')
+  worktree_path="$(dirname "$repo_root")/${repo_name}-${dir_name}"
 
   # worktree作成のエラーハンドリング
   if ! git worktree add "$worktree_path" -b "$branch_name"; then
