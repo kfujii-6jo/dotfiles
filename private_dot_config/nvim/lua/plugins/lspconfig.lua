@@ -1,4 +1,4 @@
--- LSP Configuration (Neovim 0.11+)
+-- LSP Configuration
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -6,21 +6,23 @@ return {
     "williamboman/mason-lspconfig.nvim",
   },
   config = function()
-    -- Common keymaps via LspAttach autocommand
-    vim.api.nvim_create_autocmd('LspAttach', {
-      callback = function(args)
-        local opts = { noremap = true, silent = true, buffer = args.buf }
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-      end,
-    })
+    local lspconfig = require("lspconfig")
+
+    -- Common on_attach function
+    local on_attach = function(client, bufnr)
+      local opts = { noremap = true, silent = true, buffer = bufnr }
+
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+      vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    end
 
     -- Lua
-    vim.lsp.config('lua_ls', {
+    lspconfig.lua_ls.setup({
+      on_attach = on_attach,
       settings = {
         Lua = {
           diagnostics = {
@@ -31,21 +33,29 @@ return {
     })
 
     -- TypeScript/JavaScript
-    vim.lsp.config('ts_ls', {})
+    lspconfig.ts_ls.setup({
+      on_attach = on_attach,
+    })
 
     -- Python
-    vim.lsp.config('pyright', {})
+    lspconfig.pyright.setup({
+      on_attach = on_attach,
+    })
 
     -- HTML
-    vim.lsp.config('html', {})
+    lspconfig.html.setup({
+      on_attach = on_attach,
+    })
 
     -- CSS
-    vim.lsp.config('cssls', {})
+    lspconfig.cssls.setup({
+      on_attach = on_attach,
+    })
 
     -- PHP
-    vim.lsp.config('intelephense', {})
-
-    -- Enable all configured servers
-    vim.lsp.enable({ 'lua_ls', 'ts_ls', 'pyright', 'html', 'cssls', 'intelephense' })
+    lspconfig.intelephense.setup({
+      on_attach = on_attach,
+    })
+    
   end
 }
