@@ -12,6 +12,7 @@ return {
   require("plugins.auto-pairs"),
   require("plugins.gitsigns"),
   require("plugins.diffview"),
+  require("plugins.neogit"),
 
   -- LSP
   require("plugins.mason"),
