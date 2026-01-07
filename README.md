@@ -36,10 +36,10 @@ chezmoi apply
 ```
 dotfiles/
 ├── dot_claude/                 # ~/.claude
-│   ├── agents/                 # カスタムエージェント
-│   │   └── reviewer/           # レビュー系エージェント
-│   ├── commands/               # スラッシュコマンド
-│   ├── skills/                 # 再利用可能スキル
+│   ├── agents/                 # Custom agents
+│   │   └── reviewer/           # Review agents
+│   ├── commands/               # Slash commands
+│   ├── skills/                 # Reusable skills
 │   └── settings.json
 ├── dot_local/bin/              # ~/.local/bin
 │   ├── repo
@@ -81,18 +81,18 @@ dotfiles/
 
 ### .local/bin (dot_local/bin)
 
-- **repo**: リポジトリ選択・tmuxセッション起動 (ghq/fzf integration)
-- **wt**: git worktree管理 (新規作成/選択/削除、tmux連携)
+- **repo**: Repository selection & tmux session launcher (ghq/fzf integration)
+- **wt**: git worktree management (create/select/delete, tmux integration)
 
 ### Claude Code (dot_claude)
 
-- **agents/**: カスタムエージェント
+- **agents/**: Custom agents
   - api-designer, database-architect, devops-engineer
   - documentation-expert, refactoring-advisor, test-strategist
   - reviewer/ (architecture, maintainability, performance, security)
-- **commands/**: スラッシュコマンド
+- **commands/**: Slash commands
   - /commit, /quick-review, /deep-review
   - /docs-sync, /start-impl, /start-research
-- **skills/**: 再利用可能スキル
+- **skills/**: Reusable skills
   - clean-code, git-workflow
   - error-handling, logging-observability, security-checklist
