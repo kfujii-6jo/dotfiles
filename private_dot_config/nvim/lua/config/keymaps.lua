@@ -24,7 +24,7 @@ vim.api.nvim_create_user_command('Q', function(opts)
   end
 
   local buffers = vim.fn.getbufinfo({ buflisted = 1 })
-  if #buffers > 0 then
+  if #buffers > 1 then
     vim.notify('Use :qa to quit', vim.log.levels.WARN)
   else
     vim.cmd('q' .. (opts.bang and '!' or ''))
