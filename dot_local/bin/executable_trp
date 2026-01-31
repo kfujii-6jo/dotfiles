@@ -1,12 +1,10 @@
 #!/bin/bash
 set -eu
 
-# ウィンドウ名を正規化（ブランチ名から特殊文字を置換）
 normalize_window_name() {
   echo "$1" | tr '/./' '_'
 }
 
-# worktree(.gitがファイル)を除外し、本体のリポジトリ(.gitがディレクトリ)のみ表示
 ghq_root=$(ghq root)
 selected=$(ghq list | while read -r repo; do
   [[ -d "$ghq_root/$repo/.git" ]] && echo "$repo"
@@ -17,9 +15,12 @@ dir="$ghq_root/$selected"
 session_name=$(basename "$selected" | tr '.' '_')
 window_name=$(normalize_window_name "$(git -C "$dir" branch --show-current 2>/dev/null || echo "main")")
 
-if tmux has-session -t "$session_name" 2>/dev/null; then
-  tmux attach-session -t "$session_name"
-else
+if ! tmux has-session -t "=$session_name" 2>/dev/null; then
   tmux new-session -d -s "$session_name" -n "$window_name" -c "$dir"
-  tmux attach-session -t "$session_name"
+fi
+
+if [[ -n "${TMUX:-}" ]]; then
+  tmux switch-client -t "=$session_name"
+else
+  tmux attach-session -t "=$session_name"
 fi

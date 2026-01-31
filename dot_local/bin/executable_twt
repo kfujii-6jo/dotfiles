@@ -1,0 +1,23 @@
+#!/bin/bash
+set -eu
+
+normalize_window_name() {
+  echo "$1" | tr '/./' '_'
+}
+
+selected=$(git wt | tail -n +2 | fzf | awk '{print $(NF-1)}')
+[ -z "$selected" ] && exit 0
+
+wt_path=$(echo "$selected" | awk '{print $1}')
+wt_name=$(normalize_window_name "$(basename "$wt_path")")
+
+if [ -z "${TMUX:-}" ]; then
+  cd "$wt_path"
+  exec $SHELL
+fi
+
+if tmux list-windows -F '#{window_name}' | grep -qx "$wt_name"; then
+  tmux select-window -t "$wt_name"
+else
+  tmux new-window -n "$wt_name" -c "$wt_path"
+fi

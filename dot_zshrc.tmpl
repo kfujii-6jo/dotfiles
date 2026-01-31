@@ -12,9 +12,11 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 {{- end }}
 alias vim="nvim"
+alias rp="cd $(ghq list -p | fzf --with-nth=-1 -d/)"
 alias trel="tmux source-file ~/.tmux.conf && echo 'Reloaded!'"
 alias taf='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
 alias tkf='tmux kill-session -t $(tmux list-sessions -F "#{session_name}" | fzf)'
+alias tkw='tmux kill-window -t $(tmux list-windows -F "#{window_index}: #{window_name}" | fzf | cut -d: -f1)'
 # PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/bin/claude.d:$PATH
@@ -25,3 +27,4 @@ export PATH=$PATH:/opt/nvim-linux-x86_64/bin
 
 # mise
 eval "$($HOME/.local/bin/mise activate zsh)"
+eval "$(git wt --init zsh)"

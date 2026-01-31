@@ -12,7 +12,7 @@ fi
 # Install packages
 echo "Installing packages..."
 brew install git tmux vim neovim
-
+brew install k1LoW/tap/git-wt
 # Install mise
 echo "Installing mise..."
 curl https://mise.run | sh
