@@ -26,7 +26,7 @@ bind -r H resize-pane -L 5
 bind -r L resize-pane -R 5
 
 # 画面分割
-bind - split-window -v -c "#{pane_current_path}"
+bind - split-window -fv -c "#{pane_current_path}"
 bind = split-window -h -c "#{pane_current_path}"
 
 # ステータスバー
