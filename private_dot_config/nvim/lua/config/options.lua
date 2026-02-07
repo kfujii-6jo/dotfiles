@@ -10,15 +10,14 @@ g.loaded_netrwPlugin = 1
 
 -- Basic settings
 opt.clipboard = "unnamedplus"
-opt.number = true              -- Show line numbers
-opt.relativenumber = true      -- Show relative line numbers
-opt.mouse = "a"               -- Enable mouse support
-opt.ignorecase = true         -- Ignore case in search
-opt.smartcase = true          -- Smart case search
-opt.wrap = false              -- Don't wrap lines
-opt.expandtab = true          -- Use spaces instead of tabs
-opt.tabstop = 2              -- Tab width
-opt.shiftwidth = 2           -- Shift width
-opt.autoindent = true        -- Auto indent
-opt.cursorline = true        -- Highlight current line
-
+opt.number = true -- Show line numbers
+opt.relativenumber = true -- Show relative line numbers
+opt.mouse = "a" -- Enable mouse support
+opt.ignorecase = true -- Ignore case in search
+opt.smartcase = true -- Smart case search
+opt.wrap = false -- Don't wrap lines
+opt.expandtab = true -- Use spaces instead of tabs
+opt.tabstop = 2 -- Tab width
+opt.shiftwidth = 2 -- Shift width
+opt.autoindent = true -- Auto indent
+opt.cursorline = true -- Highlight current line

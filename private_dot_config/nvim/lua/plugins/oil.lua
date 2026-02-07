@@ -11,8 +11,7 @@ return {
     })
   end,
   keys = {
-    { '<leader>e', '<cmd>Oil<cr>', desc = 'Open file explorer (Oil)' },
-    { '<leader>E', '<cmd>Oil --float<cr>', desc = 'Open file explorer (Oil) in float' },
+    { "<leader>e", "<cmd>Oil<cr>", desc = "Open file explorer (Oil)" },
+    { "<leader>E", "<cmd>Oil --float<cr>", desc = "Open file explorer (Oil) in float" },
   },
 }
-
