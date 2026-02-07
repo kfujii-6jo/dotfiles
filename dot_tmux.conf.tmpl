@@ -42,6 +42,9 @@ setw -g window-status-current-format "#[fg=#3b4252,bg=#88c0d0,bold] #W "
 set -g window-active-style bg='#2e3440'
 set -g pane-border-lines heavy
 
+# gituiの起動（既存ウィンドウがあれば移動、なければ新規作成）
+bind g if-shell 'tmux list-windows | grep -q "gitui"' 'select-window -t gitui' 'new-window -n gitui "gitui"'
+
 # 通知無効化
 setw -g monitor-activity off
 set -g visual-activity off
