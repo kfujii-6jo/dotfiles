@@ -3,6 +3,7 @@ return {
   "williamboman/mason.nvim",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
     require("mason").setup({
@@ -10,9 +11,9 @@ return {
         icons = {
           package_installed = "✓",
           package_pending = "➜",
-          package_uninstalled = "✗"
-        }
-      }
+          package_uninstalled = "✗",
+        },
+      },
     })
 
     require("mason-lspconfig").setup({
@@ -22,9 +23,25 @@ return {
         "pyright",
         "html",
         "cssls",
-        "intelephense",  -- PHP
+        "intelephense", -- PHP
       },
       automatic_installation = true,
     })
-  end
+
+    require("mason-tool-installer").setup({
+      ensure_installed = {
+        -- Formatters
+        "stylua", -- Lua
+        "prettierd", -- JS/TS/HTML/CSS/JSON/Markdown/YAML
+        "biome", -- JS/TS/HTML/CSS/JSON/Markdown/YAML
+        "black", -- Python
+        "shfmt", -- Shell
+        "pint", -- PHP (Laravel)
+        "php-cs-fixer", -- PHP
+        "goimports", -- Go
+      },
+      auto_update = false,
+      run_on_start = true,
+    })
+  end,
 }
