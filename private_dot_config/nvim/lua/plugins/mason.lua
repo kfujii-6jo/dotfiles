@@ -35,8 +35,6 @@ return {
         "prettierd", -- JS/TS/HTML/CSS/JSON/Markdown/YAML
         "biome", -- JS/TS/HTML/CSS/JSON/Markdown/YAML
         "black", -- Python
-        "shfmt", -- Shell
-        "pint", -- PHP (Laravel)
         "php-cs-fixer", -- PHP
         "goimports", -- Go
       },
