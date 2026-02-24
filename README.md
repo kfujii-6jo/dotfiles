@@ -4,32 +4,47 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Requirements
 
+For macOS, no prerequisites are required as the setup script will install everything automatically.
+
+For manual setup, the following are required:
 - [chezmoi](https://www.chezmoi.io/install/)
 - [mise](https://mise.jdx.dev/) (for runtime version management)
+- [ghq](https://github.com/x-motemen/ghq) (for repository management)
 
 ## Setup
+
+### macOS
+
+On a fresh macOS environment, run this one-liner to set up everything:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/kfujii-6jo/dotfiles/main/scripts/setup-macos.sh | bash
+```
+
+This script will automatically:
+1. Install **Homebrew**
+2. Install base packages (git, tmux, vim, neovim)
+3. Install and configure **mise**
+4. Install **ghq**
+5. Clone dotfiles to `~/ghq/github.com/kfujii-6jo/dotfiles`
+6. Install all mise-managed tools (defined in config.toml)
+7. Apply dotfiles with **chezmoi**
+
+After completion, reload your shell:
+
+```bash
+source ~/.zshrc
+```
+
+### Ubuntu
 
 ```bash
 git clone https://github.com/kfujii-6jo/dotfiles.git
 cd dotfiles
-
-# Ubuntu
 ./scripts/setup-ubuntu.sh
-
-# macOS
-./scripts/setup-macos.sh
 ```
 
-**Ubuntu:** git, tmux, vim, xclip, Neovim (nightly), mise
-
-**macOS:** Homebrew, git, tmux, vim, neovim, mise
-
-## Installation
-
-```bash
-chezmoi init https://github.com/kfujii-6jo/dotfiles.git
-chezmoi apply
-```
+**Installs:** git, tmux, vim, xclip, Neovim (nightly), mise
 
 ## Structure
 
