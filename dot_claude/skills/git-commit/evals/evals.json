@@ -1,0 +1,30 @@
+{
+  "skill_name": "git-commit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I've added neo-tree.nvim to my Neovim config to replace the old file explorer. Updated the lazy.nvim plugin spec and removed the oil.nvim plugin. The changes are in private_dot_config/nvim/lua/plugins/neo-tree.lua (new file) and I deleted private_dot_config/nvim/lua/plugins/oil.lua. Please create a commit for this.",
+      "expected_output": "A commit message with type 'feat' and scope '(nvim)', describing the addition of neo-tree and removal of oil.nvim. Should be in English following Conventional Commits format."
+    },
+    {
+      "id": 2,
+      "prompt": "tmuxの設定を修正しました。macOSでプレフィックスキーがC-qに正しく設定されていなかったのを修正。dot_tmux.conf.tmpl を編集しています。コミットしてください。",
+      "expected_output": "A commit message with type 'fix' and scope '(tmux)'. Given the Japanese prompt and context, could be in Japanese or English, should mention fixing the prefix key configuration for macOS."
+    },
+    {
+      "id": 3,
+      "prompt": "The wt script in dot_local/bin/wt has been refactored. I cleaned up the code, improved error handling, and made the tmux session naming more consistent. No behavior changes, just cleaner code. Commit these changes.",
+      "expected_output": "A commit message with type 'refactor' and scope '(wt)' or no scope. Should explain it's a code cleanup without behavior changes. English expected."
+    },
+    {
+      "id": 4,
+      "prompt": "Updated CLAUDE.md to add more detailed instructions about the mise setup process and clarified the chezmoi workflow. Also fixed some typos. Create a commit message.",
+      "expected_output": "A commit message with type 'docs' describing documentation improvements. Should mention CLAUDE.md updates. English expected."
+    },
+    {
+      "id": 5,
+      "prompt": "Updated mise config.toml - bumped go from 1.21 to 1.22 and node from 20.x to 22.x. Also added a new tool 'jq' for JSON processing. Changes are in private_dot_config/mise/config.toml. Please commit.",
+      "expected_output": "A commit message with type 'chore' or 'feat' and scope '(mise)'. Should mention tool version updates and new tool addition. English expected."
+    }
+  ]
+}
