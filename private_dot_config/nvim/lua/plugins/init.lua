@@ -10,6 +10,7 @@ return {
   require("plugins.fzf"),
   require("plugins.comment"),
   require("plugins.auto-pairs"),
+  require("plugins.autotag"),
   require("plugins.treesitter"),
 
   -- LSP

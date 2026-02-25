@@ -1,9 +1,10 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  event = { "BufReadPost", "BufNewFile" },
-  opts = {
-    ensure_installed = {
+  lazy = false,
+  config = function()
+    -- Install parsers
+    local parsers = {
       "tsx",
       "typescript",
       "javascript",
@@ -20,14 +21,33 @@ return {
       "python",
       "html",
       "css",
-    },
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = false,
-    },
-    indent = {
-      enable = true,
-    },
-    auto_install = true,
-  },
+    }
+
+    require("nvim-treesitter").install(parsers)
+
+    -- Enable treesitter highlighting for specific filetypes
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = {
+        "typescript",
+        "typescriptreact",
+        "javascript",
+        "javascriptreact",
+        "tsx",
+        "jsx",
+        "lua",
+        "vim",
+        "json",
+        "yaml",
+        "markdown",
+        "bash",
+        "go",
+        "python",
+        "html",
+        "css",
+      },
+      callback = function()
+        vim.treesitter.start()
+      end,
+    })
+  end,
 }
