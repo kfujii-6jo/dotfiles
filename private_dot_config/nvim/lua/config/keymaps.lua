@@ -12,7 +12,7 @@ map("x", "p", '"_dP')
 
 -- :q を無効化（:qa を使用させる）
 -- 特定のバッファでは :q を許可
-local allowed_quit_patterns = { "^Diffview", "^oil", "^fzf" }
+local allowed_quit_patterns = { "^Diffview", "^neo%-tree", "^fzf" }
 
 vim.api.nvim_create_user_command("Q", function(opts)
   local ft = vim.bo.filetype

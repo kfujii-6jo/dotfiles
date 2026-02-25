@@ -6,7 +6,7 @@ return {
   require("plugins.barbar"),
 
   -- Editor
-  require("plugins.oil"),
+  require("plugins.neo-tree"),
   require("plugins.fzf"),
   require("plugins.comment"),
   require("plugins.auto-pairs"),
