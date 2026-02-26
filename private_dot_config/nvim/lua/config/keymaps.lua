@@ -33,3 +33,6 @@ end, { bang = true })
 
 vim.cmd([[cabbrev <expr> q getcmdtype() == ':' && getcmdline() ==# 'q' ? 'Q' : 'q']])
 vim.cmd([[cabbrev <expr> q! getcmdtype() == ':' && getcmdline() ==# 'q!' ? 'Q!' : 'q!']])
+
+-- :qa を :qa! にリマップ（変更を保存せずに全て閉じる）
+vim.cmd([[cabbrev <expr> qa getcmdtype() == ':' && getcmdline() ==# 'qa' ? 'qa!' : 'qa']])
