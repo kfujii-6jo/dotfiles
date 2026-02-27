@@ -16,9 +16,10 @@ dotfiles/
 ├── scripts/
 │   └── setup-macos.sh       # Automated setup script for macOS
 ├── dot_claude/              # ~/.claude (Claude Code configuration)
-│   ├── agents/              # Custom Claude Code agents
-│   ├── commands/            # Slash commands
+│   ├── settings.json        # Claude Code settings
 │   └── skills/              # Reusable skills
+│       ├── git-commit/      # Git commit skill with evals
+│       └── code-review/     # Code review skill
 ├── dot_local/bin/           # ~/.local/bin (custom scripts)
 │   ├── repo                 # Repository selection with ghq/fzf
 │   └── wt                   # Git worktree management
