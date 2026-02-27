@@ -21,3 +21,4 @@ opt.tabstop = 2 -- Tab width
 opt.shiftwidth = 2 -- Shift width
 opt.autoindent = true -- Auto indent
 opt.cursorline = true -- Highlight current line
+opt.updatetime = 300 -- Faster diagnostic display (ms)
