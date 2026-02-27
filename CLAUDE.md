@@ -14,8 +14,7 @@ This repository contains personal configuration files (dotfiles) for development
 ```
 dotfiles/
 ├── scripts/
-│   ├── setup-macos.sh       # Automated setup script for macOS
-│   └── setup-ubuntu.sh      # Setup script for Ubuntu
+│   └── setup-macos.sh       # Automated setup script for macOS
 ├── dot_claude/              # ~/.claude (Claude Code configuration)
 │   ├── agents/              # Custom Claude Code agents
 │   ├── commands/            # Slash commands
@@ -101,14 +100,13 @@ All tools are defined in `private_dot_config/mise/config.toml`:
 
 ### Shell (zsh)
 - oh-my-zsh with agnoster theme
-- OS-specific aliases (Linux: open, pbcopy, pbpaste emulation)
 - Common aliases (vim→nvim, repository navigation)
 - mise integration
 
 ### tmux
-- Prefix key: `C-q` (macOS only)
+- Prefix key: `C-s`
 - vi-mode key bindings
-- OS-specific clipboard integration
+- macOS clipboard integration (pbcopy)
 - Custom status bar
 
 ### Neovim

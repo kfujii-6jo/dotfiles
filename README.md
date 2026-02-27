@@ -36,16 +36,6 @@ After completion, reload your shell:
 source ~/.zshrc
 ```
 
-### Ubuntu
-
-```bash
-git clone https://github.com/kfujii-6jo/dotfiles.git
-cd dotfiles
-./scripts/setup-ubuntu.sh
-```
-
-**Installs:** git, tmux, vim, xclip, Neovim (nightly), mise
-
 ## Structure
 
 ```
@@ -71,15 +61,14 @@ dotfiles/
 ### zsh (dot_zshrc.tmpl)
 
 - oh-my-zsh with agnoster theme
-- OS-specific aliases (Linux: open, pbcopy, pbpaste)
 - Common aliases (vim→nvim, repo navigation with ghq/fzf)
 - mise integration
 
 ### tmux (dot_tmux.conf.tmpl)
 
-- Prefix key: `C-q` (macOS only)
+- Prefix key: `C-s`
 - vi-mode key bindings
-- OS-specific clipboard integration
+- macOS clipboard integration (pbcopy)
 - Custom status bar
 
 ### Neovim (private_dot_config/nvim)
