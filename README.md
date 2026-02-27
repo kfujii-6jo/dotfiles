@@ -40,20 +40,21 @@ source ~/.zshrc
 
 ```
 dotfiles/
-├── dot_claude/                 # ~/.claude
-│   ├── agents/                 # Custom agents
-│   │   └── reviewer/           # Review agents
-│   ├── commands/               # Slash commands
-│   ├── skills/                 # Reusable skills
-│   └── settings.json
+├── dot_claude/                 # ~/.claude (Claude Code configuration)
+│   ├── settings.json           # Claude Code settings
+│   └── skills/                 # Reusable skills
+│       ├── git-commit/         # Git commit skill with evals
+│       └── code-review/        # Code review skill
 ├── dot_local/bin/              # ~/.local/bin
-│   ├── repo
-│   └── wt
+│   ├── repo                    # Repository selection with ghq/fzf
+│   └── wt                      # Git worktree management
 ├── dot_tmux.conf.tmpl          # ~/.tmux.conf (template)
 ├── dot_zshrc.tmpl              # ~/.zshrc (template)
 └── private_dot_config/         # ~/.config
     ├── mise/
-    └── nvim/
+    │   └── config.toml         # mise tool versions
+    └── nvim/                   # Neovim configuration
+        └── lua/
 ```
 
 ## What's included
@@ -90,13 +91,7 @@ dotfiles/
 
 ### Claude Code (dot_claude)
 
-- **agents/**: Custom agents
-  - api-designer, database-architect, devops-engineer
-  - documentation-expert, refactoring-advisor, test-strategist
-  - reviewer/ (architecture, maintainability, performance, security)
-- **commands/**: Slash commands
-  - /commit, /quick-review, /deep-review
-  - /docs-sync, /start-impl, /start-research
-- **skills/**: Reusable skills
-  - clean-code, git-workflow
-  - error-handling, logging-observability, security-checklist
+- **settings.json**: Claude Code configuration settings
+- **skills/**: Custom skills
+  - **git-commit**: Generates conventional commit messages with evals
+  - **code-review**: Code review skill for web development
