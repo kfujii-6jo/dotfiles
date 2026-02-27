@@ -21,8 +21,8 @@ dotfiles/
 │       ├── git-commit/      # Git commit skill with evals
 │       └── code-review/     # Code review skill
 ├── dot_local/bin/           # ~/.local/bin (custom scripts)
-│   ├── repo                 # Repository selection with ghq/fzf
-│   └── wt                   # Git worktree management
+│   ├── executable_trp       # Repository selection & tmux session launcher
+│   └── executable_twt       # Git worktree selection & tmux window manager
 ├── dot_tmux.conf.tmpl       # ~/.tmux.conf (template)
 ├── dot_zshrc.tmpl           # ~/.zshrc (template)
 └── private_dot_config/      # ~/.config
@@ -118,8 +118,8 @@ All tools are defined in `private_dot_config/mise/config.toml`:
 - Custom keymaps
 
 ### Custom Scripts
-- **repo**: Repository selection & tmux session launcher (ghq/fzf)
-- **wt**: Git worktree management with tmux integration
+- **trp**: Repository selection & tmux session launcher (ghq/fzf)
+- **twt**: Git worktree selection & tmux window manager
 
 ## Usage
 
