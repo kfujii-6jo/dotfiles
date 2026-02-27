@@ -22,7 +22,9 @@ brew install \
   git \
   tmux \
   vim \
-  neovim
+  neovim \
+  xwmx/taps/nb \
+  bash
 
 # Install mise
 echo "Installing mise..."
