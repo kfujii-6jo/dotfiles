@@ -14,6 +14,7 @@ eval "$(git wt --init zsh)"
 
 # Aliases
 alias vim="nvim"
+alias gu="gitui"
 alias rp='cd $(ghq list -p | fzf --with-nth=5.. -d/)'
 alias trel="tmux source-file ~/.tmux.conf && echo 'Reloaded!'"
 alias taf='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
