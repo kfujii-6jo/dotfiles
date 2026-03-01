@@ -18,21 +18,17 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- Show diagnostics or LSP hover automatically on cursor hold
 vim.api.nvim_create_autocmd("CursorHold", {
   callback = function()
-    local opts = { focus = false, scope = "cursor" }
-
     -- Check if there are diagnostics at cursor position
     local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })
 
     if #diagnostics > 0 then
       -- Show diagnostics if present
-      vim.diagnostic.open_float(nil, opts)
+      vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
     else
       -- Show LSP hover info if no diagnostics
-      local params = vim.lsp.util.make_position_params()
-      vim.lsp.buf_request(0, "textDocument/hover", params, function(_, result, ctx, config)
-        if result and result.contents then
-          vim.lsp.util.open_floating_preview(result.contents, "markdown", { focus = false })
-        end
+      -- Use vim.lsp.buf.hover() in a protected call to avoid errors
+      pcall(function()
+        vim.lsp.buf.hover()
       end)
     end
   end,
