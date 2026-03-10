@@ -36,3 +36,6 @@ vim.cmd([[cabbrev <expr> q! getcmdtype() == ':' && getcmdline() ==# 'q!' ? 'Q!' 
 
 -- :qa を :qa! にリマップ（変更を保存せずに全て閉じる）
 vim.cmd([[cabbrev <expr> qa getcmdtype() == ':' && getcmdline() ==# 'qa' ? 'qa!' : 'qa']])
+
+-- Show diagnostics float
+map("n", "gl", vim.diagnostic.open_float, { desc = "Show diagnostics" })
