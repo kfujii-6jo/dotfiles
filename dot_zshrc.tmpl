@@ -14,6 +14,7 @@ eval "$(git wt --init zsh)"
 
 # Aliases
 alias vim="nvim"
+alias nvim-dev='NVIM_APPNAME=nvim-dev nvim'
 alias gu="gitui"
 alias rp='cd $(ghq list -p | fzf --with-nth=5.. -d/)'
 alias trel="tmux source-file ~/.tmux.conf && echo 'Reloaded!'"
@@ -21,3 +22,5 @@ alias taf='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
 alias tkf='tmux kill-session -t $(tmux list-sessions -F "#{session_name}" | fzf)'
 alias tkw='tmux kill-window -t $(tmux list-windows -F "#{window_index}: #{window_name}" | fzf | cut -d: -f1)'
 alias hcp="history | sed 's/^ *[0-9]* *//' | awk '!seen[\$0]++' | fzf | pbcopy"
+alias gsw='git switch $(git branch --format="%(refname:short)" | fzf)'
+alias gbd='git branch -d $(git branch --format="%(refname:short)" | fzf -m)'
