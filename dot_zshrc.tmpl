@@ -16,7 +16,7 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border"
 alias vim="nvim"
 alias nvim-dev='NVIM_APPNAME=nvim-dev nvim'
 alias gu="gitui"
-alias rp='cd $(ghq list -p | fzf --with-nth=5.. -d/)'
+alias rp='cd $(ghq list -p | fzf --with-nth=5.. -d/) && ls -la'
 alias trel="tmux source-file ~/.tmux.conf && echo 'Reloaded!'"
 alias taf='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
 alias tkf='tmux kill-session -t $(tmux list-sessions -F "#{session_name}" | fzf)'
