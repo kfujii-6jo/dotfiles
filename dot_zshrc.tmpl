@@ -11,6 +11,8 @@ export PATH=$HOME/.local/bin:$PATH
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(git wt --init zsh)"
 
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border"
+
 alias vim="nvim"
 alias nvim-dev='NVIM_APPNAME=nvim-dev nvim'
 alias gu="gitui"
