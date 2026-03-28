@@ -1,12 +1,12 @@
 -- Plugin definitions
 return {
   -- UI
-  require("plugins.onenord"),
+  require("plugins.cursor-dark"),
   require("plugins.lualine"),
   require("plugins.barbar"),
 
   -- Editor
-  require("plugins.neo-tree"),
+  require("plugins.oil"),
   require("plugins.fzf"),
   require("plugins.comment"),
   require("plugins.auto-pairs"),

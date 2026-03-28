@@ -5,8 +5,6 @@ local g = vim.g
 -- Set leader key to space
 g.mapleader = " "
 g.maplocalleader = " "
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
 
 -- Basic settings
 opt.clipboard = "unnamedplus"
