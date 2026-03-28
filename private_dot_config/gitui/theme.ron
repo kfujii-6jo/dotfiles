@@ -1,0 +1,22 @@
+(
+    // GitHub Desktop 風の差分表示
+    selection_bg: Some("#0969da"),
+    selection_fg: Some("#ffffff"),
+
+    // 差分の色
+    diff_line_add: Some("#2da44e"),
+    diff_line_delete: Some("#cf222e"),
+
+    // ファイル状態
+    diff_file_added: Some("#2da44e"),
+    diff_file_removed: Some("#cf222e"),
+    diff_file_modified: Some("#9a6700"),
+    diff_file_moved: Some("#8250df"),
+
+    // Git 情報
+    commit_hash: Some("#0969da"),
+    commit_author: Some("#57606a"),
+    commit_time: Some("#57606a"),
+    branch_fg: Some("#2da44e"),
+    tag_fg: Some("#8250df"),
+)
