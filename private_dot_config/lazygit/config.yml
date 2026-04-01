@@ -1,3 +1,10 @@
+gui:
+  border: rounded
+  theme:
+    activeBorderColor:
+      - "#0078d4"
+    inactiveBorderColor:
+      - "#2d2d2d"
 git:
   paging:
     colorArg: always
