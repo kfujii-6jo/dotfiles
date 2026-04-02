@@ -2,9 +2,14 @@ gui:
   border: rounded
   theme:
     activeBorderColor:
-      - "#0078d4"
+      - "#58a6ff"
+      - bold
     inactiveBorderColor:
-      - "#2d2d2d"
+      - "#30363d"
+    selectedLineBgColor:
+      - "#161b22"
+    selectedRangeBgColor:
+      - "#161b22"
 git:
   paging:
     colorArg: always
