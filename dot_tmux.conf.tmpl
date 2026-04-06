@@ -1,3 +1,5 @@
+set -g prefix C-b
+
 set -g escape-time 10
 set -g focus-events on
 set -g mouse on
@@ -17,8 +19,10 @@ bind -r L resize-pane -R 5
 bind - split-window -fv -c "#{pane_current_path}"
 bind = split-window -h -c "#{pane_current_path}"
 
-bind -r n next-window
-bind -r p previous-window
+bind t new-window -c "#{pane_current_path}"
+bind w confirm-before -p "kill window #W? (y/n)" kill-window
+bind -r Tab next-window
+bind -r BTab previous-window
 
 set -g status-position top
 set -g status-bg "#181818"
