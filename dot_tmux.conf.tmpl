@@ -29,6 +29,8 @@ bind -T cs Tab { next-window ; switch-client -T cs }
 bind -T cs BTab { previous-window ; switch-client -T cs }
 bind -T cs n { next-window ; switch-client -T cs }
 bind -T cs p { previous-window ; switch-client -T cs }
+bind -T cs d detach-client
+bind -T cs s choose-tree -s
 
 set -g status-position top
 set -g status-bg "#181818"
