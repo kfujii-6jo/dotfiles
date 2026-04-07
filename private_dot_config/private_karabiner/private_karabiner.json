@@ -14,7 +14,7 @@
                       ]
                     },
                     {
-                        "description": "Left Ctrl -> Ctrl+B",
+                        "description": "Left Ctrl -> Ctrl+S",
                         "manipulators": [
                             {
                                 "from": {
@@ -23,7 +23,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "b",
+                                        "key_code": "s",
                                         "modifiers": ["left_control"]
                                     }
                                 ],
