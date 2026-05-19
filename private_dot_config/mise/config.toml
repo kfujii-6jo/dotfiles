@@ -29,6 +29,9 @@ bat = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:turbo" = "latest"
 
+# Cloud
+gcloud = "latest"
+
 # Formatters & Parsers
 stylua = "latest"
 tree-sitter = "latest"
