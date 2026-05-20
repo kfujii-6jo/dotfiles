@@ -34,9 +34,21 @@ return {
             end
           end
         end, { buffer = buf, desc = "Go out (restricted to cwd)" })
-        vim.keymap.set("n", "<C-s>", function()
+        local sync = function() mini_files.synchronize() end
+        vim.keymap.set("n", "<C-s>", sync, { buffer = buf, desc = "Synchronize" })
+        vim.keymap.set("i", "<C-s>", function()
+          vim.cmd("stopinsert")
           mini_files.synchronize()
-        end, { buffer = buf, desc = "Synchronize (apply file operations)" })
+        end, { buffer = buf, desc = "Synchronize from insert" })
+      end,
+    })
+
+    -- :w in mini.files buffer → synchronize
+    vim.api.nvim_create_autocmd("BufWriteCmd", {
+      callback = function()
+        if vim.bo.filetype == "minifiles" then
+          mini_files.synchronize()
+        end
       end,
     })
   end,
