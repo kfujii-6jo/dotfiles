@@ -38,7 +38,6 @@ return {
         "black", -- Python
         "php-cs-fixer", -- PHP
         "goimports", -- Go
-        "rustfmt", -- Rust
       },
       auto_update = false,
       run_on_start = true,
