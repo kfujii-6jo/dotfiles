@@ -14,6 +14,7 @@ return {
       mappings = {
         go_in_plus = "<CR>",
         go_out = "",
+        synchronize = "<C-s>",
       },
       options = {
         permanent_delete = false,
