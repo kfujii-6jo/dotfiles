@@ -28,6 +28,7 @@ bat = "latest"
 # Dev Tools
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:turbo" = "latest"
+"npm:wrangler" = "latest"
 
 # Cloud
 gcloud = "latest"

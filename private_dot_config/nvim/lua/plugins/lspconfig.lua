@@ -46,7 +46,10 @@ return {
     -- PHP
     vim.lsp.config.intelephense = {}
 
+    -- Rust
+    vim.lsp.config.rust_analyzer = {}
+
     -- Enable all configured LSP servers
-    vim.lsp.enable({ "lua_ls", "ts_ls", "pyright", "html", "cssls", "intelephense" })
+    vim.lsp.enable({ "lua_ls", "ts_ls", "pyright", "html", "cssls", "intelephense", "rust_analyzer" })
   end,
 }

@@ -24,6 +24,7 @@ return {
         "html",
         "cssls",
         "intelephense", -- PHP
+        "rust_analyzer", -- Rust
       },
       automatic_installation = true,
     })
@@ -37,6 +38,7 @@ return {
         "black", -- Python
         "php-cs-fixer", -- PHP
         "goimports", -- Go
+        "rustfmt", -- Rust
       },
       auto_update = false,
       run_on_start = true,

@@ -29,6 +29,7 @@ return {
         yaml = { "prettier" },
         php = { "pint", "php_cs_fixer", stop_after_first = true },
         go = { "gofmt", "goimports", stop_after_first = true },
+        rust = { "rustfmt" },
         sh = { "shfmt" },
         bash = { "shfmt" },
         zsh = { "shfmt" },

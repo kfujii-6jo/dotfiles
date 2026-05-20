@@ -19,6 +19,7 @@ return {
       "bash",
       "go",
       "python",
+      "rust",
       "html",
       "css",
     }
@@ -42,6 +43,7 @@ return {
         "bash",
         "go",
         "python",
+        "rust",
         "html",
         "css",
       },
