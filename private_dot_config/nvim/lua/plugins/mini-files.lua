@@ -25,6 +25,8 @@ return {
       pattern = "MiniFilesBufferCreate",
       callback = function(args)
         local buf = args.data.buf_id
+        vim.b[buf].is_mini_files = true
+        vim.bo[buf].buftype = "acwrite"
         vim.keymap.set("n", "h", function()
           local state = mini_files.get_explorer_state()
           if state then
@@ -46,8 +48,9 @@ return {
     -- :w in mini.files buffer → synchronize
     vim.api.nvim_create_autocmd("BufWriteCmd", {
       callback = function()
-        if vim.bo.filetype == "minifiles" then
+        if vim.b.is_mini_files then
           mini_files.synchronize()
+          vim.bo.modified = false
         end
       end,
     })
