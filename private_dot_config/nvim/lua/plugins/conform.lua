@@ -1,7 +1,7 @@
 -- Auto formatter
 return {
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
+  event = { "VeryLazy" },
   cmd = { "ConformInfo" },
   keys = {
     {
@@ -45,10 +45,7 @@ return {
           require_cwd = true,
         },
       },
-      format_on_save = {
-        timeout_ms = 1000,
-        lsp_fallback = true,
-      },
+      format_on_save = false,
     })
   end,
 }

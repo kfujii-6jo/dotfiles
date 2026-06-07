@@ -42,16 +42,13 @@ return {
           vim.cmd("stopinsert")
           mini_files.synchronize()
         end, { buffer = buf, desc = "Synchronize from insert" })
-      end,
-    })
-
-    -- :w in mini.files buffer → synchronize
-    vim.api.nvim_create_autocmd("BufWriteCmd", {
-      callback = function()
-        if vim.b.is_mini_files then
-          mini_files.synchronize()
-          vim.bo.modified = false
-        end
+        vim.api.nvim_create_autocmd("BufWriteCmd", {
+          buffer = buf,
+          callback = function()
+            mini_files.synchronize()
+            vim.bo[buf].modified = false
+          end,
+        })
       end,
     })
   end,
