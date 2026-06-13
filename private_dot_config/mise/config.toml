@@ -29,6 +29,7 @@ bat = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:turbo" = "latest"
 "npm:wrangler" = "latest"
+"npm:ralph-tui" = "latest"  # AI agent loop orchestrator (requires bun runtime)
 
 # Cloud
 gcloud = "latest"
