@@ -137,7 +137,7 @@
       "Write(/etc/shadow)",
       "Write(/etc/sudoers)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "enabledPlugins": {
     "example-skills@anthropic-agent-skills": true
