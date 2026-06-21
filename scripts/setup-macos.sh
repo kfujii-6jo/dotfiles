@@ -73,9 +73,5 @@ echo "Installing global npm packages..."
 NPM_PACKAGES=$(~/.local/bin/mise exec -- node -e "const p=require('${DOTFILES_DIR}/package.json');console.log(Object.keys(p.dependencies).join(' '))")
 ~/.local/bin/mise exec -- npm install -g $NPM_PACKAGES
 
-# Install global Go tools
-echo "Installing global Go tools..."
-~/.local/bin/mise exec -- go install github.com/k1LoW/git-wt@latest
-
 echo "=== Setup complete ==="
 echo "Run 'source ~/.zshrc' or restart your shell"

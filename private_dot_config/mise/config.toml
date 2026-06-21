@@ -17,6 +17,7 @@ gh = "latest"
 ghq = "latest"
 delta = "latest"
 lazygit = "latest"
+"go:github.com/k1LoW/git-wt" = "latest"
 
 # Search & Files
 fzf = "latest"
