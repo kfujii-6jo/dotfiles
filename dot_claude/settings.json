@@ -86,7 +86,7 @@
       "Bash(sudo:*)",
       "Bash(curl:*)",
       "Bash(wget:*)",
-"Bash(dd:*)",
+      "Bash(dd:*)",
       "Bash(mkfs:*)",
       "Bash(fdisk:*)",
       "Bash(> /dev/*)",
