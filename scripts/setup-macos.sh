@@ -68,18 +68,10 @@ echo "Reloading mise configuration from dotfiles..."
 cd ~
 ~/.local/bin/mise install
 
-# Install global npm packages
+# Install global npm packages from package.json
 echo "Installing global npm packages..."
-~/.local/bin/mise exec -- npm install -g \
-  pnpm \
-  @anthropic-ai/claude-code \
-  turbo \
-  wrangler \
-  ralph-tui
-
-# Install global Go tools
-echo "Installing global Go tools..."
-~/.local/bin/mise exec -- go install github.com/k1LoW/git-wt@latest
+NPM_PACKAGES=$(~/.local/bin/mise exec -- node -e "const p=require('${DOTFILES_DIR}/package.json');console.log(Object.keys(p.dependencies).join(' '))")
+~/.local/bin/mise exec -- npm install -g $NPM_PACKAGES
 
 echo "=== Setup complete ==="
 echo "Run 'source ~/.zshrc' or restart your shell"

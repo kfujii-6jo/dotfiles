@@ -1,0 +1,12 @@
+{
+  "name": "dotfiles",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/claude-code": "latest",
+    "@beads/bd": "latest",
+    "@fission-ai/openspec": "latest",
+    "@openai/codex": "latest",
+    "pnpm": "latest",
+    "takt": "latest"
+  }
+}
