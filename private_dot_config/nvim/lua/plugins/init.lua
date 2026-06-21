@@ -16,7 +16,6 @@ return {
   -- LSP
   require("plugins.mason"),
   require("plugins.lspconfig"),
-  require("plugins.cmp"),
 
   -- Utilities
   require("plugins.which-key"),

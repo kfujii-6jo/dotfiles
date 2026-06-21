@@ -11,6 +11,12 @@ return {
       callback = function(args)
         local opts = { noremap = true, silent = true, buffer = args.buf }
 
+        -- Native LSP completion (0.11+), autotrigger on server trigger chars
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client and client:supports_method("textDocument/completion") then
+          vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+        end
+
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)

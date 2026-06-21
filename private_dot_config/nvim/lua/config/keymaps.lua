@@ -39,3 +39,15 @@ vim.cmd([[cabbrev <expr> qa getcmdtype() == ':' && getcmdline() ==# 'qa' ? 'qa!'
 
 -- Show diagnostics float
 map("n", "gl", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+
+-- Completion menu (native pum): CR confirms only when an item is selected,
+-- Tab/S-Tab navigate when the menu is open, otherwise fall back to normal keys.
+map("i", "<CR>", function()
+  return vim.fn.complete_info({ "selected" }).selected ~= -1 and "<C-y>" or "<CR>"
+end, { expr = true, desc = "Confirm completion / newline" })
+map("i", "<Tab>", function()
+  return vim.fn.pumvisible() == 1 and "<C-n>" or "<Tab>"
+end, { expr = true, desc = "Next completion item" })
+map("i", "<S-Tab>", function()
+  return vim.fn.pumvisible() == 1 and "<C-p>" or "<S-Tab>"
+end, { expr = true, desc = "Prev completion item" })

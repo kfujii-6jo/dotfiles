@@ -19,3 +19,8 @@ opt.shiftwidth = 2 -- Shift width
 opt.autoindent = true -- Auto indent
 opt.cursorline = true -- Highlight current line
 opt.updatetime = 300 -- Faster diagnostic display (ms)
+
+-- Completion (native, 0.12+)
+opt.autocomplete = true -- Show completion menu as you type (replaces nvim-cmp)
+opt.completeopt = "menu,menuone,noselect,popup,fuzzy" -- fuzzy match + docs in popup
+opt.pumheight = 12 -- Limit completion menu height
