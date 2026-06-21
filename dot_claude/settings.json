@@ -141,7 +141,18 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "opus",
   "enabledPlugins": {
-    "example-skills@anthropic-agent-skills": true
+    "example-skills@anthropic-agent-skills": true,
+    "ponytail@ponytail": true,
+    "feature-dev@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
   }
 }
