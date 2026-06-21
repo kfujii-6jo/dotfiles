@@ -68,5 +68,18 @@ echo "Reloading mise configuration from dotfiles..."
 cd ~
 ~/.local/bin/mise install
 
+# Install global npm packages
+echo "Installing global npm packages..."
+~/.local/bin/mise exec -- npm install -g \
+  pnpm \
+  @anthropic-ai/claude-code \
+  turbo \
+  wrangler \
+  ralph-tui
+
+# Install global Go tools
+echo "Installing global Go tools..."
+~/.local/bin/mise exec -- go install github.com/k1LoW/git-wt@latest
+
 echo "=== Setup complete ==="
 echo "Run 'source ~/.zshrc' or restart your shell"
