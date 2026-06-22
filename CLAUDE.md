@@ -21,7 +21,9 @@ dotfiles/
 │   └── skills/                 # Custom skills
 │       ├── commit/             # Create a git commit
 │       ├── commit-push-pr/     # Commit, push, and open a PR
-│       └── clean_gone/         # Clean up [gone] branches
+│       ├── clean_gone/         # Clean up [gone] branches
+│       ├── grill-me/           # Relentless plan/design interview (vendored)
+│       └── grilling/           # Interview engine behind grill-me (vendored)
 ├── dot_gitconfig               # ~/.gitconfig
 ├── dot_local/bin/              # ~/.local/bin (custom scripts)
 │   ├── executable_trp          # Repository selection & tmux session launcher
@@ -103,9 +105,19 @@ The `scripts/setup-macos.sh` automates the entire setup process:
 - **twt**: Git worktree selection & tmux window manager
 
 ### Claude Code Skills
+
+Custom skills (vendored in `dot_claude/skills/`, deployed by chezmoi):
 - **commit**: Create a git commit following repository conventions (model: haiku)
 - **commit-push-pr**: Commit, push, and open a PR with Summary/Test plan format (model: haiku)
 - **clean_gone**: Clean up locally stale [gone] branches (model: haiku)
+- **grill-me** / **grilling**: Relentless one-question-at-a-time interview to stress-test a plan or design before building. `grill-me` is user-invoked (`/grill-me`) and delegates to `grilling`. Vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT).
+
+### Claude Code Plugins (marketplaces)
+
+Enabled via `dot_claude/settings.json` (`enabledPlugins` + `extraKnownMarketplaces`), so a fresh machine restores them on `chezmoi apply`:
+- **example-skills** — marketplace `anthropic-agent-skills` ([anthropics/skills](https://github.com/anthropics/skills)): sample skills (skill-creator, mcp-builder, design/art, webapp-testing, etc.)
+- **feature-dev** — marketplace `claude-plugins-official` ([anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)): feature development agents (code-architect, code-explorer, code-reviewer)
+- **ponytail** — marketplace `ponytail` ([DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)): "lazy senior dev" mode (YAGNI, stdlib first)
 
 ## Usage
 
