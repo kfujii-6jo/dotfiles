@@ -17,42 +17,49 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "rmehri01/onenord.nvim",
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
     lazy = false,
     priority = 1000,
     config = function()
-      require("onenord").setup()
-      vim.cmd.colorscheme("onenord")
+      require("github-theme").setup({})
+      vim.cmd.colorscheme("github_dark_dimmed")
     end,
   },
   {
     "romgrk/barbar.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    opts = {
+      animation = true,
+      tabpages = true,
+      clickable = true,
+    },
+    keys = {
+      { "<S-h>", "<Cmd>BufferPrevious<CR>", desc = "BufferPrevious" },
+      { "<S-l>", "<Cmd>BufferNext<CR>", desc = "BufferNext" },
+      { "<leader>q", "<Cmd>BufferClose<CR>", desc = "BufferClose" },
+      { "<leader>Q", "<Cmd>BufferClose!<CR>", desc = "BufferClose!" },
+    },
   },
   {
-    "stevearc/oil.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    "folke/snacks.nvim",
+    priority = 1000,
     lazy = false,
-    keys = {
-      { "<leader>e", function() require("oil").open(vim.fn.getcwd()) end, desc = "Open oil at cwd" },
-      { "<leader>E", function() require("oil").open_float(vim.fn.getcwd()) end, desc = "Open oil at cwd (float)" },
-    },
     opts = {
-      default_file_explorer = true,
-      keymaps = {
-        ["-"] = {
-          callback = function()
-            local oil = require("oil")
-            local cwd = vim.fn.getcwd()
-            local dir = oil.get_current_dir()
-            if dir and vim.startswith(cwd, dir:sub(1, -2)) then
-              return
-            end
-            oil.open()
-          end,
-          desc = "Open parent directory (restricted to cwd)",
-        },
-      },
+      picker = { enabled = true },
+      explorer = { enabled = true },
+      indent = { enabled = true },
+    },
+    keys = {
+      { "<leader>e", function() require("snacks").explorer() end, desc = "File explorer" },
+      { "<leader>ff", function() require("snacks").picker.files() end, desc = "Find files" },
+      { "<leader>fg", function() require("snacks").picker.grep() end, desc = "Live grep" },
+      { "<leader>/", function() require("snacks").picker.lines() end, desc = "Search buffer lines" },
+      { "<leader>gg", function() require("snacks").lazygit() end, desc = "Lazygit" },
     },
   },
 })
