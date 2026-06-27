@@ -216,27 +216,6 @@ local servers = {
     cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
     root_markers = { "package.json", "tsconfig.json", ".git" },
-    init_options = {
-      preferences = {},
-      tsserver = {
-        logVerbosity = "off",
-      },
-    },
-    settings = {
-      typescript = {
-        tsdk = "",
-      },
-      javascript = {},
-    },
-    on_new_config = function(config, root_dir)
-      -- tsconfig.app.json があればそれを優先する（Vite プロジェクト対応）
-      local app_tsconfig = root_dir .. "/tsconfig.app.json"
-      if vim.fn.filereadable(app_tsconfig) == 1 then
-        config.init_options = config.init_options or {}
-        config.init_options.tsserver = config.init_options.tsserver or {}
-        config.init_options.tsserver.configFile = app_tsconfig
-      end
-    end,
   },
 }
 
