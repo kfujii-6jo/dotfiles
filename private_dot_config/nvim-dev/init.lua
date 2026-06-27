@@ -186,6 +186,8 @@ require("lazy").setup({
       { "<leader>fg", function() require("snacks").picker.grep() end, desc = "Live grep" },
       { "<leader>/", function() require("snacks").picker.lines() end, desc = "Search buffer lines" },
       { "<leader>gg", function() require("snacks").lazygit() end, desc = "Lazygit" },
+      { "<leader>fd", function() require("snacks").picker.diagnostics() end, desc = "Diagnostics" },
+      { "<leader>fr", function() require("snacks").picker.lsp_references() end, desc = "LSP references" },
     },
   },
 })
