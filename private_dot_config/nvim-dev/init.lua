@@ -27,6 +27,61 @@ require("lazy").setup({
     end,
   },
   {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      spec = {
+        { "<leader>f", group = "find" },
+        { "<leader>g", group = "git" },
+        { "<leader>r", group = "lsp" },
+        { "<leader>c", group = "code" },
+      },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    lazy = false,
+    config = function()
+      local parsers = {
+        "lua", "vim", "vimdoc", "rust", "go", "python",
+        "typescript", "tsx", "javascript", "json", "yaml",
+        "markdown", "markdown_inline", "bash", "html", "css",
+      }
+      require("nvim-treesitter").install(parsers)
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "lua", "rust", "go", "python", "typescript", "typescriptreact",
+          "javascript", "javascriptreact", "json", "yaml", "markdown",
+          "bash", "html", "css",
+        },
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
+    end,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = { "kevinhwang91/promise-async" },
+    event = "VeryLazy",
+    init = function()
+      vim.o.foldcolumn = "1"
+      vim.o.foldlevel = 99
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+    end,
+    opts = {
+      provider_selector = function()
+        return { "treesitter", "indent" }
+      end,
+    },
+    keys = {
+      { "zR", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
+      { "zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
+    },
+  },
+  {
     "romgrk/barbar.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
