@@ -1,5 +1,5 @@
 ---
-name: finish-branch
+name: cleanup-branch
 description: Switch to main, pull latest, and delete the work branch. Use this when the user has finished work on a branch (merged or no longer needed).
 model: haiku
 ---
