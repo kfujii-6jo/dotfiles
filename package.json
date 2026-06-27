@@ -7,6 +7,9 @@
     "@fission-ai/openspec": "latest",
     "@openai/codex": "latest",
     "pnpm": "latest",
-    "takt": "latest"
+    "pyright": "latest",
+    "takt": "latest",
+    "typescript": "latest",
+    "typescript-language-server": "latest"
   }
 }

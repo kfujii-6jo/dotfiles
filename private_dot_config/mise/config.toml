@@ -30,3 +30,8 @@ gcloud = "latest"
 # Formatters & Parsers
 stylua = "latest"
 tree-sitter = "latest"
+
+# Language Servers (nvim-dev native LSP)
+lua-language-server = "latest"
+rust-analyzer = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
