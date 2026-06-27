@@ -34,7 +34,7 @@ require("lazy").setup({
         { "<leader>f", group = "find" },
         { "<leader>g", group = "git" },
         { "<leader>r", group = "lsp" },
-        { "<leader>c", group = "code" },
+        { "<leader>c", group = "code/format" },
         { "<leader>z", group = "fold" },
       },
     },
@@ -121,6 +121,35 @@ require("lazy").setup({
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
+    },
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {},
+  },
+  {
+    "stevearc/conform.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>cf", function() require("conform").format({ async = true, lsp_fallback = true }) end, desc = "Format buffer" },
+    },
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+        rust = { "rustfmt" },
+        go = { "gofmt" },
+        python = { "ruff_format" },
+        javascript = { "biome", "prettier", stop_after_first = true },
+        typescript = { "biome", "prettier", stop_after_first = true },
+        javascriptreact = { "biome", "prettier", stop_after_first = true },
+        typescriptreact = { "biome", "prettier", stop_after_first = true },
+        json = { "biome", "prettier", stop_after_first = true },
+      },
+      formatters = {
+        biome = { require_cwd = true },
+      },
+      format_on_save = false,
     },
   },
   {
