@@ -148,6 +148,8 @@ require("lazy").setup({
       },
       formatters = {
         biome = { require_cwd = true },
+        prettier = { require_cwd = true },
+        ruff_format = { require_cwd = true },
       },
       format_on_save = false,
     },
