@@ -35,6 +35,7 @@ require("lazy").setup({
         { "<leader>g", group = "git" },
         { "<leader>r", group = "lsp" },
         { "<leader>c", group = "code" },
+        { "<leader>z", group = "fold" },
       },
     },
   },
@@ -77,8 +78,9 @@ require("lazy").setup({
       end,
     },
     keys = {
-      { "zR", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
-      { "zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
+      { "<leader>zR", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
+      { "<leader>zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
+      { "<leader>za", "za", desc = "Toggle fold" },
     },
   },
   {
