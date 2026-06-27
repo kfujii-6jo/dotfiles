@@ -124,6 +124,23 @@ require("lazy").setup({
     },
   },
   {
+    "saghen/blink.cmp",
+    version = "*",
+    opts = {
+      keymap = {
+        preset = "default",
+        ["<CR>"] = { "accept", "fallback" },
+      },
+      sources = {
+        default = { "lsp", "path", "buffer" },
+      },
+      completion = {
+        documentation = { auto_show = true },
+        list = { selection = { preselect = true } },
+      },
+    },
+  },
+  {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
@@ -157,23 +174,7 @@ opt.autoindent = true
 opt.cursorline = true
 opt.updatetime = 300
 
--- Native completion (0.12+)
-opt.autocomplete = true
-opt.completeopt = "menu,menuone,noselect,popup,fuzzy"
-opt.pumheight = 12
-
--- Completion menu keymaps: confirm a selected item, otherwise normal key.
-vim.keymap.set("i", "<CR>", function()
-  return vim.fn.complete_info({ "selected" }).selected ~= -1 and "<C-y>" or "<CR>"
-end, { expr = true })
-vim.keymap.set("i", "<Tab>", function()
-  return vim.fn.pumvisible() == 1 and "<C-n>" or "<Tab>"
-end, { expr = true })
-vim.keymap.set("i", "<S-Tab>", function()
-  return vim.fn.pumvisible() == 1 and "<C-p>" or "<S-Tab>"
-end, { expr = true })
-
--- LSP: buffer keymaps + native completion on attach
+-- LSP: buffer keymaps on attach (completion handled by blink.cmp)
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local o = { buffer = args.buf, silent = true }
@@ -184,10 +185,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, o)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, o)
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, o)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client and client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-    end
   end,
 })
 
@@ -219,6 +216,27 @@ local servers = {
     cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
     root_markers = { "package.json", "tsconfig.json", ".git" },
+    init_options = {
+      preferences = {},
+      tsserver = {
+        logVerbosity = "off",
+      },
+    },
+    settings = {
+      typescript = {
+        tsdk = "",
+      },
+      javascript = {},
+    },
+    on_new_config = function(config, root_dir)
+      -- tsconfig.app.json があればそれを優先する（Vite プロジェクト対応）
+      local app_tsconfig = root_dir .. "/tsconfig.app.json"
+      if vim.fn.filereadable(app_tsconfig) == 1 then
+        config.init_options = config.init_options or {}
+        config.init_options.tsserver = config.init_options.tsserver or {}
+        config.init_options.tsserver.configFile = app_tsconfig
+      end
+    end,
   },
 }
 
