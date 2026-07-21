@@ -1,0 +1,38 @@
+[keys]
+prefix = "ctrl+s"
+
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+resize_mode = "prefix+r"
+
+split_horizontal = "prefix+minus"
+split_vertical = "prefix+="
+close_pane = "prefix+x"
+
+new_tab = "prefix+t"
+close_tab = "prefix+w"
+next_tab = "prefix+tab"
+previous_tab = "prefix+shift+tab"
+
+cycle_pane_next = ""
+cycle_pane_previous = ""
+
+workspace_picker = "prefix+f"
+goto = ""
+
+[[keys.command]]
+key = "prefix+g"
+type = "popup"
+command = "lazygit"
+width = "90%"
+height = "90%"
+
+[[keys.command]]
+key = "prefix+y"
+type = "popup"
+command = "claude"
+width = "80%"
+height = "80%"
