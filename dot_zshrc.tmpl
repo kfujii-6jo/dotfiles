@@ -24,3 +24,6 @@ alias tkw='tmux kill-window -t $(tmux list-windows -F "#{window_index}: #{window
 alias hcp="history | sed 's/^ *[0-9]* *//' | awk '!seen[\$0]++' | fzf | pbcopy"
 alias gsw='git switch $(git branch --format="%(refname:short)" | fzf)'
 alias gbd='git branch -d $(git branch --format="%(refname:short)" | fzf -m)'
+alias hd='hunk diff'
+alias hpr='hunk diff main...HEAD'
+alias hsh='hunk show'

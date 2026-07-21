@@ -14,14 +14,23 @@ close_pane = "prefix+x"
 
 new_tab = "prefix+t"
 close_tab = "prefix+w"
+rename_tab = "prefix+,"
 next_tab = "prefix+tab"
 previous_tab = "prefix+shift+tab"
 
 cycle_pane_next = ""
 cycle_pane_previous = ""
 
+next_agent = "prefix+]"
+previous_agent = "prefix+["
+
 workspace_picker = "prefix+f"
+next_workspace = "prefix+n"
+previous_workspace = "prefix+p"
 goto = ""
+
+[keys.indexed]
+focus_agent = "prefix+1..9"
 
 [[keys.command]]
 key = "prefix+g"
