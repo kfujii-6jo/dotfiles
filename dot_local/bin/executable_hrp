@@ -1,0 +1,23 @@
+#!/bin/bash
+set -eu
+
+ghq_root=$(ghq root)
+selected=$(ghq list | while read -r repo; do
+  [[ -d "$ghq_root/$repo/.git" ]] && echo "$repo"
+done | fzf)
+[[ -z "$selected" ]] && exit 0
+
+dir="$ghq_root/$selected"
+label=$(basename "$selected")
+
+# Focus an existing workspace with this label, else create one rooted at the repo.
+# ponytail: match by label (repo basename); herdr labels aren't unique but this
+# prevents creating duplicates on repeat runs.
+existing=$(herdr workspace list | HRP_LABEL="$label" python3 -c \
+  "import os,sys,json; ws=json.load(sys.stdin)['result']['workspaces']; print(next((w['workspace_id'] for w in ws if w['label']==os.environ['HRP_LABEL']),''))")
+
+if [[ -n "$existing" ]]; then
+  herdr workspace focus "$existing"
+else
+  herdr workspace create --cwd "$dir" --label "$label" --focus
+fi
