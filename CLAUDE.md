@@ -17,6 +17,7 @@ dotfiles/
 ├── scripts/
 │   └── setup-macos.sh          # Automated setup script for macOS
 ├── dot_claude/                 # ~/.claude (Claude Code configuration)
+│   ├── CLAUDE.md               # Global instructions (all projects)
 │   ├── settings.json           # Claude Code settings
 │   └── skills/                 # Custom skills
 │       ├── commit/             # Create a git commit
