@@ -1,6 +1,15 @@
 #!/bin/bash
 set -eu
 
+if [[ "${1:-}" == "-d" ]]; then
+  target=$(herdr workspace list | python3 -c \
+    "import sys,json; [print(w['workspace_id'],'\t',w['label'],sep='') for w in json.load(sys.stdin)['result']['workspaces']]" |
+    fzf --with-nth=2.. --delimiter='\t' | cut -f1)
+  [[ -z "$target" ]] && exit 0
+  herdr workspace close "$target"
+  exit 0
+fi
+
 ghq_root=$(ghq root)
 selected=$(ghq list | while read -r repo; do
   [[ -d "$ghq_root/$repo/.git" ]] && echo "$repo"
