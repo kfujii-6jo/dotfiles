@@ -19,6 +19,7 @@ dotfiles/
 ├── dot_claude/                 # ~/.claude (Claude Code configuration)
 │   ├── CLAUDE.md               # Global instructions (all projects)
 │   ├── settings.json           # Claude Code settings
+│   ├── hooks/                  # SessionStart hook (herdr integration)
 │   └── skills/                 # Custom skills
 │       ├── commit/             # Create a git commit
 │       ├── commit-push-pr/     # Commit, push, and open a PR
