@@ -126,7 +126,22 @@
   "enabledPlugins": {
     "example-skills@anthropic-agent-skills": true,
     "ponytail@ponytail": true,
-    "feature-dev@claude-plugins-official": true
+    "feature-dev@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
