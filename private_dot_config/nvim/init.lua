@@ -188,7 +188,10 @@ require("lazy").setup({
     priority = 1000,
     lazy = false,
     opts = {
-      picker = { enabled = true },
+      picker = {
+        enabled = true,
+        sources = { explorer = { hidden = true } },
+      },
       explorer = { enabled = true },
       indent = { enabled = true },
     },
