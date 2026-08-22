@@ -1,0 +1,14 @@
+{
+  "project_panel": {
+    "dock": "left"
+  },
+  "ui_font_size": 14,
+  "buffer_font_size": 12,
+  "vim_mode": true,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "disable_ai": true,
+}
