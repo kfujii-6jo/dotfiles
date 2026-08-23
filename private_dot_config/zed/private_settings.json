@@ -10,5 +10,9 @@
     "light": "One Light",
     "dark": "One Dark",
   },
+  "terminal": {
+    "flexible": false,
+    "default_height": 250,
+  },
   "disable_ai": true,
 }
