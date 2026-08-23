@@ -123,12 +123,6 @@
     "defaultMode": "auto"
   },
   "model": "opus",
-  "enabledPlugins": {
-    "example-skills@anthropic-agent-skills": true,
-    "ponytail@ponytail": true,
-    "feature-dev@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
-  },
   "hooks": {
     "SessionStart": [
       {
@@ -142,6 +136,15 @@
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "example-skills@anthropic-agent-skills": true,
+    "ponytail@ponytail": true,
+    "feature-dev@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "natural-japanese@natural-japanese": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
@@ -160,6 +163,12 @@
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "natural-japanese": {
+      "source": {
+        "source": "github",
+        "repo": "coji/natural-japanese"
       }
     }
   }
