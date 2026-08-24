@@ -40,7 +40,8 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 ## Claude Code config (`dot_claude/`)
 
 - Skills under `dot_claude/skills/` are deployed by chezmoi. `grill-me` and
-  `grilling` are vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT) — do not edit them by hand.
+  `grilling` are vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT),
+  `empirical-prompt-tuning` from [mizchi/skills](https://github.com/mizchi/skills) (MIT) — do not edit them by hand.
 - `settings.json` carries `enabledPlugins` and `extraKnownMarketplaces` so a
   fresh machine restores its plugins on `chezmoi apply`. Claude Code writes
   this file itself, so it follows the `chezmoi add` rule above.
