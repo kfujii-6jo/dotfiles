@@ -45,3 +45,11 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 - `settings.json` carries `enabledPlugins` and `extraKnownMarketplaces` so a
   fresh machine restores its plugins on `chezmoi apply`. Claude Code writes
   this file itself, so it follows the `chezmoi add` rule above.
+
+## Codex config (`dot_codex/`)
+
+- `modify_private_config.toml` manages only portable user preferences. It must
+  preserve the trusted projects, plugins, runtime paths, notifications, and UI
+  state that Codex Desktop writes to `~/.codex/config.toml`.
+- `AGENTS.md` contains global instructions for Codex. Shared rules may follow
+  `dot_claude/CLAUDE.md`, but Codex-specific differences are intentional.

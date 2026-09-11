@@ -5,7 +5,7 @@ Runtimes and binary tools are managed with [mise](https://mise.jdx.dev/);
 global npm packages are tracked in `package.json`.
 
 Configured: zsh, tmux, Neovim, Ghostty, lazygit, gitui, Karabiner-Elements,
-Zed, herdr, and Claude Code.
+Zed, herdr, Claude Code, and Codex.
 
 ## Setup
 
@@ -40,3 +40,9 @@ chezmoi apply
 ```
 
 Run `chezmoi diff` first to see what would change in your home directory.
+
+## Codex
+
+`dot_codex/modify_private_config.toml` manages the portable defaults in
+`~/.codex/config.toml` without removing settings written by Codex Desktop.
+`dot_codex/AGENTS.md` provides the global working agreements for Codex.

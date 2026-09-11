@@ -1,0 +1,69 @@
+#!/bin/sh
+set -eu
+
+# Keep the portable preferences in this script while preserving settings that
+# Codex Desktop writes to config.toml (trusted projects, plugins, runtime paths,
+# notifications, and UI state).
+awk '
+BEGIN {
+  count = 6
+  order[1] = "model"
+  order[2] = "model_reasoning_effort"
+  order[3] = "approval_policy"
+  order[4] = "sandbox_mode"
+  order[5] = "service_tier"
+  order[6] = "project_doc_fallback_filenames"
+
+  value["model"] = "\"gpt-5.6-sol\""
+  value["model_reasoning_effort"] = "\"high\""
+  value["approval_policy"] = "\"never\""
+  value["sandbox_mode"] = "\"workspace-write\""
+  value["service_tier"] = "\"default\""
+  value["project_doc_fallback_filenames"] = "[\"CLAUDE.md\"]"
+
+  in_root = 1
+}
+
+function emit_missing(    i, key, added) {
+  for (i = 1; i <= count; i++) {
+    key = order[i]
+    if (!seen[key]) {
+      print key " = " value[key]
+      seen[key] = 1
+      added++
+    }
+  }
+  return added
+}
+
+{
+  if (in_root && $0 ~ /^[[:space:]]*\[/) {
+    if (emit_missing() > 0) {
+      print ""
+    }
+    in_root = 0
+  }
+
+  if (in_root) {
+    for (i = 1; i <= count; i++) {
+      key = order[i]
+      pattern = "^[[:space:]]*" key "[[:space:]]*="
+      if ($0 ~ pattern) {
+        if (!seen[key]) {
+          print key " = " value[key]
+          seen[key] = 1
+        }
+        next
+      }
+    }
+  }
+
+  print
+}
+
+END {
+  if (in_root) {
+    emit_missing()
+  }
+}
+'
