@@ -22,6 +22,9 @@ BEGIN {
   value["project_doc_fallback_filenames"] = "[\"CLAUDE.md\"]"
 
   in_root = 1
+  in_features = 0
+  features_seen = 0
+  hooks_seen = 0
 }
 
 function emit_missing(    i, key, added) {
@@ -44,6 +47,29 @@ function emit_missing(    i, key, added) {
     in_root = 0
   }
 
+  if (in_features && $0 ~ /^[[:space:]]*\[/) {
+    if (!hooks_seen) {
+      print "hooks = true"
+    }
+    in_features = 0
+  }
+
+  if ($0 ~ /^[[:space:]]*\[features\][[:space:]]*(#.*)?$/) {
+    features_seen = 1
+    in_features = 1
+    hooks_seen = 0
+    print
+    next
+  }
+
+  if (in_features && $0 ~ /^[[:space:]]*hooks[[:space:]]*=/) {
+    if (!hooks_seen) {
+      print "hooks = true"
+      hooks_seen = 1
+    }
+    next
+  }
+
   if (in_root) {
     for (i = 1; i <= count; i++) {
       key = order[i]
@@ -64,6 +90,14 @@ function emit_missing(    i, key, added) {
 END {
   if (in_root) {
     emit_missing()
+  }
+  if (in_features && !hooks_seen) {
+    print "hooks = true"
+  }
+  if (!features_seen) {
+    print ""
+    print "[features]"
+    print "hooks = true"
   }
 }
 '

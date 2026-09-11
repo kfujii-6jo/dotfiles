@@ -48,8 +48,13 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 
 ## Codex config (`dot_codex/`)
 
-- `modify_private_config.toml` manages only portable user preferences. It must
-  preserve the trusted projects, plugins, runtime paths, notifications, and UI
-  state that Codex Desktop writes to `~/.codex/config.toml`.
+- `modify_private_config.toml` manages portable user preferences and enables
+  Codex hooks. It must preserve the trusted projects, plugins, runtime paths,
+  notifications, and UI state that Codex Desktop writes to
+  `~/.codex/config.toml`.
+- `private_hooks.json` and `executable_herdr-agent-state.sh` vendor Herdr's
+  Codex SessionStart integration. After upgrading Herdr, refresh them with
+  `herdr integration install codex`, inspect the generated files, and pull the
+  safe changes into chezmoi.
 - `AGENTS.md` contains global instructions for Codex. Shared rules may follow
   `dot_claude/CLAUDE.md`, but Codex-specific differences are intentional.
