@@ -1,0 +1,25 @@
+# Portable Codex defaults.
+#
+# This fragment is merged into ~/.codex/config.toml by
+# dot_codex/modify_private_config.toml. Keep Codex Desktop-owned state (such
+# as trusted projects, plugins, and UI preferences) out of this file.
+
+# Claude Code uses Opus with extended thinking. Use Codex's frontier coding
+# model with high reasoning as the corresponding default.
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+
+# Claude's defaultMode is "auto". Codex has no command allowlist equivalent;
+# on-request is the closest safe default for commands outside the sandbox.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+service_tier = "default"
+
+# Prefer the shared instruction file and retain the Claude Code fallback.
+project_doc_fallback_filenames = ["AGENT.md", "CLAUDE.md"]
+
+# Command approval allow/deny rules live in ~/.codex/rules/default.rules.
+# They are tracked here as private_dot_codex/rules/default.rules.
+
+[features]
+hooks = true

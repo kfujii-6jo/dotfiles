@@ -1,0 +1,113 @@
+# Derived from dot_claude/settings.json.
+#
+# Codex applies these rules to commands that would otherwise need to run
+# outside its workspace sandbox. A more restrictive matching rule wins.
+
+# Read-only inspection and ordinary developer commands allowed by Claude Code.
+prefix_rule(
+    pattern = [["ls", "rg", "find", "grep", "cat", "head", "tail", "less", "more", "wc", "sort", "uniq", "cut", "awk", "sed", "which", "pwd", "date", "echo", "printf", "export", "source", "file", "stat", "diff", "cmp"]],
+    decision = "allow",
+    justification = "Allowed by the shared Claude Code settings.",
+)
+
+# Routine build and formatting commands allowed by Claude Code.
+prefix_rule(
+    pattern = [["make", "mise", "aqua", "bun", "pnpm", "turbo", "go", "gofmt"]],
+    decision = "allow",
+    justification = "Allowed by the shared Claude Code settings.",
+)
+
+prefix_rule(
+    pattern = ["go", ["test", "build", "fmt"]],
+    decision = "allow",
+    justification = "Allowed by the shared Claude Code settings.",
+)
+
+# Git operations explicitly allowed by Claude Code. Keep `git rm` narrow.
+prefix_rule(
+    pattern = ["git", ["add", "commit", "push", "checkout", "pull", "reset", "cherry-pick"]],
+    decision = "allow",
+    justification = "Allowed by the shared Claude Code settings.",
+)
+
+prefix_rule(
+    pattern = ["git", "rm", "--cached"],
+    decision = "allow",
+    justification = "Only cached-file removal is allowed by the shared Claude Code settings.",
+)
+
+# Read and update GitHub metadata as allowed by Claude Code.
+prefix_rule(
+    pattern = ["gh", "pr", ["list", "view", "diff"]],
+    decision = "allow",
+    justification = "Allowed by the shared Claude Code settings.",
+)
+
+prefix_rule(
+    pattern = ["gh", "issue", ["create", "edit"]],
+    decision = "allow",
+    justification = "Allowed by the shared Claude Code settings.",
+)
+
+# The Claude denylist blocks these command families outright.
+prefix_rule(
+    pattern = ["sudo"],
+    decision = "forbidden",
+    justification = "Do not use elevated privileges.",
+)
+
+prefix_rule(
+    pattern = [["curl", "wget", "dd", "mkfs", "fdisk", "npx", "pnpx"]],
+    decision = "forbidden",
+    justification = "This command is prohibited by the shared Claude Code settings.",
+)
+
+# Forbid all recursive force deletion. This is intentionally broader than the
+# Claude pattern variants so shell expansion cannot bypass the policy.
+prefix_rule(
+    pattern = ["rm", "-rf"],
+    decision = "forbidden",
+    justification = "Recursive forced deletion is prohibited.",
+)
+
+prefix_rule(
+    pattern = ["chmod", "777"],
+    decision = "forbidden",
+    justification = "Do not grant world-writable access to system paths.",
+)
+
+prefix_rule(
+    pattern = ["chown", "root:"],
+    decision = "forbidden",
+    justification = "Do not change ownership to root.",
+)
+
+prefix_rule(
+    pattern = ["docker", "system", "prune", "-af"],
+    decision = "forbidden",
+    justification = "Destructive Docker pruning is prohibited.",
+)
+
+prefix_rule(
+    pattern = ["npm", "publish"],
+    decision = "forbidden",
+    justification = "Publishing packages is prohibited.",
+)
+
+prefix_rule(
+    pattern = ["pnpm", "publish"],
+    decision = "forbidden",
+    justification = "Publishing packages is prohibited.",
+)
+
+prefix_rule(
+    pattern = ["cargo", "publish"],
+    decision = "forbidden",
+    justification = "Publishing packages is prohibited.",
+)
+
+prefix_rule(
+    pattern = ["deno", "publish"],
+    decision = "forbidden",
+    justification = "Publishing packages is prohibited.",
+)

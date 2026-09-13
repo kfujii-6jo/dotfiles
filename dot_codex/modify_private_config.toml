@@ -1,10 +1,46 @@
 #!/bin/sh
 set -eu
 
-# Keep the portable preferences in this script while preserving settings that
-# Codex Desktop writes to config.toml (trusted projects, plugins, runtime paths,
+# Merge the declarative portable defaults with settings that Codex Desktop
+# writes to config.toml (trusted projects, plugins, runtime paths,
 # notifications, and UI state).
-awk '
+config_source="${CHEZMOI_SOURCE_DIR:?}/.chezmoitemplates/codex-config.toml"
+
+toml_value() {
+  sed -n -E "s/^[[:space:]]*$1[[:space:]]*=[[:space:]]*//p" "$config_source" | head -n 1
+}
+
+model="$(toml_value model)"
+model_reasoning_effort="$(toml_value model_reasoning_effort)"
+approval_policy="$(toml_value approval_policy)"
+sandbox_mode="$(toml_value sandbox_mode)"
+service_tier="$(toml_value service_tier)"
+project_doc_fallback_filenames="$(toml_value project_doc_fallback_filenames)"
+hooks="$(awk '
+  /^[[:space:]]*\[features\][[:space:]]*$/ { in_features = 1; next }
+  /^[[:space:]]*\[/ { in_features = 0 }
+  in_features && /^[[:space:]]*hooks[[:space:]]*=/ {
+    sub(/^[^=]*=[[:space:]]*/, "")
+    print
+    exit
+  }
+' "$config_source")"
+
+for value in "$model" "$model_reasoning_effort" "$approval_policy" \
+  "$sandbox_mode" "$service_tier" "$project_doc_fallback_filenames" "$hooks"; do
+  [ -n "$value" ] || {
+    echo "missing required Codex setting in $config_source" >&2
+    exit 1
+  }
+done
+
+awk -v model="$model" \
+  -v model_reasoning_effort="$model_reasoning_effort" \
+  -v approval_policy="$approval_policy" \
+  -v sandbox_mode="$sandbox_mode" \
+  -v service_tier="$service_tier" \
+  -v project_doc_fallback_filenames="$project_doc_fallback_filenames" \
+  -v hooks="$hooks" '
 BEGIN {
   count = 6
   order[1] = "model"
@@ -14,12 +50,12 @@ BEGIN {
   order[5] = "service_tier"
   order[6] = "project_doc_fallback_filenames"
 
-  value["model"] = "\"gpt-5.6-sol\""
-  value["model_reasoning_effort"] = "\"high\""
-  value["approval_policy"] = "\"never\""
-  value["sandbox_mode"] = "\"workspace-write\""
-  value["service_tier"] = "\"default\""
-  value["project_doc_fallback_filenames"] = "[\"CLAUDE.md\"]"
+  value["model"] = model
+  value["model_reasoning_effort"] = model_reasoning_effort
+  value["approval_policy"] = approval_policy
+  value["sandbox_mode"] = sandbox_mode
+  value["service_tier"] = service_tier
+  value["project_doc_fallback_filenames"] = project_doc_fallback_filenames
 
   in_root = 1
   in_features = 0
@@ -49,7 +85,7 @@ function emit_missing(    i, key, added) {
 
   if (in_features && $0 ~ /^[[:space:]]*\[/) {
     if (!hooks_seen) {
-      print "hooks = true"
+      print "hooks = " hooks
     }
     in_features = 0
   }
@@ -64,7 +100,7 @@ function emit_missing(    i, key, added) {
 
   if (in_features && $0 ~ /^[[:space:]]*hooks[[:space:]]*=/) {
     if (!hooks_seen) {
-      print "hooks = true"
+      print "hooks = " hooks
       hooks_seen = 1
     }
     next
@@ -92,12 +128,12 @@ END {
     emit_missing()
   }
   if (in_features && !hooks_seen) {
-    print "hooks = true"
+    print "hooks = " hooks
   }
   if (!features_seen) {
     print ""
     print "[features]"
-    print "hooks = true"
+    print "hooks = " hooks
   }
 }
 '
