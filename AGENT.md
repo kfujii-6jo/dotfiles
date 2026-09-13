@@ -53,7 +53,7 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
   `modify_private_config.toml` merges them into `~/.codex/config.toml` and
   enables Codex hooks, while preserving the trusted projects, plugins, runtime
   paths, notifications, and UI state that Codex Desktop writes.
-- `private_dot_codex/rules/default.rules` holds the shared command allow/deny
+- `dot_codex/private_rules/default.rules` holds the shared command allow/deny
   policy. Update it alongside `dot_claude/settings.json` when the policy changes.
 - `private_hooks.json` and `executable_herdr-agent-state.sh` vendor Herdr's
   Codex SessionStart integration. After upgrading Herdr, run

@@ -19,7 +19,7 @@ service_tier = "default"
 project_doc_fallback_filenames = ["AGENT.md", "CLAUDE.md"]
 
 # Command approval allow/deny rules live in ~/.codex/rules/default.rules.
-# They are tracked here as private_dot_codex/rules/default.rules.
+# They are tracked here as dot_codex/private_rules/default.rules.
 
 [features]
 hooks = true
