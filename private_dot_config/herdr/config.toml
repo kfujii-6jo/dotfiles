@@ -9,6 +9,7 @@ focus_pane_up = "prefix+k"
 focus_pane_right = "prefix+l"
 
 resize_mode = "prefix+r"
+copy_mode = "prefix+v"
 
 split_horizontal = "prefix+minus"
 split_vertical = "prefix+="
