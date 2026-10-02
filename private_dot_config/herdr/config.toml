@@ -38,6 +38,14 @@ previous_workspace = "prefix+p"
 goto = ""
 
 [[keys.command]]
+key = "prefix+s"
+type = "popup"
+command = "exec \"$HOME/.config/herdr/repo-space.sh\""
+description = "search repositories and open a new Space"
+width = "80%"
+height = "80%"
+
+[[keys.command]]
 key = "prefix+t"
 type = "popup"
 command = "exec \"${SHELL:-sh}\""
