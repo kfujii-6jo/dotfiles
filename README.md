@@ -47,6 +47,8 @@ Run `chezmoi diff` first to see what would change in your home directory.
 `dot_codex/modify_private_config.toml` merges them into `~/.codex/config.toml`
 using chezmoi's built-in TOML functions, preserving settings written by Codex
 Desktop. Add settings to the defaults file; the merge template needs no changes.
+Routine workspace operations run automatically; operations needing approval
+go through AI review (`approvals_reviewer = "auto_review"`).
 `dot_codex/private_rules/default.rules` carries the shared command allow/deny
 policy.
 `dot_codex/AGENTS.md` provides the global working agreements for Codex.
