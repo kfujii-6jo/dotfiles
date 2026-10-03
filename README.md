@@ -45,7 +45,8 @@ Run `chezmoi diff` first to see what would change in your home directory.
 
 `.chezmoitemplates/codex-config.toml` declares the portable Codex defaults.
 `dot_codex/modify_private_config.toml` merges them into `~/.codex/config.toml`
-without removing settings written by Codex Desktop.
+using chezmoi's built-in TOML functions, preserving settings written by Codex
+Desktop. Add settings to the defaults file; the merge template needs no changes.
 `dot_codex/private_rules/default.rules` carries the shared command allow/deny
 policy.
 `dot_codex/AGENTS.md` provides the global working agreements for Codex.
