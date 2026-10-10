@@ -52,3 +52,15 @@ go through AI review (`approvals_reviewer = "auto_review"`).
 `dot_codex/private_rules/default.rules` carries the shared command allow/deny
 policy.
 `dot_codex/AGENTS.md` provides the global working agreements for Codex.
+
+## Pi
+
+[Pi](https://github.com/earendil-works/pi) is tracked as an npm global in
+`package.json`. Install it on an existing machine with:
+
+```bash
+npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+```
+
+Run `pi` in a project directory, use `/login` to connect a model provider,
+then `/model` to choose a model. Resume the latest session with `pi --continue`.
