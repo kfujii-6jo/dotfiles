@@ -10,6 +10,7 @@ focus_pane_right = "prefix+l"
 
 resize_mode = "prefix+r"
 copy_mode = "prefix+v"
+edit_scrollback = ""
 
 split_horizontal = "prefix+minus"
 split_vertical = "prefix+="
@@ -33,9 +34,22 @@ previous_agent = "prefix+["
 focus_agent = "prefix+1..9"
 
 workspace_picker = "prefix+f"
+# Use Vim keys to select workspaces in Navigate mode.
+navigate_workspace_down = ["j", "down"]
+navigate_workspace_up = ["k", "up"]
+navigate_pane_down = ""
+navigate_pane_up = ""
 next_workspace = "prefix+n"
 previous_workspace = "prefix+p"
 goto = ""
+
+[[keys.command]]
+key = "prefix+e"
+type = "popup"
+command = "exec \"$HOME/.config/herdr/read-scrollback.sh\""
+description = "read pane scrollback in Neovim"
+width = "100%"
+height = "100%"
 
 [[keys.command]]
 key = "prefix+s"
