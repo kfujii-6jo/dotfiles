@@ -13,6 +13,9 @@ uv = "latest"
 chezmoi = "latest"
 "pipx:apm-cli" = "0.33.0"
 
+# Coding Agents
+"github:can1357/oh-my-pi" = "18.10.3"
+
 # Git
 gh = "latest"
 ghq = "latest"

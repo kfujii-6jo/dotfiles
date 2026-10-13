@@ -5,7 +5,7 @@ Runtimes and binary tools are managed with [mise](https://mise.jdx.dev/);
 global npm packages are tracked in `package.json`.
 
 Configured: zsh, tmux, Neovim, Ghostty, lazygit, gitui, Karabiner-Elements,
-Zed, herdr, Claude Code, and Codex.
+Zed, herdr, Claude Code, Codex, Pi, and oh-my-pi.
 
 ## Setup
 
@@ -88,6 +88,18 @@ go through AI review (`approvals_reviewer = "auto_review"`).
 policy.
 `dot_codex/AGENTS.md` provides the global working agreements for Codex.
 
+After installing Herdr on a new machine, and after each Herdr upgrade, install
+its Codex integration with the official command:
+
+```bash
+herdr integration install codex
+herdr integration status
+```
+
+Herdr owns `~/.codex/herdr-agent-state.sh` and `~/.codex/hooks.json`.
+Both are excluded from chezmoi; do not copy them into this repository.
+`chezmoi apply` does not install or update this integration.
+
 ## Pi
 
 [Pi](https://github.com/earendil-works/pi) is tracked as an npm global in
@@ -99,3 +111,19 @@ npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 
 Run `pi` in a project directory, use `/login` to connect a model provider,
 then `/model` to choose a model. Resume the latest session with `pi --continue`.
+
+## oh-my-pi
+
+[oh-my-pi](https://github.com/can1357/oh-my-pi) is installed as a release binary
+through mise, pinned in `private_dot_config/mise/config.toml`.
+Install it on an existing machine with:
+
+```bash
+chezmoi diff ~/.config/mise/config.toml
+chezmoi apply ~/.config/mise/config.toml
+mise install github:can1357/oh-my-pi
+```
+
+Run `omp` to start. Use `omp config list` to inspect available settings, or
+`/settings` inside a session. Global settings live in `~/.omp/agent/config.yml`;
+project settings live in `.omp/config.yml`. These are separate from Pi's settings.

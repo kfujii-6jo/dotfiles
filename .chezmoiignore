@@ -9,3 +9,7 @@ scripts/
 .claude/skills
 .agents/skills
 .codex/skills
+
+# Codex integration files are installed and updated by Herdr.
+.codex/herdr-agent-state.sh
+.codex/hooks.json

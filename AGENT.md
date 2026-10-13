@@ -57,9 +57,8 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
   paths, notifications, and UI state that Codex Desktop writes.
 - `dot_codex/private_rules/default.rules` holds the shared command allow/deny
   policy. Update it alongside `dot_claude/settings.json` when the policy changes.
-- `private_hooks.json` and `executable_herdr-agent-state.sh` vendor Herdr's
-  Codex SessionStart integration. After upgrading Herdr, run
-  `herdr integration install codex`, inspect the generated files, and pull
-  safe changes into chezmoi.
+- Herdr owns `~/.codex/herdr-agent-state.sh` and `~/.codex/hooks.json`;
+  both are excluded from chezmoi. After installing or upgrading Herdr, run
+  `herdr integration install codex`. Do not vendor or `chezmoi add` these files.
 - `dot_codex/AGENTS.md` contains global instructions for Codex. Differences
   from `dot_claude/CLAUDE.md` are intentional.
