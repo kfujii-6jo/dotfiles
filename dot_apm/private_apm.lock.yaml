@@ -5,7 +5,7 @@ dependencies:
   name: agents-sdk
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/agents-sdk
   is_virtual: true
@@ -99,7 +99,7 @@ dependencies:
   name: cloudflare
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/cloudflare
   is_virtual: true
@@ -773,7 +773,7 @@ dependencies:
   name: cloudflare-email-service
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/cloudflare-email-service
   is_virtual: true
@@ -811,7 +811,7 @@ dependencies:
   name: durable-objects
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/durable-objects
   is_virtual: true
@@ -841,7 +841,7 @@ dependencies:
   name: sandbox-migrate-to-next
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/sandbox-migrate-to-next
   is_virtual: true
@@ -859,7 +859,7 @@ dependencies:
   name: sandbox-next
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/sandbox-next
   is_virtual: true
@@ -885,7 +885,7 @@ dependencies:
   name: sandbox-stable
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/sandbox-stable
   is_virtual: true
@@ -903,7 +903,7 @@ dependencies:
   name: turnstile-spin
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/turnstile-spin
   is_virtual: true
@@ -973,7 +973,7 @@ dependencies:
   name: web-perf
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/web-perf
   is_virtual: true
@@ -991,7 +991,7 @@ dependencies:
   name: workers-best-practices
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/workers-best-practices
   is_virtual: true
@@ -1021,7 +1021,7 @@ dependencies:
   name: wrangler
   host: github.com
   resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
-  resolved_ref: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_ref: main
   version: unknown
   virtual_path: skills/wrangler
   is_virtual: true
@@ -1039,7 +1039,7 @@ dependencies:
   name: natural-japanese
   host: github.com
   resolved_commit: 9a78a42964096da509b8f3e011f0085a5f080151
-  resolved_ref: 9a78a42964096da509b8f3e011f0085a5f080151
+  resolved_ref: main
   version: unknown
   virtual_path: skills/natural-japanese
   is_virtual: true
@@ -1157,7 +1157,7 @@ dependencies:
   name: herdr
   host: github.com
   resolved_commit: 241b99cd397bb642eaabcfee1647bcecffb26be1
-  resolved_ref: 241b99cd397bb642eaabcfee1647bcecffb26be1
+  resolved_ref: master
   version: unknown
   virtual_path: skills/herdr
   is_virtual: true
@@ -1175,7 +1175,7 @@ dependencies:
   name: clean-gone
   host: github.com
   resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
-  resolved_ref: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_ref: main
   version: unknown
   virtual_path: clean-gone
   is_virtual: true
@@ -1192,8 +1192,8 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: cleanup-branch
   host: github.com
-  resolved_commit: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
-  resolved_ref: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
+  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_ref: main
   version: unknown
   virtual_path: cleanup-branch
   is_virtual: true
@@ -1210,8 +1210,8 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: commit
   host: github.com
-  resolved_commit: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
-  resolved_ref: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
+  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_ref: main
   version: unknown
   virtual_path: commit
   is_virtual: true
@@ -1228,8 +1228,8 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: commit-push-pr
   host: github.com
-  resolved_commit: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
-  resolved_ref: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
+  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_ref: main
   version: unknown
   virtual_path: commit-push-pr
   is_virtual: true
@@ -1246,8 +1246,8 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: rebase-branch
   host: github.com
-  resolved_commit: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
-  resolved_ref: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
+  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_ref: main
   version: unknown
   virtual_path: rebase-branch
   is_virtual: true
@@ -1265,7 +1265,7 @@ dependencies:
   name: grill-me
   host: github.com
   resolved_commit: 49dd158d1076134a641b33efb035946536778336
-  resolved_ref: 49dd158d1076134a641b33efb035946536778336
+  resolved_ref: main
   version: unknown
   virtual_path: skills/productivity/grill-me
   is_virtual: true
@@ -1287,7 +1287,7 @@ dependencies:
   name: grilling
   host: github.com
   resolved_commit: 49dd158d1076134a641b33efb035946536778336
-  resolved_ref: 49dd158d1076134a641b33efb035946536778336
+  resolved_ref: main
   version: unknown
   virtual_path: skills/productivity/grilling
   is_virtual: true
@@ -1309,7 +1309,7 @@ dependencies:
   name: empirical-prompt-tuning
   host: github.com
   resolved_commit: 62f580819410cb1d398e4d7f234bbd0aad1c1a15
-  resolved_ref: 62f580819410cb1d398e4d7f234bbd0aad1c1a15
+  resolved_ref: main
   version: unknown
   virtual_path: empirical-prompt-tuning
   is_virtual: true
@@ -1335,7 +1335,7 @@ dependencies:
   name: ralph-tui-create-beads
   host: github.com
   resolved_commit: af44322134198a980335fc526a03ebb0dce0d432
-  resolved_ref: af44322134198a980335fc526a03ebb0dce0d432
+  resolved_ref: main
   version: unknown
   virtual_path: skills/ralph-tui-create-beads
   is_virtual: true
@@ -1353,7 +1353,7 @@ dependencies:
   name: ralph-tui-create-beads-rust
   host: github.com
   resolved_commit: af44322134198a980335fc526a03ebb0dce0d432
-  resolved_ref: af44322134198a980335fc526a03ebb0dce0d432
+  resolved_ref: main
   version: unknown
   virtual_path: skills/ralph-tui-create-beads-rust
   is_virtual: true
@@ -1371,7 +1371,7 @@ dependencies:
   name: ralph-tui-create-json
   host: github.com
   resolved_commit: af44322134198a980335fc526a03ebb0dce0d432
-  resolved_ref: af44322134198a980335fc526a03ebb0dce0d432
+  resolved_ref: main
   version: unknown
   virtual_path: skills/ralph-tui-create-json
   is_virtual: true
@@ -1389,7 +1389,7 @@ dependencies:
   name: ralph-tui-prd
   host: github.com
   resolved_commit: af44322134198a980335fc526a03ebb0dce0d432
-  resolved_ref: af44322134198a980335fc526a03ebb0dce0d432
+  resolved_ref: main
   version: unknown
   virtual_path: skills/ralph-tui-prd
   is_virtual: true
@@ -1407,7 +1407,7 @@ dependencies:
   name: find-skills
   host: github.com
   resolved_commit: 13e4063a1cf913f5606d57d42ab83a86f5001e04
-  resolved_ref: 13e4063a1cf913f5606d57d42ab83a86f5001e04
+  resolved_ref: main
   version: unknown
   virtual_path: skills/find-skills
   is_virtual: true

@@ -45,6 +45,8 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 - Run `bash scripts/install-skills.sh` to restore the pinned versions into
   `~/.claude/skills` and `~/.agents/skills` (Codex and Pi). Do not add deployed
   skills to chezmoi or recreate separate copies under `~/.codex/skills`.
+- Run `bash scripts/update-skills.sh` to update all skills from their upstream
+  branches and save the new lockfile into chezmoi. Review and commit the diff.
 - `dot_claude/settings.json` carries `enabledPlugins` and
   `extraKnownMarketplaces`. Claude Code writes it itself, so follow the
   `chezmoi add` rule above. Plugin-provided skills keep their plugin lifecycle.

@@ -44,8 +44,8 @@ Run `chezmoi diff` first to see what would change in your home directory.
 ## Shared skills (APM)
 
 APM 0.33.0 is installed through mise. `dot_apm/apm.yml` declares all 26 user
-skills, pinned to full Git commit hashes. `dot_apm/private_apm.lock.yaml`
-records resolved files and deployment ownership. APM deploys to
+skills, tracking each upstream's default branch. `dot_apm/private_apm.lock.yaml`
+pins resolved commits and records files and deployment ownership. APM deploys to
 `~/.claude/skills/` and `~/.agents/skills/` (shared by Codex and Pi).
 All user skill directories are excluded from chezmoi; edit skills at their
 upstream repository instead. Built-in and plugin-provided skills remain owned
@@ -66,11 +66,19 @@ then restore the pinned skills:
 bash scripts/install-skills.sh
 ```
 
-Ordinary `chezmoi apply` does not install or update skills. To update intentionally,
-change the full commit pin in `dot_apm/apm.yml`, apply that manifest, then run
-`apm install --global` and `chezmoi add ~/.apm/apm.lock.yaml`. Review and commit
-the manifest and lockfile together. To roll back, restore their previous versions
-and run the install script again. Do not edit APM's deployed copies.
+To update all skills to the latest upstream versions and save the resulting
+lockfile back into this repository:
+
+```bash
+bash scripts/update-skills.sh
+```
+
+The script runs `apm update --global --yes`, then `chezmoi add` for the lockfile.
+Review and commit the resulting diff. To preview available updates, run
+`mise exec -- apm update --global --dry-run`.
+Ordinary `chezmoi apply` does not install or update skills. To roll back,
+restore the previous manifest and lockfile and run the install script again.
+Do not edit APM's deployed copies.
 
 Installation and discovery are verified separately from workflow behavior.
 Some upstream skills still use agent-specific instructions; APM deploys them
