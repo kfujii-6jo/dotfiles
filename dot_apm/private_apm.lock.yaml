@@ -1,6 +1,24 @@
 lockfile_version: '1'
 apm_version: 0.33.0
 dependencies:
+- repo_url: herdrdev/herdr
+  name: herdr
+  host: github.com
+  resolved_commit: 241b99cd397bb642eaabcfee1647bcecffb26be1
+  resolved_ref: 241b99cd397bb642eaabcfee1647bcecffb26be1
+  version: unknown
+  virtual_path: skills/herdr
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/herdr
+  - .agents/skills/herdr/SKILL.md
+  - .claude/skills/herdr
+  - .claude/skills/herdr/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/herdr/SKILL.md: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
+    .claude/skills/herdr/SKILL.md: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
+  content_hash: sha256:66715d76e5947497431ec0db32f2693b9c916ad799c3f32b99e6174b4b9c607f
 - repo_url: kfujii-6jo/skills
   name: commit
   host: github.com
@@ -101,6 +119,24 @@ deployments:
   active_owner: mizchi/skills/empirical-prompt-tuning
   content_hash: sha256:252418e7ef022981d2dda2e3ec57fa1c786d30af68c50b7e062edf1d7361b0cb
 - kind: project-relative
+  target: claude
+  value: .claude/skills/herdr
+  runtime: null
+  scope: project
+  owners:
+  - herdrdev/herdr/skills/herdr
+  active_owner: herdrdev/herdr/skills/herdr
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/herdr/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - herdrdev/herdr/skills/herdr
+  active_owner: herdrdev/herdr/skills/herdr
+  content_hash: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
+- kind: project-relative
   target: codex
   value: .agents/skills/commit
   runtime: null
@@ -154,3 +190,21 @@ deployments:
   - mizchi/skills/empirical-prompt-tuning
   active_owner: mizchi/skills/empirical-prompt-tuning
   content_hash: sha256:252418e7ef022981d2dda2e3ec57fa1c786d30af68c50b7e062edf1d7361b0cb
+- kind: project-relative
+  target: codex
+  value: .agents/skills/herdr
+  runtime: null
+  scope: project
+  owners:
+  - herdrdev/herdr/skills/herdr
+  active_owner: herdrdev/herdr/skills/herdr
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/herdr/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - herdrdev/herdr/skills/herdr
+  active_owner: herdrdev/herdr/skills/herdr
+  content_hash: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b

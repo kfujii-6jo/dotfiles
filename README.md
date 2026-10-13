@@ -43,13 +43,15 @@ Run `chezmoi diff` first to see what would change in your home directory.
 
 ## Shared skills (APM pilot)
 
-APM 0.33.0 is installed through mise. `dot_apm/apm.yml` declares two pilot
+APM 0.33.0 is installed through mise. `dot_apm/apm.yml` declares three pilot
 dependencies: `commit` from `kfujii-6jo/skills` and `empirical-prompt-tuning`
-from `mizchi/skills`. Both are pinned to full Git commit hashes;
+from `mizchi/skills`, plus `herdr` from `herdrdev/herdr/skills/herdr`.
+All are pinned to full Git commit hashes;
 `dot_apm/private_apm.lock.yaml` records their resolved contents and deployment ownership.
 APM deploys to `~/.claude/skills/` and `~/.agents/skills/` (Codex and Pi).
 The two Claude destinations are excluded from chezmoi; their old source copies
-are retained during the pilot. Other skills still use their existing setup.
+are retained during the pilot. Herdr's former Codex-only copy has been retired
+in favor of the shared APM installation. Other skills still use their existing setup.
 
 After applying the mise configuration and running `mise install`, authenticate
 GitHub access with `gh auth login` if needed (the personal skills repo is private),

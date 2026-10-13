@@ -43,6 +43,9 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
   `dot_apm/apm.yml` and its lockfile. Their old source copies are excluded by
   `.chezmoiignore`; edit the upstream repositories instead. Run
   `bash scripts/install-skills.sh` to restore the pinned versions.
+- The Herdr skill is also installed by APM from `herdrdev/herdr/skills/herdr`.
+  Do not recreate a separate `~/.codex/skills/herdr` copy; Codex reads the
+  shared `~/.agents/skills/herdr` installation.
 
 - Skills under `dot_claude/skills/` are deployed by chezmoi. `grill-me` and
   `grilling` are vendored from [mattpocock/skills](https://github.com/mattpocock/skills)
