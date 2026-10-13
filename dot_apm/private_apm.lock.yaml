@@ -1,0 +1,156 @@
+lockfile_version: '1'
+apm_version: 0.33.0
+dependencies:
+- repo_url: kfujii-6jo/skills
+  name: commit
+  host: github.com
+  resolved_commit: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
+  resolved_ref: 4f6eaf72389f2067a30b4c651a20f432bf603a8b
+  version: unknown
+  virtual_path: commit
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/commit
+  - .agents/skills/commit/SKILL.md
+  - .claude/skills/commit
+  - .claude/skills/commit/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/commit/SKILL.md: sha256:ee873295e1c4d65232051bbb440d943b3aae4312c00c5122215ca6fcd935d549
+    .claude/skills/commit/SKILL.md: sha256:ee873295e1c4d65232051bbb440d943b3aae4312c00c5122215ca6fcd935d549
+  content_hash: sha256:4648f7e2c25bacc3001e909e1178b0926675f448a6e19039ddde82b49a6eb1bc
+- repo_url: mizchi/skills
+  name: empirical-prompt-tuning
+  host: github.com
+  resolved_commit: 62f580819410cb1d398e4d7f234bbd0aad1c1a15
+  resolved_ref: 62f580819410cb1d398e4d7f234bbd0aad1c1a15
+  version: unknown
+  virtual_path: empirical-prompt-tuning
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/empirical-prompt-tuning
+  - .agents/skills/empirical-prompt-tuning/README.md
+  - .agents/skills/empirical-prompt-tuning/SKILL-ja.md
+  - .agents/skills/empirical-prompt-tuning/SKILL.md
+  - .claude/skills/empirical-prompt-tuning
+  - .claude/skills/empirical-prompt-tuning/README.md
+  - .claude/skills/empirical-prompt-tuning/SKILL-ja.md
+  - .claude/skills/empirical-prompt-tuning/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/empirical-prompt-tuning/README.md: sha256:5fc8e7774a7290497c941e46baeb2712731dd92a7ea2ddff75fecc9173ccc347
+    .agents/skills/empirical-prompt-tuning/SKILL-ja.md: sha256:0a38d830802c2e08a7faca13928fedf6911e00b896946b4b03910d662de6dea5
+    .agents/skills/empirical-prompt-tuning/SKILL.md: sha256:252418e7ef022981d2dda2e3ec57fa1c786d30af68c50b7e062edf1d7361b0cb
+    .claude/skills/empirical-prompt-tuning/README.md: sha256:5fc8e7774a7290497c941e46baeb2712731dd92a7ea2ddff75fecc9173ccc347
+    .claude/skills/empirical-prompt-tuning/SKILL-ja.md: sha256:0a38d830802c2e08a7faca13928fedf6911e00b896946b4b03910d662de6dea5
+    .claude/skills/empirical-prompt-tuning/SKILL.md: sha256:252418e7ef022981d2dda2e3ec57fa1c786d30af68c50b7e062edf1d7361b0cb
+  content_hash: sha256:26042612e2d8b6ee1deebcdfc556da494640488e03471aaae74da587ae84fa2b
+deployments:
+- kind: project-relative
+  target: claude
+  value: .claude/skills/commit
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/commit
+  active_owner: kfujii-6jo/skills/commit
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/commit/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/commit
+  active_owner: kfujii-6jo/skills/commit
+  content_hash: sha256:ee873295e1c4d65232051bbb440d943b3aae4312c00c5122215ca6fcd935d549
+- kind: project-relative
+  target: claude
+  value: .claude/skills/empirical-prompt-tuning
+  runtime: null
+  scope: project
+  owners:
+  - mizchi/skills/empirical-prompt-tuning
+  active_owner: mizchi/skills/empirical-prompt-tuning
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/empirical-prompt-tuning/README.md
+  runtime: null
+  scope: project
+  owners:
+  - mizchi/skills/empirical-prompt-tuning
+  active_owner: mizchi/skills/empirical-prompt-tuning
+  content_hash: sha256:5fc8e7774a7290497c941e46baeb2712731dd92a7ea2ddff75fecc9173ccc347
+- kind: project-relative
+  target: claude
+  value: .claude/skills/empirical-prompt-tuning/SKILL-ja.md
+  runtime: null
+  scope: project
+  owners:
+  - mizchi/skills/empirical-prompt-tuning
+  active_owner: mizchi/skills/empirical-prompt-tuning
+  content_hash: sha256:0a38d830802c2e08a7faca13928fedf6911e00b896946b4b03910d662de6dea5
+- kind: project-relative
+  target: claude
+  value: .claude/skills/empirical-prompt-tuning/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - mizchi/skills/empirical-prompt-tuning
+  active_owner: mizchi/skills/empirical-prompt-tuning
+  content_hash: sha256:252418e7ef022981d2dda2e3ec57fa1c786d30af68c50b7e062edf1d7361b0cb
+- kind: project-relative
+  target: codex
+  value: .agents/skills/commit
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/commit
+  active_owner: kfujii-6jo/skills/commit
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/commit/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/commit
+  active_owner: kfujii-6jo/skills/commit
+  content_hash: sha256:ee873295e1c4d65232051bbb440d943b3aae4312c00c5122215ca6fcd935d549
+- kind: project-relative
+  target: codex
+  value: .agents/skills/empirical-prompt-tuning
+  runtime: null
+  scope: project
+  owners:
+  - mizchi/skills/empirical-prompt-tuning
+  active_owner: mizchi/skills/empirical-prompt-tuning
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/empirical-prompt-tuning/README.md
+  runtime: null
+  scope: project
+  owners:
+  - mizchi/skills/empirical-prompt-tuning
+  active_owner: mizchi/skills/empirical-prompt-tuning
+  content_hash: sha256:5fc8e7774a7290497c941e46baeb2712731dd92a7ea2ddff75fecc9173ccc347
+- kind: project-relative
+  target: codex
+  value: .agents/skills/empirical-prompt-tuning/SKILL-ja.md
+  runtime: null
+  scope: project
+  owners:
+  - mizchi/skills/empirical-prompt-tuning
+  active_owner: mizchi/skills/empirical-prompt-tuning
+  content_hash: sha256:0a38d830802c2e08a7faca13928fedf6911e00b896946b4b03910d662de6dea5
+- kind: project-relative
+  target: codex
+  value: .agents/skills/empirical-prompt-tuning/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - mizchi/skills/empirical-prompt-tuning
+  active_owner: mizchi/skills/empirical-prompt-tuning
+  content_hash: sha256:252418e7ef022981d2dda2e3ec57fa1c786d30af68c50b7e062edf1d7361b0cb

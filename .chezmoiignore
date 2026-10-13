@@ -4,3 +4,7 @@ AGENTS.md
 README.md
 package.json
 scripts/
+
+# These pilot skills are deployed by APM, not chezmoi.
+.claude/skills/commit
+.claude/skills/empirical-prompt-tuning

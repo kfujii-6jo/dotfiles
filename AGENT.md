@@ -39,6 +39,11 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 
 ## Claude Code configuration (`dot_claude/`)
 
+- APM pilot: `commit` and `empirical-prompt-tuning` are installed through
+  `dot_apm/apm.yml` and its lockfile. Their old source copies are excluded by
+  `.chezmoiignore`; edit the upstream repositories instead. Run
+  `bash scripts/install-skills.sh` to restore the pinned versions.
+
 - Skills under `dot_claude/skills/` are deployed by chezmoi. `grill-me` and
   `grilling` are vendored from [mattpocock/skills](https://github.com/mattpocock/skills)
   (MIT), and `empirical-prompt-tuning` is from
