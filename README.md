@@ -135,3 +135,16 @@ mise install github:can1357/oh-my-pi
 Run `omp` to start. Use `omp config list` to inspect available settings, or
 `/settings` inside a session. Global settings live in `~/.omp/agent/config.yml`;
 project settings live in `.omp/config.yml`. These are separate from Pi's settings.
+
+`dot_omp/private_agent/private_config.yml` tracks the global settings, including
+`advisor.enabled: true`. OMP writes this file itself; after changing settings in
+OMP, run `chezmoi add ~/.omp/agent/config.yml` to capture them before applying
+dotfiles again. Credentials, databases, and session history are not tracked.
+
+`dot_omp/private_agent/WATCHDOG.yml` deploys the user-wide advisor roster to
+`~/.omp/agent/WATCHDOG.yml`: Advisor Astra uses
+`openai-codex/gpt-6-astra:xhigh` and reviews final yields (`agent-end`), with the
+default interval of 1 and asynchronous review (`syncBacklog: off`).
+Project rosters can override advisors with the same name.
+Use `/advisor status` to inspect the runtime; `/advisor on` and `/advisor off`
+only change the current session, not the saved enabled setting.

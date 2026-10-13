@@ -1,0 +1,4 @@
+advisors:
+  - name: Advisor Astra
+    model: openai-codex/gpt-6-astra:xhigh
+    reviewMode: agent-end

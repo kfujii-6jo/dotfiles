@@ -1,0 +1,15 @@
+modelRoles:
+  default: openai-codex/gpt-6.1-sol
+symbolPreset: unicode
+composer:
+  shape: band
+theme:
+  dark: titanium
+setupVersion: 2
+task:
+  agentModelOverrides:
+    reviewer: openai-codex/gpt-6-astra
+    security-reviewer: openai-codex/gpt-6-astra
+    scout: openai-codex/gpt-6-astra
+advisor:
+  enabled: true
