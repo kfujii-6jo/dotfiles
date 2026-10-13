@@ -1,0 +1,4 @@
+{{/* chezmoi:modify-template */}}
+{{- $defaults := includeTemplate "omp-config.yml" . | fromYaml -}}
+{{- $current := .chezmoi.stdin | fromYaml | default dict -}}
+{{ mergeOverwrite $current $defaults | toYaml }}

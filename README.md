@@ -136,10 +136,18 @@ Run `omp` to start. Use `omp config list` to inspect available settings, or
 `/settings` inside a session. Global settings live in `~/.omp/agent/config.yml`;
 project settings live in `.omp/config.yml`. These are separate from Pi's settings.
 
-`dot_omp/private_agent/private_config.yml` tracks the global settings, including
-`advisor.enabled: true`. OMP writes this file itself; after changing settings in
-OMP, run `chezmoi add ~/.omp/agent/config.yml` to capture them before applying
-dotfiles again. Credentials, databases, and session history are not tracked.
+`.chezmoitemplates/omp-config.yml` declares the portable OMP settings, including
+`advisor.enabled: true`. `dot_omp/private_agent/modify_private_config.yml`
+deep-merges them into `~/.omp/agent/config.yml`, with declared settings taking
+precedence and undeclared settings preserved. OMP-owned state such as
+`setupVersion`, consent choices, and machine-specific settings stays local.
+Credentials, databases, and session history are not tracked.
+
+Edit the defaults file to persist a setting across machines, then run
+`chezmoi diff ~/.omp/agent/config.yml` and `chezmoi apply ~/.omp/agent/config.yml`.
+Do not import the entire OMP config with `chezmoi add`; copy only the intended
+portable settings into the defaults file. OMP UI changes to declared settings
+are reset to the dotfiles values on the next apply.
 
 `dot_omp/private_agent/WATCHDOG.yml` deploys the user-wide advisor roster to
 `~/.omp/agent/WATCHDOG.yml`: Advisor Astra uses
