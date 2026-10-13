@@ -37,23 +37,17 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 - mise tool: edit `private_dot_config/mise/config.toml`, then run `mise install`.
 - npm global: add it to `package.json`, then run `npm install -g <package>`.
 
-## Claude Code configuration (`dot_claude/`)
+## Shared skills and Claude Code configuration
 
-- APM pilot: `commit` and `empirical-prompt-tuning` are installed through
-  `dot_apm/apm.yml` and its lockfile. Their old source copies are excluded by
-  `.chezmoiignore`; edit the upstream repositories instead. Run
-  `bash scripts/install-skills.sh` to restore the pinned versions.
-- The Herdr skill is also installed by APM from `herdrdev/herdr/skills/herdr`.
-  Do not recreate a separate `~/.codex/skills/herdr` copy; Codex reads the
-  shared `~/.agents/skills/herdr` installation.
-
-- Skills under `dot_claude/skills/` are deployed by chezmoi. `grill-me` and
-  `grilling` are vendored from [mattpocock/skills](https://github.com/mattpocock/skills)
-  (MIT), and `empirical-prompt-tuning` is from
-  [mizchi/skills](https://github.com/mizchi/skills) (MIT). Do not edit them by hand.
-- `settings.json` carries `enabledPlugins` and `extraKnownMarketplaces` so a
-  fresh machine restores its plugins on `chezmoi apply`. Claude Code writes the
-  file itself, so follow the `chezmoi add` rule above.
+- All user skills are managed by APM through `dot_apm/apm.yml` and
+  `dot_apm/private_apm.lock.yaml`. Edit self-authored skills in
+  `~/ghq/github.com/kfujii-6jo/skills`; update external skills at their upstream.
+- Run `bash scripts/install-skills.sh` to restore the pinned versions into
+  `~/.claude/skills` and `~/.agents/skills` (Codex and Pi). Do not add deployed
+  skills to chezmoi or recreate separate copies under `~/.codex/skills`.
+- `dot_claude/settings.json` carries `enabledPlugins` and
+  `extraKnownMarketplaces`. Claude Code writes it itself, so follow the
+  `chezmoi add` rule above. Plugin-provided skills keep their plugin lifecycle.
 
 ## Codex configuration (`dot_codex/`)
 

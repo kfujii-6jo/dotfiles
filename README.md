@@ -41,17 +41,22 @@ chezmoi apply
 
 Run `chezmoi diff` first to see what would change in your home directory.
 
-## Shared skills (APM pilot)
+## Shared skills (APM)
 
-APM 0.33.0 is installed through mise. `dot_apm/apm.yml` declares three pilot
-dependencies: `commit` from `kfujii-6jo/skills` and `empirical-prompt-tuning`
-from `mizchi/skills`, plus `herdr` from `herdrdev/herdr/skills/herdr`.
-All are pinned to full Git commit hashes;
-`dot_apm/private_apm.lock.yaml` records their resolved contents and deployment ownership.
-APM deploys to `~/.claude/skills/` and `~/.agents/skills/` (Codex and Pi).
-The two Claude destinations are excluded from chezmoi; their old source copies
-are retained during the pilot. Herdr's former Codex-only copy has been retired
-in favor of the shared APM installation. Other skills still use their existing setup.
+APM 0.33.0 is installed through mise. `dot_apm/apm.yml` declares all 26 user
+skills, pinned to full Git commit hashes. `dot_apm/private_apm.lock.yaml`
+records resolved files and deployment ownership. APM deploys to
+`~/.claude/skills/` and `~/.agents/skills/` (shared by Codex and Pi).
+All user skill directories are excluded from chezmoi; edit skills at their
+upstream repository instead. Built-in and plugin-provided skills remain owned
+by their respective applications.
+
+Sources: `kfujii-6jo/skills` (5 Git workflows), `cloudflare/skills` (11),
+`mattpocock/skills` (2), `subsy/ralph-tui` (4), and one each from
+`mizchi/skills`, `herdrdev/herdr`, `coji/natural-japanese`, and `vercel-labs/skills`.
+`clean_gone` is now `clean-gone`. The old `sandbox-sdk` is replaced by
+`sandbox-stable`, `sandbox-next`, and `sandbox-migrate-to-next`.
+`finish-branch`, `learning-check`, and Sanity skills have been removed.
 
 After applying the mise configuration and running `mise install`, authenticate
 GitHub access with `gh auth login` if needed (the personal skills repo is private),
@@ -67,9 +72,9 @@ change the full commit pin in `dot_apm/apm.yml`, apply that manifest, then run
 the manifest and lockfile together. To roll back, restore their previous versions
 and run the install script again. Do not edit APM's deployed copies.
 
-This pilot checks package installation and discovery. The Git workflow skills
-still contain Claude-specific inline shell notation; portable workflow behavior
-must be addressed in the skills repository before completing the wider migration.
+Installation and discovery are verified separately from workflow behavior.
+Some upstream skills still use agent-specific instructions; APM deploys them
+without translating those instructions.
 
 ## Codex
 
