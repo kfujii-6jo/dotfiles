@@ -1,0 +1,9 @@
+{
+  "label": "Research",
+  "description": "Read code and research the web without implementation tools",
+  "skills": [],
+  "extensions": ["pi-web-access", "@narumitw/pi-caffeinate"],
+  "mcps": [],
+  "tools": ["read", "grep", "find", "ls", "web_search", "source_check", "fetch_content", "get_search_content", "web_enable"],
+  "instructions": "Research code and web sources, cite evidence, and explain findings. Do not modify project files or execute shell commands."
+}

@@ -143,6 +143,32 @@ servers and ask Pi to use `scout` or `reviewer` for subagent work. Shared user
 skills remain managed by APM in `~/.agents/skills`; package-provided resources
 stay with their Pi packages.
 
+### Pi profiles
+
+`pi-profile-switch` is an npm global pinned in `package.json`. Install with
+`npm install -g pi-profile-switch@0.16.0 --legacy-peer-deps`. Profile definitions
+in `dot_pi-profile-switch/profiles/` deploy to `~/.pi-profile-switch/profiles/`.
+Apply them with `chezmoi apply --recursive ~/.pi-profile-switch`.
+
+```bash
+pi-profile default   # all configured resources, current model settings
+pi-profile ask       # read code and discuss; no shell or editing tools
+pi-profile research  # read code and search/fetch web sources
+pi-profile ask -- --model openai/gpt-5.5 --thinking high
+```
+
+Inside a session launched with `pi-profile`, use `/profile` to select a profile,
+`/profile use research` to switch directly, `/profile status` to inspect the
+selection, and `/profile reload` after editing its definition. In-session
+selections are remembered for the next `pi-profile` launch. Plain `pi` keeps its
+normal behavior. Profiles reuse authentication and session history.
+
+Add named JSON files in `dot_pi-profile-switch/profiles/` to define more profiles.
+`extensions`, `skills`, and `tools` select installed resources by name or glob;
+omit a field to retain the normal selection. Set `defaultProvider` and
+`defaultModel` together, plus `defaultThinkingLevel`, to select a model per
+profile. The supplied profiles inherit the existing model settings.
+
 ## oh-my-pi
 
 [oh-my-pi](https://github.com/can1357/oh-my-pi) is installed as a release binary
