@@ -120,12 +120,11 @@ npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 Run `pi` in a project directory, use `/login` to connect a model provider,
 then `/model` to choose a model. Resume the latest session with `pi --continue`.
 
-`.chezmoitemplates/pi-settings.json` pins the Pi packages: `pi-web-access`,
+`dot_pi/private_agent/modify_private_settings.json` pins the Pi packages: `pi-web-access`,
 `pi-lens`, `pi-subagents`, `pi-mcp-adapter`, `pi-interactive-shell`,
 `pi-rewind-hook`, and `@narumitw/pi-caffeinate` (prevents sleep during agent
-work). `dot_pi/private_agent/modify_private_settings.json` merges
-these defaults into `~/.pi/agent/settings.json`, preserving Pi-owned state and
-model selections. Apply with:
+work). It merges these defaults into `~/.pi/agent/settings.json`, preserving
+Pi-owned state and model selections. Apply with:
 
 ```bash
 chezmoi diff ~/.pi/agent/settings.json
@@ -317,7 +316,7 @@ This profile does not invoke factory commands. Use a new session when starting a
 independent task; switching profiles does not erase conversation history.
 
 `dot_pi-profile-switch/profiles/guided.json.tmpl` renders the instructions from
-`.chezmoitemplates/pi-guided-instructions.md` into the deployed profile JSON. This
+`dot_pi-profile-switch/instructions/guided.md` into the deployed profile JSON. This
 keeps the workflow scoped to `guided` without adding it to shared `AGENTS.md`.
 It selects three skills, web access, pi-subagents, caffeinate and Herdr integration;
 user-level MCP servers are disabled. As with the other profiles, trusted project
@@ -329,8 +328,8 @@ Restore the locked skills and apply the profile, then start a new session:
 
 ```bash
 bash scripts/install-skills.sh
-chezmoi diff ~/.pi-profile-switch/profiles/guided.json
-chezmoi apply ~/.pi-profile-switch/profiles/guided.json
+chezmoi diff ~/.pi-profile-switch/instructions ~/.pi-profile-switch/profiles/guided.json
+chezmoi apply ~/.pi-profile-switch/instructions ~/.pi-profile-switch/profiles/guided.json
 pi-profile guided
 ```
 

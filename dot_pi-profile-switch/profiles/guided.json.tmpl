@@ -8,7 +8,7 @@
   "defaultModel": "gpt-6.1-sol",
   "defaultThinkingLevel": "medium",
   "tools": ["read", "grep", "find", "ls", "bash", "edit", "write", "subagents_enable", "subagent", "bg_wait", "web_search", "source_check", "fetch_content", "get_search_content", "web_enable"],
-  "instructions": {{ includeTemplate "pi-guided-instructions.md" . | toJson }},
+  "instructions": {{ include (joinPath .chezmoi.sourceDir "dot_pi-profile-switch" "instructions" "guided.md") | toJson }},
   "subagents": {
     "agentOverrides": {
       "reviewer": {
