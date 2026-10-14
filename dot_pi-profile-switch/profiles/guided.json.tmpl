@@ -1,0 +1,24 @@
+{
+  "label": "Guided",
+  "description": "Approve a concise design, then implement and review one coherent change",
+  "skills": ["typescript-type-design", "tdd", "codebase-design"],
+  "extensions": ["pi-subagents", "pi-web-access", "@narumitw/pi-caffeinate", "herdr-agent-state"],
+  "mcps": [],
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-6.1-sol",
+  "defaultThinkingLevel": "medium",
+  "tools": ["read", "grep", "find", "ls", "bash", "edit", "write", "subagents_enable", "subagent", "bg_wait", "web_search", "source_check", "fetch_content", "get_search_content", "web_enable"],
+  "instructions": {{ includeTemplate "pi-guided-instructions.md" . | toJson }},
+  "subagents": {
+    "agentOverrides": {
+      "reviewer": {
+        "model": "inherit",
+        "thinking": "high",
+        "advertise": true
+      },
+      "factory-reviewer": {
+        "advertise": false
+      }
+    }
+  }
+}

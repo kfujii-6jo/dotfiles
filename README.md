@@ -178,6 +178,7 @@ pi-profile default   # all configured resources, current model settings
 pi-profile ask       # read code and discuss; no shell or editing tools
 pi-profile research  # read code and search/fetch web sources
 pi-profile factory   # local planning, implementation, validation, and review
+pi-profile guided    # approve a short design before each implementation
 pi-profile ask -- --model openai/gpt-5.5 --thinking high
 ```
 
@@ -266,6 +267,83 @@ GitHub issue/PR automation, automatic commit/push/merge/deploy, production
 monitoring, scheduled performance/automation audits, metrics, recaps, and social
 posts are outside this workflow. UI verification and task-specific performance
 checks remain part of local validation when required by the plan.
+
+### Guided development
+
+`guided` is an independent, conversational development profile. Start it with
+`pi-profile guided`, describe the change normally, review its short proposal, and
+explicitly approve it before implementation starts. Even a small fix or a proposal
+with no unresolved questions waits for approval. Answers to specification questions
+alone do not authorize implementation. No additional slash commands are needed.
+
+The proposal uses these headings:
+
+```text
+目的：
+今回の範囲／対象外：
+期待する動作・重要な失敗時の動作：
+変更方針・型やデータの制約：
+検証方法・テスト追加の要否：
+PR の分割：
+人間に決めてほしい点：なし／具体的な質問
+```
+
+The change approach covers API contracts, screens/user interactions, permissions
+and data visibility, table changes, data migration, external integrations,
+batch/scheduled work, configuration/infrastructure, dependencies, existing-feature
+impact, and rollout/operations. Explain affected areas; group unaffected areas
+under `変更なし`. Unknown impact remains `未確認`, not “no impact.” Include relevant
+performance or volume constraints without inventing targets.
+
+The approved scope includes the test decision and named public test interfaces.
+The profile uses the APM-managed `typescript-type-design` skill for TypeScript
+domain and boundary types, and Matt Pocock's `tdd` only when new behavior or
+regression tests are justified. `codebase-design` is available as its conditional
+interface-design reference. Existing checks can be sufficient; tests, abstractions
+and dependencies are not added for their own sake. The custom type skill's source
+is `~/ghq/github.com/kfujii-6jo/skills/typescript-type-design`.
+
+One coherent PR is the default unit. Keep related types, implementation and tests
+together, and show dependencies when multiple PRs are needed. Repository-specific
+direct-commit workflows still apply. A materially changed design or expanded scope
+returns to approval; ordinary internal implementation choices do not. After an
+interruption, recover the approved proposal and reconcile the actual diff before
+continuing. Missing approval is not inferred.
+
+The existing generic `reviewer` checks completed implementation and validation
+against the approved proposal, including test value, type invariants, unnecessary
+complexity and PR cohesion. There is no planning review or second factory review.
+This profile does not invoke factory commands. Use a new session when starting an
+independent task; switching profiles does not erase conversation history.
+
+`dot_pi-profile-switch/profiles/guided.json.tmpl` renders the instructions from
+`.chezmoitemplates/pi-guided-instructions.md` into the deployed profile JSON. This
+keeps the workflow scoped to `guided` without adding it to shared `AGENTS.md`.
+It selects three skills, web access, pi-subagents, caffeinate and Herdr integration;
+user-level MCP servers are disabled. As with the other profiles, trusted project
+resources follow Pi's trust rules. It uses `openai/gpt-6.1-sol` with medium thinking,
+and the reviewer inherits the model with high thinking, avoiding the unsupported
+`gpt-5.5` setting used by plain Pi on this account.
+
+Restore the locked skills and apply the profile, then start a new session:
+
+```bash
+bash scripts/install-skills.sh
+chezmoi diff ~/.pi-profile-switch/profiles/guided.json
+chezmoi apply ~/.pi-profile-switch/profiles/guided.json
+pi-profile guided
+```
+
+Inside a `pi-profile` session, `/profile use guided` selects it and `/profile status`
+shows the active resources. After changing the template, apply it with chezmoi,
+then use `/profile reload`. Profile instructions are not a code-enforced write
+barrier; no state-machine extension or continuous review hook is installed.
+
+With pi-profile-switch 0.16.0, `/profile status` can label extension tools as
+conflicts because it compares the installed path with a generated runtime symlink
+path. The guided startup check confirmed that the reported subagent and web tools
+resolve to the selected installed extensions; the three skill commands load without
+conflicts. Compare real paths before treating that diagnostic as a different owner.
 
 ## oh-my-pi
 
