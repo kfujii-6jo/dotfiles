@@ -143,6 +143,17 @@ servers and ask Pi to use `scout` or `reviewer` for subagent work. Shared user
 skills remain managed by APM in `~/.agents/skills`; package-provided resources
 stay with their Pi packages.
 
+`dot_pi/private_agent/AGENTS.md` adds a completion review workflow for the
+primary Pi agent: finish implementation and relevant validation, delegate the
+task's completed changes to `reviewer`, wait for findings, then fix material issues
+and rerun validation before reporting completion. Questions, planning, progress
+updates, and incomplete implementation do not trigger review. This is an agent
+instruction, not a turn-end hook. Apply with
+`chezmoi apply ~/.pi/agent/AGENTS.md` and start a new Pi session.
+The `default` profile supports this workflow; `ask` and `research` do not load
+pi-subagents. The agent-directory context file also remains available through the
+profile launcher's generated runtime directories.
+
 Install Herdr's Pi integration after installing or upgrading Herdr:
 
 ```bash
@@ -166,6 +177,7 @@ Apply them with `chezmoi apply --recursive ~/.pi-profile-switch`.
 pi-profile default   # all configured resources, current model settings
 pi-profile ask       # read code and discuss; no shell or editing tools
 pi-profile research  # read code and search/fetch web sources
+pi-profile factory   # local planning, implementation, validation, and review
 pi-profile ask -- --model openai/gpt-5.5 --thinking high
 ```
 
@@ -179,7 +191,81 @@ Add named JSON files in `dot_pi-profile-switch/profiles/` to define more profile
 `extensions`, `skills`, and `tools` select installed resources by name or glob;
 omit a field to retain the normal selection. Set `defaultProvider` and
 `defaultModel` together, plus `defaultThinkingLevel`, to select a model per
-profile. The supplied profiles inherit the existing model settings.
+profile. The `ask` and `research` profiles inherit the existing model settings.
+
+### Local factory workflow
+
+The `factory` profile adapts the [Software Factory flow](https://www.software-factory.dev/sdlc)
+to local work. The main agent plans, implements, validates, and recovers
+interrupted work; one fresh-context `factory-reviewer` checks the completed
+implementation. Its tool allowlist is `read`, `grep`, `find`, and `ls`, with no
+ambient extensions, inherited skills, shell, editing, or nested delegation.
+The profile retains web research, caffeinate, and Herdr integration. User-level
+MCP servers are disabled; trusted project resources still follow Pi's own trust
+rules. No extra npm package is required.
+
+Factory uses `openai/gpt-6.1-sol` with medium thinking; the reviewer inherits that
+model with high thinking. This profile-specific default avoids the account's
+unsupported `gpt-5.5` selection without changing the ordinary Pi model settings.
+
+From this dotfiles checkout, apply the managed files, then start the profile:
+
+```bash
+chezmoi diff ~/.pi/agent ~/.pi-profile-switch/profiles/factory.json
+chezmoi apply ~/.pi/agent/settings.json ~/.pi/agent/AGENTS.md
+chezmoi apply --parent-dirs --source-path \
+  dot_pi/private_agent/prompts dot_pi/private_agent/agents
+chezmoi apply ~/.pi-profile-switch/profiles/factory.json
+pi-profile factory
+```
+
+Inside a `pi-profile` session, `/profile use factory` selects the profile.
+Use `/reload` after adding or changing prompt/agent files, or start a new session.
+
+```text
+/factory-plan Add password reset to the login screen
+/factory-run .pi/plans/password-reset.md
+/factory-improve Inspect the login screen for accessibility improvements
+```
+
+- `/factory-plan` investigates a request or supplied feedback and writes
+  `.pi/plans/<slug>.md`. It records acceptance criteria, validation commands,
+  task priorities/dependencies, and unresolved decisions. Missing information
+  returns to questions; unapproved scope changes wait for a decision. Answers
+  update the same plan and are re-evaluated, not treated as automatic approval.
+  Planning does not implement changes or launch review.
+- `/factory-run <plan>` starts or resumes that plan. It checks the actual partial
+  diff and recorded runs, preserves existing work, and selects dependency-ready
+  tasks within the approved scope. It validates individual tasks, then validates
+  the whole implementation before launching the independent review. Concrete
+  findings return to the main agent for correction. At most two automatic repair
+  cycles are shared across validation and review failures; the count survives
+  resumption. Missing decisions, unavailable required checks, failed reviewers,
+  and exhausted repair cycles stop with a recorded reason instead of success.
+- `/factory-improve <area>` investigates only when requested and returns at most
+  three evidence-backed proposals. Selecting a proposal leads to planning; it
+  does not start implementation or an automatic post-task improvement sweep.
+
+The plan records scope authorization, progress, checkpoints, next actions, check
+results, and review run IDs. `.pi/plans/<slug>.evidence/` holds original file
+snapshots, the task-owned patch, validation evidence, and review results. Keep
+these local artifacts under the project's existing ignore conventions if needed.
+Do not put secrets in them. Done requires passing acceptance checks and a finished
+review of the current implementation. Unchanged completed plans and conversational
+follow-ups reuse that result instead of launching another reviewer.
+
+This is a prompt-directed workflow, not a code-enforced state machine or a
+background scheduler. Checkpoints are written at task boundaries; after a hard
+exit the next run reconciles actual files and subagent status. The managed Pi
+defaults explicitly disable main/child watchdog reviews. Project or session
+overrides can take precedence; inspect `/subagents-watchdog status` if unexpected
+reviews occur. The global completion-review instruction defers to the factory
+workflow, so it does not add a second generic reviewer.
+
+GitHub issue/PR automation, automatic commit/push/merge/deploy, production
+monitoring, scheduled performance/automation audits, metrics, recaps, and social
+posts are outside this workflow. UI verification and task-specific performance
+checks remain part of local validation when required by the plan.
 
 ## oh-my-pi
 
