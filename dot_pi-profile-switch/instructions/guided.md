@@ -124,8 +124,35 @@ After the implementation and relevant validation are complete, use the existing
 completion-review workflow in AGENTS.md with reviewer, exactly once initially.
 No review is triggered by planning, questions, approval waits or progress updates.
 Give reviewer the approved proposal and changes to it, task-owned diff and file
-inventory, validation results, and the test-addition/omission rationale. Include
-the applicable type-design guidance or its skill path when types changed.
+inventory, validation results, and the test-addition/omission rationale.
+
+Reviewer does not inherit the parent's skill catalog. For every review, select
+skills from the actual diff and approved design, including relevant guidance the
+implementer may have missed:
+
+| Changed area | Skills to pass when relevant |
+| --- | --- |
+| TypeScript domain types, states or boundary contracts | typescript-type-design |
+| Tests, or behavior whose test coverage/value needs review | tdd |
+| Module interfaces or test seams | codebase-design |
+| Cloudflare architecture, runtime or configuration | cloudflare plus the relevant workers-best-practices, wrangler or durable-objects |
+| TanStack Start server functions, middleware or rendering | start-core |
+| TanStack routing, loaders, navigation or search params | router-core |
+
+Pass the selected names in the subagent tool's `options.skill` array (singular
+`skill`), not just in the task text. For example, a Worker change involving domain
+types uses `options: { skill: ["typescript-type-design", "cloudflare", "workers-best-practices"] }`.
+Select only relevant skills; pass `options: { skill: [] }` when none apply.
+
+In the review task, list the selected skills, their resolved absolute SKILL.md
+paths and why each applies. Instruct reviewer to read them before evaluating the
+change, follow only relevant sub-skill/reference links, and respect the project's
+installed versions. Use this guidance as read-only review criteria within the
+approved scope; do not run TDD, edit files, install dependencies, deploy, start a
+broader architecture review or delegate another review. Ask reviewer to report
+which skills it actually read. Skill availability alone does not prove use; if a
+selected skill is missing or unreadable, resolve the handoff or report that review
+limitation explicitly.
 
 Request a read-only review of requirements/regressions, test value, unnecessary
 complexity, type invariants and PR cohesion. Findings need concrete evidence and

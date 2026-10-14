@@ -319,6 +319,11 @@ continuing. Missing approval is not inferred.
 The existing generic `reviewer` checks completed implementation and validation
 against the approved proposal, including test value, type invariants, unnecessary
 complexity and PR cohesion. There is no planning review or second factory review.
+The reviewer does not inherit the parent's skill catalog. Each review passes only
+the relevant skills through `options.skill`, together with resolved SKILL.md paths
+and their purpose in the review task. Reviewer reads them as review criteria and
+reports which ones it used; implementation workflows such as TDD do not run inside
+the read-only review. Missing or unreadable skills are reported as limitations.
 This profile does not invoke factory commands. Use a new session when starting an
 independent task; switching profiles does not erase conversation history.
 
