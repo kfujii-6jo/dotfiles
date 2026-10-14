@@ -328,7 +328,7 @@ keeps the workflow scoped to `guided` without adding it to shared `AGENTS.md`.
 It selects nine skills, web access, pi-subagents, caffeinate and Herdr integration;
 user-level MCP servers are disabled. As with the other profiles, trusted project
 resources follow Pi's trust rules. It uses `openai/gpt-6.1-sol` with medium thinking,
-and the reviewer inherits the model with high thinking, avoiding the unsupported
+and the reviewer uses `openai/gpt-6-astra` with high thinking, avoiding the unsupported
 `gpt-5.5` setting used by plain Pi on this account.
 
 Restore the locked skills and apply the profile, then start a new session:
