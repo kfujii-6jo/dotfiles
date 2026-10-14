@@ -1,0 +1,4 @@
+{{/* chezmoi:modify-template */}}
+{{- $defaults := includeTemplate "pi-settings.json" . | fromJson -}}
+{{- $current := .chezmoi.stdin | fromJson | default dict -}}
+{{ mergeOverwrite $current $defaults | toPrettyJson }}

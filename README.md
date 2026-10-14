@@ -120,6 +120,29 @@ npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 Run `pi` in a project directory, use `/login` to connect a model provider,
 then `/model` to choose a model. Resume the latest session with `pi --continue`.
 
+`.chezmoitemplates/pi-settings.json` pins the Pi packages: `pi-web-access`,
+`pi-lens`, `pi-subagents`, `pi-mcp-adapter`, `pi-interactive-shell`,
+`pi-rewind-hook`, and `@narumitw/pi-caffeinate` (prevents sleep during agent
+work). `dot_pi/private_agent/modify_private_settings.json` merges
+these defaults into `~/.pi/agent/settings.json`, preserving Pi-owned state and
+model selections. Apply with:
+
+```bash
+chezmoi diff ~/.pi/agent/settings.json
+chezmoi apply ~/.pi/agent/settings.json
+```
+
+Pi installs missing configured packages on startup. Check the package list with:
+
+```bash
+pi list
+```
+
+Restart Pi after installing packages. Use `/mcp-adapter setup` to configure MCP
+servers and ask Pi to use `scout` or `reviewer` for subagent work. Shared user
+skills remain managed by APM in `~/.agents/skills`; package-provided resources
+stay with their Pi packages.
+
 ## oh-my-pi
 
 [oh-my-pi](https://github.com/can1357/oh-my-pi) is installed as a release binary
