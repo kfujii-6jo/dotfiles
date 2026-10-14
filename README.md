@@ -149,10 +149,22 @@ Do not import the entire OMP config with `chezmoi add`; copy only the intended
 portable settings into the defaults file. OMP UI changes to declared settings
 are reset to the dotfiles values on the next apply.
 
+The main session uses `openai-codex/gpt-6.1-sol` with an explicit
+`defaultThinkingLevel: high`. Agent overrides select Sol `medium` for `scout`
+and Astra `xhigh` for `reviewer` and `security-reviewer`. The generic `task` and
+mechanical `sonic` agents keep their bundled `auto` and `medium` thinking
+selectors. Model defaults are verified in fresh sessions; agent overrides are
+resolved at the next spawn.
+
 `dot_omp/private_agent/WATCHDOG.yml` deploys the user-wide advisor roster to
 `~/.omp/agent/WATCHDOG.yml`: Advisor Astra uses
 `openai-codex/gpt-6-astra:xhigh` and reviews final yields (`agent-end`), with the
 default interval of 1 and asynchronous review (`syncBacklog: off`).
+The advisor instructions focus on correctness and avoiding over-engineering:
+findings need concrete evidence and a minimal fix, not speculative hardening,
+future-proofing, or style-only changes. Edit the roster here, then run
+`chezmoi diff ~/.omp/agent/WATCHDOG.yml` and
+`chezmoi apply ~/.omp/agent/WATCHDOG.yml`.
 Project rosters can override advisors with the same name.
 Use `/advisor status` to inspect the runtime; `/advisor on` and `/advisor off`
 only change the current session, not the saved enabled setting.

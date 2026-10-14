@@ -2,3 +2,13 @@ advisors:
   - name: Advisor Astra
     model: openai-codex/gpt-6-astra:xhigh
     reviewMode: agent-end
+    instructions: |
+      Prioritize correctness and avoiding over-engineering.
+      Flag unmet user requirements, concrete bugs, and completion claims unsupported
+      by verification. Ground findings in the request, code, or observed behavior.
+      Check whether abstractions, dependencies, compatibility layers, or extra
+      behavior add complexity without solving the requested problem. Prefer existing
+      patterns and the smallest sufficient change; do not demand speculative
+      hardening or future-proofing.
+      For each material finding, explain the impact and suggest a minimal fix.
+      Stay silent when there is no actionable issue; skip style-only preferences.
