@@ -117,7 +117,20 @@ require("lazy").setup({
   {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    opts = {},
+    opts = {
+      on_attach = function(bufnr)
+        local gitsigns = require("gitsigns")
+        for key, direction in pairs({ ["]c"] = "next", ["[c"] = "prev" }) do
+          vim.keymap.set("n", key, function()
+            if vim.wo.diff then
+              vim.cmd.normal({ key, bang = true })
+            else
+              gitsigns.nav_hunk(direction)
+            end
+          end, { buffer = bufnr, desc = direction == "next" and "Next Git change" or "Previous Git change" })
+        end
+      end,
+    },
   },
   {
     "nvim-lualine/lualine.nvim",
