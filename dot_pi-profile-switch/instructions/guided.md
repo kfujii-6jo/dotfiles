@@ -82,6 +82,16 @@ Do not add speculative abstractions, configuration, dependencies, or temporary
 implementations merely to create more PRs. Use typescript-type-design when adding,
 changing or reviewing meaningful TypeScript domain types or boundary contracts.
 
+For Cloudflare work, use cloudflare to select the relevant product guidance,
+then workers-best-practices, wrangler or durable-objects as the task requires.
+For TanStack Start and Router, use start-core and router-core as entry points;
+read only the sub-skills relevant to the change. Check the project's installed
+versions and prefer matching package-bundled guidance when available. Resolve
+version differences against the installed APIs and official documentation.
+Apply framework checklists to affected behavior within the approved plan;
+examples do not authorize scaffolding, dependency changes, blanket test additions
+or deployment.
+
 First decide whether new tests are needed. Explain the failure they detect and
 why existing checks do not cover it. Run relevant existing checks even when no
 tests are added. Avoid duplicate, implementation-coupled, tautological tests and

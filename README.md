@@ -302,6 +302,13 @@ interface-design reference. Existing checks can be sufficient; tests, abstractio
 and dependencies are not added for their own sake. The custom type skill's source
 is `~/ghq/github.com/kfujii-6jo/skills/typescript-type-design`.
 
+Cloudflare work can use the official `cloudflare`, `workers-best-practices`,
+`wrangler` and `durable-objects` skills. TanStack's official `start-core` and
+`router-core` skills cover Start and routing, with bundled sub-skills read only
+when relevant. They are pinned through APM from `TanStack/router`. Check the
+project's installed versions and prefer matching package-bundled guidance when
+available. Framework checklists stay within the approved scope and test decision.
+
 One coherent PR is the default unit. Keep related types, implementation and tests
 together, and show dependencies when multiple PRs are needed. Repository-specific
 direct-commit workflows still apply. A materially changed design or expanded scope
@@ -318,7 +325,7 @@ independent task; switching profiles does not erase conversation history.
 `dot_pi-profile-switch/profiles/guided.json.tmpl` renders the instructions from
 `dot_pi-profile-switch/instructions/guided.md` into the deployed profile JSON. This
 keeps the workflow scoped to `guided` without adding it to shared `AGENTS.md`.
-It selects three skills, web access, pi-subagents, caffeinate and Herdr integration;
+It selects nine skills, web access, pi-subagents, caffeinate and Herdr integration;
 user-level MCP servers are disabled. As with the other profiles, trusted project
 resources follow Pi's trust rules. It uses `openai/gpt-6.1-sol` with medium thinking,
 and the reviewer inherits the model with high thinking, avoiding the unsupported
@@ -341,7 +348,7 @@ barrier; no state-machine extension or continuous review hook is installed.
 With pi-profile-switch 0.16.0, `/profile status` can label extension tools as
 conflicts because it compares the installed path with a generated runtime symlink
 path. The guided startup check confirmed that the reported subagent and web tools
-resolve to the selected installed extensions; the three skill commands load without
+resolve to the selected installed extensions; the selected skill commands load without
 conflicts. Compare real paths before treating that diagnostic as a different owner.
 
 ## oh-my-pi

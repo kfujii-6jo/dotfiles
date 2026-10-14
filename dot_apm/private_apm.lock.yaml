@@ -1481,6 +1481,108 @@ dependencies:
     .agents/skills/ralph-tui-prd/SKILL.md: sha256:8127004f3332a6070b990d34ee0d6d0f7364d1f88b21edb17a2ccdf50b7e263b
     .claude/skills/ralph-tui-prd/SKILL.md: sha256:8127004f3332a6070b990d34ee0d6d0f7364d1f88b21edb17a2ccdf50b7e263b
   content_hash: sha256:b2c3a46cac20530d6f23b6e3c9dbb98a8865f65dee9ee10ea9b1bd04c91754a0
+- repo_url: tanstack/router
+  materialization_repo_url: TanStack/router
+  name: router-core
+  host: github.com
+  resolved_commit: 6777b8b0a5f1f21e2c9d91c92d9c095b4a267201
+  resolved_ref: main
+  version: unknown
+  virtual_path: packages/router-core/skills/router-core
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/router-core
+  - .agents/skills/router-core/SKILL.md
+  - .agents/skills/router-core/auth-and-guards/SKILL.md
+  - .agents/skills/router-core/code-splitting/SKILL.md
+  - .agents/skills/router-core/data-loading/SKILL.md
+  - .agents/skills/router-core/navigation/SKILL.md
+  - .agents/skills/router-core/not-found-and-errors/SKILL.md
+  - .agents/skills/router-core/path-params/SKILL.md
+  - .agents/skills/router-core/search-params/SKILL.md
+  - .agents/skills/router-core/search-params/references/validation-patterns.md
+  - .agents/skills/router-core/ssr/SKILL.md
+  - .agents/skills/router-core/type-safety/SKILL.md
+  - .claude/skills/router-core
+  - .claude/skills/router-core/SKILL.md
+  - .claude/skills/router-core/auth-and-guards/SKILL.md
+  - .claude/skills/router-core/code-splitting/SKILL.md
+  - .claude/skills/router-core/data-loading/SKILL.md
+  - .claude/skills/router-core/navigation/SKILL.md
+  - .claude/skills/router-core/not-found-and-errors/SKILL.md
+  - .claude/skills/router-core/path-params/SKILL.md
+  - .claude/skills/router-core/search-params/SKILL.md
+  - .claude/skills/router-core/search-params/references/validation-patterns.md
+  - .claude/skills/router-core/ssr/SKILL.md
+  - .claude/skills/router-core/type-safety/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/router-core/SKILL.md: sha256:03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0
+    .agents/skills/router-core/auth-and-guards/SKILL.md: sha256:456736451326d86e00fff9bc6333625b00727b7fd717a81ae92150b2b04100e2
+    .agents/skills/router-core/code-splitting/SKILL.md: sha256:12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3
+    .agents/skills/router-core/data-loading/SKILL.md: sha256:9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd
+    .agents/skills/router-core/navigation/SKILL.md: sha256:6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80
+    .agents/skills/router-core/not-found-and-errors/SKILL.md: sha256:b79f903049856322275bd524de982172790b06416efb54760740ee7a8156f8cb
+    .agents/skills/router-core/path-params/SKILL.md: sha256:caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99
+    .agents/skills/router-core/search-params/SKILL.md: sha256:e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804
+    .agents/skills/router-core/search-params/references/validation-patterns.md: sha256:ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2
+    .agents/skills/router-core/ssr/SKILL.md: sha256:b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004
+    .agents/skills/router-core/type-safety/SKILL.md: sha256:fc009f3dcf18fc2db2e5cf20b7dbb621e15f66959b405b8843e2911ca017bb83
+    .claude/skills/router-core/SKILL.md: sha256:03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0
+    .claude/skills/router-core/auth-and-guards/SKILL.md: sha256:456736451326d86e00fff9bc6333625b00727b7fd717a81ae92150b2b04100e2
+    .claude/skills/router-core/code-splitting/SKILL.md: sha256:12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3
+    .claude/skills/router-core/data-loading/SKILL.md: sha256:9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd
+    .claude/skills/router-core/navigation/SKILL.md: sha256:6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80
+    .claude/skills/router-core/not-found-and-errors/SKILL.md: sha256:b79f903049856322275bd524de982172790b06416efb54760740ee7a8156f8cb
+    .claude/skills/router-core/path-params/SKILL.md: sha256:caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99
+    .claude/skills/router-core/search-params/SKILL.md: sha256:e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804
+    .claude/skills/router-core/search-params/references/validation-patterns.md: sha256:ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2
+    .claude/skills/router-core/ssr/SKILL.md: sha256:b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004
+    .claude/skills/router-core/type-safety/SKILL.md: sha256:fc009f3dcf18fc2db2e5cf20b7dbb621e15f66959b405b8843e2911ca017bb83
+  content_hash: sha256:0b1314c143663f6552f57510c62d81f069a972395a3bf8a847f9b6cb143e8f75
+- repo_url: tanstack/router
+  materialization_repo_url: TanStack/router
+  name: start-core
+  host: github.com
+  resolved_commit: 6777b8b0a5f1f21e2c9d91c92d9c095b4a267201
+  resolved_ref: main
+  version: unknown
+  virtual_path: packages/start-client-core/skills/start-core
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/start-core
+  - .agents/skills/start-core/SKILL.md
+  - .agents/skills/start-core/auth-server-primitives/SKILL.md
+  - .agents/skills/start-core/deployment/SKILL.md
+  - .agents/skills/start-core/execution-model/SKILL.md
+  - .agents/skills/start-core/middleware/SKILL.md
+  - .agents/skills/start-core/server-functions/SKILL.md
+  - .agents/skills/start-core/server-routes/SKILL.md
+  - .claude/skills/start-core
+  - .claude/skills/start-core/SKILL.md
+  - .claude/skills/start-core/auth-server-primitives/SKILL.md
+  - .claude/skills/start-core/deployment/SKILL.md
+  - .claude/skills/start-core/execution-model/SKILL.md
+  - .claude/skills/start-core/middleware/SKILL.md
+  - .claude/skills/start-core/server-functions/SKILL.md
+  - .claude/skills/start-core/server-routes/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/start-core/SKILL.md: sha256:471f83a5c2d9033a4569aef264c46d7dc0f7c4b272f4b95831dcfdb7bb725157
+    .agents/skills/start-core/auth-server-primitives/SKILL.md: sha256:9423e7ab5c2334accec9e0ba1a1fc51791835d73f4cf1fcb598d4fe3a7075ba1
+    .agents/skills/start-core/deployment/SKILL.md: sha256:d1614371828ccfa8c5c181e686a21bffe42614a6918dbf3544e32240b3cac0c0
+    .agents/skills/start-core/execution-model/SKILL.md: sha256:b2a463c0bc39317a9b479c9c5f70bc9931b6c1d89f254968907d3e253b9b379e
+    .agents/skills/start-core/middleware/SKILL.md: sha256:dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16
+    .agents/skills/start-core/server-functions/SKILL.md: sha256:0bd51a8bac7c8f149489aaa1732dc8fb86101e23e7597b10b7681711784a96de
+    .agents/skills/start-core/server-routes/SKILL.md: sha256:0284e4446e7ad9a8607fec3b5bd51a163449434e77fdff88ee2cd89b42634b1d
+    .claude/skills/start-core/SKILL.md: sha256:471f83a5c2d9033a4569aef264c46d7dc0f7c4b272f4b95831dcfdb7bb725157
+    .claude/skills/start-core/auth-server-primitives/SKILL.md: sha256:9423e7ab5c2334accec9e0ba1a1fc51791835d73f4cf1fcb598d4fe3a7075ba1
+    .claude/skills/start-core/deployment/SKILL.md: sha256:d1614371828ccfa8c5c181e686a21bffe42614a6918dbf3544e32240b3cac0c0
+    .claude/skills/start-core/execution-model/SKILL.md: sha256:b2a463c0bc39317a9b479c9c5f70bc9931b6c1d89f254968907d3e253b9b379e
+    .claude/skills/start-core/middleware/SKILL.md: sha256:dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16
+    .claude/skills/start-core/server-functions/SKILL.md: sha256:0bd51a8bac7c8f149489aaa1732dc8fb86101e23e7597b10b7681711784a96de
+    .claude/skills/start-core/server-routes/SKILL.md: sha256:0284e4446e7ad9a8607fec3b5bd51a163449434e77fdff88ee2cd89b42634b1d
+  content_hash: sha256:0c3af69b10e4a07ab42006c81b269f6e43c4c715a2db68330257b0f47fc0f7c3
 - repo_url: vercel-labs/skills
   name: find-skills
   host: github.com
@@ -3869,6 +3971,114 @@ deployments:
   content_hash: sha256:9b8388016e53bee1a0a24ace9f65b09435723aaa77c77e6b8a4ab18795026409
 - kind: project-relative
   target: claude
+  value: .claude/skills/router-core
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/auth-and-guards/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:456736451326d86e00fff9bc6333625b00727b7fd717a81ae92150b2b04100e2
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/code-splitting/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/data-loading/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/navigation/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/not-found-and-errors/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:b79f903049856322275bd524de982172790b06416efb54760740ee7a8156f8cb
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/path-params/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/search-params/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/search-params/references/validation-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/ssr/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004
+- kind: project-relative
+  target: claude
+  value: .claude/skills/router-core/type-safety/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:fc009f3dcf18fc2db2e5cf20b7dbb621e15f66959b405b8843e2911ca017bb83
+- kind: project-relative
+  target: claude
   value: .claude/skills/sandbox-migrate-to-next
   runtime: null
   scope: project
@@ -3939,6 +4149,78 @@ deployments:
   - cloudflare/skills/skills/sandbox-stable
   active_owner: cloudflare/skills/skills/sandbox-stable
   content_hash: sha256:490dc8b20d6ffbdfcbf1b4bc30fda1362997d4cf1d2af48fa1afb63fdf8f37ad
+- kind: project-relative
+  target: claude
+  value: .claude/skills/start-core
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/start-core/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:471f83a5c2d9033a4569aef264c46d7dc0f7c4b272f4b95831dcfdb7bb725157
+- kind: project-relative
+  target: claude
+  value: .claude/skills/start-core/auth-server-primitives/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:9423e7ab5c2334accec9e0ba1a1fc51791835d73f4cf1fcb598d4fe3a7075ba1
+- kind: project-relative
+  target: claude
+  value: .claude/skills/start-core/deployment/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:d1614371828ccfa8c5c181e686a21bffe42614a6918dbf3544e32240b3cac0c0
+- kind: project-relative
+  target: claude
+  value: .claude/skills/start-core/execution-model/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:b2a463c0bc39317a9b479c9c5f70bc9931b6c1d89f254968907d3e253b9b379e
+- kind: project-relative
+  target: claude
+  value: .claude/skills/start-core/middleware/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16
+- kind: project-relative
+  target: claude
+  value: .claude/skills/start-core/server-functions/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:0bd51a8bac7c8f149489aaa1732dc8fb86101e23e7597b10b7681711784a96de
+- kind: project-relative
+  target: claude
+  value: .claude/skills/start-core/server-routes/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:0284e4446e7ad9a8607fec3b5bd51a163449434e77fdff88ee2cd89b42634b1d
 - kind: project-relative
   target: claude
   value: .claude/skills/tdd
@@ -6587,6 +6869,114 @@ deployments:
   content_hash: sha256:9b8388016e53bee1a0a24ace9f65b09435723aaa77c77e6b8a4ab18795026409
 - kind: project-relative
   target: codex
+  value: .agents/skills/router-core
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/auth-and-guards/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:456736451326d86e00fff9bc6333625b00727b7fd717a81ae92150b2b04100e2
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/code-splitting/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/data-loading/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/navigation/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/not-found-and-errors/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:b79f903049856322275bd524de982172790b06416efb54760740ee7a8156f8cb
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/path-params/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/search-params/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/search-params/references/validation-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/ssr/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004
+- kind: project-relative
+  target: codex
+  value: .agents/skills/router-core/type-safety/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/router-core/skills/router-core
+  active_owner: tanstack/router/packages/router-core/skills/router-core
+  content_hash: sha256:fc009f3dcf18fc2db2e5cf20b7dbb621e15f66959b405b8843e2911ca017bb83
+- kind: project-relative
+  target: codex
   value: .agents/skills/sandbox-migrate-to-next
   runtime: null
   scope: project
@@ -6657,6 +7047,78 @@ deployments:
   - cloudflare/skills/skills/sandbox-stable
   active_owner: cloudflare/skills/skills/sandbox-stable
   content_hash: sha256:490dc8b20d6ffbdfcbf1b4bc30fda1362997d4cf1d2af48fa1afb63fdf8f37ad
+- kind: project-relative
+  target: codex
+  value: .agents/skills/start-core
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/start-core/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:471f83a5c2d9033a4569aef264c46d7dc0f7c4b272f4b95831dcfdb7bb725157
+- kind: project-relative
+  target: codex
+  value: .agents/skills/start-core/auth-server-primitives/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:9423e7ab5c2334accec9e0ba1a1fc51791835d73f4cf1fcb598d4fe3a7075ba1
+- kind: project-relative
+  target: codex
+  value: .agents/skills/start-core/deployment/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:d1614371828ccfa8c5c181e686a21bffe42614a6918dbf3544e32240b3cac0c0
+- kind: project-relative
+  target: codex
+  value: .agents/skills/start-core/execution-model/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:b2a463c0bc39317a9b479c9c5f70bc9931b6c1d89f254968907d3e253b9b379e
+- kind: project-relative
+  target: codex
+  value: .agents/skills/start-core/middleware/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16
+- kind: project-relative
+  target: codex
+  value: .agents/skills/start-core/server-functions/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:0bd51a8bac7c8f149489aaa1732dc8fb86101e23e7597b10b7681711784a96de
+- kind: project-relative
+  target: codex
+  value: .agents/skills/start-core/server-routes/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - tanstack/router/packages/start-client-core/skills/start-core
+  active_owner: tanstack/router/packages/start-client-core/skills/start-core
+  content_hash: sha256:0284e4446e7ad9a8607fec3b5bd51a163449434e77fdff88ee2cd89b42634b1d
 - kind: project-relative
   target: codex
   value: .agents/skills/tdd
