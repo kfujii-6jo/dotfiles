@@ -115,6 +115,11 @@ require("lazy").setup({
     },
   },
   {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {},
+  },
+  {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
@@ -237,6 +242,7 @@ local opt = vim.opt
 
 opt.clipboard = "unnamedplus"
 opt.number = true
+opt.signcolumn = "yes"
 opt.mouse = "a"
 opt.ignorecase = true
 opt.smartcase = true
