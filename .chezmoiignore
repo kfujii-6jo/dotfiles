@@ -13,3 +13,6 @@ scripts/
 # Codex integration files are installed and updated by Herdr.
 .codex/herdr-agent-state.sh
 .codex/hooks.json
+
+# OMP integration is installed and updated by Herdr.
+.omp/agent/extensions/herdr-omp-agent-state.ts

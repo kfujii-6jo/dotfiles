@@ -168,3 +168,13 @@ future-proofing, or style-only changes. Edit the roster here, then run
 Project rosters can override advisors with the same name.
 Use `/advisor status` to inspect the runtime; `/advisor on` and `/advisor off`
 only change the current session, not the saved enabled setting.
+
+Install Herdr's OMP integration after installing or upgrading Herdr:
+
+```bash
+herdr integration install omp
+herdr integration status
+```
+
+Herdr owns `~/.omp/agent/extensions/herdr-omp-agent-state.ts`, which is excluded
+from chezmoi. Start a new OMP session inside Herdr to load the integration.
