@@ -2,7 +2,7 @@
   "label": "Ask",
   "description": "Read code and discuss without shell commands or file edits",
   "skills": [],
-  "extensions": ["@narumitw/pi-caffeinate"],
+  "extensions": ["@narumitw/pi-caffeinate", "herdr-agent-state"],
   "mcps": [],
   "tools": ["read", "grep", "find", "ls"],
   "instructions": "Read and explain code. Do not modify files or execute shell commands."

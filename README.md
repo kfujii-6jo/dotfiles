@@ -143,6 +143,18 @@ servers and ask Pi to use `scout` or `reviewer` for subagent work. Shared user
 skills remain managed by APM in `~/.agents/skills`; package-provided resources
 stay with their Pi packages.
 
+Install Herdr's Pi integration after installing or upgrading Herdr:
+
+```bash
+herdr integration install pi
+herdr integration status
+```
+
+Herdr owns `~/.pi/agent/extensions/herdr-agent-state.ts`, which is excluded from
+chezmoi. Start a new Pi session inside Herdr to load it. The `ask` and `research`
+profiles also include this integration; keep `herdr-agent-state` in extension
+allowlists when defining more profiles.
+
 ### Pi profiles
 
 `pi-profile-switch` is an npm global pinned in `package.json`. Install with
