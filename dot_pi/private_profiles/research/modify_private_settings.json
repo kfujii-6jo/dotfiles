@@ -1,0 +1,34 @@
+{{/* chezmoi:modify-template */}}
+{{/* Model preferences are initial defaults; profile resources stay managed. */}}
+{{- $initial := `{
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-6.1-sol",
+  "defaultThinkingLevel": "medium"
+}` | fromJson -}}
+{{- $managed := `{
+  "packages": [
+    "npm:pi-web-access@0.40.0",
+    "npm:@narumitw/pi-caffeinate@0.49.11"
+  ],
+  "extensions": [
+    "-builtin:mcp",
+    "~/.pi/agent/extensions/herdr-agent-state.ts"
+  ],
+  "defaultTools": [
+    "read",
+    "grep",
+    "find",
+    "ls",
+    "web_search",
+    "source_check",
+    "fetch_content",
+    "get_search_content",
+    "web_enable"
+  ]
+}` | fromJson -}}
+{{- $skillsDir := joinPath .chezmoi.homeDir ".agents" "skills" -}}
+{{- $_ := set $managed "skills" (list
+  (printf "!%s/**" $skillsDir)
+) -}}
+{{- $current := .chezmoi.stdin | default "{}" | mustFromJson | default dict -}}
+{{ mergeOverwrite $initial $current $managed | toPrettyJson }}

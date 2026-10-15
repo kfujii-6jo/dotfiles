@@ -202,8 +202,13 @@ Herdr and is referenced explicitly. APM keeps
 skill files in `~/.agents/skills`: guided enables its nine selected entries,
 factory enables that catalog, and research excludes it. Skills are not copied.
 Packages are pinned and installed separately in each environment by native Pi.
-All three start with `openai/gpt-6.1-sol` and medium thinking; their settings and
-model changes are independent of ordinary Pi.
+All three initially use `openai/gpt-6.1-sol` and medium thinking. Each profile's
+`modify_private_settings.json` merges managed resources into the current settings:
+packages, extensions, skills, tools, and declared subagent options come from
+dotfiles. Pi's saved model/provider/thinking choices, device ID, changelog version,
+and other preferences survive `chezmoi apply`. Missing model preferences receive
+the initial defaults. These settings remain independent of ordinary Pi; do not
+copy runtime metadata into the source files with `chezmoi add`.
 
 When migrating from pi-profile-switch, first remove its old global executable
 with `npm uninstall -g pi-profile-switch`.
@@ -237,8 +242,9 @@ The profile retains web research, caffeinate, and Herdr integration. MCP and
 project configuration/resources are disabled by the launcher; repository
 AGENTS.md instructions still apply.
 
-Factory uses `openai/gpt-6.1-sol` with medium thinking; the reviewer inherits that
-model with high thinking. The ordinary Pi model settings are independent.
+Factory initially uses `openai/gpt-6.1-sol` with medium thinking; the reviewer
+inherits the active model with high thinking. The ordinary Pi model settings are
+independent.
 
 From this dotfiles checkout, apply the managed files, then start the profile:
 
@@ -359,7 +365,7 @@ independent task. Each environment keeps its own conversation history.
 
 `dot_pi/private_profiles/guided/AGENTS.md` holds the complete guided workflow;
 its settings select nine skills, web access, pi-subagents, caffeinate, and Herdr.
-It uses `openai/gpt-6.1-sol` with medium thinking, and the reviewer uses
+It initially uses `openai/gpt-6.1-sol` with medium thinking, and the reviewer uses
 `openai/gpt-6-astra` with high thinking. Factory's prompts, reviewer definition,
 and workflow instructions are not loaded.
 

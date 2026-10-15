@@ -1,7 +1,11 @@
-{
+{{/* chezmoi:modify-template */}}
+{{/* Model preferences are initial defaults; profile resources stay managed. */}}
+{{- $initial := `{
   "defaultProvider": "openai",
   "defaultModel": "gpt-6.1-sol",
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "medium"
+}` | fromJson -}}
+{{- $managed := `{
   "packages": [
     "npm:pi-web-access@0.40.0",
     {
@@ -32,18 +36,6 @@
     "subagent",
     "bg_wait"
   ],
-  "skills": [
-    "!{{ .chezmoi.homeDir }}/.agents/skills/**",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/typescript-type-design/SKILL.md",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/tdd/SKILL.md",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/codebase-design/SKILL.md",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/cloudflare/SKILL.md",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/workers-best-practices/SKILL.md",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/wrangler/SKILL.md",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/durable-objects/SKILL.md",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/start-core/SKILL.md",
-    "+{{ .chezmoi.homeDir }}/.agents/skills/router-core/SKILL.md"
-  ],
   "subagents": {
     "watchdog": {
       "enabled": false,
@@ -52,11 +44,17 @@
       }
     },
     "agentOverrides": {
-      "reviewer": {
-        "model": "openai/gpt-6-astra",
+      "factory-reviewer": {
+        "model": "inherit",
         "thinking": "high",
         "advertise": true
       }
     }
   }
-}
+}` | fromJson -}}
+{{- $skillsDir := joinPath .chezmoi.homeDir ".agents" "skills" -}}
+{{- $_ := set $managed "skills" (list
+  (printf "%s" $skillsDir)
+) -}}
+{{- $current := .chezmoi.stdin | default "{}" | mustFromJson | default dict -}}
+{{ mergeOverwrite $initial $current $managed | toPrettyJson }}
