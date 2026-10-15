@@ -2,7 +2,7 @@
 set -euo pipefail
 
 usage() {
-  echo 'Usage: pi-profile {guided|factory|research|default} [--] [pi arguments...]'
+  echo 'Usage: pp {guided|factory|research|default} [--] [pi arguments...]'
   echo 'Each named profile has its own instructions, settings, packages, and sessions.'
 }
 

@@ -149,7 +149,7 @@ and rerun validation before reporting completion. Questions, planning, progress
 updates, and incomplete implementation do not trigger review. This is an agent
 instruction, not a turn-end hook. Apply with
 `chezmoi apply ~/.pi/agent/AGENTS.md` and start a new Pi session.
-This applies to ordinary `pi` and `pi-profile default`. Named profiles have
+This applies to ordinary `pi` and `pp default`. Named profiles have
 their own AGENTS.md and do not inherit this file. `research` does not load
 pi-subagents.
 
@@ -167,17 +167,17 @@ allowlists when defining more profiles.
 
 ### Pi profiles
 
-`dot_local/bin/executable_pi-profile` is a small Bash launcher for Pi's native
+`dot_local/bin/executable_pp` is a small Bash launcher for Pi's native
 `PI_CODING_AGENT_DIR`. Named environments in `dot_pi/private_profiles/` deploy to
 `~/.pi/profiles/`; each owns its instructions, settings, installed packages,
 subagent definitions, prompt templates, and session history.
 
 ```bash
-pi-profile guided    # approve a short design before each implementation
-pi-profile factory   # local planning, implementation, validation, and review
-pi-profile research  # code/web discussion; no shell, editing, or subagents
-pi-profile default   # ordinary ~/.pi/agent configuration and existing history
-pi-profile guided -- --continue
+pp guided    # approve a short design before each implementation
+pp factory   # local planning, implementation, validation, and review
+pp research  # code/web discussion; no shell, editing, or subagents
+pp default   # ordinary ~/.pi/agent configuration and existing history
+pp guided -- --continue
 ```
 
 A profile name is required; no arguments prints help. Switch environments by
@@ -206,24 +206,25 @@ All three start with `openai/gpt-6.1-sol` and medium thinking; their settings an
 model changes are independent of ordinary Pi.
 
 When migrating from pi-profile-switch, first remove its old global executable
-with `npm uninstall -g pi-profile-switch`, then run `rehash` in an existing zsh.
-After applying the files below, `command -v pi-profile` should resolve to
-`~/.local/bin/pi-profile`.
+with `npm uninstall -g pi-profile-switch`.
+After applying the files below, run `rehash` in an existing zsh.
+`command -v pp` should resolve to `~/.local/bin/pp`.
 
 Apply and initialize from this checkout:
 
 ```bash
-chezmoi diff ~/.local/bin/pi-profile ~/.pi
-chezmoi apply ~/.local/bin/pi-profile ~/.pi
+chezmoi diff ~/.local/bin/pp ~/.pi
+chezmoi apply ~/.local/bin/pp ~/.pi
 # Pi installs missing pinned packages on the first profile launch.
-pi-profile guided
+pp guided
 # Inside Pi, run /login. Repeat once for factory and research.
 ```
 
-A full `chezmoi apply` also removes the retired `~/.pi-profile-switch/` directory
-and shared factory files listed in `.chezmoiremove`. Existing sessions remain in
+A full `chezmoi apply` also removes the retired `~/.pi-profile-switch/` directory,
+the old `~/.local/bin/pi-profile` launcher, and shared factory files listed in
+`.chezmoiremove`. Existing sessions remain in
 `~/.pi/agent/sessions` and are available through ordinary `pi` or
-`pi-profile default`; new named-profile sessions are stored separately.
+`pp default`; new named-profile sessions are stored separately.
 
 ### Local factory workflow
 
@@ -243,8 +244,8 @@ From this dotfiles checkout, apply the managed files, then start the profile:
 
 ```bash
 chezmoi diff ~/.pi/profiles/factory
-chezmoi apply ~/.pi/profiles/factory ~/.local/bin/pi-profile
-pi-profile factory
+chezmoi apply ~/.pi/profiles/factory ~/.local/bin/pp
+pp factory
 ```
 
 The factory AGENTS.md, `/factory-*` prompt templates, and `factory-reviewer`
@@ -299,7 +300,7 @@ checks remain part of local validation when required by the plan.
 ### Guided development
 
 `guided` is an independent, conversational development profile. Start it with
-`pi-profile guided`, describe the change normally, review its short proposal, and
+`pp guided`, describe the change normally, review its short proposal, and
 explicitly approve it before implementation starts. Even a small fix or a proposal
 with no unresolved questions waits for approval. Answers to specification questions
 alone do not authorize implementation. No additional slash commands are needed.
@@ -367,8 +368,8 @@ Restore the locked skills and apply the environment, then start a new session:
 ```bash
 bash scripts/install-skills.sh
 chezmoi diff ~/.pi/profiles/guided
-chezmoi apply ~/.pi/profiles/guided ~/.local/bin/pi-profile
-pi-profile guided
+chezmoi apply ~/.pi/profiles/guided ~/.local/bin/pp
+pp guided
 ```
 
 Use `/subagents-models reviewer` to inspect the reviewer model. After editing

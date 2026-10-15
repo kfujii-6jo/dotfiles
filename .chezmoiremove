@@ -1,6 +1,9 @@
 # Retired pi-profile-switch definitions, runtime state, and caches.
 .pi-profile-switch
 
+# Native Pi launcher renamed to pp.
+.local/bin/pi-profile
+
 # Factory now belongs only to its native Pi environment.
 .pi/agent/prompts/factory-plan.md
 .pi/agent/prompts/factory-run.md
