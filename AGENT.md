@@ -32,6 +32,22 @@ git pull && chezmoi apply
 `chezmoi apply` prompts before overwriting a file that changed in `~` since
 chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 
+## Retiring or moving managed files
+
+- Removing a source file does not remove its deployed copy. When retiring or
+  moving a managed target, add its old home-relative path to `.chezmoiremove`
+  in the same change. Use deployed names, without chezmoi prefixes. Source-only
+  moves that preserve the deployed path need no removal entry.
+- Confirm retirement from Git history and current references, then compare any
+  remaining home copy with its last managed version. Do not discard unexplained
+  local changes.
+- Prefer exact file paths. Remove a whole directory only when its entire contents
+  are confirmed obsolete; preserve unrelated files and symlink targets.
+- Transfer to APM, Herdr, or another application's ownership is not retirement.
+  Keep those files out of `.chezmoiremove`; use `.chezmoiignore` as appropriate.
+- Preview the affected paths with `chezmoi diff` and `chezmoi apply --dry-run`,
+  then apply only the intended removals and verify the current setup is intact.
+
 ## Adding tools
 
 - mise tool: edit `private_dot_config/mise/config.toml`, then run `mise install`.
