@@ -1,9 +1,5 @@
-# Retired pi-profile-switch definitions; preserve its unmanaged state and caches.
-.pi-profile-switch/profiles/ask.json
-.pi-profile-switch/profiles/guided.json
-.pi-profile-switch/profiles/factory.json
-.pi-profile-switch/profiles/research.json
-.pi-profile-switch/instructions/guided.md
+# Retired pi-profile-switch definitions, runtime state, and caches.
+.pi-profile-switch
 
 # Factory now belongs only to its native Pi environment.
 .pi/agent/prompts/factory-plan.md

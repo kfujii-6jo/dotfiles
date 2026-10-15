@@ -220,8 +220,8 @@ pi-profile guided
 # Inside Pi, run /login. Repeat once for factory and research.
 ```
 
-A full `chezmoi apply` also removes the retired managed profile definitions and
-shared factory files listed in `.chezmoiremove`. Existing sessions remain in
+A full `chezmoi apply` also removes the retired `~/.pi-profile-switch/` directory
+and shared factory files listed in `.chezmoiremove`. Existing sessions remain in
 `~/.pi/agent/sessions` and are available through ordinary `pi` or
 `pi-profile default`; new named-profile sessions are stored separately.
 
