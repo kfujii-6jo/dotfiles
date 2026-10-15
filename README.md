@@ -149,7 +149,7 @@ and rerun validation before reporting completion. Questions, planning, progress
 updates, and incomplete implementation do not trigger review. This is an agent
 instruction, not a turn-end hook. Apply with
 `chezmoi apply ~/.pi/agent/AGENTS.md` and start a new Pi session.
-The `default` profile supports this workflow; `ask` and `research` do not load
+The `default` profile supports this workflow; `research` does not load
 pi-subagents. The agent-directory context file also remains available through the
 profile launcher's generated runtime directories.
 
@@ -161,8 +161,8 @@ herdr integration status
 ```
 
 Herdr owns `~/.pi/agent/extensions/herdr-agent-state.ts`, which is excluded from
-chezmoi. Start a new Pi session inside Herdr to load it. The `ask` and `research`
-profiles also include this integration; keep `herdr-agent-state` in extension
+chezmoi. Start a new Pi session inside Herdr to load it. The `research`
+profile also includes this integration; keep `herdr-agent-state` in extension
 allowlists when defining more profiles.
 
 ### Pi profiles
@@ -174,11 +174,9 @@ Apply them with `chezmoi apply --recursive ~/.pi-profile-switch`.
 
 ```bash
 pi-profile default   # all configured resources, current model settings
-pi-profile ask       # read code and discuss; no shell or editing tools
-pi-profile research  # read code and search/fetch web sources
+pi-profile research  # read code and search/fetch web sources; no shell or editing tools
 pi-profile factory   # local planning, implementation, validation, and review
 pi-profile guided    # approve a short design before each implementation
-pi-profile ask -- --model openai/gpt-5.5 --thinking high
 ```
 
 Inside a session launched with `pi-profile`, use `/profile` to select a profile,
@@ -191,7 +189,7 @@ Add named JSON files in `dot_pi-profile-switch/profiles/` to define more profile
 `extensions`, `skills`, and `tools` select installed resources by name or glob;
 omit a field to retain the normal selection. Set `defaultProvider` and
 `defaultModel` together, plus `defaultThinkingLevel`, to select a model per
-profile. The `ask` and `research` profiles inherit the existing model settings.
+profile. The `research` profile inherits the existing model settings.
 
 ### Local factory workflow
 

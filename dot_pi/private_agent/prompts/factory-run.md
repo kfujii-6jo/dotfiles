@@ -14,7 +14,7 @@ from global AGENTS.md. Do not launch implementation workers, automatic
 improvement sweeps, background schedules, or turn-end/watchdog reviews.
 Do not commit, push, create PRs, merge, or deploy unless separately instructed.
 Respect the active profile and repository instructions. If required tools are
-not allowed (including ask/research profiles), stop without bypassing them.
+not allowed (including the research profile), stop without bypassing them.
 
 ## 1. Resolve the plan and recover its state
 

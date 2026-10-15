@@ -32,8 +32,8 @@ clarification requests, interrupted work, or incomplete implementation. Do not
 repeat a completed review for later conversational replies unless implementation
 changes. Do not install or enable a continuous review hook for this workflow.
 
-Respect the active profile and explicit task instructions. The ask and research
-profiles do not implement changes or load pi-subagents; do not bypass their
-resource selections. If delegation is explicitly forbidden, obey that instruction
+Respect the active profile and explicit task instructions. The research profile
+does not implement changes or load pi-subagents; do not bypass its resource
+selections. If delegation is explicitly forbidden, obey that instruction
 and report that independent review was skipped. When acting as a child agent,
 finish the assigned task without launching another completion reviewer.
