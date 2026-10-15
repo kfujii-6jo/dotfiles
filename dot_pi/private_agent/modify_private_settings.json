@@ -16,5 +16,5 @@
     }
   }
 }` | fromJson -}}
-{{- $current := .chezmoi.stdin | fromJson | default dict -}}
+{{- $current := .chezmoi.stdin | default "{}" | fromJson | default dict -}}
 {{ mergeOverwrite $current $defaults | toPrettyJson }}
