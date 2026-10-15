@@ -10,11 +10,11 @@ $@
 The main agent owns all planning decisions, edits, checks, and recovery. Use one
 read-only factory-reviewer after the entire requested implementation is ready.
 This workflow owns the completion review; do not also run the generic reviewer
-from global AGENTS.md. Do not launch implementation workers, automatic
+from other workflows. Do not launch implementation workers, automatic
 improvement sweeps, background schedules, or turn-end/watchdog reviews.
 Do not commit, push, create PRs, merge, or deploy unless separately instructed.
 Respect the active profile and repository instructions. If required tools are
-not allowed (including the research profile), stop without bypassing them.
+not allowed, stop without bypassing them.
 
 ## 1. Resolve the plan and recover its state
 

@@ -1,14 +1,5 @@
 # Pi implementation completion review
 
-The factory commands define an explicit local workflow. `/factory-plan` only
-creates or revises a plan; `/factory-improve` only investigates improvements on
-request. Neither triggers implementation or review. `/factory-run` owns its
-completion review through `factory-reviewer`, including bounded repair and
-resume handling; do not also launch the generic `reviewer` described below.
-In the factory profile, use these commands for the workflow and do not start
-implementation from planning or discussion alone. Persist progress at task
-boundaries, not on every conversational reply.
-
 For the primary agent, completing an implementation task includes an independent
 review. Once the requested implementation and relevant validation are complete,
 use pi-subagents to delegate the completed changes to reviewer before reporting
@@ -32,8 +23,7 @@ clarification requests, interrupted work, or incomplete implementation. Do not
 repeat a completed review for later conversational replies unless implementation
 changes. Do not install or enable a continuous review hook for this workflow.
 
-Respect the active profile and explicit task instructions. The research profile
-does not implement changes or load pi-subagents; do not bypass its resource
-selections. If delegation is explicitly forbidden, obey that instruction
-and report that independent review was skipped. When acting as a child agent,
-finish the assigned task without launching another completion reviewer.
+Respect explicit task instructions. If delegation is explicitly forbidden,
+obey that instruction and report that independent review was skipped. When acting
+as a child agent, finish the assigned task without launching another completion
+reviewer.

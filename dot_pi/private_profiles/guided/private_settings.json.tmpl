@@ -1,0 +1,62 @@
+{
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-6.1-sol",
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:pi-web-access@0.40.0",
+    {
+      "source": "npm:pi-subagents@0.78.0",
+      "skills": [],
+      "prompts": []
+    },
+    "npm:@narumitw/pi-caffeinate@0.49.11"
+  ],
+  "extensions": [
+    "-builtin:mcp",
+    "~/.pi/agent/extensions/herdr-agent-state.ts"
+  ],
+  "defaultTools": [
+    "read",
+    "grep",
+    "find",
+    "ls",
+    "web_search",
+    "source_check",
+    "fetch_content",
+    "get_search_content",
+    "web_enable",
+    "bash",
+    "edit",
+    "write",
+    "subagents_enable",
+    "subagent",
+    "bg_wait"
+  ],
+  "skills": [
+    "!{{ .chezmoi.homeDir }}/.agents/skills/**",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/typescript-type-design/SKILL.md",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/tdd/SKILL.md",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/codebase-design/SKILL.md",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/cloudflare/SKILL.md",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/workers-best-practices/SKILL.md",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/wrangler/SKILL.md",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/durable-objects/SKILL.md",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/start-core/SKILL.md",
+    "+{{ .chezmoi.homeDir }}/.agents/skills/router-core/SKILL.md"
+  ],
+  "subagents": {
+    "watchdog": {
+      "enabled": false,
+      "children": {
+        "enabled": false
+      }
+    },
+    "agentOverrides": {
+      "reviewer": {
+        "model": "openai/gpt-6-astra",
+        "thinking": "high",
+        "advertise": true
+      }
+    }
+  }
+}

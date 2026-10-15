@@ -149,9 +149,9 @@ and rerun validation before reporting completion. Questions, planning, progress
 updates, and incomplete implementation do not trigger review. This is an agent
 instruction, not a turn-end hook. Apply with
 `chezmoi apply ~/.pi/agent/AGENTS.md` and start a new Pi session.
-The `default` profile supports this workflow; `research` does not load
-pi-subagents. The agent-directory context file also remains available through the
-profile launcher's generated runtime directories.
+This applies to ordinary `pi` and `pi-profile default`. Named profiles have
+their own AGENTS.md and do not inherit this file. `research` does not load
+pi-subagents.
 
 Install Herdr's Pi integration after installing or upgrading Herdr:
 
@@ -167,29 +167,63 @@ allowlists when defining more profiles.
 
 ### Pi profiles
 
-`pi-profile-switch` is an npm global pinned in `package.json`. Install with
-`npm install -g pi-profile-switch@0.16.0 --legacy-peer-deps`. Profile definitions
-in `dot_pi-profile-switch/profiles/` deploy to `~/.pi-profile-switch/profiles/`.
-Apply them with `chezmoi apply --recursive ~/.pi-profile-switch`.
+`dot_local/bin/executable_pi-profile` is a small Bash launcher for Pi's native
+`PI_CODING_AGENT_DIR`. Named environments in `dot_pi/private_profiles/` deploy to
+`~/.pi/profiles/`; each owns its instructions, settings, installed packages,
+subagent definitions, prompt templates, and session history.
 
 ```bash
-pi-profile default   # all configured resources, current model settings
-pi-profile research  # read code and search/fetch web sources; no shell or editing tools
-pi-profile factory   # local planning, implementation, validation, and review
 pi-profile guided    # approve a short design before each implementation
+pi-profile factory   # local planning, implementation, validation, and review
+pi-profile research  # code/web discussion; no shell, editing, or subagents
+pi-profile default   # ordinary ~/.pi/agent configuration and existing history
+pi-profile guided -- --continue
 ```
 
-Inside a session launched with `pi-profile`, use `/profile` to select a profile,
-`/profile use research` to switch directly, `/profile status` to inspect the
-selection, and `/profile reload` after editing its definition. In-session
-selections are remembered for the next `pi-profile` launch. Plain `pi` keeps its
-normal behavior. Profiles reuse authentication and session history.
+A profile name is required; no arguments prints help. Switch environments by
+exiting and launching another profile. `/profile` commands from the old extension
+are no longer installed. Use Pi's `/reload` to reload the current environment.
 
-Add named JSON files in `dot_pi-profile-switch/profiles/` to define more profiles.
-`extensions`, `skills`, and `tools` select installed resources by name or glob;
-omit a field to retain the normal selection. Set `defaultProvider` and
-`defaultModel` together, plus `defaultThinkingLevel`, to select a model per
-profile. The `research` profile inherits the existing model settings.
+The launcher preserves the working directory, sets a profile-local session root,
+and disables MCP and project `.pi` configuration/resources with `--no-mcp` and
+`--no-approve`. Repository/ancestor AGENTS.md files still load. Project skills,
+extensions, model overrides, and prompt templates do not load automatically.
+These are configuration boundaries, not an OS sandbox; explicit Pi CLI options
+can change a launch's configuration.
+
+Authentication is independent too. Run `/login` once inside each named profile;
+subsequent launches reuse that profile's login. Pi owns each profile's `auth.json`,
+which is not managed by chezmoi or tracked in git. Ordinary Pi keeps its existing
+`~/.pi/agent/auth.json`. Do not link or copy OAuth credentials between profiles:
+separate files need separate logins to avoid competing token refreshes.
+
+Selected supporting resources are shared. Herdr's extension remains owned by
+Herdr and is referenced explicitly. APM keeps
+skill files in `~/.agents/skills`: guided enables its nine selected entries,
+factory enables that catalog, and research excludes it. Skills are not copied.
+Packages are pinned and installed separately in each environment by native Pi.
+All three start with `openai/gpt-6.1-sol` and medium thinking; their settings and
+model changes are independent of ordinary Pi.
+
+When migrating from pi-profile-switch, first remove its old global executable
+with `npm uninstall -g pi-profile-switch`, then run `rehash` in an existing zsh.
+After applying the files below, `command -v pi-profile` should resolve to
+`~/.local/bin/pi-profile`.
+
+Apply and initialize from this checkout:
+
+```bash
+chezmoi diff ~/.local/bin/pi-profile ~/.pi
+chezmoi apply ~/.local/bin/pi-profile ~/.pi
+# Pi installs missing pinned packages on the first profile launch.
+pi-profile guided
+# Inside Pi, run /login. Repeat once for factory and research.
+```
+
+A full `chezmoi apply` also removes the retired managed profile definitions and
+shared factory files listed in `.chezmoiremove`. Existing sessions remain in
+`~/.pi/agent/sessions` and are available through ordinary `pi` or
+`pi-profile default`; new named-profile sessions are stored separately.
 
 ### Local factory workflow
 
@@ -198,27 +232,24 @@ to local work. The main agent plans, implements, validates, and recovers
 interrupted work; one fresh-context `factory-reviewer` checks the completed
 implementation. Its tool allowlist is `read`, `grep`, `find`, and `ls`, with no
 ambient extensions, inherited skills, shell, editing, or nested delegation.
-The profile retains web research, caffeinate, and Herdr integration. User-level
-MCP servers are disabled; trusted project resources still follow Pi's own trust
-rules. No extra npm package is required.
+The profile retains web research, caffeinate, and Herdr integration. MCP and
+project configuration/resources are disabled by the launcher; repository
+AGENTS.md instructions still apply.
 
 Factory uses `openai/gpt-6.1-sol` with medium thinking; the reviewer inherits that
-model with high thinking. This profile-specific default avoids the account's
-unsupported `gpt-5.5` selection without changing the ordinary Pi model settings.
+model with high thinking. The ordinary Pi model settings are independent.
 
 From this dotfiles checkout, apply the managed files, then start the profile:
 
 ```bash
-chezmoi diff ~/.pi/agent ~/.pi-profile-switch/profiles/factory.json
-chezmoi apply ~/.pi/agent/settings.json ~/.pi/agent/AGENTS.md
-chezmoi apply --parent-dirs --source-path \
-  dot_pi/private_agent/prompts dot_pi/private_agent/agents
-chezmoi apply ~/.pi-profile-switch/profiles/factory.json
+chezmoi diff ~/.pi/profiles/factory
+chezmoi apply ~/.pi/profiles/factory ~/.local/bin/pi-profile
 pi-profile factory
 ```
 
-Inside a `pi-profile` session, `/profile use factory` selects the profile.
-Use `/reload` after adding or changing prompt/agent files, or start a new session.
+The factory AGENTS.md, `/factory-*` prompt templates, and `factory-reviewer`
+definition live only in `~/.pi/profiles/factory`. Use `/reload` after changing
+those files, or start a new session.
 
 ```text
 /factory-plan Add password reset to the login screen
@@ -323,36 +354,27 @@ and their purpose in the review task. Reviewer reads them as review criteria and
 reports which ones it used; implementation workflows such as TDD do not run inside
 the read-only review. Missing or unreadable skills are reported as limitations.
 This profile does not invoke factory commands. Use a new session when starting an
-independent task; switching profiles does not erase conversation history.
+independent task. Each environment keeps its own conversation history.
 
-`dot_pi-profile-switch/profiles/guided.json.tmpl` renders the instructions from
-`dot_pi-profile-switch/instructions/guided.md` into the deployed profile JSON. This
-keeps the workflow scoped to `guided` without adding it to shared `AGENTS.md`.
-It selects nine skills, web access, pi-subagents, caffeinate and Herdr integration;
-user-level MCP servers are disabled. As with the other profiles, trusted project
-resources follow Pi's trust rules. It uses `openai/gpt-6.1-sol` with medium thinking,
-and the reviewer uses `openai/gpt-6-astra` with high thinking, avoiding the unsupported
-`gpt-5.5` setting used by plain Pi on this account.
+`dot_pi/private_profiles/guided/AGENTS.md` holds the complete guided workflow;
+its settings select nine skills, web access, pi-subagents, caffeinate, and Herdr.
+It uses `openai/gpt-6.1-sol` with medium thinking, and the reviewer uses
+`openai/gpt-6-astra` with high thinking. Factory's prompts, reviewer definition,
+and workflow instructions are not loaded.
 
-Restore the locked skills and apply the profile, then start a new session:
+Restore the locked skills and apply the environment, then start a new session:
 
 ```bash
 bash scripts/install-skills.sh
-chezmoi diff ~/.pi-profile-switch/instructions ~/.pi-profile-switch/profiles/guided.json
-chezmoi apply ~/.pi-profile-switch/instructions ~/.pi-profile-switch/profiles/guided.json
+chezmoi diff ~/.pi/profiles/guided
+chezmoi apply ~/.pi/profiles/guided ~/.local/bin/pi-profile
 pi-profile guided
 ```
 
-Inside a `pi-profile` session, `/profile use guided` selects it and `/profile status`
-shows the active resources. After changing the template, apply it with chezmoi,
-then use `/profile reload`. Profile instructions are not a code-enforced write
-barrier; no state-machine extension or continuous review hook is installed.
-
-With pi-profile-switch 0.16.0, `/profile status` can label extension tools as
-conflicts because it compares the installed path with a generated runtime symlink
-path. The guided startup check confirmed that the reported subagent and web tools
-resolve to the selected installed extensions; the selected skill commands load without
-conflicts. Compare real paths before treating that diagnostic as a different owner.
+Use `/subagents-models reviewer` to inspect the reviewer model. After editing
+instructions or settings, apply them with chezmoi and use `/reload` or restart.
+The design-approval rule is instruction-based; no state-machine extension or
+continuous review hook is installed.
 
 ## oh-my-pi
 

@@ -6,7 +6,6 @@
     "@earendil-works/pi-coding-agent": "latest",
     "@fission-ai/openspec": "latest",
     "pnpm": "latest",
-    "pi-profile-switch": "0.16.0",
     "pyright": "latest",
     "takt": "latest",
     "typescript": "latest",

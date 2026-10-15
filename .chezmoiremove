@@ -1,2 +1,12 @@
-# Retired read-only profile; use research instead.
+# Retired pi-profile-switch definitions; preserve its unmanaged state and caches.
 .pi-profile-switch/profiles/ask.json
+.pi-profile-switch/profiles/guided.json
+.pi-profile-switch/profiles/factory.json
+.pi-profile-switch/profiles/research.json
+.pi-profile-switch/instructions/guided.md
+
+# Factory now belongs only to its native Pi environment.
+.pi/agent/prompts/factory-plan.md
+.pi/agent/prompts/factory-run.md
+.pi/agent/prompts/factory-improve.md
+.pi/agent/agents/factory-reviewer.md

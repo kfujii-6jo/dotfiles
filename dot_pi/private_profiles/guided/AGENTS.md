@@ -120,8 +120,11 @@ established, ask before further implementation; do not reconstruct consent.
 
 ## Validate and finish
 
-After the implementation and relevant validation are complete, use the existing
-completion-review workflow in AGENTS.md with reviewer, exactly once initially.
+After the implementation and relevant validation are complete, delegate a
+read-only completion review to reviewer through pi-subagents, exactly once
+initially. If only subagents_enable is exposed, activate it first. Do not report
+completion while the review is still running. When acting as a child agent,
+finish the assigned task without launching another completion reviewer.
 No review is triggered by planning, questions, approval waits or progress updates.
 Give reviewer the approved proposal and changes to it, task-owned diff and file
 inventory, validation results, and the test-addition/omission rationale.

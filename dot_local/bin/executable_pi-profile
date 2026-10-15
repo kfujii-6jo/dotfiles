@@ -1,0 +1,37 @@
+#!/bin/bash
+set -euo pipefail
+
+usage() {
+  echo 'Usage: pi-profile {guided|factory|research|default} [--] [pi arguments...]'
+  echo 'Each named profile has its own instructions, settings, packages, and sessions.'
+}
+
+profile=${1:-}
+case "$profile" in
+  ''|-h|--help) usage; exit 0 ;;
+  guided|factory|research|default) shift ;;
+  *) echo "Unknown Pi profile: $profile" >&2; usage >&2; exit 2 ;;
+esac
+if [[ "${1:-}" == -- ]]; then shift; fi
+
+if [[ "$profile" == default ]]; then
+  export PI_CODING_AGENT_DIR="$HOME/.pi/agent"
+  unset PI_CODING_AGENT_SESSION_DIR
+  exec pi "$@"
+fi
+
+export PI_CODING_AGENT_DIR="$HOME/.pi/profiles/$profile"
+export PI_CODING_AGENT_SESSION_DIR="$PI_CODING_AGENT_DIR/sessions"
+if [[ ! -f "$PI_CODING_AGENT_DIR/settings.json" || ! -f "$PI_CODING_AGENT_DIR/AGENTS.md" ]]; then
+  echo "Missing Pi profile: $PI_CODING_AGENT_DIR (run chezmoi apply)" >&2
+  exit 1
+fi
+
+extra=(--no-approve --no-mcp)
+if [[ "$profile" == research ]]; then
+  extra+=(--tools read,grep,find,ls,web_search,source_check,fetch_content,get_search_content,web_enable)
+  extra+=(--exclude-tools bash,powershell,edit,write,subagent,subagents_enable,bg_wait)
+fi
+
+# Project AGENTS.md still applies; project settings and executable resources do not.
+exec pi "${extra[@]}" "$@"
