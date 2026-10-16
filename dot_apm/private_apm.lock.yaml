@@ -1279,6 +1279,24 @@ dependencies:
     .agents/skills/typescript-type-design/SKILL.md: sha256:8cebb0861807d194ded3d7b958d87b7171feb76900f6f5e0d0dc48fff975cb03
     .claude/skills/typescript-type-design/SKILL.md: sha256:8cebb0861807d194ded3d7b958d87b7171feb76900f6f5e0d0dc48fff975cb03
   content_hash: sha256:8cbf10792ab69472be63b65665550b27bbdc9f408756eb7351c41c5090ff842f
+- repo_url: kfujii-6jo/skills
+  name: meta-context
+  host: github.com
+  resolved_commit: ecc2b007b1ba1181d2408d8ed63023365488b25f
+  resolved_ref: main
+  version: unknown
+  virtual_path: meta-context
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/meta-context
+  - .agents/skills/meta-context/SKILL.md
+  - .claude/skills/meta-context
+  - .claude/skills/meta-context/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/meta-context/SKILL.md: sha256:6db38c5e7a2c78a37ddcbe638fa9d0cf42d9a8aeaa32a2f59098aad67ad13ee4
+    .claude/skills/meta-context/SKILL.md: sha256:6db38c5e7a2c78a37ddcbe638fa9d0cf42d9a8aeaa32a2f59098aad67ad13ee4
+  content_hash: sha256:8d8128695117a4b7f32b3bb96b114dd7711870db523871ecefb3611a1ff2a24c
 - repo_url: mattpocock/skills
   name: codebase-design
   host: github.com
@@ -3636,6 +3654,24 @@ deployments:
   - herdrdev/herdr/skills/herdr
   active_owner: herdrdev/herdr/skills/herdr
   content_hash: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
+- kind: project-relative
+  target: claude
+  value: .claude/skills/meta-context
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/meta-context
+  active_owner: kfujii-6jo/skills/meta-context
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/meta-context/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/meta-context
+  active_owner: kfujii-6jo/skills/meta-context
+  content_hash: sha256:6db38c5e7a2c78a37ddcbe638fa9d0cf42d9a8aeaa32a2f59098aad67ad13ee4
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese
@@ -6534,6 +6570,24 @@ deployments:
   - herdrdev/herdr/skills/herdr
   active_owner: herdrdev/herdr/skills/herdr
   content_hash: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
+- kind: project-relative
+  target: codex
+  value: .agents/skills/meta-context
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/meta-context
+  active_owner: kfujii-6jo/skills/meta-context
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/meta-context/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/meta-context
+  active_owner: kfujii-6jo/skills/meta-context
+  content_hash: sha256:6db38c5e7a2c78a37ddcbe638fa9d0cf42d9a8aeaa32a2f59098aad67ad13ee4
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese

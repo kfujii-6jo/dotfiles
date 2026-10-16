@@ -43,7 +43,7 @@ Run `chezmoi diff` first to see what would change in your home directory.
 
 ## Shared skills (APM)
 
-APM 0.33.0 is installed through mise. `dot_apm/apm.yml` declares all 26 user
+APM 0.33.0 is installed through mise. `dot_apm/apm.yml` declares the user
 skills, tracking each upstream's default branch. `dot_apm/private_apm.lock.yaml`
 pins resolved commits and records files and deployment ownership. APM deploys to
 `~/.claude/skills/` and `~/.agents/skills/` (shared by Codex and Pi).
@@ -51,7 +51,8 @@ All user skill directories are excluded from chezmoi; edit skills at their
 upstream repository instead. Built-in and plugin-provided skills remain owned
 by their respective applications.
 
-Sources: `kfujii-6jo/skills` (5 Git workflows), `cloudflare/skills` (11),
+Sources: `kfujii-6jo/skills` (Git workflows, TypeScript type design, and meta
+context), `cloudflare/skills` (11),
 `mattpocock/skills` (2), `subsy/ralph-tui` (4), and one each from
 `mizchi/skills`, `herdrdev/herdr`, `coji/natural-japanese`, and `vercel-labs/skills`.
 `clean_gone` is now `clean-gone`. The old `sandbox-sdk` is replaced by
@@ -83,6 +84,31 @@ Do not edit APM's deployed copies.
 Installation and discovery are verified separately from workflow behavior.
 Some upstream skills still use agent-specific instructions; APM deploys them
 without translating those instructions.
+
+## Carrying meta context into a worktree
+
+The shared `meta-context` skill reads a note or conversation history from the
+`META_CONTEXT` environment variable. Pass the absolute source path when opening
+a pane in an existing worktree:
+
+```bash
+note="$HOME/ghq/github.com/kfujii-6jo/meta/explorations/your-topic.md"
+worktree="/absolute/path/to/your-worktree"
+herdr pane split --current --direction right --cwd "$worktree" \
+  --env "META_CONTEXT=$note" --focus
+```
+
+Open Vim or start an agent in the new pane as usual. Ask the agent to use the
+`meta-context` skill to load the background or continue the work. The current
+directory stays in the worktree; no global startup hook is needed. Setting the
+variable alone does not load the note into the agent.
+
+The skill accepts Markdown notes and reads structured conversation histories
+without modifying them. When progress logging is requested, use a Markdown note;
+agent-owned history files are not logs to append to. If an agent filters inherited
+environment variables, supply the absolute note path with the skill invocation.
+Pi profiles with an explicit skill allowlist must include `meta-context` to
+discover it.
 
 ## Codex
 
