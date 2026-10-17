@@ -87,8 +87,21 @@ without translating those instructions.
 
 ## Carrying meta context into a worktree
 
-The shared `meta-context` skill reads a note or conversation history from the
-`META_CONTEXT` environment variable. Pass the absolute source path when opening
+Use `herdr-meta-handoff` in the original conversation to open the destination
+pane and start an agent with the context already supplied. For example:
+
+> Use herdr-meta-handoff to continue this note in a new worktree for my-project,
+> using Claude Code.
+
+The skill resolves the source note or conversation history and the destination,
+creates a worktree when requested, opens a pane with `META_CONTEXT`, starts the
+agent, and sends the initial instruction. The receiver uses `herdr-meta-context`
+to read the source and orient itself. If the source or destination is ambiguous,
+the sender asks rather than guessing. The default layout is a sibling pane in
+the current Space; worktree creation uses Git directly so it does not also open
+another Space. The original pane remains available.
+
+To create the pane manually instead, pass the absolute source path when opening
 a pane in an existing worktree:
 
 ```bash
@@ -99,7 +112,7 @@ herdr pane split --current --direction right --cwd "$worktree" \
 ```
 
 Open Vim or start an agent in the new pane as usual. Ask the agent to use the
-`meta-context` skill to load the background or continue the work. The current
+`herdr-meta-context` skill to load the background or continue the work. The current
 directory stays in the worktree; no global startup hook is needed. Setting the
 variable alone does not load the note into the agent.
 
@@ -107,8 +120,8 @@ The skill accepts Markdown notes and reads structured conversation histories
 without modifying them. When progress logging is requested, use a Markdown note;
 agent-owned history files are not logs to append to. If an agent filters inherited
 environment variables, supply the absolute note path with the skill invocation.
-Pi profiles with an explicit skill allowlist must include `meta-context` to
-discover it.
+Pi profiles with an explicit skill allowlist must include these skills to
+discover them, or receive their installed `SKILL.md` paths explicitly.
 
 ## Codex
 

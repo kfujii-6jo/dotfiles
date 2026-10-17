@@ -11,7 +11,8 @@ dependencies:
     - kfujii-6jo/skills/cleanup-branch#main
     - kfujii-6jo/skills/rebase-branch#main
     - kfujii-6jo/skills/typescript-type-design#main
-    - kfujii-6jo/skills/meta-context#main
+    - kfujii-6jo/skills/herdr-meta-context#main
+    - kfujii-6jo/skills/herdr-meta-handoff#main
     - mizchi/skills/empirical-prompt-tuning#main
     - herdrdev/herdr/skills/herdr#master
     - cloudflare/skills/skills/agents-sdk#main
