@@ -1300,7 +1300,7 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: herdr-meta-handoff
   host: github.com
-  resolved_commit: 86c4e49125840c00e613da26721bb0e3987ec0f3
+  resolved_commit: 4dcce099b77d56c2293762b7097149e53a08b0cf
   resolved_ref: main
   version: unknown
   virtual_path: herdr-meta-handoff
@@ -1312,9 +1312,9 @@ dependencies:
   - .claude/skills/herdr-meta-handoff
   - .claude/skills/herdr-meta-handoff/SKILL.md
   deployed_file_hashes:
-    .agents/skills/herdr-meta-handoff/SKILL.md: sha256:437d45f2fdf77f51db7aeaf7980362c47985f8027b0bc3fc905950a131b1390b
-    .claude/skills/herdr-meta-handoff/SKILL.md: sha256:437d45f2fdf77f51db7aeaf7980362c47985f8027b0bc3fc905950a131b1390b
-  content_hash: sha256:ef54b18503b52d6b61083dbd8daefbcc3c84b706f6f469fc604b4a965ef51dc1
+    .agents/skills/herdr-meta-handoff/SKILL.md: sha256:e343438d0ed6372fa5fce06242e85576f875a97a4d7df9e276f629038cb0805c
+    .claude/skills/herdr-meta-handoff/SKILL.md: sha256:e343438d0ed6372fa5fce06242e85576f875a97a4d7df9e276f629038cb0805c
+  content_hash: sha256:386ebc3a77d0cc7971dfed2baf000be95aa88c130cb2e5db7b629993c26efc7c
 - repo_url: mattpocock/skills
   name: codebase-design
   host: github.com
@@ -3698,7 +3698,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/herdr-meta-handoff
   active_owner: kfujii-6jo/skills/herdr-meta-handoff
-  content_hash: sha256:437d45f2fdf77f51db7aeaf7980362c47985f8027b0bc3fc905950a131b1390b
+  content_hash: sha256:e343438d0ed6372fa5fce06242e85576f875a97a4d7df9e276f629038cb0805c
 - kind: project-relative
   target: claude
   value: .claude/skills/herdr/SKILL.md
@@ -6632,7 +6632,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/herdr-meta-handoff
   active_owner: kfujii-6jo/skills/herdr-meta-handoff
-  content_hash: sha256:437d45f2fdf77f51db7aeaf7980362c47985f8027b0bc3fc905950a131b1390b
+  content_hash: sha256:e343438d0ed6372fa5fce06242e85576f875a97a4d7df9e276f629038cb0805c
 - kind: project-relative
   target: codex
   value: .agents/skills/herdr/SKILL.md

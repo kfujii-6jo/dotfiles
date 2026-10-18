@@ -87,19 +87,16 @@ without translating those instructions.
 
 ## Carrying meta context into a worktree
 
-Use `herdr-meta-handoff` in the original conversation to open the destination
-pane and start an agent with the context already supplied. For example:
+Use `herdr-meta-handoff` to carry a note or conversation into a project. It
+creates a Herdr-managed worktree and child workspace by default, starts the
+chosen agent, and confirms that the agent loaded the context. For example:
 
-> Use herdr-meta-handoff to continue this note in a new worktree for my-project,
-> using Claude Code.
+> Use herdr-meta-handoff to carry this note into my-project with Claude Code.
 
-The skill resolves the source note or conversation history and the destination,
-creates a worktree when requested, opens a pane with `META_CONTEXT`, starts the
-agent, and sends the initial instruction. The receiver uses `herdr-meta-context`
-to read the source and orient itself. If the source or destination is ambiguous,
-the sender asks rather than guessing. The default layout is a sibling pane in
-the current Space; worktree creation uses Git directly so it does not also open
-another Space. The original pane remains available.
+The receiver uses `herdr-meta-context` with `META_CONTEXT` or the absolute source
+path in its prompt. Specify an existing checkout or a sibling pane when wanted.
+A handoff alone loads context; implementation begins only when requested.
+The original checkout and agent remain available.
 
 To create the pane manually instead, pass the absolute source path when opening
 a pane in an existing worktree:
