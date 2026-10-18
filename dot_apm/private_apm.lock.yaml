@@ -1,6 +1,24 @@
 lockfile_version: '1'
 apm_version: 0.33.0
 dependencies:
+- repo_url: kfujii-6jo/skills
+  name: jev-review
+  host: github.com
+  resolved_commit: f4d8a7e2b18a0f35ddd50dcf4a7f493b6c115d48
+  resolved_ref: main
+  version: unknown
+  virtual_path: jev-review
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/jev-review
+  - .agents/skills/jev-review/SKILL.md
+  - .claude/skills/jev-review
+  - .claude/skills/jev-review/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/jev-review/SKILL.md: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
+    .claude/skills/jev-review/SKILL.md: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
+  content_hash: sha256:10228abd0de6cdca6b6c1023285d324138770efab5ce040d31e92ad7e48c4ef0
 - repo_url: cloudflare/skills
   name: agents-sdk
   host: github.com
@@ -7452,3 +7470,39 @@ deployments:
   - cloudflare/skills/skills/wrangler
   active_owner: cloudflare/skills/skills/wrangler
   content_hash: sha256:7884f560509c08ac29ee0d3cfe1b5259855fd6790acf0c5292f4d1c54db7c191
+- kind: project-relative
+  target: claude
+  value: .claude/skills/jev-review
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/jev-review
+  active_owner: kfujii-6jo/skills/jev-review
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/jev-review/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/jev-review
+  active_owner: kfujii-6jo/skills/jev-review
+  content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
+- kind: project-relative
+  target: codex
+  value: .agents/skills/jev-review
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/jev-review
+  active_owner: kfujii-6jo/skills/jev-review
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/jev-review/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/jev-review
+  active_owner: kfujii-6jo/skills/jev-review
+  content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4

@@ -419,6 +419,77 @@ instructions or settings, apply them with chezmoi and use `/reload` or restart.
 The design-approval rule is instruction-based; no state-machine extension or
 continuous review hook is installed.
 
+### Explicit Jev review in guided
+
+The `guided` profile loads `dot_pi/private_extensions/jev-review.ts` as
+`~/.pi/extensions/jev-review.ts` and exposes the `jev_review` tool. It sends
+bounded questions and selected evidence to the
+[TypeSafe HTTP API](https://docs.typesafe.ai/api). The `jev-review` skill prepares
+the questions and checks the results against code and tests. It covers design,
+comment necessity and change scope, including separating independent refactors.
+It does not replace guided's approval step or completion reviewer.
+
+The skill's source is `~/ghq/github.com/kfujii-6jo/skills/jev-review/SKILL.md`.
+APM installs `kfujii-6jo/skills/jev-review#main` at the commit pinned in the
+lockfile, so installation does not require a local skills checkout. Edit the
+source skill, not the APM-deployed copies.
+
+To try this worktree before applying shared settings, launch from its root:
+
+```bash
+pp guided -- --extension "$PWD/dot_pi/private_extensions/jev-review.ts" \
+  --skill "$HOME/.agents/skills/jev-review" \
+  --tools +jev_review
+```
+
+These explicit resources also let a trial continue when another dotfiles checkout
+manages the shared guided settings. `+jev_review` adds to the profile's selected
+tools. Use ordinary `pp guided` after the managed configuration is applied.
+
+From this checkout, preview and apply only the integration's managed files
+(use the explicit `--source` so a worktree does not read main's configuration):
+
+```bash
+chezmoi --source "$PWD" diff ~/.apm/apm.yml ~/.apm/apm.lock.yaml \
+  ~/.pi/extensions ~/.pi/profiles/guided/settings.json
+chezmoi --source "$PWD" apply ~/.apm/apm.yml ~/.apm/apm.lock.yaml \
+  ~/.pi/extensions ~/.pi/profiles/guided/settings.json
+mise exec -- apm install --global --frozen
+pp guided
+```
+
+Set `TYPESAFE_API_KEY` through your usual credential setup in the environment
+that launches Pi; do not put it in dotfiles, skill text or chat. After adding a
+key to the launch environment, restart Pi. Use `/reload` for resource changes in
+an existing process. Then ask, for example:
+
+```text
+/skill:jev-review 今回の差分について、コメントの制約が実装で守られているかと、コメントを省いても情報が伝わるかを別々に確認して。
+```
+
+Each call accepts an objective, scope, source-labelled evidence and up to eight
+independent questions with yes/no criteria. It returns `yes`, `no`, or
+`insufficient_evidence`, probabilities, confidence, actual model, token usage and
+request latency. The default is pinned to `jev-1.13.0`; set `JEV_MODEL` in the
+launch environment to compare another version. There is no acceptance threshold
+or automatic action. Model confidence and the primary agent's explanation remain
+distinct from evidence of correctness.
+
+The local request limit is 64 KiB; oversized inputs are rejected, never truncated.
+Calls time out after 15 seconds and are not retried automatically. Missing keys,
+invalid results, HTTP failures and cancellation return `unavailable`, not a pass.
+Only the supplied packet is sent; the extension does not collect files or session
+history. Normal Pi tool-call history contains the packet and result. Jev returns
+classifications, so any textual explanation comes from the reviewing agent.
+
+Run `npm run test:jev` with the repo's global Pi and TypeScript installations.
+This checks the installed Pi loader/types and mocked HTTP behavior without a key
+or API calls. It does not establish review accuracy or savings. Before expanding
+to automatic checks, compare a small set of clear, ambiguous and evidence-missing
+examples against human judgments, including paraphrases and preparation effort.
+Risk checks, completion verification, skill/tool selection, context retention and
+model routing remain candidates for later work.
+
 ## oh-my-pi
 
 [oh-my-pi](https://github.com/can1357/oh-my-pi) is installed as a release binary

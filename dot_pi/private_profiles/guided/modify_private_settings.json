@@ -17,6 +17,7 @@
   ],
   "extensions": [
     "-builtin:mcp",
+    "~/.pi/extensions/jev-review.ts",
     "~/.pi/agent/extensions/herdr-agent-state.ts"
   ],
   "defaultTools": [
@@ -32,6 +33,7 @@
     "bash",
     "edit",
     "write",
+    "jev_review",
     "subagents_enable",
     "subagent",
     "bg_wait"
@@ -58,6 +60,7 @@
   (printf "+%s/typescript-type-design/SKILL.md" $skillsDir)
   (printf "+%s/tdd/SKILL.md" $skillsDir)
   (printf "+%s/codebase-design/SKILL.md" $skillsDir)
+  (printf "+%s/jev-review/SKILL.md" $skillsDir)
   (printf "+%s/cloudflare/SKILL.md" $skillsDir)
   (printf "+%s/workers-best-practices/SKILL.md" $skillsDir)
   (printf "+%s/wrangler/SKILL.md" $skillsDir)

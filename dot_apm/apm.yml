@@ -5,6 +5,7 @@ targets:
   - codex
 dependencies:
   apm:
+    - kfujii-6jo/skills/jev-review#main
     - kfujii-6jo/skills/commit#main
     - kfujii-6jo/skills/commit-push-pr#main
     - kfujii-6jo/skills/clean-gone#main
