@@ -65,6 +65,8 @@
   (printf "+%s/start-core/SKILL.md" $skillsDir)
   (printf "+%s/router-core/SKILL.md" $skillsDir)
   (printf "+%s/herdr/SKILL.md" $skillsDir)
+  (printf "+%s/herdr-meta-context/SKILL.md" $skillsDir)
+  (printf "+%s/herdr-meta-handoff/SKILL.md" $skillsDir)
 ) -}}
 {{- $current := .chezmoi.stdin | default "{}" | mustFromJson | default dict -}}
 {{ mergeOverwrite $initial $current $managed | toPrettyJson }}

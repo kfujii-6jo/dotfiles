@@ -238,11 +238,14 @@ separate files need separate logins to avoid competing token refreshes.
 
 Selected supporting resources are shared. Herdr's extension remains owned by
 Herdr and is referenced explicitly. APM keeps
-skill files in `~/.agents/skills`: guided enables its ten selected entries,
-including Herdr; factory enables that catalog, and research excludes it. Skills
-are not copied. Inside a Herdr pane, guided and factory can use `/skill:herdr`
-to inspect panes, start agents, submit work, and read results through the Herdr
-CLI. Run `/reload` in an existing Pi session after applying skill changes.
+skill files in `~/.agents/skills`: guided enables its twelve selected entries,
+including Herdr and the two meta handoff skills; factory enables that catalog,
+and research excludes it. Skills are not copied. Inside a Herdr pane, guided and
+factory can use `/skill:herdr` to inspect panes, start agents, submit work, and
+read results through the Herdr CLI. `/skill:herdr-meta-context` loads a note or
+conversation history from `META_CONTEXT` or an explicit path;
+`/skill:herdr-meta-handoff` carries that context and a task to another Herdr pane.
+Run `/reload` in an existing Pi session after applying skill changes.
 Packages are pinned and installed separately in each environment by native Pi.
 All three initially use `openai/gpt-6.1-sol` and medium thinking. Each profile's
 `modify_private_settings.json` merges managed resources into the current settings:
