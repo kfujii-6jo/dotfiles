@@ -2,6 +2,24 @@ lockfile_version: '1'
 apm_version: 0.33.0
 dependencies:
 - repo_url: kfujii-6jo/skills
+  name: herdr-worktree-finish
+  host: github.com
+  resolved_commit: 7cbad9419fa91047043ab6823e2969d71b3facdb
+  resolved_ref: main
+  version: unknown
+  virtual_path: herdr-worktree-finish
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/herdr-worktree-finish
+  - .agents/skills/herdr-worktree-finish/SKILL.md
+  - .claude/skills/herdr-worktree-finish
+  - .claude/skills/herdr-worktree-finish/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/herdr-worktree-finish/SKILL.md: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
+    .claude/skills/herdr-worktree-finish/SKILL.md: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
+  content_hash: sha256:22fc02a66478be0d4ec46488dbde96182e0d288ab728f2c7d21b10466f592420
+- repo_url: kfujii-6jo/skills
   name: jev-review
   host: github.com
   resolved_commit: f4d8a7e2b18a0f35ddd50dcf4a7f493b6c115d48
@@ -7506,3 +7524,39 @@ deployments:
   - kfujii-6jo/skills/jev-review
   active_owner: kfujii-6jo/skills/jev-review
   content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
+- kind: project-relative
+  target: claude
+  value: .claude/skills/herdr-worktree-finish
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-worktree-finish
+  active_owner: kfujii-6jo/skills/herdr-worktree-finish
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/herdr-worktree-finish/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-worktree-finish
+  active_owner: kfujii-6jo/skills/herdr-worktree-finish
+  content_hash: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
+- kind: project-relative
+  target: codex
+  value: .agents/skills/herdr-worktree-finish
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-worktree-finish
+  active_owner: kfujii-6jo/skills/herdr-worktree-finish
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/herdr-worktree-finish/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-worktree-finish
+  active_owner: kfujii-6jo/skills/herdr-worktree-finish
+  content_hash: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
