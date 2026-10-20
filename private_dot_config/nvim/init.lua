@@ -34,6 +34,7 @@ require("lazy").setup({
         { "<leader>f", group = "find" },
         { "<leader>g", group = "git" },
         { "<leader>r", group = "lsp" },
+        { "<leader>v", group = "review" },
         { "<leader>c", group = "code/format" },
         { "<leader>z", group = "fold" },
         { "<leader>a", group = "ai" },
@@ -131,6 +132,25 @@ require("lazy").setup({
         end
       end,
     },
+  },
+  {
+    "georgeguimaraes/review.nvim",
+    version = "*",
+    dependencies = {
+      "esmuellert/codediff.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    event = "VeryLazy",
+    keys = {
+      { "<leader>vr", "<Cmd>Review<CR>", desc = "Review working tree" },
+      { "<leader>vc", "<Cmd>Review commits<CR>", desc = "Review commits" },
+      { "<leader>vb", "<Cmd>Review branch<CR>", desc = "Review branch" },
+      { "<leader>vn", ":Review note<CR>", mode = { "n", "x" }, desc = "Review: note here" },
+      { "<leader>ve", "<Cmd>Review edit<CR>", desc = "Review: edit comment" },
+      { "<leader>vd", "<Cmd>Review delete<CR>", desc = "Review: delete comment" },
+      { "<leader>vx", "<Cmd>Review export<CR>", desc = "Review: export" },
+    },
+    opts = {},
   },
   {
     "nvim-lualine/lualine.nvim",
