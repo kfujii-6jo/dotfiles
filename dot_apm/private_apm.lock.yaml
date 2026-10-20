@@ -1,46 +1,10 @@
 lockfile_version: '1'
 apm_version: 0.33.0
 dependencies:
-- repo_url: kfujii-6jo/skills
-  name: herdr-worktree-finish
-  host: github.com
-  resolved_commit: 7cbad9419fa91047043ab6823e2969d71b3facdb
-  resolved_ref: main
-  version: unknown
-  virtual_path: herdr-worktree-finish
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/herdr-worktree-finish
-  - .agents/skills/herdr-worktree-finish/SKILL.md
-  - .claude/skills/herdr-worktree-finish
-  - .claude/skills/herdr-worktree-finish/SKILL.md
-  deployed_file_hashes:
-    .agents/skills/herdr-worktree-finish/SKILL.md: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
-    .claude/skills/herdr-worktree-finish/SKILL.md: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
-  content_hash: sha256:22fc02a66478be0d4ec46488dbde96182e0d288ab728f2c7d21b10466f592420
-- repo_url: kfujii-6jo/skills
-  name: jev-review
-  host: github.com
-  resolved_commit: f4d8a7e2b18a0f35ddd50dcf4a7f493b6c115d48
-  resolved_ref: main
-  version: unknown
-  virtual_path: jev-review
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/jev-review
-  - .agents/skills/jev-review/SKILL.md
-  - .claude/skills/jev-review
-  - .claude/skills/jev-review/SKILL.md
-  deployed_file_hashes:
-    .agents/skills/jev-review/SKILL.md: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
-    .claude/skills/jev-review/SKILL.md: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
-  content_hash: sha256:10228abd0de6cdca6b6c1023285d324138770efab5ce040d31e92ad7e48c4ef0
 - repo_url: cloudflare/skills
   name: agents-sdk
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/agents-sdk
@@ -134,7 +98,7 @@ dependencies:
 - repo_url: cloudflare/skills
   name: cloudflare
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/cloudflare
@@ -154,11 +118,6 @@ dependencies:
   - .agents/skills/cloudflare/references/ai-search/configuration.md
   - .agents/skills/cloudflare/references/ai-search/gotchas.md
   - .agents/skills/cloudflare/references/ai-search/patterns.md
-  - .agents/skills/cloudflare/references/analytics-engine/README.md
-  - .agents/skills/cloudflare/references/analytics-engine/api.md
-  - .agents/skills/cloudflare/references/analytics-engine/configuration.md
-  - .agents/skills/cloudflare/references/analytics-engine/gotchas.md
-  - .agents/skills/cloudflare/references/analytics-engine/patterns.md
   - .agents/skills/cloudflare/references/bindings/README.md
   - .agents/skills/cloudflare/references/bindings/api.md
   - .agents/skills/cloudflare/references/bindings/configuration.md
@@ -189,11 +148,6 @@ dependencies:
   - .agents/skills/cloudflare/references/d1/configuration.md
   - .agents/skills/cloudflare/references/d1/gotchas.md
   - .agents/skills/cloudflare/references/d1/patterns.md
-  - .agents/skills/cloudflare/references/graphql-api/README.md
-  - .agents/skills/cloudflare/references/graphql-api/api.md
-  - .agents/skills/cloudflare/references/graphql-api/configuration.md
-  - .agents/skills/cloudflare/references/graphql-api/gotchas.md
-  - .agents/skills/cloudflare/references/graphql-api/patterns.md
   - .agents/skills/cloudflare/references/hyperdrive/README.md
   - .agents/skills/cloudflare/references/hyperdrive/api.md
   - .agents/skills/cloudflare/references/hyperdrive/configuration.md
@@ -271,11 +225,6 @@ dependencies:
   - .agents/skills/cloudflare/references/tunnel/gotchas.md
   - .agents/skills/cloudflare/references/tunnel/networking.md
   - .agents/skills/cloudflare/references/tunnel/patterns.md
-  - .agents/skills/cloudflare/references/turn/README.md
-  - .agents/skills/cloudflare/references/turn/api.md
-  - .agents/skills/cloudflare/references/turn/configuration.md
-  - .agents/skills/cloudflare/references/turn/gotchas.md
-  - .agents/skills/cloudflare/references/turn/patterns.md
   - .agents/skills/cloudflare/references/vectorize/README.md
   - .agents/skills/cloudflare/references/vectorize/api.md
   - .agents/skills/cloudflare/references/vectorize/configuration.md
@@ -286,11 +235,6 @@ dependencies:
   - .agents/skills/cloudflare/references/waf/configuration.md
   - .agents/skills/cloudflare/references/waf/gotchas.md
   - .agents/skills/cloudflare/references/waf/patterns.md
-  - .agents/skills/cloudflare/references/workerd/README.md
-  - .agents/skills/cloudflare/references/workerd/api.md
-  - .agents/skills/cloudflare/references/workerd/configuration.md
-  - .agents/skills/cloudflare/references/workerd/gotchas.md
-  - .agents/skills/cloudflare/references/workerd/patterns.md
   - .agents/skills/cloudflare/references/workers-ai/README.md
   - .agents/skills/cloudflare/references/workers-ai/api.md
   - .agents/skills/cloudflare/references/workers-ai/configuration.md
@@ -301,12 +245,6 @@ dependencies:
   - .agents/skills/cloudflare/references/workflows/configuration.md
   - .agents/skills/cloudflare/references/workflows/gotchas.md
   - .agents/skills/cloudflare/references/workflows/patterns.md
-  - .agents/skills/cloudflare/references/zaraz/IMPLEMENTATION_SUMMARY.md
-  - .agents/skills/cloudflare/references/zaraz/README.md
-  - .agents/skills/cloudflare/references/zaraz/api.md
-  - .agents/skills/cloudflare/references/zaraz/configuration.md
-  - .agents/skills/cloudflare/references/zaraz/gotchas.md
-  - .agents/skills/cloudflare/references/zaraz/patterns.md
   - .claude/skills/cloudflare
   - .claude/skills/cloudflare/SKILL.md
   - .claude/skills/cloudflare/references/ai-gateway/README.md
@@ -320,11 +258,6 @@ dependencies:
   - .claude/skills/cloudflare/references/ai-search/configuration.md
   - .claude/skills/cloudflare/references/ai-search/gotchas.md
   - .claude/skills/cloudflare/references/ai-search/patterns.md
-  - .claude/skills/cloudflare/references/analytics-engine/README.md
-  - .claude/skills/cloudflare/references/analytics-engine/api.md
-  - .claude/skills/cloudflare/references/analytics-engine/configuration.md
-  - .claude/skills/cloudflare/references/analytics-engine/gotchas.md
-  - .claude/skills/cloudflare/references/analytics-engine/patterns.md
   - .claude/skills/cloudflare/references/bindings/README.md
   - .claude/skills/cloudflare/references/bindings/api.md
   - .claude/skills/cloudflare/references/bindings/configuration.md
@@ -355,11 +288,6 @@ dependencies:
   - .claude/skills/cloudflare/references/d1/configuration.md
   - .claude/skills/cloudflare/references/d1/gotchas.md
   - .claude/skills/cloudflare/references/d1/patterns.md
-  - .claude/skills/cloudflare/references/graphql-api/README.md
-  - .claude/skills/cloudflare/references/graphql-api/api.md
-  - .claude/skills/cloudflare/references/graphql-api/configuration.md
-  - .claude/skills/cloudflare/references/graphql-api/gotchas.md
-  - .claude/skills/cloudflare/references/graphql-api/patterns.md
   - .claude/skills/cloudflare/references/hyperdrive/README.md
   - .claude/skills/cloudflare/references/hyperdrive/api.md
   - .claude/skills/cloudflare/references/hyperdrive/configuration.md
@@ -437,11 +365,6 @@ dependencies:
   - .claude/skills/cloudflare/references/tunnel/gotchas.md
   - .claude/skills/cloudflare/references/tunnel/networking.md
   - .claude/skills/cloudflare/references/tunnel/patterns.md
-  - .claude/skills/cloudflare/references/turn/README.md
-  - .claude/skills/cloudflare/references/turn/api.md
-  - .claude/skills/cloudflare/references/turn/configuration.md
-  - .claude/skills/cloudflare/references/turn/gotchas.md
-  - .claude/skills/cloudflare/references/turn/patterns.md
   - .claude/skills/cloudflare/references/vectorize/README.md
   - .claude/skills/cloudflare/references/vectorize/api.md
   - .claude/skills/cloudflare/references/vectorize/configuration.md
@@ -452,11 +375,6 @@ dependencies:
   - .claude/skills/cloudflare/references/waf/configuration.md
   - .claude/skills/cloudflare/references/waf/gotchas.md
   - .claude/skills/cloudflare/references/waf/patterns.md
-  - .claude/skills/cloudflare/references/workerd/README.md
-  - .claude/skills/cloudflare/references/workerd/api.md
-  - .claude/skills/cloudflare/references/workerd/configuration.md
-  - .claude/skills/cloudflare/references/workerd/gotchas.md
-  - .claude/skills/cloudflare/references/workerd/patterns.md
   - .claude/skills/cloudflare/references/workers-ai/README.md
   - .claude/skills/cloudflare/references/workers-ai/api.md
   - .claude/skills/cloudflare/references/workers-ai/configuration.md
@@ -467,14 +385,8 @@ dependencies:
   - .claude/skills/cloudflare/references/workflows/configuration.md
   - .claude/skills/cloudflare/references/workflows/gotchas.md
   - .claude/skills/cloudflare/references/workflows/patterns.md
-  - .claude/skills/cloudflare/references/zaraz/IMPLEMENTATION_SUMMARY.md
-  - .claude/skills/cloudflare/references/zaraz/README.md
-  - .claude/skills/cloudflare/references/zaraz/api.md
-  - .claude/skills/cloudflare/references/zaraz/configuration.md
-  - .claude/skills/cloudflare/references/zaraz/gotchas.md
-  - .claude/skills/cloudflare/references/zaraz/patterns.md
   deployed_file_hashes:
-    .agents/skills/cloudflare/SKILL.md: sha256:b93a25020fe26501261628c75ee4c15490ad7de96ff9a2940909d2d822c40354
+    .agents/skills/cloudflare/SKILL.md: sha256:336a55878f37551d14b6d8dddabfe0c97362fd5414380083a365802568fb39b7
     .agents/skills/cloudflare/references/ai-gateway/README.md: sha256:87498b44d8f22ef991b426b8d779ab58ab40f781bbcf917c8224ecb348caee80
     .agents/skills/cloudflare/references/ai-gateway/configuration.md: sha256:57179b9afe4d7910c0b8c9fb4fd456d212468d2d845532bfc51ea6976a72e437
     .agents/skills/cloudflare/references/ai-gateway/dynamic-routing.md: sha256:36d77e7fead198ee26519390662f70d8fbb4a7c9f00d2fb91a85a241b7e29fbe
@@ -486,11 +398,6 @@ dependencies:
     .agents/skills/cloudflare/references/ai-search/configuration.md: sha256:ad630849a5db7d3fa370d7106891c88fafffbede2af9d5fec66e0a6de3581ab7
     .agents/skills/cloudflare/references/ai-search/gotchas.md: sha256:6b5e87ff5af301f0dee487c637448090d0bfb8a865b369683686100077150569
     .agents/skills/cloudflare/references/ai-search/patterns.md: sha256:4a180463c1618c638bc488826c416d19ae70bb883805c41664efa9ae204d8e85
-    .agents/skills/cloudflare/references/analytics-engine/README.md: sha256:ac8a712efbcf66eef3d81f938c0f917e901eb069262cb04a0f65039a6a3d970c
-    .agents/skills/cloudflare/references/analytics-engine/api.md: sha256:647f4d5a50690af27e6ea5117623795fb9c4e1c348c39c07ce7f73ac9b7c222e
-    .agents/skills/cloudflare/references/analytics-engine/configuration.md: sha256:86112c2385fe4e44b4825f9962cfe3429e6681de9f051a50a1c70514f1b85131
-    .agents/skills/cloudflare/references/analytics-engine/gotchas.md: sha256:08d11a06bc1cc955bdf4ade8d1a523b0e78157434d559169c4bc2d36f886667b
-    .agents/skills/cloudflare/references/analytics-engine/patterns.md: sha256:d294a7ee3ce2d58fbb8413eb6e58faf7af8f699cecc7480b955ceb31e87204b2
     .agents/skills/cloudflare/references/bindings/README.md: sha256:49e6574c3dec6061c3d716f94e598e42381a4e57fb17edc995e9a1e564961903
     .agents/skills/cloudflare/references/bindings/api.md: sha256:6d82acf4c32c1fa989fe055ced384595aa1ff39c49eeea941fdb6a2cbf3497b9
     .agents/skills/cloudflare/references/bindings/configuration.md: sha256:f29c9a7b6c3f0be999d2a68f19e9db989910b025b4aad36e78ceb1ee6c270f2b
@@ -521,11 +428,6 @@ dependencies:
     .agents/skills/cloudflare/references/d1/configuration.md: sha256:14d5d69ebe2aa0276c4c52b079fb1784c24dfc02db01114a83102f211b7f809c
     .agents/skills/cloudflare/references/d1/gotchas.md: sha256:a685330ff73c9d70f2471a24caed0064ed234ead8f9c73200db39e882fb47dda
     .agents/skills/cloudflare/references/d1/patterns.md: sha256:1618f870394a4bd94f2affe7f885098407e70d6cc9fc8d3907b56dab5663b343
-    .agents/skills/cloudflare/references/graphql-api/README.md: sha256:c1dbd31a638443495baf6e60f6bbce4841cdae4c28e30ad82ad8381ff96f7c17
-    .agents/skills/cloudflare/references/graphql-api/api.md: sha256:0c0250cdf31adfbf2c7f96bf3ec257c32d14709160a8552b3238a861b3540de5
-    .agents/skills/cloudflare/references/graphql-api/configuration.md: sha256:765e696dfd11bfa87d231c011b10fb2c10a2e33d704d7c6d04f1f125585c5b92
-    .agents/skills/cloudflare/references/graphql-api/gotchas.md: sha256:59dbb9a541db17cdac52665fd6883d2eb660ec6fea4b45cc87c291d2e2b4a50f
-    .agents/skills/cloudflare/references/graphql-api/patterns.md: sha256:902d188040a60c5d130790222442158ff12879232357ee34ab410e0d7b9b5e76
     .agents/skills/cloudflare/references/hyperdrive/README.md: sha256:7df9ba59535214d662e0ea65f0d2aa86c712b76431acbb1aae9589351e374412
     .agents/skills/cloudflare/references/hyperdrive/api.md: sha256:076723505ca605827042f2094456e4421af3258e06f0592a3519227f17630c57
     .agents/skills/cloudflare/references/hyperdrive/configuration.md: sha256:86ebf76987116d2cd2f389f31b8945abb15e5943905f40e482317a9e3126e9e6
@@ -546,7 +448,7 @@ dependencies:
     .agents/skills/cloudflare/references/miniflare/configuration.md: sha256:a74010b43f388c4240ff554a2cbebe23ce8a4b3f1459fffa8334862e775f13ad
     .agents/skills/cloudflare/references/miniflare/gotchas.md: sha256:d360d41dc8819babdcfb136cd036fabaa3fdfd5929c2d1d4e428d1529cbde53b
     .agents/skills/cloudflare/references/miniflare/patterns.md: sha256:9074209c3f01a38897fd99470c8b0e82ff7e295f024b6806d360738a5a1e5699
-    .agents/skills/cloudflare/references/observability/README.md: sha256:c35951cf460fb4002ab78c97eccbfdf81f6367059d9817dde7ae137ddecdeb06
+    .agents/skills/cloudflare/references/observability/README.md: sha256:7a89cc5ce7aa8faa1f1e36ed8d4d4f42313f7bb3a45b6203f3c1f9bd37180792
     .agents/skills/cloudflare/references/observability/api.md: sha256:168510bf1bc1d0cb8a4e16d7bfdec76f8ca02c3379ebe9cd1167e2043268874b
     .agents/skills/cloudflare/references/observability/configuration.md: sha256:5c0187482a0dc128321c5ac846011084bedf131e75090f6a84899b7e43bec2ed
     .agents/skills/cloudflare/references/observability/gotchas.md: sha256:47cc66515778aff2481cbdad04428392e44f13d63563dd3bc3e6b636a612ce0c
@@ -603,11 +505,6 @@ dependencies:
     .agents/skills/cloudflare/references/tunnel/gotchas.md: sha256:3e87041cfe5ba891260bc90ced81db6701cb4c28e349efc308c7db618b8750a4
     .agents/skills/cloudflare/references/tunnel/networking.md: sha256:21ef941081debc3a4ab46dc4227557f303302a9cb80e5e74b51fce8c49c56c9a
     .agents/skills/cloudflare/references/tunnel/patterns.md: sha256:bb18ec9c06422599cea57cd4c992c4e991c35fd42ef2d1cdce35c5523b5cda61
-    .agents/skills/cloudflare/references/turn/README.md: sha256:6d7fa57622b162f520ad0e01726b2712681c71e242e8e272d6553814c0b7a4fe
-    .agents/skills/cloudflare/references/turn/api.md: sha256:912ec9aa734843078db5ceb9c6732f3aa62778aa7ffb836b9798b46152f377ff
-    .agents/skills/cloudflare/references/turn/configuration.md: sha256:8df0cf402a41dd2a8205b9fc94f868df48273ef9e85cf1ad690732ac1e2469b7
-    .agents/skills/cloudflare/references/turn/gotchas.md: sha256:7135e3e6e0351bf85fcfd5a914fd499979e7e15540d155810be5bc710e5841d7
-    .agents/skills/cloudflare/references/turn/patterns.md: sha256:de0a2e64a0fe6456028cbd0cd8f29195cc8d4da0e8935746357587d5937aa636
     .agents/skills/cloudflare/references/vectorize/README.md: sha256:5552d78b49b9fd8b309e443d5a1d632d9f229693e3d71115a4482df792f27cd9
     .agents/skills/cloudflare/references/vectorize/api.md: sha256:b965c61a025d48c5ac3c056ddede548707d2f1c9672106b2406038cb4e6d336d
     .agents/skills/cloudflare/references/vectorize/configuration.md: sha256:add15c7dd611fd7cd683068de5fef6d59586bbf2f3fa7a2f3bee22821194e87b
@@ -618,11 +515,6 @@ dependencies:
     .agents/skills/cloudflare/references/waf/configuration.md: sha256:4da82c579d41340d39e973c9a5d3cf696f7033aa9123ef98da00ccd8d7fb28a5
     .agents/skills/cloudflare/references/waf/gotchas.md: sha256:d9f68c3f9492ba4e09d7d9014dfaca011b27f9a3ca92b88bbd119a951fb84eaa
     .agents/skills/cloudflare/references/waf/patterns.md: sha256:c3c99dcbffdd6842952c23a8014da74465783af451fb4916f012f64532254329
-    .agents/skills/cloudflare/references/workerd/README.md: sha256:845d68c8f2c13058079640d025994c7716bdc51c2ff95c4ea7042b7446d4270a
-    .agents/skills/cloudflare/references/workerd/api.md: sha256:7a6652e76e27424b0ce0d7393e1a04595460290d44e5ca937e3b0090a3b61166
-    .agents/skills/cloudflare/references/workerd/configuration.md: sha256:656371e6aa55e315ea02e4304228f5c1151023f68af8058ad60984b90e00a9ad
-    .agents/skills/cloudflare/references/workerd/gotchas.md: sha256:994588104d1a505da58235f8706f67403a9c9d05644be5986190146d1d00d4cd
-    .agents/skills/cloudflare/references/workerd/patterns.md: sha256:dc293c43c732adf6e3edfeaf72510904c7e8d097ca26c8b168748dd3d57e4408
     .agents/skills/cloudflare/references/workers-ai/README.md: sha256:5ac3782a02b880a811567aabc03e39ac5191ff7284eb84966e3457481bd0ee78
     .agents/skills/cloudflare/references/workers-ai/api.md: sha256:fc0b5f7f0d0ddca28277a57abbbba09a13bd7b41da4bf6d62f7b4e0aefce07f7
     .agents/skills/cloudflare/references/workers-ai/configuration.md: sha256:14ed0fae276fcd69809a01086a36476f5a8d69ad83a03d8479a5b8c119f6e3f3
@@ -633,13 +525,7 @@ dependencies:
     .agents/skills/cloudflare/references/workflows/configuration.md: sha256:297b59fc474f885a6c313212bc22b3485642495dced1ab4919da57c6223a2563
     .agents/skills/cloudflare/references/workflows/gotchas.md: sha256:178152af4c810ec7104e4459bc883b0730c06de213b25ae86b8bcd06c7259f1a
     .agents/skills/cloudflare/references/workflows/patterns.md: sha256:91ea4976873dc1737173f23762b433e6fdbd3ed8ab989189490325eaeb66815f
-    .agents/skills/cloudflare/references/zaraz/IMPLEMENTATION_SUMMARY.md: sha256:eba1671fc4ba17fae19d1ff2d1b312d5042b5821e7a4dbc2f6367a4fa8bd5506
-    .agents/skills/cloudflare/references/zaraz/README.md: sha256:efa52f4e152f959cfb7aceb57687916c3367d94cb5daf3ae5bcb3ae933320c0f
-    .agents/skills/cloudflare/references/zaraz/api.md: sha256:6b28a3e1525d46aad707b1bf4edd2739df9f48ae880f71a705448270b42f8b9e
-    .agents/skills/cloudflare/references/zaraz/configuration.md: sha256:6f3666ac64d1b36b4a708b3dea9d3b1d9679b34c58a00e3ca8e254edd602418a
-    .agents/skills/cloudflare/references/zaraz/gotchas.md: sha256:30378f48fde6e866780466228a3e698005a9ce23a24188c8ed520195b03eac3e
-    .agents/skills/cloudflare/references/zaraz/patterns.md: sha256:2ea1d00fe81b1e881c00090fd18c96d8c78ebb41fcc55f540b68150320d90d17
-    .claude/skills/cloudflare/SKILL.md: sha256:b93a25020fe26501261628c75ee4c15490ad7de96ff9a2940909d2d822c40354
+    .claude/skills/cloudflare/SKILL.md: sha256:336a55878f37551d14b6d8dddabfe0c97362fd5414380083a365802568fb39b7
     .claude/skills/cloudflare/references/ai-gateway/README.md: sha256:87498b44d8f22ef991b426b8d779ab58ab40f781bbcf917c8224ecb348caee80
     .claude/skills/cloudflare/references/ai-gateway/configuration.md: sha256:57179b9afe4d7910c0b8c9fb4fd456d212468d2d845532bfc51ea6976a72e437
     .claude/skills/cloudflare/references/ai-gateway/dynamic-routing.md: sha256:36d77e7fead198ee26519390662f70d8fbb4a7c9f00d2fb91a85a241b7e29fbe
@@ -651,11 +537,6 @@ dependencies:
     .claude/skills/cloudflare/references/ai-search/configuration.md: sha256:ad630849a5db7d3fa370d7106891c88fafffbede2af9d5fec66e0a6de3581ab7
     .claude/skills/cloudflare/references/ai-search/gotchas.md: sha256:6b5e87ff5af301f0dee487c637448090d0bfb8a865b369683686100077150569
     .claude/skills/cloudflare/references/ai-search/patterns.md: sha256:4a180463c1618c638bc488826c416d19ae70bb883805c41664efa9ae204d8e85
-    .claude/skills/cloudflare/references/analytics-engine/README.md: sha256:ac8a712efbcf66eef3d81f938c0f917e901eb069262cb04a0f65039a6a3d970c
-    .claude/skills/cloudflare/references/analytics-engine/api.md: sha256:647f4d5a50690af27e6ea5117623795fb9c4e1c348c39c07ce7f73ac9b7c222e
-    .claude/skills/cloudflare/references/analytics-engine/configuration.md: sha256:86112c2385fe4e44b4825f9962cfe3429e6681de9f051a50a1c70514f1b85131
-    .claude/skills/cloudflare/references/analytics-engine/gotchas.md: sha256:08d11a06bc1cc955bdf4ade8d1a523b0e78157434d559169c4bc2d36f886667b
-    .claude/skills/cloudflare/references/analytics-engine/patterns.md: sha256:d294a7ee3ce2d58fbb8413eb6e58faf7af8f699cecc7480b955ceb31e87204b2
     .claude/skills/cloudflare/references/bindings/README.md: sha256:49e6574c3dec6061c3d716f94e598e42381a4e57fb17edc995e9a1e564961903
     .claude/skills/cloudflare/references/bindings/api.md: sha256:6d82acf4c32c1fa989fe055ced384595aa1ff39c49eeea941fdb6a2cbf3497b9
     .claude/skills/cloudflare/references/bindings/configuration.md: sha256:f29c9a7b6c3f0be999d2a68f19e9db989910b025b4aad36e78ceb1ee6c270f2b
@@ -686,11 +567,6 @@ dependencies:
     .claude/skills/cloudflare/references/d1/configuration.md: sha256:14d5d69ebe2aa0276c4c52b079fb1784c24dfc02db01114a83102f211b7f809c
     .claude/skills/cloudflare/references/d1/gotchas.md: sha256:a685330ff73c9d70f2471a24caed0064ed234ead8f9c73200db39e882fb47dda
     .claude/skills/cloudflare/references/d1/patterns.md: sha256:1618f870394a4bd94f2affe7f885098407e70d6cc9fc8d3907b56dab5663b343
-    .claude/skills/cloudflare/references/graphql-api/README.md: sha256:c1dbd31a638443495baf6e60f6bbce4841cdae4c28e30ad82ad8381ff96f7c17
-    .claude/skills/cloudflare/references/graphql-api/api.md: sha256:0c0250cdf31adfbf2c7f96bf3ec257c32d14709160a8552b3238a861b3540de5
-    .claude/skills/cloudflare/references/graphql-api/configuration.md: sha256:765e696dfd11bfa87d231c011b10fb2c10a2e33d704d7c6d04f1f125585c5b92
-    .claude/skills/cloudflare/references/graphql-api/gotchas.md: sha256:59dbb9a541db17cdac52665fd6883d2eb660ec6fea4b45cc87c291d2e2b4a50f
-    .claude/skills/cloudflare/references/graphql-api/patterns.md: sha256:902d188040a60c5d130790222442158ff12879232357ee34ab410e0d7b9b5e76
     .claude/skills/cloudflare/references/hyperdrive/README.md: sha256:7df9ba59535214d662e0ea65f0d2aa86c712b76431acbb1aae9589351e374412
     .claude/skills/cloudflare/references/hyperdrive/api.md: sha256:076723505ca605827042f2094456e4421af3258e06f0592a3519227f17630c57
     .claude/skills/cloudflare/references/hyperdrive/configuration.md: sha256:86ebf76987116d2cd2f389f31b8945abb15e5943905f40e482317a9e3126e9e6
@@ -711,7 +587,7 @@ dependencies:
     .claude/skills/cloudflare/references/miniflare/configuration.md: sha256:a74010b43f388c4240ff554a2cbebe23ce8a4b3f1459fffa8334862e775f13ad
     .claude/skills/cloudflare/references/miniflare/gotchas.md: sha256:d360d41dc8819babdcfb136cd036fabaa3fdfd5929c2d1d4e428d1529cbde53b
     .claude/skills/cloudflare/references/miniflare/patterns.md: sha256:9074209c3f01a38897fd99470c8b0e82ff7e295f024b6806d360738a5a1e5699
-    .claude/skills/cloudflare/references/observability/README.md: sha256:c35951cf460fb4002ab78c97eccbfdf81f6367059d9817dde7ae137ddecdeb06
+    .claude/skills/cloudflare/references/observability/README.md: sha256:7a89cc5ce7aa8faa1f1e36ed8d4d4f42313f7bb3a45b6203f3c1f9bd37180792
     .claude/skills/cloudflare/references/observability/api.md: sha256:168510bf1bc1d0cb8a4e16d7bfdec76f8ca02c3379ebe9cd1167e2043268874b
     .claude/skills/cloudflare/references/observability/configuration.md: sha256:5c0187482a0dc128321c5ac846011084bedf131e75090f6a84899b7e43bec2ed
     .claude/skills/cloudflare/references/observability/gotchas.md: sha256:47cc66515778aff2481cbdad04428392e44f13d63563dd3bc3e6b636a612ce0c
@@ -768,11 +644,6 @@ dependencies:
     .claude/skills/cloudflare/references/tunnel/gotchas.md: sha256:3e87041cfe5ba891260bc90ced81db6701cb4c28e349efc308c7db618b8750a4
     .claude/skills/cloudflare/references/tunnel/networking.md: sha256:21ef941081debc3a4ab46dc4227557f303302a9cb80e5e74b51fce8c49c56c9a
     .claude/skills/cloudflare/references/tunnel/patterns.md: sha256:bb18ec9c06422599cea57cd4c992c4e991c35fd42ef2d1cdce35c5523b5cda61
-    .claude/skills/cloudflare/references/turn/README.md: sha256:6d7fa57622b162f520ad0e01726b2712681c71e242e8e272d6553814c0b7a4fe
-    .claude/skills/cloudflare/references/turn/api.md: sha256:912ec9aa734843078db5ceb9c6732f3aa62778aa7ffb836b9798b46152f377ff
-    .claude/skills/cloudflare/references/turn/configuration.md: sha256:8df0cf402a41dd2a8205b9fc94f868df48273ef9e85cf1ad690732ac1e2469b7
-    .claude/skills/cloudflare/references/turn/gotchas.md: sha256:7135e3e6e0351bf85fcfd5a914fd499979e7e15540d155810be5bc710e5841d7
-    .claude/skills/cloudflare/references/turn/patterns.md: sha256:de0a2e64a0fe6456028cbd0cd8f29195cc8d4da0e8935746357587d5937aa636
     .claude/skills/cloudflare/references/vectorize/README.md: sha256:5552d78b49b9fd8b309e443d5a1d632d9f229693e3d71115a4482df792f27cd9
     .claude/skills/cloudflare/references/vectorize/api.md: sha256:b965c61a025d48c5ac3c056ddede548707d2f1c9672106b2406038cb4e6d336d
     .claude/skills/cloudflare/references/vectorize/configuration.md: sha256:add15c7dd611fd7cd683068de5fef6d59586bbf2f3fa7a2f3bee22821194e87b
@@ -783,11 +654,6 @@ dependencies:
     .claude/skills/cloudflare/references/waf/configuration.md: sha256:4da82c579d41340d39e973c9a5d3cf696f7033aa9123ef98da00ccd8d7fb28a5
     .claude/skills/cloudflare/references/waf/gotchas.md: sha256:d9f68c3f9492ba4e09d7d9014dfaca011b27f9a3ca92b88bbd119a951fb84eaa
     .claude/skills/cloudflare/references/waf/patterns.md: sha256:c3c99dcbffdd6842952c23a8014da74465783af451fb4916f012f64532254329
-    .claude/skills/cloudflare/references/workerd/README.md: sha256:845d68c8f2c13058079640d025994c7716bdc51c2ff95c4ea7042b7446d4270a
-    .claude/skills/cloudflare/references/workerd/api.md: sha256:7a6652e76e27424b0ce0d7393e1a04595460290d44e5ca937e3b0090a3b61166
-    .claude/skills/cloudflare/references/workerd/configuration.md: sha256:656371e6aa55e315ea02e4304228f5c1151023f68af8058ad60984b90e00a9ad
-    .claude/skills/cloudflare/references/workerd/gotchas.md: sha256:994588104d1a505da58235f8706f67403a9c9d05644be5986190146d1d00d4cd
-    .claude/skills/cloudflare/references/workerd/patterns.md: sha256:dc293c43c732adf6e3edfeaf72510904c7e8d097ca26c8b168748dd3d57e4408
     .claude/skills/cloudflare/references/workers-ai/README.md: sha256:5ac3782a02b880a811567aabc03e39ac5191ff7284eb84966e3457481bd0ee78
     .claude/skills/cloudflare/references/workers-ai/api.md: sha256:fc0b5f7f0d0ddca28277a57abbbba09a13bd7b41da4bf6d62f7b4e0aefce07f7
     .claude/skills/cloudflare/references/workers-ai/configuration.md: sha256:14ed0fae276fcd69809a01086a36476f5a8d69ad83a03d8479a5b8c119f6e3f3
@@ -798,17 +664,11 @@ dependencies:
     .claude/skills/cloudflare/references/workflows/configuration.md: sha256:297b59fc474f885a6c313212bc22b3485642495dced1ab4919da57c6223a2563
     .claude/skills/cloudflare/references/workflows/gotchas.md: sha256:178152af4c810ec7104e4459bc883b0730c06de213b25ae86b8bcd06c7259f1a
     .claude/skills/cloudflare/references/workflows/patterns.md: sha256:91ea4976873dc1737173f23762b433e6fdbd3ed8ab989189490325eaeb66815f
-    .claude/skills/cloudflare/references/zaraz/IMPLEMENTATION_SUMMARY.md: sha256:eba1671fc4ba17fae19d1ff2d1b312d5042b5821e7a4dbc2f6367a4fa8bd5506
-    .claude/skills/cloudflare/references/zaraz/README.md: sha256:efa52f4e152f959cfb7aceb57687916c3367d94cb5daf3ae5bcb3ae933320c0f
-    .claude/skills/cloudflare/references/zaraz/api.md: sha256:6b28a3e1525d46aad707b1bf4edd2739df9f48ae880f71a705448270b42f8b9e
-    .claude/skills/cloudflare/references/zaraz/configuration.md: sha256:6f3666ac64d1b36b4a708b3dea9d3b1d9679b34c58a00e3ca8e254edd602418a
-    .claude/skills/cloudflare/references/zaraz/gotchas.md: sha256:30378f48fde6e866780466228a3e698005a9ce23a24188c8ed520195b03eac3e
-    .claude/skills/cloudflare/references/zaraz/patterns.md: sha256:2ea1d00fe81b1e881c00090fd18c96d8c78ebb41fcc55f540b68150320d90d17
-  content_hash: sha256:30916021f20a53a3fe6eb4c55878d407242e4038a2195a6154295412170d86b1
+  content_hash: sha256:829eeea10c4d0f314201fca969c73cf87d8cf1972748a85f3f4460c316a5aba5
 - repo_url: cloudflare/skills
   name: cloudflare-email-service
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/cloudflare-email-service
@@ -832,21 +692,21 @@ dependencies:
   deployed_file_hashes:
     .agents/skills/cloudflare-email-service/SKILL.md: sha256:846013394fd263cf637b4ea8fb319ccce8ca23a8e5c5aa2ee920a813cf13781a
     .agents/skills/cloudflare-email-service/references/cli-and-mcp.md: sha256:a7b4115514ca685fd664afaa54fe27240e87ce268b854beaf9aa26a16d41e65f
-    .agents/skills/cloudflare-email-service/references/deliverability.md: sha256:08f6d06c6da71a7f0eaa4d7a355fd2043ab5666fcca2cdf257898a3a778e1978
+    .agents/skills/cloudflare-email-service/references/deliverability.md: sha256:16fac60424f90fdeeb2081eb844e79b0f3f535202778b0a5b0b1c06691eb233a
     .agents/skills/cloudflare-email-service/references/rest-api.md: sha256:b3c512d0e76a30dd51c6f131488c438cd3975aa0f14f42bad00ef2d442721083
     .agents/skills/cloudflare-email-service/references/routing.md: sha256:22e42f3b60a4c256e79c865c2c8fb0512e656e95b2b9ee206d5e7f18d9de92ec
     .agents/skills/cloudflare-email-service/references/sending.md: sha256:313e75e8ec59eb428b443d284ee6e74631e8c2e0b585ee64f2e4a1c7612e4207
     .claude/skills/cloudflare-email-service/SKILL.md: sha256:846013394fd263cf637b4ea8fb319ccce8ca23a8e5c5aa2ee920a813cf13781a
     .claude/skills/cloudflare-email-service/references/cli-and-mcp.md: sha256:a7b4115514ca685fd664afaa54fe27240e87ce268b854beaf9aa26a16d41e65f
-    .claude/skills/cloudflare-email-service/references/deliverability.md: sha256:08f6d06c6da71a7f0eaa4d7a355fd2043ab5666fcca2cdf257898a3a778e1978
+    .claude/skills/cloudflare-email-service/references/deliverability.md: sha256:16fac60424f90fdeeb2081eb844e79b0f3f535202778b0a5b0b1c06691eb233a
     .claude/skills/cloudflare-email-service/references/rest-api.md: sha256:b3c512d0e76a30dd51c6f131488c438cd3975aa0f14f42bad00ef2d442721083
     .claude/skills/cloudflare-email-service/references/routing.md: sha256:22e42f3b60a4c256e79c865c2c8fb0512e656e95b2b9ee206d5e7f18d9de92ec
     .claude/skills/cloudflare-email-service/references/sending.md: sha256:313e75e8ec59eb428b443d284ee6e74631e8c2e0b585ee64f2e4a1c7612e4207
-  content_hash: sha256:7d425f8a088984cb0dddd64bc1f9e0933725a7834ec6167f30d9dc45ad8840f1
+  content_hash: sha256:44e6c6ffe716c7e850f5bbe7b6817bbf9927d1d8ca19c2521eb7c7258de437e3
 - repo_url: cloudflare/skills
   name: durable-objects
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/durable-objects
@@ -876,7 +736,7 @@ dependencies:
 - repo_url: cloudflare/skills
   name: sandbox-migrate-to-next
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/sandbox-migrate-to-next
@@ -894,7 +754,7 @@ dependencies:
 - repo_url: cloudflare/skills
   name: sandbox-next
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/sandbox-next
@@ -920,7 +780,7 @@ dependencies:
 - repo_url: cloudflare/skills
   name: sandbox-stable
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/sandbox-stable
@@ -938,7 +798,7 @@ dependencies:
 - repo_url: cloudflare/skills
   name: turnstile-spin
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/turnstile-spin
@@ -1008,7 +868,7 @@ dependencies:
 - repo_url: cloudflare/skills
   name: web-perf
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/web-perf
@@ -1026,7 +886,7 @@ dependencies:
 - repo_url: cloudflare/skills
   name: workers-best-practices
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/workers-best-practices
@@ -1056,7 +916,7 @@ dependencies:
 - repo_url: cloudflare/skills
   name: wrangler
   host: github.com
-  resolved_commit: 53395984c3ea1925d00fce03b266112302f050e6
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   resolved_ref: main
   version: unknown
   virtual_path: skills/wrangler
@@ -1074,7 +934,7 @@ dependencies:
 - repo_url: coji/natural-japanese
   name: natural-japanese
   host: github.com
-  resolved_commit: 9a78a42964096da509b8f3e011f0085a5f080151
+  resolved_commit: 03bc944a0c4a9f0b2a66eab065b30de5c529bf08
   resolved_ref: main
   version: unknown
   virtual_path: skills/natural-japanese
@@ -1090,21 +950,14 @@ dependencies:
   - .agents/skills/natural-japanese/references/doctypes/minutes.md
   - .agents/skills/natural-japanese/references/doctypes/report.md
   - .agents/skills/natural-japanese/references/doctypes/slide.md
-  - .agents/skills/natural-japanese/references/eval-rubric.md
-  - .agents/skills/natural-japanese/references/examples.md
-  - .agents/skills/natural-japanese/references/forbidden-patterns.md
-  - .agents/skills/natural-japanese/references/genre-notes.md
   - .agents/skills/natural-japanese/references/manual-checklist.md
-  - .agents/skills/natural-japanese/references/readability-antipatterns.md
-  - .agents/skills/natural-japanese/references/readability-principles.md
-  - .agents/skills/natural-japanese/references/revision-guide.md
-  - .agents/skills/natural-japanese/references/translationese.md
-  - .agents/skills/natural-japanese/references/writing-constitution.md
   - .agents/skills/natural-japanese/scripts/calibrate.py
   - .agents/skills/natural-japanese/scripts/fixtures/ai-smelly.md
   - .agents/skills/natural-japanese/scripts/fixtures/natural.md
   - .agents/skills/natural-japanese/scripts/lint.py
+  - .agents/skills/natural-japanese/scripts/newfacts.py
   - .agents/skills/natural-japanese/scripts/outline.py
+  - .agents/skills/natural-japanese/scripts/paragraphs.py
   - .agents/skills/natural-japanese/scripts/semantic.py
   - .agents/skills/natural-japanese/scripts/terms.py
   - .agents/skills/natural-japanese/scripts/textcore.py
@@ -1117,82 +970,61 @@ dependencies:
   - .claude/skills/natural-japanese/references/doctypes/minutes.md
   - .claude/skills/natural-japanese/references/doctypes/report.md
   - .claude/skills/natural-japanese/references/doctypes/slide.md
-  - .claude/skills/natural-japanese/references/eval-rubric.md
-  - .claude/skills/natural-japanese/references/examples.md
-  - .claude/skills/natural-japanese/references/forbidden-patterns.md
-  - .claude/skills/natural-japanese/references/genre-notes.md
   - .claude/skills/natural-japanese/references/manual-checklist.md
-  - .claude/skills/natural-japanese/references/readability-antipatterns.md
-  - .claude/skills/natural-japanese/references/readability-principles.md
-  - .claude/skills/natural-japanese/references/revision-guide.md
-  - .claude/skills/natural-japanese/references/translationese.md
-  - .claude/skills/natural-japanese/references/writing-constitution.md
   - .claude/skills/natural-japanese/scripts/calibrate.py
   - .claude/skills/natural-japanese/scripts/fixtures/ai-smelly.md
   - .claude/skills/natural-japanese/scripts/fixtures/natural.md
   - .claude/skills/natural-japanese/scripts/lint.py
+  - .claude/skills/natural-japanese/scripts/newfacts.py
   - .claude/skills/natural-japanese/scripts/outline.py
+  - .claude/skills/natural-japanese/scripts/paragraphs.py
   - .claude/skills/natural-japanese/scripts/semantic.py
   - .claude/skills/natural-japanese/scripts/terms.py
   - .claude/skills/natural-japanese/scripts/textcore.py
   deployed_file_hashes:
-    .agents/skills/natural-japanese/SKILL.md: sha256:0f662a6ab4955b9146a138a38b73a619b27fa1448ef71e27fcc57f67d3ad0267
+    .agents/skills/natural-japanese/SKILL.md: sha256:3f51689eba0894845551fdf9d12b605bc32dc8ff54fb14c193574932f4398d6a
     .agents/skills/natural-japanese/assets/style-profile-template.md: sha256:d43a199e1399c73a41f332c45c5cf2321457fd49391b0a5bec23e52ef6fb5541
-    .agents/skills/natural-japanese/references/diagnose.md: sha256:e3c80cdeada823d34d003f83df1e9cbc0e07fbdf109b5c8f7a796a889a00d5a4
-    .agents/skills/natural-japanese/references/doctypes/guide.md: sha256:4b9db16365ea305c71eb9a59faedfc73620fd93d09721dc29292951994ba239d
-    .agents/skills/natural-japanese/references/doctypes/memo.md: sha256:d74be03c71e992f4c070fe42249e1cfc6faa87efc7438c6f5aa2659d831e17f5
-    .agents/skills/natural-japanese/references/doctypes/minutes.md: sha256:de38887be3def7cd35e1b1ffbdf10c21a9c4601fb528f3022f14512df3bc8129
-    .agents/skills/natural-japanese/references/doctypes/report.md: sha256:28f0cd6cef86fda5cb0bc236b9d1bb1d3d09892aacf5f813bec4f7c4cd84ea8f
-    .agents/skills/natural-japanese/references/doctypes/slide.md: sha256:1ca8db97566ad053cdb0115a72e12099f94648c5ba3a3d0bd6d33bf91c7f59d8
-    .agents/skills/natural-japanese/references/eval-rubric.md: sha256:77a49a4d0f70a51d4e595dec3ab236543b404edab5c6ccafb57c3f1f68d4ae65
-    .agents/skills/natural-japanese/references/examples.md: sha256:bc37c36ebda975351e2949f05990b7202737a3f5b1f95f53584158e9a6d1e99d
-    .agents/skills/natural-japanese/references/forbidden-patterns.md: sha256:0cce2ad7f053611a8c983ebf86f55631e019bbf752cc815c04077b229a557b1f
-    .agents/skills/natural-japanese/references/genre-notes.md: sha256:d5b2f7ecda12649efc26ef4a716fe6b2d4c03568b674dc5a06842f90cf6e8a6f
-    .agents/skills/natural-japanese/references/manual-checklist.md: sha256:19eda8c3098e941c593bb3d4018b9b1f284f3c184db140c799623a07e91c487c
-    .agents/skills/natural-japanese/references/readability-antipatterns.md: sha256:10418600db75d12da4ba7ca6d76cc9d0bc60e305ae4e75fa90f28c2aa76317b0
-    .agents/skills/natural-japanese/references/readability-principles.md: sha256:6a495446fe6828968371d24a1b628d28a37842ae0fd0e4f11162b57a7f9c4d70
-    .agents/skills/natural-japanese/references/revision-guide.md: sha256:27641d1a2aa5b41821d3da186ddf4139dc091c5dd8fb20544d814675b863433a
-    .agents/skills/natural-japanese/references/translationese.md: sha256:09b3da1ebf4c663be9cb0bf9ed5bade476ba10804509e6ca6dc22dc15129f827
-    .agents/skills/natural-japanese/references/writing-constitution.md: sha256:457b83afa64fa0da95a9daa25a8140e203fc4a3e87b2ff2c2839e0c8aad7ffdb
+    .agents/skills/natural-japanese/references/diagnose.md: sha256:48bd4700e6b103dd2731a73fae5e5ff32e112497da3618b8210db99bc1999664
+    .agents/skills/natural-japanese/references/doctypes/guide.md: sha256:75ca3e5e146b10df0b2a80f81462b324831b7bbd4686b98b03cc70a8863b8ec0
+    .agents/skills/natural-japanese/references/doctypes/memo.md: sha256:f49353f909a9a7bd7adc184e30d9cfc82b2538cd4b3e3092026e688bdfa5e282
+    .agents/skills/natural-japanese/references/doctypes/minutes.md: sha256:61591245d72afa9c0fe0eeefc6422255fa6110af4555ead1c7aa63bd3dd9e0ba
+    .agents/skills/natural-japanese/references/doctypes/report.md: sha256:1569b345f62e38d67f9defb51d0182c905a0c0fcaeabfa8bc8b1dc13e720edcc
+    .agents/skills/natural-japanese/references/doctypes/slide.md: sha256:44c9b8e16ead7d1f6b9f0baa115c48999905233415bdd8c802f1af9a1a49e4ce
+    .agents/skills/natural-japanese/references/manual-checklist.md: sha256:ac31e8fcfdfeb79b8339cc38022a88e2a80653a2faea19e2925335919b53b2cb
     .agents/skills/natural-japanese/scripts/calibrate.py: sha256:7409007f511524fafe7eaf026f8d693a0829d0bc0845b9e35092ea61deb411d8
     .agents/skills/natural-japanese/scripts/fixtures/ai-smelly.md: sha256:c84979246c11005139ba35afe4e6c5f0a716cf2f8d7e9ac647efffe1b1c5c558
     .agents/skills/natural-japanese/scripts/fixtures/natural.md: sha256:218c4e52cf0e231ba8c9192fc8f23b49de40d0b3463419a6697dea787862572e
-    .agents/skills/natural-japanese/scripts/lint.py: sha256:576fb564126b6a81feadc88969a0ec8fb8fc7a755899e5b90fe91981e644881a
+    .agents/skills/natural-japanese/scripts/lint.py: sha256:6cf6c93f51b62a919b983414714091bc7d0e8273bd029518dcc86395326ad4b0
+    .agents/skills/natural-japanese/scripts/newfacts.py: sha256:7f7490001a0ccf8b2efab76b95e51c3c3b8f6212d261b3a2c8008946e203e824
     .agents/skills/natural-japanese/scripts/outline.py: sha256:9b0478364f76c6aeed2befc8f4ee1aa4aa1ec6789eca45fb7b9958ccaed7ca80
+    .agents/skills/natural-japanese/scripts/paragraphs.py: sha256:ca3775be4475b092c9c140455bc17a70520823c97d669e98a64705f777480ffd
     .agents/skills/natural-japanese/scripts/semantic.py: sha256:c14909618677ee66c6f67a0cc81bc9ced9951f2ffd9727182e5e0de6b2d1d667
-    .agents/skills/natural-japanese/scripts/terms.py: sha256:304acb82d8d8cb8a2f45b5efc1110f407e2316d23c13bfc8734670fc1ac81e19
-    .agents/skills/natural-japanese/scripts/textcore.py: sha256:ea363ed8611256afb07b0ce83b478c2d559a910d00bfa152d9244f60025da1f2
-    .claude/skills/natural-japanese/SKILL.md: sha256:0f662a6ab4955b9146a138a38b73a619b27fa1448ef71e27fcc57f67d3ad0267
+    .agents/skills/natural-japanese/scripts/terms.py: sha256:f41da63929642540a2e44ba3ef9e04476cc0a693c57a8d99f117b4b086b03439
+    .agents/skills/natural-japanese/scripts/textcore.py: sha256:b09d7147d84f48fe6a9a534f8ec0198161a4944720cc25f68f15971a6bab41a0
+    .claude/skills/natural-japanese/SKILL.md: sha256:3f51689eba0894845551fdf9d12b605bc32dc8ff54fb14c193574932f4398d6a
     .claude/skills/natural-japanese/assets/style-profile-template.md: sha256:d43a199e1399c73a41f332c45c5cf2321457fd49391b0a5bec23e52ef6fb5541
-    .claude/skills/natural-japanese/references/diagnose.md: sha256:e3c80cdeada823d34d003f83df1e9cbc0e07fbdf109b5c8f7a796a889a00d5a4
-    .claude/skills/natural-japanese/references/doctypes/guide.md: sha256:4b9db16365ea305c71eb9a59faedfc73620fd93d09721dc29292951994ba239d
-    .claude/skills/natural-japanese/references/doctypes/memo.md: sha256:d74be03c71e992f4c070fe42249e1cfc6faa87efc7438c6f5aa2659d831e17f5
-    .claude/skills/natural-japanese/references/doctypes/minutes.md: sha256:de38887be3def7cd35e1b1ffbdf10c21a9c4601fb528f3022f14512df3bc8129
-    .claude/skills/natural-japanese/references/doctypes/report.md: sha256:28f0cd6cef86fda5cb0bc236b9d1bb1d3d09892aacf5f813bec4f7c4cd84ea8f
-    .claude/skills/natural-japanese/references/doctypes/slide.md: sha256:1ca8db97566ad053cdb0115a72e12099f94648c5ba3a3d0bd6d33bf91c7f59d8
-    .claude/skills/natural-japanese/references/eval-rubric.md: sha256:77a49a4d0f70a51d4e595dec3ab236543b404edab5c6ccafb57c3f1f68d4ae65
-    .claude/skills/natural-japanese/references/examples.md: sha256:bc37c36ebda975351e2949f05990b7202737a3f5b1f95f53584158e9a6d1e99d
-    .claude/skills/natural-japanese/references/forbidden-patterns.md: sha256:0cce2ad7f053611a8c983ebf86f55631e019bbf752cc815c04077b229a557b1f
-    .claude/skills/natural-japanese/references/genre-notes.md: sha256:d5b2f7ecda12649efc26ef4a716fe6b2d4c03568b674dc5a06842f90cf6e8a6f
-    .claude/skills/natural-japanese/references/manual-checklist.md: sha256:19eda8c3098e941c593bb3d4018b9b1f284f3c184db140c799623a07e91c487c
-    .claude/skills/natural-japanese/references/readability-antipatterns.md: sha256:10418600db75d12da4ba7ca6d76cc9d0bc60e305ae4e75fa90f28c2aa76317b0
-    .claude/skills/natural-japanese/references/readability-principles.md: sha256:6a495446fe6828968371d24a1b628d28a37842ae0fd0e4f11162b57a7f9c4d70
-    .claude/skills/natural-japanese/references/revision-guide.md: sha256:27641d1a2aa5b41821d3da186ddf4139dc091c5dd8fb20544d814675b863433a
-    .claude/skills/natural-japanese/references/translationese.md: sha256:09b3da1ebf4c663be9cb0bf9ed5bade476ba10804509e6ca6dc22dc15129f827
-    .claude/skills/natural-japanese/references/writing-constitution.md: sha256:457b83afa64fa0da95a9daa25a8140e203fc4a3e87b2ff2c2839e0c8aad7ffdb
+    .claude/skills/natural-japanese/references/diagnose.md: sha256:48bd4700e6b103dd2731a73fae5e5ff32e112497da3618b8210db99bc1999664
+    .claude/skills/natural-japanese/references/doctypes/guide.md: sha256:75ca3e5e146b10df0b2a80f81462b324831b7bbd4686b98b03cc70a8863b8ec0
+    .claude/skills/natural-japanese/references/doctypes/memo.md: sha256:f49353f909a9a7bd7adc184e30d9cfc82b2538cd4b3e3092026e688bdfa5e282
+    .claude/skills/natural-japanese/references/doctypes/minutes.md: sha256:61591245d72afa9c0fe0eeefc6422255fa6110af4555ead1c7aa63bd3dd9e0ba
+    .claude/skills/natural-japanese/references/doctypes/report.md: sha256:1569b345f62e38d67f9defb51d0182c905a0c0fcaeabfa8bc8b1dc13e720edcc
+    .claude/skills/natural-japanese/references/doctypes/slide.md: sha256:44c9b8e16ead7d1f6b9f0baa115c48999905233415bdd8c802f1af9a1a49e4ce
+    .claude/skills/natural-japanese/references/manual-checklist.md: sha256:ac31e8fcfdfeb79b8339cc38022a88e2a80653a2faea19e2925335919b53b2cb
     .claude/skills/natural-japanese/scripts/calibrate.py: sha256:7409007f511524fafe7eaf026f8d693a0829d0bc0845b9e35092ea61deb411d8
     .claude/skills/natural-japanese/scripts/fixtures/ai-smelly.md: sha256:c84979246c11005139ba35afe4e6c5f0a716cf2f8d7e9ac647efffe1b1c5c558
     .claude/skills/natural-japanese/scripts/fixtures/natural.md: sha256:218c4e52cf0e231ba8c9192fc8f23b49de40d0b3463419a6697dea787862572e
-    .claude/skills/natural-japanese/scripts/lint.py: sha256:576fb564126b6a81feadc88969a0ec8fb8fc7a755899e5b90fe91981e644881a
+    .claude/skills/natural-japanese/scripts/lint.py: sha256:6cf6c93f51b62a919b983414714091bc7d0e8273bd029518dcc86395326ad4b0
+    .claude/skills/natural-japanese/scripts/newfacts.py: sha256:7f7490001a0ccf8b2efab76b95e51c3c3b8f6212d261b3a2c8008946e203e824
     .claude/skills/natural-japanese/scripts/outline.py: sha256:9b0478364f76c6aeed2befc8f4ee1aa4aa1ec6789eca45fb7b9958ccaed7ca80
+    .claude/skills/natural-japanese/scripts/paragraphs.py: sha256:ca3775be4475b092c9c140455bc17a70520823c97d669e98a64705f777480ffd
     .claude/skills/natural-japanese/scripts/semantic.py: sha256:c14909618677ee66c6f67a0cc81bc9ced9951f2ffd9727182e5e0de6b2d1d667
-    .claude/skills/natural-japanese/scripts/terms.py: sha256:304acb82d8d8cb8a2f45b5efc1110f407e2316d23c13bfc8734670fc1ac81e19
-    .claude/skills/natural-japanese/scripts/textcore.py: sha256:ea363ed8611256afb07b0ce83b478c2d559a910d00bfa152d9244f60025da1f2
-  content_hash: sha256:6b522424613a4f552b3b45f8cef72d172c20e27b06fee7ac88a069c1d9d54ed0
+    .claude/skills/natural-japanese/scripts/terms.py: sha256:f41da63929642540a2e44ba3ef9e04476cc0a693c57a8d99f117b4b086b03439
+    .claude/skills/natural-japanese/scripts/textcore.py: sha256:b09d7147d84f48fe6a9a534f8ec0198161a4944720cc25f68f15971a6bab41a0
+  content_hash: sha256:db0ff50aa3707e4507ef45d041f6e593f24be8eac64a705b4cc4efaba64c90be
 - repo_url: herdrdev/herdr
   name: herdr
   host: github.com
-  resolved_commit: 241b99cd397bb642eaabcfee1647bcecffb26be1
+  resolved_commit: 143bf5fd4781d164260c63fe28e7dc08054ad32f
   resolved_ref: master
   version: unknown
   virtual_path: skills/herdr
@@ -1204,13 +1036,13 @@ dependencies:
   - .claude/skills/herdr
   - .claude/skills/herdr/SKILL.md
   deployed_file_hashes:
-    .agents/skills/herdr/SKILL.md: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
-    .claude/skills/herdr/SKILL.md: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
-  content_hash: sha256:66715d76e5947497431ec0db32f2693b9c916ad799c3f32b99e6174b4b9c607f
+    .agents/skills/herdr/SKILL.md: sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984
+    .claude/skills/herdr/SKILL.md: sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984
+  content_hash: sha256:72177e911f55467de8737174072ec6bb08e30bbf62bceabcb69678e944398b18
 - repo_url: kfujii-6jo/skills
   name: clean-gone
   host: github.com
-  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
   resolved_ref: main
   version: unknown
   virtual_path: clean-gone
@@ -1228,7 +1060,7 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: cleanup-branch
   host: github.com
-  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
   resolved_ref: main
   version: unknown
   virtual_path: cleanup-branch
@@ -1246,7 +1078,7 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: commit
   host: github.com
-  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
   resolved_ref: main
   version: unknown
   virtual_path: commit
@@ -1264,7 +1096,7 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: commit-push-pr
   host: github.com
-  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
   resolved_ref: main
   version: unknown
   virtual_path: commit-push-pr
@@ -1276,13 +1108,67 @@ dependencies:
   - .claude/skills/commit-push-pr
   - .claude/skills/commit-push-pr/SKILL.md
   deployed_file_hashes:
-    .agents/skills/commit-push-pr/SKILL.md: sha256:b096b468dc11413c9ffd4de8357b3cfc3af43bb329c0e77f608d8279bee6c03e
-    .claude/skills/commit-push-pr/SKILL.md: sha256:b096b468dc11413c9ffd4de8357b3cfc3af43bb329c0e77f608d8279bee6c03e
-  content_hash: sha256:d34e0a95ba511d082ccd1a7ca3ccb334a26172efdabdfca04f17e8da32614224
+    .agents/skills/commit-push-pr/SKILL.md: sha256:1f5fc40b2e7525d7d382d6daa9a5230a636b7e6ae969b5519252fe8c479c03c5
+    .claude/skills/commit-push-pr/SKILL.md: sha256:1f5fc40b2e7525d7d382d6daa9a5230a636b7e6ae969b5519252fe8c479c03c5
+  content_hash: sha256:39b9d03928e0f921cc659feb93a787c181d8292685e08cc5f76534a6f1fa449f
+- repo_url: kfujii-6jo/skills
+  name: herdr-meta-handoff
+  host: github.com
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
+  resolved_ref: main
+  version: unknown
+  virtual_path: herdr-meta-handoff
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/herdr-meta-handoff
+  - .agents/skills/herdr-meta-handoff/SKILL.md
+  - .claude/skills/herdr-meta-handoff
+  - .claude/skills/herdr-meta-handoff/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/herdr-meta-handoff/SKILL.md: sha256:f369e5c9b49cd4a8598a403684f90de1f6a2e6a38788344a47df9663f7d6501d
+    .claude/skills/herdr-meta-handoff/SKILL.md: sha256:f369e5c9b49cd4a8598a403684f90de1f6a2e6a38788344a47df9663f7d6501d
+  content_hash: sha256:295469db06bae2ec1313285b3b1accf89e1e055b7feffbc2e7d8f80344c19252
+- repo_url: kfujii-6jo/skills
+  name: herdr-worktree-finish
+  host: github.com
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
+  resolved_ref: main
+  version: unknown
+  virtual_path: herdr-worktree-finish
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/herdr-worktree-finish
+  - .agents/skills/herdr-worktree-finish/SKILL.md
+  - .claude/skills/herdr-worktree-finish
+  - .claude/skills/herdr-worktree-finish/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/herdr-worktree-finish/SKILL.md: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
+    .claude/skills/herdr-worktree-finish/SKILL.md: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
+  content_hash: sha256:22fc02a66478be0d4ec46488dbde96182e0d288ab728f2c7d21b10466f592420
+- repo_url: kfujii-6jo/skills
+  name: jev-review
+  host: github.com
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
+  resolved_ref: main
+  version: unknown
+  virtual_path: jev-review
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/jev-review
+  - .agents/skills/jev-review/SKILL.md
+  - .claude/skills/jev-review
+  - .claude/skills/jev-review/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/jev-review/SKILL.md: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
+    .claude/skills/jev-review/SKILL.md: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
+  content_hash: sha256:10228abd0de6cdca6b6c1023285d324138770efab5ce040d31e92ad7e48c4ef0
 - repo_url: kfujii-6jo/skills
   name: rebase-branch
   host: github.com
-  resolved_commit: 2d3fddebc7af3665b05af6963b5e87fc67f1c677
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
   resolved_ref: main
   version: unknown
   virtual_path: rebase-branch
@@ -1300,7 +1186,7 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: typescript-type-design
   host: github.com
-  resolved_commit: 5c203d9ca233eb0eeba0e7200fe8b36ccd558102
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
   resolved_ref: main
   version: unknown
   virtual_path: typescript-type-design
@@ -1315,28 +1201,10 @@ dependencies:
     .agents/skills/typescript-type-design/SKILL.md: sha256:8cebb0861807d194ded3d7b958d87b7171feb76900f6f5e0d0dc48fff975cb03
     .claude/skills/typescript-type-design/SKILL.md: sha256:8cebb0861807d194ded3d7b958d87b7171feb76900f6f5e0d0dc48fff975cb03
   content_hash: sha256:8cbf10792ab69472be63b65665550b27bbdc9f408756eb7351c41c5090ff842f
-- repo_url: kfujii-6jo/skills
-  name: herdr-meta-handoff
-  host: github.com
-  resolved_commit: 08ceb50a68f0d6dde10e2df1dc1f76c450f938c5
-  resolved_ref: main
-  version: unknown
-  virtual_path: herdr-meta-handoff
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/herdr-meta-handoff
-  - .agents/skills/herdr-meta-handoff/SKILL.md
-  - .claude/skills/herdr-meta-handoff
-  - .claude/skills/herdr-meta-handoff/SKILL.md
-  deployed_file_hashes:
-    .agents/skills/herdr-meta-handoff/SKILL.md: sha256:f369e5c9b49cd4a8598a403684f90de1f6a2e6a38788344a47df9663f7d6501d
-    .claude/skills/herdr-meta-handoff/SKILL.md: sha256:f369e5c9b49cd4a8598a403684f90de1f6a2e6a38788344a47df9663f7d6501d
-  content_hash: sha256:295469db06bae2ec1313285b3b1accf89e1e055b7feffbc2e7d8f80344c19252
 - repo_url: mattpocock/skills
   name: codebase-design
   host: github.com
-  resolved_commit: 49dd158d1076134a641b33efb035946536778336
+  resolved_commit: 5beb35b040e3de97e54fa9e386d7e42d15c295c2
   resolved_ref: main
   version: unknown
   virtual_path: skills/engineering/codebase-design
@@ -1366,7 +1234,7 @@ dependencies:
 - repo_url: mattpocock/skills
   name: tdd
   host: github.com
-  resolved_commit: 49dd158d1076134a641b33efb035946536778336
+  resolved_commit: 5beb35b040e3de97e54fa9e386d7e42d15c295c2
   resolved_ref: main
   version: unknown
   virtual_path: skills/engineering/tdd
@@ -1396,7 +1264,7 @@ dependencies:
 - repo_url: mattpocock/skills
   name: grill-me
   host: github.com
-  resolved_commit: 49dd158d1076134a641b33efb035946536778336
+  resolved_commit: 5beb35b040e3de97e54fa9e386d7e42d15c295c2
   resolved_ref: main
   version: unknown
   virtual_path: skills/productivity/grill-me
@@ -1418,7 +1286,7 @@ dependencies:
 - repo_url: mattpocock/skills
   name: grilling
   host: github.com
-  resolved_commit: 49dd158d1076134a641b33efb035946536778336
+  resolved_commit: 5beb35b040e3de97e54fa9e386d7e42d15c295c2
   resolved_ref: main
   version: unknown
   virtual_path: skills/productivity/grilling
@@ -1440,7 +1308,7 @@ dependencies:
 - repo_url: mizchi/skills
   name: empirical-prompt-tuning
   host: github.com
-  resolved_commit: 62f580819410cb1d398e4d7f234bbd0aad1c1a15
+  resolved_commit: ab4eb2f7a92a13fb37c225ab427f2f492143ace1
   resolved_ref: main
   version: unknown
   virtual_path: empirical-prompt-tuning
@@ -1539,7 +1407,7 @@ dependencies:
   materialization_repo_url: TanStack/router
   name: router-core
   host: github.com
-  resolved_commit: 6777b8b0a5f1f21e2c9d91c92d9c095b4a267201
+  resolved_commit: ed5577593a749b8c7193cc7b5d945fd084bfac2f
   resolved_ref: main
   version: unknown
   virtual_path: packages/router-core/skills/router-core
@@ -1572,7 +1440,7 @@ dependencies:
   - .claude/skills/router-core/type-safety/SKILL.md
   deployed_file_hashes:
     .agents/skills/router-core/SKILL.md: sha256:03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0
-    .agents/skills/router-core/auth-and-guards/SKILL.md: sha256:456736451326d86e00fff9bc6333625b00727b7fd717a81ae92150b2b04100e2
+    .agents/skills/router-core/auth-and-guards/SKILL.md: sha256:c250cce0c2e9eac7126ef1e5a69193285651eae118f984292b47ed47bc539606
     .agents/skills/router-core/code-splitting/SKILL.md: sha256:12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3
     .agents/skills/router-core/data-loading/SKILL.md: sha256:9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd
     .agents/skills/router-core/navigation/SKILL.md: sha256:6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80
@@ -1580,10 +1448,10 @@ dependencies:
     .agents/skills/router-core/path-params/SKILL.md: sha256:caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99
     .agents/skills/router-core/search-params/SKILL.md: sha256:e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804
     .agents/skills/router-core/search-params/references/validation-patterns.md: sha256:ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2
-    .agents/skills/router-core/ssr/SKILL.md: sha256:b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004
+    .agents/skills/router-core/ssr/SKILL.md: sha256:899e3e779500e95ff7d43c57af1ce01ed2238055b8b784253320bce4baf08492
     .agents/skills/router-core/type-safety/SKILL.md: sha256:fc009f3dcf18fc2db2e5cf20b7dbb621e15f66959b405b8843e2911ca017bb83
     .claude/skills/router-core/SKILL.md: sha256:03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0
-    .claude/skills/router-core/auth-and-guards/SKILL.md: sha256:456736451326d86e00fff9bc6333625b00727b7fd717a81ae92150b2b04100e2
+    .claude/skills/router-core/auth-and-guards/SKILL.md: sha256:c250cce0c2e9eac7126ef1e5a69193285651eae118f984292b47ed47bc539606
     .claude/skills/router-core/code-splitting/SKILL.md: sha256:12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3
     .claude/skills/router-core/data-loading/SKILL.md: sha256:9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd
     .claude/skills/router-core/navigation/SKILL.md: sha256:6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80
@@ -1591,14 +1459,14 @@ dependencies:
     .claude/skills/router-core/path-params/SKILL.md: sha256:caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99
     .claude/skills/router-core/search-params/SKILL.md: sha256:e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804
     .claude/skills/router-core/search-params/references/validation-patterns.md: sha256:ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2
-    .claude/skills/router-core/ssr/SKILL.md: sha256:b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004
+    .claude/skills/router-core/ssr/SKILL.md: sha256:899e3e779500e95ff7d43c57af1ce01ed2238055b8b784253320bce4baf08492
     .claude/skills/router-core/type-safety/SKILL.md: sha256:fc009f3dcf18fc2db2e5cf20b7dbb621e15f66959b405b8843e2911ca017bb83
-  content_hash: sha256:0b1314c143663f6552f57510c62d81f069a972395a3bf8a847f9b6cb143e8f75
+  content_hash: sha256:a2bb43f869e7bb58fe7eb10b23e31e32a0cce89b45b171c5aa5d8c74dae05fce
 - repo_url: tanstack/router
   materialization_repo_url: TanStack/router
   name: start-core
   host: github.com
-  resolved_commit: 6777b8b0a5f1f21e2c9d91c92d9c095b4a267201
+  resolved_commit: ed5577593a749b8c7193cc7b5d945fd084bfac2f
   resolved_ref: main
   version: unknown
   virtual_path: packages/start-client-core/skills/start-core
@@ -1623,24 +1491,24 @@ dependencies:
   - .claude/skills/start-core/server-routes/SKILL.md
   deployed_file_hashes:
     .agents/skills/start-core/SKILL.md: sha256:471f83a5c2d9033a4569aef264c46d7dc0f7c4b272f4b95831dcfdb7bb725157
-    .agents/skills/start-core/auth-server-primitives/SKILL.md: sha256:9423e7ab5c2334accec9e0ba1a1fc51791835d73f4cf1fcb598d4fe3a7075ba1
+    .agents/skills/start-core/auth-server-primitives/SKILL.md: sha256:f392f381555e63a010076f18b69301463eff642dbe8569913de3cab727107a90
     .agents/skills/start-core/deployment/SKILL.md: sha256:d1614371828ccfa8c5c181e686a21bffe42614a6918dbf3544e32240b3cac0c0
     .agents/skills/start-core/execution-model/SKILL.md: sha256:b2a463c0bc39317a9b479c9c5f70bc9931b6c1d89f254968907d3e253b9b379e
-    .agents/skills/start-core/middleware/SKILL.md: sha256:dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16
-    .agents/skills/start-core/server-functions/SKILL.md: sha256:0bd51a8bac7c8f149489aaa1732dc8fb86101e23e7597b10b7681711784a96de
+    .agents/skills/start-core/middleware/SKILL.md: sha256:16bddd88c01f00a5f4afd0b79d04fdc6018124effb92f5a2aa4f7e3d6b363174
+    .agents/skills/start-core/server-functions/SKILL.md: sha256:1b969a496cfcb85b3c9f7e790f002ac8e9131f281689411003382a3674bb1684
     .agents/skills/start-core/server-routes/SKILL.md: sha256:0284e4446e7ad9a8607fec3b5bd51a163449434e77fdff88ee2cd89b42634b1d
     .claude/skills/start-core/SKILL.md: sha256:471f83a5c2d9033a4569aef264c46d7dc0f7c4b272f4b95831dcfdb7bb725157
-    .claude/skills/start-core/auth-server-primitives/SKILL.md: sha256:9423e7ab5c2334accec9e0ba1a1fc51791835d73f4cf1fcb598d4fe3a7075ba1
+    .claude/skills/start-core/auth-server-primitives/SKILL.md: sha256:f392f381555e63a010076f18b69301463eff642dbe8569913de3cab727107a90
     .claude/skills/start-core/deployment/SKILL.md: sha256:d1614371828ccfa8c5c181e686a21bffe42614a6918dbf3544e32240b3cac0c0
     .claude/skills/start-core/execution-model/SKILL.md: sha256:b2a463c0bc39317a9b479c9c5f70bc9931b6c1d89f254968907d3e253b9b379e
-    .claude/skills/start-core/middleware/SKILL.md: sha256:dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16
-    .claude/skills/start-core/server-functions/SKILL.md: sha256:0bd51a8bac7c8f149489aaa1732dc8fb86101e23e7597b10b7681711784a96de
+    .claude/skills/start-core/middleware/SKILL.md: sha256:16bddd88c01f00a5f4afd0b79d04fdc6018124effb92f5a2aa4f7e3d6b363174
+    .claude/skills/start-core/server-functions/SKILL.md: sha256:1b969a496cfcb85b3c9f7e790f002ac8e9131f281689411003382a3674bb1684
     .claude/skills/start-core/server-routes/SKILL.md: sha256:0284e4446e7ad9a8607fec3b5bd51a163449434e77fdff88ee2cd89b42634b1d
-  content_hash: sha256:0c3af69b10e4a07ab42006c81b269f6e43c4c715a2db68330257b0f47fc0f7c3
+  content_hash: sha256:4a406bae0aff2de0058d7637d70de0e064e6f16545df3238c94ea89bb6c2fd9c
 - repo_url: vercel-labs/skills
   name: find-skills
   host: github.com
-  resolved_commit: 13e4063a1cf913f5606d57d42ab83a86f5001e04
+  resolved_commit: a80e4c9d12d607631249d4d7d059f835d4b2f13a
   resolved_ref: main
   version: unknown
   virtual_path: skills/find-skills
@@ -1925,7 +1793,7 @@ deployments:
   owners:
   - cloudflare/skills/skills/cloudflare-email-service
   active_owner: cloudflare/skills/skills/cloudflare-email-service
-  content_hash: sha256:08f6d06c6da71a7f0eaa4d7a355fd2043ab5666fcca2cdf257898a3a778e1978
+  content_hash: sha256:16fac60424f90fdeeb2081eb844e79b0f3f535202778b0a5b0b1c06691eb233a
 - kind: project-relative
   target: claude
   value: .claude/skills/cloudflare-email-service/references/rest-api.md
@@ -1961,7 +1829,7 @@ deployments:
   owners:
   - cloudflare/skills/skills/cloudflare
   active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:b93a25020fe26501261628c75ee4c15490ad7de96ff9a2940909d2d822c40354
+  content_hash: sha256:336a55878f37551d14b6d8dddabfe0c97362fd5414380083a365802568fb39b7
 - kind: project-relative
   target: claude
   value: .claude/skills/cloudflare/references/ai-gateway/README.md
@@ -2061,51 +1929,6 @@ deployments:
   - cloudflare/skills/skills/cloudflare
   active_owner: cloudflare/skills/skills/cloudflare
   content_hash: sha256:4a180463c1618c638bc488826c416d19ae70bb883805c41664efa9ae204d8e85
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/analytics-engine/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:ac8a712efbcf66eef3d81f938c0f917e901eb069262cb04a0f65039a6a3d970c
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/analytics-engine/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:647f4d5a50690af27e6ea5117623795fb9c4e1c348c39c07ce7f73ac9b7c222e
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/analytics-engine/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:86112c2385fe4e44b4825f9962cfe3429e6681de9f051a50a1c70514f1b85131
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/analytics-engine/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:08d11a06bc1cc955bdf4ade8d1a523b0e78157434d559169c4bc2d36f886667b
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/analytics-engine/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:d294a7ee3ce2d58fbb8413eb6e58faf7af8f699cecc7480b955ceb31e87204b2
 - kind: project-relative
   target: claude
   value: .claude/skills/cloudflare/references/bindings/README.md
@@ -2378,51 +2201,6 @@ deployments:
   content_hash: sha256:1618f870394a4bd94f2affe7f885098407e70d6cc9fc8d3907b56dab5663b343
 - kind: project-relative
   target: claude
-  value: .claude/skills/cloudflare/references/graphql-api/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:c1dbd31a638443495baf6e60f6bbce4841cdae4c28e30ad82ad8381ff96f7c17
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/graphql-api/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:0c0250cdf31adfbf2c7f96bf3ec257c32d14709160a8552b3238a861b3540de5
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/graphql-api/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:765e696dfd11bfa87d231c011b10fb2c10a2e33d704d7c6d04f1f125585c5b92
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/graphql-api/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:59dbb9a541db17cdac52665fd6883d2eb660ec6fea4b45cc87c291d2e2b4a50f
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/graphql-api/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:902d188040a60c5d130790222442158ff12879232357ee34ab410e0d7b9b5e76
-- kind: project-relative
-  target: claude
   value: .claude/skills/cloudflare/references/hyperdrive/README.md
   runtime: null
   scope: project
@@ -2609,7 +2387,7 @@ deployments:
   owners:
   - cloudflare/skills/skills/cloudflare
   active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:c35951cf460fb4002ab78c97eccbfdf81f6367059d9817dde7ae137ddecdeb06
+  content_hash: sha256:7a89cc5ce7aa8faa1f1e36ed8d4d4f42313f7bb3a45b6203f3c1f9bd37180792
 - kind: project-relative
   target: claude
   value: .claude/skills/cloudflare/references/observability/api.md
@@ -3116,51 +2894,6 @@ deployments:
   content_hash: sha256:bb18ec9c06422599cea57cd4c992c4e991c35fd42ef2d1cdce35c5523b5cda61
 - kind: project-relative
   target: claude
-  value: .claude/skills/cloudflare/references/turn/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:6d7fa57622b162f520ad0e01726b2712681c71e242e8e272d6553814c0b7a4fe
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/turn/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:912ec9aa734843078db5ceb9c6732f3aa62778aa7ffb836b9798b46152f377ff
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/turn/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:8df0cf402a41dd2a8205b9fc94f868df48273ef9e85cf1ad690732ac1e2469b7
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/turn/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:7135e3e6e0351bf85fcfd5a914fd499979e7e15540d155810be5bc710e5841d7
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/turn/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:de0a2e64a0fe6456028cbd0cd8f29195cc8d4da0e8935746357587d5937aa636
-- kind: project-relative
-  target: claude
   value: .claude/skills/cloudflare/references/vectorize/README.md
   runtime: null
   scope: project
@@ -3249,51 +2982,6 @@ deployments:
   - cloudflare/skills/skills/cloudflare
   active_owner: cloudflare/skills/skills/cloudflare
   content_hash: sha256:c3c99dcbffdd6842952c23a8014da74465783af451fb4916f012f64532254329
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/workerd/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:845d68c8f2c13058079640d025994c7716bdc51c2ff95c4ea7042b7446d4270a
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/workerd/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:7a6652e76e27424b0ce0d7393e1a04595460290d44e5ca937e3b0090a3b61166
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/workerd/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:656371e6aa55e315ea02e4304228f5c1151023f68af8058ad60984b90e00a9ad
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/workerd/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:994588104d1a505da58235f8706f67403a9c9d05644be5986190146d1d00d4cd
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/workerd/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:dc293c43c732adf6e3edfeaf72510904c7e8d097ca26c8b168748dd3d57e4408
 - kind: project-relative
   target: claude
   value: .claude/skills/cloudflare/references/workers-ai/README.md
@@ -3386,60 +3074,6 @@ deployments:
   content_hash: sha256:91ea4976873dc1737173f23762b433e6fdbd3ed8ab989189490325eaeb66815f
 - kind: project-relative
   target: claude
-  value: .claude/skills/cloudflare/references/zaraz/IMPLEMENTATION_SUMMARY.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:eba1671fc4ba17fae19d1ff2d1b312d5042b5821e7a4dbc2f6367a4fa8bd5506
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/zaraz/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:efa52f4e152f959cfb7aceb57687916c3367d94cb5daf3ae5bcb3ae933320c0f
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/zaraz/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:6b28a3e1525d46aad707b1bf4edd2739df9f48ae880f71a705448270b42f8b9e
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/zaraz/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:6f3666ac64d1b36b4a708b3dea9d3b1d9679b34c58a00e3ca8e254edd602418a
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/zaraz/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:30378f48fde6e866780466228a3e698005a9ce23a24188c8ed520195b03eac3e
-- kind: project-relative
-  target: claude
-  value: .claude/skills/cloudflare/references/zaraz/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:2ea1d00fe81b1e881c00090fd18c96d8c78ebb41fcc55f540b68150320d90d17
-- kind: project-relative
-  target: claude
   value: .claude/skills/codebase-design
   runtime: null
   scope: project
@@ -3509,7 +3143,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/commit-push-pr
   active_owner: kfujii-6jo/skills/commit-push-pr
-  content_hash: sha256:b096b468dc11413c9ffd4de8357b3cfc3af43bb329c0e77f608d8279bee6c03e
+  content_hash: sha256:1f5fc40b2e7525d7d382d6daa9a5230a636b7e6ae969b5519252fe8c479c03c5
 - kind: project-relative
   target: claude
   value: .claude/skills/commit/SKILL.md
@@ -3701,13 +3335,49 @@ deployments:
   content_hash: sha256:f369e5c9b49cd4a8598a403684f90de1f6a2e6a38788344a47df9663f7d6501d
 - kind: project-relative
   target: claude
+  value: .claude/skills/herdr-worktree-finish
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-worktree-finish
+  active_owner: kfujii-6jo/skills/herdr-worktree-finish
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/herdr-worktree-finish/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-worktree-finish
+  active_owner: kfujii-6jo/skills/herdr-worktree-finish
+  content_hash: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
+- kind: project-relative
+  target: claude
   value: .claude/skills/herdr/SKILL.md
   runtime: null
   scope: project
   owners:
   - herdrdev/herdr/skills/herdr
   active_owner: herdrdev/herdr/skills/herdr
-  content_hash: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
+  content_hash: sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984
+- kind: project-relative
+  target: claude
+  value: .claude/skills/jev-review
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/jev-review
+  active_owner: kfujii-6jo/skills/jev-review
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/jev-review/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/jev-review
+  active_owner: kfujii-6jo/skills/jev-review
+  content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese
@@ -3725,7 +3395,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:0f662a6ab4955b9146a138a38b73a619b27fa1448ef71e27fcc57f67d3ad0267
+  content_hash: sha256:3f51689eba0894845551fdf9d12b605bc32dc8ff54fb14c193574932f4398d6a
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/assets/style-profile-template.md
@@ -3743,7 +3413,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:e3c80cdeada823d34d003f83df1e9cbc0e07fbdf109b5c8f7a796a889a00d5a4
+  content_hash: sha256:48bd4700e6b103dd2731a73fae5e5ff32e112497da3618b8210db99bc1999664
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/references/doctypes/guide.md
@@ -3752,7 +3422,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:4b9db16365ea305c71eb9a59faedfc73620fd93d09721dc29292951994ba239d
+  content_hash: sha256:75ca3e5e146b10df0b2a80f81462b324831b7bbd4686b98b03cc70a8863b8ec0
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/references/doctypes/memo.md
@@ -3761,7 +3431,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:d74be03c71e992f4c070fe42249e1cfc6faa87efc7438c6f5aa2659d831e17f5
+  content_hash: sha256:f49353f909a9a7bd7adc184e30d9cfc82b2538cd4b3e3092026e688bdfa5e282
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/references/doctypes/minutes.md
@@ -3770,7 +3440,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:de38887be3def7cd35e1b1ffbdf10c21a9c4601fb528f3022f14512df3bc8129
+  content_hash: sha256:61591245d72afa9c0fe0eeefc6422255fa6110af4555ead1c7aa63bd3dd9e0ba
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/references/doctypes/report.md
@@ -3779,7 +3449,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:28f0cd6cef86fda5cb0bc236b9d1bb1d3d09892aacf5f813bec4f7c4cd84ea8f
+  content_hash: sha256:1569b345f62e38d67f9defb51d0182c905a0c0fcaeabfa8bc8b1dc13e720edcc
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/references/doctypes/slide.md
@@ -3788,43 +3458,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:1ca8db97566ad053cdb0115a72e12099f94648c5ba3a3d0bd6d33bf91c7f59d8
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/eval-rubric.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:77a49a4d0f70a51d4e595dec3ab236543b404edab5c6ccafb57c3f1f68d4ae65
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/examples.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:bc37c36ebda975351e2949f05990b7202737a3f5b1f95f53584158e9a6d1e99d
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/forbidden-patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:0cce2ad7f053611a8c983ebf86f55631e019bbf752cc815c04077b229a557b1f
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/genre-notes.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:d5b2f7ecda12649efc26ef4a716fe6b2d4c03568b674dc5a06842f90cf6e8a6f
+  content_hash: sha256:44c9b8e16ead7d1f6b9f0baa115c48999905233415bdd8c802f1af9a1a49e4ce
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/references/manual-checklist.md
@@ -3833,52 +3467,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:19eda8c3098e941c593bb3d4018b9b1f284f3c184db140c799623a07e91c487c
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/readability-antipatterns.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:10418600db75d12da4ba7ca6d76cc9d0bc60e305ae4e75fa90f28c2aa76317b0
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/readability-principles.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:6a495446fe6828968371d24a1b628d28a37842ae0fd0e4f11162b57a7f9c4d70
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/revision-guide.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:27641d1a2aa5b41821d3da186ddf4139dc091c5dd8fb20544d814675b863433a
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/translationese.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:09b3da1ebf4c663be9cb0bf9ed5bade476ba10804509e6ca6dc22dc15129f827
-- kind: project-relative
-  target: claude
-  value: .claude/skills/natural-japanese/references/writing-constitution.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:457b83afa64fa0da95a9daa25a8140e203fc4a3e87b2ff2c2839e0c8aad7ffdb
+  content_hash: sha256:ac31e8fcfdfeb79b8339cc38022a88e2a80653a2faea19e2925335919b53b2cb
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/scripts/calibrate.py
@@ -3914,7 +3503,16 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:576fb564126b6a81feadc88969a0ec8fb8fc7a755899e5b90fe91981e644881a
+  content_hash: sha256:6cf6c93f51b62a919b983414714091bc7d0e8273bd029518dcc86395326ad4b0
+- kind: project-relative
+  target: claude
+  value: .claude/skills/natural-japanese/scripts/newfacts.py
+  runtime: null
+  scope: project
+  owners:
+  - coji/natural-japanese/skills/natural-japanese
+  active_owner: coji/natural-japanese/skills/natural-japanese
+  content_hash: sha256:7f7490001a0ccf8b2efab76b95e51c3c3b8f6212d261b3a2c8008946e203e824
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/scripts/outline.py
@@ -3924,6 +3522,15 @@ deployments:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
   content_hash: sha256:9b0478364f76c6aeed2befc8f4ee1aa4aa1ec6789eca45fb7b9958ccaed7ca80
+- kind: project-relative
+  target: claude
+  value: .claude/skills/natural-japanese/scripts/paragraphs.py
+  runtime: null
+  scope: project
+  owners:
+  - coji/natural-japanese/skills/natural-japanese
+  active_owner: coji/natural-japanese/skills/natural-japanese
+  content_hash: sha256:ca3775be4475b092c9c140455bc17a70520823c97d669e98a64705f777480ffd
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/scripts/semantic.py
@@ -3941,7 +3548,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:304acb82d8d8cb8a2f45b5efc1110f407e2316d23c13bfc8734670fc1ac81e19
+  content_hash: sha256:f41da63929642540a2e44ba3ef9e04476cc0a693c57a8d99f117b4b086b03439
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese/scripts/textcore.py
@@ -3950,7 +3557,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:ea363ed8611256afb07b0ce83b478c2d559a910d00bfa152d9244f60025da1f2
+  content_hash: sha256:b09d7147d84f48fe6a9a534f8ec0198161a4944720cc25f68f15971a6bab41a0
 - kind: project-relative
   target: claude
   value: .claude/skills/ralph-tui-create-beads
@@ -4067,7 +3674,7 @@ deployments:
   owners:
   - tanstack/router/packages/router-core/skills/router-core
   active_owner: tanstack/router/packages/router-core/skills/router-core
-  content_hash: sha256:456736451326d86e00fff9bc6333625b00727b7fd717a81ae92150b2b04100e2
+  content_hash: sha256:c250cce0c2e9eac7126ef1e5a69193285651eae118f984292b47ed47bc539606
 - kind: project-relative
   target: claude
   value: .claude/skills/router-core/code-splitting/SKILL.md
@@ -4139,7 +3746,7 @@ deployments:
   owners:
   - tanstack/router/packages/router-core/skills/router-core
   active_owner: tanstack/router/packages/router-core/skills/router-core
-  content_hash: sha256:b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004
+  content_hash: sha256:899e3e779500e95ff7d43c57af1ce01ed2238055b8b784253320bce4baf08492
 - kind: project-relative
   target: claude
   value: .claude/skills/router-core/type-safety/SKILL.md
@@ -4247,7 +3854,7 @@ deployments:
   owners:
   - tanstack/router/packages/start-client-core/skills/start-core
   active_owner: tanstack/router/packages/start-client-core/skills/start-core
-  content_hash: sha256:9423e7ab5c2334accec9e0ba1a1fc51791835d73f4cf1fcb598d4fe3a7075ba1
+  content_hash: sha256:f392f381555e63a010076f18b69301463eff642dbe8569913de3cab727107a90
 - kind: project-relative
   target: claude
   value: .claude/skills/start-core/deployment/SKILL.md
@@ -4274,7 +3881,7 @@ deployments:
   owners:
   - tanstack/router/packages/start-client-core/skills/start-core
   active_owner: tanstack/router/packages/start-client-core/skills/start-core
-  content_hash: sha256:dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16
+  content_hash: sha256:16bddd88c01f00a5f4afd0b79d04fdc6018124effb92f5a2aa4f7e3d6b363174
 - kind: project-relative
   target: claude
   value: .claude/skills/start-core/server-functions/SKILL.md
@@ -4283,7 +3890,7 @@ deployments:
   owners:
   - tanstack/router/packages/start-client-core/skills/start-core
   active_owner: tanstack/router/packages/start-client-core/skills/start-core
-  content_hash: sha256:0bd51a8bac7c8f149489aaa1732dc8fb86101e23e7597b10b7681711784a96de
+  content_hash: sha256:1b969a496cfcb85b3c9f7e790f002ac8e9131f281689411003382a3674bb1684
 - kind: project-relative
   target: claude
   value: .claude/skills/start-core/server-routes/SKILL.md
@@ -4841,7 +4448,7 @@ deployments:
   owners:
   - cloudflare/skills/skills/cloudflare-email-service
   active_owner: cloudflare/skills/skills/cloudflare-email-service
-  content_hash: sha256:08f6d06c6da71a7f0eaa4d7a355fd2043ab5666fcca2cdf257898a3a778e1978
+  content_hash: sha256:16fac60424f90fdeeb2081eb844e79b0f3f535202778b0a5b0b1c06691eb233a
 - kind: project-relative
   target: codex
   value: .agents/skills/cloudflare-email-service/references/rest-api.md
@@ -4877,7 +4484,7 @@ deployments:
   owners:
   - cloudflare/skills/skills/cloudflare
   active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:b93a25020fe26501261628c75ee4c15490ad7de96ff9a2940909d2d822c40354
+  content_hash: sha256:336a55878f37551d14b6d8dddabfe0c97362fd5414380083a365802568fb39b7
 - kind: project-relative
   target: codex
   value: .agents/skills/cloudflare/references/ai-gateway/README.md
@@ -4977,51 +4584,6 @@ deployments:
   - cloudflare/skills/skills/cloudflare
   active_owner: cloudflare/skills/skills/cloudflare
   content_hash: sha256:4a180463c1618c638bc488826c416d19ae70bb883805c41664efa9ae204d8e85
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/analytics-engine/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:ac8a712efbcf66eef3d81f938c0f917e901eb069262cb04a0f65039a6a3d970c
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/analytics-engine/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:647f4d5a50690af27e6ea5117623795fb9c4e1c348c39c07ce7f73ac9b7c222e
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/analytics-engine/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:86112c2385fe4e44b4825f9962cfe3429e6681de9f051a50a1c70514f1b85131
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/analytics-engine/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:08d11a06bc1cc955bdf4ade8d1a523b0e78157434d559169c4bc2d36f886667b
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/analytics-engine/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:d294a7ee3ce2d58fbb8413eb6e58faf7af8f699cecc7480b955ceb31e87204b2
 - kind: project-relative
   target: codex
   value: .agents/skills/cloudflare/references/bindings/README.md
@@ -5294,51 +4856,6 @@ deployments:
   content_hash: sha256:1618f870394a4bd94f2affe7f885098407e70d6cc9fc8d3907b56dab5663b343
 - kind: project-relative
   target: codex
-  value: .agents/skills/cloudflare/references/graphql-api/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:c1dbd31a638443495baf6e60f6bbce4841cdae4c28e30ad82ad8381ff96f7c17
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/graphql-api/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:0c0250cdf31adfbf2c7f96bf3ec257c32d14709160a8552b3238a861b3540de5
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/graphql-api/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:765e696dfd11bfa87d231c011b10fb2c10a2e33d704d7c6d04f1f125585c5b92
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/graphql-api/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:59dbb9a541db17cdac52665fd6883d2eb660ec6fea4b45cc87c291d2e2b4a50f
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/graphql-api/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:902d188040a60c5d130790222442158ff12879232357ee34ab410e0d7b9b5e76
-- kind: project-relative
-  target: codex
   value: .agents/skills/cloudflare/references/hyperdrive/README.md
   runtime: null
   scope: project
@@ -5525,7 +5042,7 @@ deployments:
   owners:
   - cloudflare/skills/skills/cloudflare
   active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:c35951cf460fb4002ab78c97eccbfdf81f6367059d9817dde7ae137ddecdeb06
+  content_hash: sha256:7a89cc5ce7aa8faa1f1e36ed8d4d4f42313f7bb3a45b6203f3c1f9bd37180792
 - kind: project-relative
   target: codex
   value: .agents/skills/cloudflare/references/observability/api.md
@@ -6032,51 +5549,6 @@ deployments:
   content_hash: sha256:bb18ec9c06422599cea57cd4c992c4e991c35fd42ef2d1cdce35c5523b5cda61
 - kind: project-relative
   target: codex
-  value: .agents/skills/cloudflare/references/turn/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:6d7fa57622b162f520ad0e01726b2712681c71e242e8e272d6553814c0b7a4fe
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/turn/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:912ec9aa734843078db5ceb9c6732f3aa62778aa7ffb836b9798b46152f377ff
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/turn/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:8df0cf402a41dd2a8205b9fc94f868df48273ef9e85cf1ad690732ac1e2469b7
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/turn/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:7135e3e6e0351bf85fcfd5a914fd499979e7e15540d155810be5bc710e5841d7
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/turn/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:de0a2e64a0fe6456028cbd0cd8f29195cc8d4da0e8935746357587d5937aa636
-- kind: project-relative
-  target: codex
   value: .agents/skills/cloudflare/references/vectorize/README.md
   runtime: null
   scope: project
@@ -6165,51 +5637,6 @@ deployments:
   - cloudflare/skills/skills/cloudflare
   active_owner: cloudflare/skills/skills/cloudflare
   content_hash: sha256:c3c99dcbffdd6842952c23a8014da74465783af451fb4916f012f64532254329
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/workerd/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:845d68c8f2c13058079640d025994c7716bdc51c2ff95c4ea7042b7446d4270a
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/workerd/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:7a6652e76e27424b0ce0d7393e1a04595460290d44e5ca937e3b0090a3b61166
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/workerd/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:656371e6aa55e315ea02e4304228f5c1151023f68af8058ad60984b90e00a9ad
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/workerd/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:994588104d1a505da58235f8706f67403a9c9d05644be5986190146d1d00d4cd
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/workerd/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:dc293c43c732adf6e3edfeaf72510904c7e8d097ca26c8b168748dd3d57e4408
 - kind: project-relative
   target: codex
   value: .agents/skills/cloudflare/references/workers-ai/README.md
@@ -6302,60 +5729,6 @@ deployments:
   content_hash: sha256:91ea4976873dc1737173f23762b433e6fdbd3ed8ab989189490325eaeb66815f
 - kind: project-relative
   target: codex
-  value: .agents/skills/cloudflare/references/zaraz/IMPLEMENTATION_SUMMARY.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:eba1671fc4ba17fae19d1ff2d1b312d5042b5821e7a4dbc2f6367a4fa8bd5506
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/zaraz/README.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:efa52f4e152f959cfb7aceb57687916c3367d94cb5daf3ae5bcb3ae933320c0f
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/zaraz/api.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:6b28a3e1525d46aad707b1bf4edd2739df9f48ae880f71a705448270b42f8b9e
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/zaraz/configuration.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:6f3666ac64d1b36b4a708b3dea9d3b1d9679b34c58a00e3ca8e254edd602418a
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/zaraz/gotchas.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:30378f48fde6e866780466228a3e698005a9ce23a24188c8ed520195b03eac3e
-- kind: project-relative
-  target: codex
-  value: .agents/skills/cloudflare/references/zaraz/patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - cloudflare/skills/skills/cloudflare
-  active_owner: cloudflare/skills/skills/cloudflare
-  content_hash: sha256:2ea1d00fe81b1e881c00090fd18c96d8c78ebb41fcc55f540b68150320d90d17
-- kind: project-relative
-  target: codex
   value: .agents/skills/codebase-design
   runtime: null
   scope: project
@@ -6425,7 +5798,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/commit-push-pr
   active_owner: kfujii-6jo/skills/commit-push-pr
-  content_hash: sha256:b096b468dc11413c9ffd4de8357b3cfc3af43bb329c0e77f608d8279bee6c03e
+  content_hash: sha256:1f5fc40b2e7525d7d382d6daa9a5230a636b7e6ae969b5519252fe8c479c03c5
 - kind: project-relative
   target: codex
   value: .agents/skills/commit/SKILL.md
@@ -6617,13 +5990,49 @@ deployments:
   content_hash: sha256:f369e5c9b49cd4a8598a403684f90de1f6a2e6a38788344a47df9663f7d6501d
 - kind: project-relative
   target: codex
+  value: .agents/skills/herdr-worktree-finish
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-worktree-finish
+  active_owner: kfujii-6jo/skills/herdr-worktree-finish
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/herdr-worktree-finish/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-worktree-finish
+  active_owner: kfujii-6jo/skills/herdr-worktree-finish
+  content_hash: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
+- kind: project-relative
+  target: codex
   value: .agents/skills/herdr/SKILL.md
   runtime: null
   scope: project
   owners:
   - herdrdev/herdr/skills/herdr
   active_owner: herdrdev/herdr/skills/herdr
-  content_hash: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
+  content_hash: sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984
+- kind: project-relative
+  target: codex
+  value: .agents/skills/jev-review
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/jev-review
+  active_owner: kfujii-6jo/skills/jev-review
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/jev-review/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/jev-review
+  active_owner: kfujii-6jo/skills/jev-review
+  content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese
@@ -6641,7 +6050,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:0f662a6ab4955b9146a138a38b73a619b27fa1448ef71e27fcc57f67d3ad0267
+  content_hash: sha256:3f51689eba0894845551fdf9d12b605bc32dc8ff54fb14c193574932f4398d6a
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/assets/style-profile-template.md
@@ -6659,7 +6068,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:e3c80cdeada823d34d003f83df1e9cbc0e07fbdf109b5c8f7a796a889a00d5a4
+  content_hash: sha256:48bd4700e6b103dd2731a73fae5e5ff32e112497da3618b8210db99bc1999664
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/references/doctypes/guide.md
@@ -6668,7 +6077,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:4b9db16365ea305c71eb9a59faedfc73620fd93d09721dc29292951994ba239d
+  content_hash: sha256:75ca3e5e146b10df0b2a80f81462b324831b7bbd4686b98b03cc70a8863b8ec0
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/references/doctypes/memo.md
@@ -6677,7 +6086,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:d74be03c71e992f4c070fe42249e1cfc6faa87efc7438c6f5aa2659d831e17f5
+  content_hash: sha256:f49353f909a9a7bd7adc184e30d9cfc82b2538cd4b3e3092026e688bdfa5e282
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/references/doctypes/minutes.md
@@ -6686,7 +6095,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:de38887be3def7cd35e1b1ffbdf10c21a9c4601fb528f3022f14512df3bc8129
+  content_hash: sha256:61591245d72afa9c0fe0eeefc6422255fa6110af4555ead1c7aa63bd3dd9e0ba
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/references/doctypes/report.md
@@ -6695,7 +6104,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:28f0cd6cef86fda5cb0bc236b9d1bb1d3d09892aacf5f813bec4f7c4cd84ea8f
+  content_hash: sha256:1569b345f62e38d67f9defb51d0182c905a0c0fcaeabfa8bc8b1dc13e720edcc
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/references/doctypes/slide.md
@@ -6704,43 +6113,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:1ca8db97566ad053cdb0115a72e12099f94648c5ba3a3d0bd6d33bf91c7f59d8
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/eval-rubric.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:77a49a4d0f70a51d4e595dec3ab236543b404edab5c6ccafb57c3f1f68d4ae65
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/examples.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:bc37c36ebda975351e2949f05990b7202737a3f5b1f95f53584158e9a6d1e99d
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/forbidden-patterns.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:0cce2ad7f053611a8c983ebf86f55631e019bbf752cc815c04077b229a557b1f
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/genre-notes.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:d5b2f7ecda12649efc26ef4a716fe6b2d4c03568b674dc5a06842f90cf6e8a6f
+  content_hash: sha256:44c9b8e16ead7d1f6b9f0baa115c48999905233415bdd8c802f1af9a1a49e4ce
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/references/manual-checklist.md
@@ -6749,52 +6122,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:19eda8c3098e941c593bb3d4018b9b1f284f3c184db140c799623a07e91c487c
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/readability-antipatterns.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:10418600db75d12da4ba7ca6d76cc9d0bc60e305ae4e75fa90f28c2aa76317b0
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/readability-principles.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:6a495446fe6828968371d24a1b628d28a37842ae0fd0e4f11162b57a7f9c4d70
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/revision-guide.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:27641d1a2aa5b41821d3da186ddf4139dc091c5dd8fb20544d814675b863433a
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/translationese.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:09b3da1ebf4c663be9cb0bf9ed5bade476ba10804509e6ca6dc22dc15129f827
-- kind: project-relative
-  target: codex
-  value: .agents/skills/natural-japanese/references/writing-constitution.md
-  runtime: null
-  scope: project
-  owners:
-  - coji/natural-japanese/skills/natural-japanese
-  active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:457b83afa64fa0da95a9daa25a8140e203fc4a3e87b2ff2c2839e0c8aad7ffdb
+  content_hash: sha256:ac31e8fcfdfeb79b8339cc38022a88e2a80653a2faea19e2925335919b53b2cb
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/scripts/calibrate.py
@@ -6830,7 +6158,16 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:576fb564126b6a81feadc88969a0ec8fb8fc7a755899e5b90fe91981e644881a
+  content_hash: sha256:6cf6c93f51b62a919b983414714091bc7d0e8273bd029518dcc86395326ad4b0
+- kind: project-relative
+  target: codex
+  value: .agents/skills/natural-japanese/scripts/newfacts.py
+  runtime: null
+  scope: project
+  owners:
+  - coji/natural-japanese/skills/natural-japanese
+  active_owner: coji/natural-japanese/skills/natural-japanese
+  content_hash: sha256:7f7490001a0ccf8b2efab76b95e51c3c3b8f6212d261b3a2c8008946e203e824
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/scripts/outline.py
@@ -6840,6 +6177,15 @@ deployments:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
   content_hash: sha256:9b0478364f76c6aeed2befc8f4ee1aa4aa1ec6789eca45fb7b9958ccaed7ca80
+- kind: project-relative
+  target: codex
+  value: .agents/skills/natural-japanese/scripts/paragraphs.py
+  runtime: null
+  scope: project
+  owners:
+  - coji/natural-japanese/skills/natural-japanese
+  active_owner: coji/natural-japanese/skills/natural-japanese
+  content_hash: sha256:ca3775be4475b092c9c140455bc17a70520823c97d669e98a64705f777480ffd
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/scripts/semantic.py
@@ -6857,7 +6203,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:304acb82d8d8cb8a2f45b5efc1110f407e2316d23c13bfc8734670fc1ac81e19
+  content_hash: sha256:f41da63929642540a2e44ba3ef9e04476cc0a693c57a8d99f117b4b086b03439
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese/scripts/textcore.py
@@ -6866,7 +6212,7 @@ deployments:
   owners:
   - coji/natural-japanese/skills/natural-japanese
   active_owner: coji/natural-japanese/skills/natural-japanese
-  content_hash: sha256:ea363ed8611256afb07b0ce83b478c2d559a910d00bfa152d9244f60025da1f2
+  content_hash: sha256:b09d7147d84f48fe6a9a534f8ec0198161a4944720cc25f68f15971a6bab41a0
 - kind: project-relative
   target: codex
   value: .agents/skills/ralph-tui-create-beads
@@ -6983,7 +6329,7 @@ deployments:
   owners:
   - tanstack/router/packages/router-core/skills/router-core
   active_owner: tanstack/router/packages/router-core/skills/router-core
-  content_hash: sha256:456736451326d86e00fff9bc6333625b00727b7fd717a81ae92150b2b04100e2
+  content_hash: sha256:c250cce0c2e9eac7126ef1e5a69193285651eae118f984292b47ed47bc539606
 - kind: project-relative
   target: codex
   value: .agents/skills/router-core/code-splitting/SKILL.md
@@ -7055,7 +6401,7 @@ deployments:
   owners:
   - tanstack/router/packages/router-core/skills/router-core
   active_owner: tanstack/router/packages/router-core/skills/router-core
-  content_hash: sha256:b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004
+  content_hash: sha256:899e3e779500e95ff7d43c57af1ce01ed2238055b8b784253320bce4baf08492
 - kind: project-relative
   target: codex
   value: .agents/skills/router-core/type-safety/SKILL.md
@@ -7163,7 +6509,7 @@ deployments:
   owners:
   - tanstack/router/packages/start-client-core/skills/start-core
   active_owner: tanstack/router/packages/start-client-core/skills/start-core
-  content_hash: sha256:9423e7ab5c2334accec9e0ba1a1fc51791835d73f4cf1fcb598d4fe3a7075ba1
+  content_hash: sha256:f392f381555e63a010076f18b69301463eff642dbe8569913de3cab727107a90
 - kind: project-relative
   target: codex
   value: .agents/skills/start-core/deployment/SKILL.md
@@ -7190,7 +6536,7 @@ deployments:
   owners:
   - tanstack/router/packages/start-client-core/skills/start-core
   active_owner: tanstack/router/packages/start-client-core/skills/start-core
-  content_hash: sha256:dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16
+  content_hash: sha256:16bddd88c01f00a5f4afd0b79d04fdc6018124effb92f5a2aa4f7e3d6b363174
 - kind: project-relative
   target: codex
   value: .agents/skills/start-core/server-functions/SKILL.md
@@ -7199,7 +6545,7 @@ deployments:
   owners:
   - tanstack/router/packages/start-client-core/skills/start-core
   active_owner: tanstack/router/packages/start-client-core/skills/start-core
-  content_hash: sha256:0bd51a8bac7c8f149489aaa1732dc8fb86101e23e7597b10b7681711784a96de
+  content_hash: sha256:1b969a496cfcb85b3c9f7e790f002ac8e9131f281689411003382a3674bb1684
 - kind: project-relative
   target: codex
   value: .agents/skills/start-core/server-routes/SKILL.md
@@ -7488,75 +6834,3 @@ deployments:
   - cloudflare/skills/skills/wrangler
   active_owner: cloudflare/skills/skills/wrangler
   content_hash: sha256:7884f560509c08ac29ee0d3cfe1b5259855fd6790acf0c5292f4d1c54db7c191
-- kind: project-relative
-  target: claude
-  value: .claude/skills/jev-review
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/jev-review
-  active_owner: kfujii-6jo/skills/jev-review
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/jev-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/jev-review
-  active_owner: kfujii-6jo/skills/jev-review
-  content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
-- kind: project-relative
-  target: codex
-  value: .agents/skills/jev-review
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/jev-review
-  active_owner: kfujii-6jo/skills/jev-review
-  content_hash: null
-- kind: project-relative
-  target: codex
-  value: .agents/skills/jev-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/jev-review
-  active_owner: kfujii-6jo/skills/jev-review
-  content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
-- kind: project-relative
-  target: claude
-  value: .claude/skills/herdr-worktree-finish
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/herdr-worktree-finish
-  active_owner: kfujii-6jo/skills/herdr-worktree-finish
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/herdr-worktree-finish/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/herdr-worktree-finish
-  active_owner: kfujii-6jo/skills/herdr-worktree-finish
-  content_hash: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
-- kind: project-relative
-  target: codex
-  value: .agents/skills/herdr-worktree-finish
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/herdr-worktree-finish
-  active_owner: kfujii-6jo/skills/herdr-worktree-finish
-  content_hash: null
-- kind: project-relative
-  target: codex
-  value: .agents/skills/herdr-worktree-finish/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/herdr-worktree-finish
-  active_owner: kfujii-6jo/skills/herdr-worktree-finish
-  content_hash: sha256:f49533374ef31d48fbcc6ad2b9a72255aceba129bb47388608c5a3d9a1fb5bd1
