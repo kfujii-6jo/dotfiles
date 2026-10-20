@@ -287,6 +287,11 @@ opt.autoindent = true
 opt.cursorline = true
 opt.updatetime = 300
 
+vim.keymap.set("x", "<Tab>", ">gv", { desc = "Indent selection" })
+vim.keymap.set("x", "<S-Tab>", "<gv", { desc = "Unindent selection" })
+vim.keymap.set("x", ">", ">gv", { desc = "Indent selection" })
+vim.keymap.set("x", "<", "<gv", { desc = "Unindent selection" })
+
 -- LSP: buffer keymaps on attach (completion handled by blink.cmp)
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
