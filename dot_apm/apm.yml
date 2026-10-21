@@ -14,6 +14,7 @@ dependencies:
     - kfujii-6jo/skills/typescript-type-design#main
     - kfujii-6jo/skills/herdr-meta-handoff#main
     - kfujii-6jo/skills/herdr-worktree-finish#main
+    - kfujii-6jo/skills/herdr-implement-review#main
     - mizchi/skills/empirical-prompt-tuning#main
     - herdrdev/herdr/skills/herdr#master
     - cloudflare/skills/skills/agents-sdk#main

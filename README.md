@@ -85,6 +85,58 @@ Installation and discovery are verified separately from workflow behavior.
 Some upstream skills still use agent-specific instructions; APM deploys them
 without translating those instructions.
 
+## Orchestrating agents with Herdr
+
+Use the installed `herdr` skill inside a Herdr pane. The official
+[agent automation recipes](https://herdr.dev/docs/agent-automation/#recipes)
+cover creating a helper pane, starting an agent, submitting work, waiting, and
+reading its response. No additional orchestrator package is required.
+Claude Code, Codex, and Pi guided/factory already have the skill available.
+For example, ask the parent agent:
+
+> Use the Herdr skill to start a Codex reviewer in a sibling pane. Ask it to
+> review the current diff without editing files, wait for it, and summarize its
+> findings. Keep focus here. Do not commit or push.
+
+The parent owns task assignment and result collection. Give each child a clear
+scope; use separate worktrees when multiple agents need to edit the same files.
+Creating worktrees or child workspaces is a separate request.
+
+For manual use, first run `herdr agent list` and choose an unused agent name.
+This example uses `reviewer`; replace it throughout if already taken. Split
+right for a wide pane or down for a narrow/tall pane:
+
+```bash
+split=$(herdr pane split --current --direction down --cwd "$PWD" --no-focus)
+review_pane=$(printf '%s\n' "$split" | jq -r '.result.pane.pane_id')
+herdr agent start reviewer --kind codex --pane "$review_pane"
+herdr agent prompt reviewer "Review the current diff without editing files. Do not commit or push." --wait --timeout 120000
+herdr agent read reviewer --source recent-unwrapped --lines 120
+```
+
+Inspect each command's result before continuing. `agent prompt --wait` settles
+on `idle`, `done`, or `blocked`; read the response to confirm what happened.
+If startup or a prompt is blocked, inspect the dialog and let the user resolve
+it. After a timeout or stalled prompt, read the agent before retrying to avoid
+duplicate submissions. Keep the helper available for follow-up, or close only
+the pane created for this task when finished.
+
+### Meta → implementation → review
+
+`herdr-implement-review` keeps the user in the meta repository. Meta starts an
+implementation agent in a target worktree, collects its implementation/check
+results, then starts a read-only reviewer in another pane of the same worktree.
+Meta evaluates findings and coordinates up to two repair passes. It stays active
+and uses bounded waits; ending the parent turn does not install an automatic wakeup.
+Global Claude Code/Codex instructions and Pi workflows are unchanged.
+
+APM installs this skill for Claude Code and Codex from
+`kfujii-6jo/skills/herdr-implement-review#main`, pinned in the lockfile. Start a new
+agent session in the meta repository and ask it to use `herdr-implement-review`
+for the task and target repository. Source lives at
+`~/ghq/github.com/kfujii-6jo/skills/herdr-implement-review/SKILL.md`;
+do not edit the deployed copies.
+
 ## Carrying meta context into a worktree
 
 Use `herdr-meta-handoff` to carry a note or conversation into a project. It

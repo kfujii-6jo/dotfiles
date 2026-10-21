@@ -1523,6 +1523,24 @@ dependencies:
     .agents/skills/find-skills/SKILL.md: sha256:c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f
     .claude/skills/find-skills/SKILL.md: sha256:c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f
   content_hash: sha256:913b9d37d0d54047dd65222bb8c67b2bf04e3cb87dcad1729068d7a8b2c8c396
+- repo_url: kfujii-6jo/skills
+  name: herdr-implement-review
+  host: github.com
+  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
+  resolved_ref: main
+  version: unknown
+  virtual_path: herdr-implement-review
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/herdr-implement-review
+  - .agents/skills/herdr-implement-review/SKILL.md
+  - .claude/skills/herdr-implement-review
+  - .claude/skills/herdr-implement-review/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/herdr-implement-review/SKILL.md: sha256:bbdf64d627ca2c3da82a5a781d4d9e206db49cdb1fcfada8ec04fc3f0bc12fd7
+    .claude/skills/herdr-implement-review/SKILL.md: sha256:bbdf64d627ca2c3da82a5a781d4d9e206db49cdb1fcfada8ec04fc3f0bc12fd7
+  content_hash: sha256:acffbc3e983b27253a3b018b882c83ed42318c7e7c0a6127cec7a8119fa33dcb
 deployments:
 - kind: project-relative
   target: claude
@@ -6834,3 +6852,39 @@ deployments:
   - cloudflare/skills/skills/wrangler
   active_owner: cloudflare/skills/skills/wrangler
   content_hash: sha256:7884f560509c08ac29ee0d3cfe1b5259855fd6790acf0c5292f4d1c54db7c191
+- kind: project-relative
+  target: claude
+  value: .claude/skills/herdr-implement-review
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-implement-review
+  active_owner: kfujii-6jo/skills/herdr-implement-review
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/herdr-implement-review/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-implement-review
+  active_owner: kfujii-6jo/skills/herdr-implement-review
+  content_hash: sha256:bbdf64d627ca2c3da82a5a781d4d9e206db49cdb1fcfada8ec04fc3f0bc12fd7
+- kind: project-relative
+  target: codex
+  value: .agents/skills/herdr-implement-review
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-implement-review
+  active_owner: kfujii-6jo/skills/herdr-implement-review
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/herdr-implement-review/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - kfujii-6jo/skills/herdr-implement-review
+  active_owner: kfujii-6jo/skills/herdr-implement-review
+  content_hash: sha256:bbdf64d627ca2c3da82a5a781d4d9e206db49cdb1fcfada8ec04fc3f0bc12fd7
