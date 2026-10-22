@@ -19,6 +19,7 @@ fi
 # Install packages
 echo "Installing packages..."
 brew install \
+  curl \
   git \
   tmux \
   vim \
