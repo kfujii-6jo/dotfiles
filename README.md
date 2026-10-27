@@ -41,6 +41,24 @@ chezmoi apply
 
 Run `chezmoi diff` first to see what would change in your home directory.
 
+### eMudhra CA incident (October 2026)
+
+The [incident tracker](https://emudhra.we-have-a-problem.com/) lists patched
+versions and test endpoints. Update Homebrew's `ca-certificates`, mise, uv,
+Claude Code and rustup as well as applying the pinned runtime versions.
+Applying the mise configuration does not install those runtimes; run
+`mise install` afterward.
+
+The zsh configuration directs OpenSSL clients, curl, Git, Requests and pip to
+Homebrew's patched CA bundle. Open a new shell after applying it. These overrides
+only cover processes inheriting that shell's environment; they do not change
+`/etc/ssl/cert.pem` or independent application trust stores.
+
+Bun is pinned to 1.4.4; with the CA configuration above, it rejects both public
+test endpoints with `CERT_REVOKED`. Bun 1.4.3 still accepted the compromised
+intermediates. Updating Python does not update certifi or pip inside existing
+virtual environments; update those dependencies separately.
+
 ## Shared skills (APM)
 
 APM 0.33.0 is installed through mise. `dot_apm/apm.yml` declares the user

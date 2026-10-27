@@ -46,5 +46,10 @@ if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)
 export PATH="$PATH:$HOME/.turso"
 
 export PATH="{{ $brewPrefix }}/opt/curl/bin:{{ $brewPrefix }}/opt/git/bin:$PATH"
-# Homebrew Git links Apple's libcurl, which otherwise uses the outdated system CA bundle.
-export GIT_SSL_CAINFO="{{ $brewPrefix }}/etc/ca-certificates/cert.pem"
+# Use Homebrew's patched CA bundle instead of macOS's outdated PEM file.
+export SSL_CERT_FILE="{{ $brewPrefix }}/etc/ca-certificates/cert.pem"
+export CURL_CA_BUNDLE="$SSL_CERT_FILE"
+# Homebrew Git links Apple's libcurl and needs its own CA override.
+export GIT_SSL_CAINFO="$SSL_CERT_FILE"
+export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"
+export PIP_CERT="$SSL_CERT_FILE"

@@ -4,7 +4,7 @@ go = "1.27.3"
 node = "26.12.1"
 python = "3.15.1"
 rust = "1.99.1"
-bun = "1.4.3"
+bun = "1.4.4"
 
 # Python Package Manager
 uv = "latest"
