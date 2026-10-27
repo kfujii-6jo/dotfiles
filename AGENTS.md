@@ -78,5 +78,5 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 - Herdr owns `~/.codex/herdr-agent-state.sh` and `~/.codex/hooks.json`;
   both are excluded from chezmoi. After installing or upgrading Herdr, run
   `herdr integration install codex`. Do not vendor or `chezmoi add` these files.
-- `dot_codex/AGENTS.md` contains global instructions for Codex. Differences
-  from `dot_claude/CLAUDE.md` are intentional.
+- `dot_codex/AGENTS.md.tmpl` contains global instructions for Codex. Differences
+  from `dot_claude/CLAUDE.md.tmpl` are intentional.

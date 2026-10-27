@@ -1,5 +1,3 @@
-# Global Instructions
-
 ## Git
 
 - **Never commit or push on your own**: do not run `git commit` / `git push`
@@ -15,18 +13,3 @@
      commit even when there is no hook manager config.
   3. Otherwise, the repository's own commands: `package.json` scripts,
      `mise.toml` tasks, `justfile`, `Makefile`, README.
-
-## Looking up repositories
-
-- **Check `~/ghq` before going to the remote**: when you need to read code from
-  another repository, look for an existing clone under `~/ghq` first and read
-  it locally instead of fetching from GitHub.
-
-## CLI and authentication
-
-- **Use the CLI when it supports the task**: do not perform the same operation
-  through a browser interface instead.
-- **Ask for reauthentication when credentials expire**: if the CLI reports that
-  authentication has expired or is missing, ask the user to sign in again and
-  retry the CLI operation afterward. Do not use the browser interface to work
-  around the authentication failure.

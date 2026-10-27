@@ -215,7 +215,15 @@ Routine workspace operations run automatically; operations needing approval
 go through AI review (`approvals_reviewer = "auto_review"`).
 `dot_codex/private_rules/default.rules` carries the shared command allow/deny
 policy.
-`dot_codex/AGENTS.md` provides the global working agreements for Codex.
+User-scoped instruction fragments live in `dot_agents/instructions/` and deploy
+to `~/.agents/instructions/`. `dot_codex/AGENTS.md.tmpl` and
+`dot_claude/CLAUDE.md.tmpl` assemble the relevant fragments into each agent's
+global instruction file during `chezmoi apply`. The generated files contain
+the full instructions, so agents receive them without following file links.
+Git, repository lookup, and code-style rules are shared; CLI/authentication
+rules belong to Codex. Agent launch rules are assembled
+separately for each runtime; required reviews go through Herdr to the other AI
+(Claude Code to Codex, Codex to Claude Code).
 
 After installing Herdr on a new machine, and after each Herdr upgrade, install
 its Codex integration with the official command:

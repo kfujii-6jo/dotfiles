@@ -4,6 +4,12 @@
 # Native Pi launcher renamed to pp.
 .local/bin/pi-profile
 
+# Retired user instruction for Obsidian planning.
+.agents/instructions/documents.md
+
+# Retired Codex completion review instruction.
+.agents/instructions/codex-review.md
+
 # Herdr helpers consolidated into hr.
 .local/bin/hrp
 .local/bin/hs
