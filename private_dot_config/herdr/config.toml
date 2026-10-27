@@ -54,8 +54,8 @@ height = "100%"
 [[keys.command]]
 key = "prefix+s"
 type = "popup"
-command = "exec \"$HOME/.config/herdr/repo-space.sh\""
-description = "search repositories and open a new Space"
+command = "exec hr repo"
+description = "search repositories and open their Space"
 width = "80%"
 height = "80%"
 

@@ -1,0 +1,171 @@
+#!/bin/bash
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage: hr create [name] [--cwd directory]
+       hr repo [repository]
+       hr close [Space name or ID ...]
+
+  create  Create a Space and switch to it; prompt for the name if omitted.
+          Use the current directory unless --cwd is given.
+  repo    Open or focus a ghq repository's Space; pick if omitted.
+  close   Close the specified Spaces; pick with Tab if omitted.
+  -h, --help  Show this help.
+EOF
+}
+
+mode="${1:-help}"
+case "${1:-}" in
+  ''|help|-h|--help) usage; exit 0 ;;
+  create|repo|close) shift ;;
+  *) printf 'hr: unknown command: %s\n' "$1" >&2; usage >&2; exit 2 ;;
+esac
+case "${1:-}" in
+  -h|--help) usage; exit 0 ;;
+esac
+if [[ "$mode" != create ]]; then
+  if [[ "${1:-}" == -- ]]; then
+    shift
+  else
+    for target in "$@"; do
+      if [[ "$target" == -* ]]; then
+        printf 'hr: unexpected option: %s\n' "$target" >&2
+        exit 2
+      fi
+    done
+  fi
+fi
+if [[ "$mode" == repo && $# -gt 1 ]]; then
+  usage >&2
+  exit 2
+fi
+
+if [[ "${HERDR_ENV:-}" != 1 ]]; then
+  printf 'hr: run this command inside Herdr.\n' >&2
+  exit 1
+fi
+herdr_bin="${HERDR_BIN_PATH:-herdr}"
+
+pick() {
+  local exit_code=0
+  fzf "$@" || exit_code=$?
+  case "$exit_code" in
+    0|1|130) return 0 ;;
+    *) return "$exit_code" ;;
+  esac
+}
+
+case "$mode" in
+  repo)
+    ghq_root=$(ghq root)
+    repos=$(ghq list)
+    repos=$(while IFS= read -r repo; do
+      if [[ -e "$ghq_root/$repo/.git" ]]; then
+        printf '%s\n' "$repo"
+      fi
+    done <<< "$repos")
+    if [[ $# -gt 0 ]]; then
+      selected=$(printf '%s\n' "$repos" | HR_REPO_ROOT="$ghq_root" python3 -c '
+import os,sys
+repos=[line.rstrip("\n") for line in sys.stdin if line.strip()]
+target=os.path.expanduser(sys.argv[1])
+exact=[repo for repo in repos if target in (repo,os.path.join(os.environ["HR_REPO_ROOT"],repo))]
+matches=exact or [repo for repo in repos if repo.rsplit("/",1)[-1]==target]
+if not matches:
+    sys.exit(f"hr: repository not found: {target}")
+if len(matches)>1:
+    sys.exit(f"hr: ambiguous repository: {target}; use its ghq path")
+print(matches[0])
+' "$1")
+    else
+      selected=$(printf '%s\n' "$repos" | pick --no-multi --prompt='Repository > ')
+    fi
+    [[ -n "$selected" ]] || exit 0
+
+    dir="$ghq_root/$selected"
+    label="${selected##*/}"
+    workspaces=$("$herdr_bin" workspace list)
+    existing=$(printf '%s\n' "$workspaces" | HR_LABEL="$label" python3 -c \
+      'import os,sys,json; ws=json.load(sys.stdin)["result"]["workspaces"]; print(next((w["workspace_id"] for w in ws if w["label"]==os.environ["HR_LABEL"]),""))')
+    if [[ -n "$existing" ]]; then
+      exec "$herdr_bin" workspace focus "$existing" >/dev/null
+    fi
+    exec "$herdr_bin" workspace create --cwd "$dir" --label "$label" --focus >/dev/null
+    ;;
+  close)
+    workspaces=$("$herdr_bin" workspace list)
+    if [[ $# -gt 0 ]]; then
+      targets=$(printf '%s\n' "$workspaces" | python3 -c '
+import json,sys
+spaces=json.load(sys.stdin)["result"]["workspaces"]
+targets=[]
+for name in sys.argv[1:]:
+    matches=[space for space in spaces if space["workspace_id"]==name]
+    matches=matches or [space for space in spaces if space["label"]==name]
+    if not matches:
+        sys.exit(f"hr: Space not found: {name}")
+    if len(matches)>1:
+        sys.exit(f"hr: ambiguous Space: {name}; use its ID")
+    workspace_id=matches[0]["workspace_id"]
+    if workspace_id not in targets:
+        targets.append(workspace_id)
+print("\n".join(targets))
+' "$@")
+    else
+      rows=$(printf '%s\n' "$workspaces" | python3 -c \
+        'import sys,json; [print(w["workspace_id"],w["label"],sep="\t") for w in json.load(sys.stdin)["result"]["workspaces"]]')
+      [[ -n "$rows" ]] || exit 0
+      selected=$(printf '%s\n' "$rows" | pick --multi \
+        --header='Tab: select | Enter: close selected Spaces' \
+        --with-nth=2,1 --delimiter=$'\t' --prompt='Space > ')
+      [[ -n "$selected" ]] || exit 0
+      targets=$(printf '%s\n' "$selected" | cut -f1)
+    fi
+    while IFS= read -r workspace_id; do
+      "$herdr_bin" workspace close "$workspace_id" >/dev/null
+    done <<< "$targets"
+    ;;
+  create)
+    cwd="$PWD"
+    label=''
+    has_label=false
+    options=true
+    while [[ $# -gt 0 ]]; do
+      if [[ "$options" == true ]]; then
+        case "$1" in
+          --cwd)
+            if [[ $# -lt 2 || -z "$2" ]]; then
+              printf 'hr: --cwd requires a directory.\n' >&2
+              exit 2
+            fi
+            cwd="$2"; shift 2; continue
+            ;;
+          --cwd=*)
+            cwd="${1#*=}"
+            if [[ -z "$cwd" ]]; then
+              printf 'hr: --cwd requires a directory.\n' >&2
+              exit 2
+            fi
+            shift; continue
+            ;;
+          -h|--help) usage; exit 0 ;;
+          --) options=false; shift; continue ;;
+          -*) printf 'hr: unknown option: %s\n' "$1" >&2; exit 2 ;;
+        esac
+      fi
+      if [[ "$has_label" == true ]]; then
+        printf 'hr: create accepts one Space name; quote names containing spaces.\n' >&2
+        exit 2
+      fi
+      label="$1"; has_label=true; shift
+    done
+    if [[ "$has_label" == false ]]; then
+      printf 'Space name: ' >&2
+      IFS= read -r label || exit 0
+    fi
+    [[ -n "$label" ]] || exit 0
+    cwd=$(cd -- "$cwd" && pwd)
+    exec "$herdr_bin" workspace create --cwd "$cwd" --label "$label" --focus >/dev/null
+    ;;
+esac

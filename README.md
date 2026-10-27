@@ -87,6 +87,27 @@ without translating those instructions.
 
 ## Orchestrating agents with Herdr
 
+Use `hr` from a shell inside Herdr:
+
+```bash
+hr                            # show help
+hr create "ログイン改善"       # create a Space in the current directory and switch to it
+hr create                     # prompt for the name; empty input cancels
+hr create "調査" --cwd ~/work  # use another working directory
+hr repo                       # pick a ghq repository and open or focus its Space
+hr repo dotfiles              # specify a unique name, ghq path, or absolute path
+hr close "ログイン改善"        # close one Space by exact name or ID
+hr close w2 w3                # close multiple Spaces by exact names or IDs
+hr close                      # select Spaces to close; Tab selects multiple
+```
+
+Repository and Space names must match uniquely; use a ghq path or Space ID
+when names overlap. With `close`, all arguments are resolved before any Space
+is closed, and repeated targets are closed only once.
+
+`Ctrl+S` then `s` opens the same repository picker as `hr repo`.
+The old `hrp` and `hs` commands are replaced by `hr`.
+
 Use the installed `herdr` skill inside a Herdr pane. The official
 [agent automation recipes](https://herdr.dev/docs/agent-automation/#recipes)
 cover creating a helper pane, starting an agent, submitting work, waiting, and

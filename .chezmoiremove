@@ -4,6 +4,11 @@
 # Native Pi launcher renamed to pp.
 .local/bin/pi-profile
 
+# Herdr helpers consolidated into hr.
+.local/bin/hrp
+.local/bin/hs
+.config/herdr/repo-space.sh
+
 # Factory now belongs only to its native Pi environment.
 .pi/agent/prompts/factory-plan.md
 .pi/agent/prompts/factory-run.md
