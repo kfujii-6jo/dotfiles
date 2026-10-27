@@ -121,6 +121,24 @@ it. After a timeout or stalled prompt, read the agent before retrying to avoid
 duplicate submissions. Keep the helper available for follow-up, or close only
 the pane created for this task when finished.
 
+### Review plans and replies with Herdr Annotate
+
+Install the Full plugin on each machine:
+
+```bash
+herdr plugin install plannotator/herdr-annotate
+```
+
+The managed Herdr config uses `Ctrl+S` as its prefix. Press it, then `a` to
+annotate selected terminal text, `m` to manage annotations, `o` to review
+Markdown documents, or `Shift+O` to review recent agent replies. `Shift+A`
+copies annotations as Markdown. In document review, use Send to return
+comments to the agent, or `q` to close.
+
+After applying the config, run `herdr config check` and
+`herdr server reload-config`. Plugin binaries and data are owned by Herdr.
+See the [upstream guide](https://github.com/plannotator/herdr-annotate#readme).
+
 ### Meta → implementation → review
 
 `herdr-implement-review` keeps the user in the meta repository. Meta starts an
