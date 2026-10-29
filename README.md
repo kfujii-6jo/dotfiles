@@ -178,37 +178,10 @@ After applying the config, run `herdr config check` and
 `herdr server reload-config`. Plugin binaries and data are owned by Herdr.
 See the [upstream guide](https://github.com/plannotator/herdr-annotate#readme).
 
-### Meta → implementation → review
-
-`herdr-implement-review` keeps the user in the meta repository. Meta starts an
-implementation agent in a target worktree, collects its implementation/check
-results, then starts a read-only reviewer in another pane of the same worktree.
-Meta evaluates findings and coordinates up to two repair passes. It stays active
-and uses bounded waits; ending the parent turn does not install an automatic wakeup.
-Global Claude Code/Codex instructions and Pi workflows are unchanged.
-
-APM installs this skill for Claude Code and Codex from
-`kfujii-6jo/skills/herdr-implement-review#main`, pinned in the lockfile. Start a new
-agent session in the meta repository and ask it to use `herdr-implement-review`
-for the task and target repository. Source lives at
-`~/ghq/github.com/kfujii-6jo/skills/herdr-implement-review/SKILL.md`;
-do not edit the deployed copies.
-
 ## Carrying meta context into a worktree
 
-Use `herdr-meta-handoff` to carry a note or conversation into a project. It
-creates a Herdr-managed worktree and child workspace by default, starts the
-chosen agent, and confirms that the agent loaded the context. For example:
-
-> Use herdr-meta-handoff to carry this note into my-project with Claude Code.
-
-The receiver reads the source file named in its first prompt; `META_CONTEXT`
-can carry the same path. Specify an existing checkout or a sibling pane when wanted.
-A handoff alone loads context; implementation begins only when requested.
-The original checkout and agent remain available.
-
-To create the pane manually instead, pass the absolute source path when opening
-a pane in an existing worktree:
+To carry a note or conversation into an existing worktree, pass the absolute
+source path when opening a pane:
 
 ```bash
 note="$HOME/ghq/github.com/kfujii-6jo/meta/explorations/your-topic.md"
@@ -347,12 +320,9 @@ separate files need separate logins to avoid competing token refreshes.
 Selected supporting resources are shared. Herdr's extension remains owned by
 Herdr and is referenced explicitly. APM keeps
 skill files in `~/.agents/skills`: guided enables selected skills, including
-Herdr and `herdr-meta-handoff`; factory enables that catalog, and research
-excludes it. Skills are not copied. Inside a Herdr pane, guided and
-factory can use `/skill:herdr` to inspect panes, start agents, submit work, and
-read results through the Herdr CLI. `/skill:herdr-meta-handoff` creates a
-worktree and child workspace, starts an agent, and asks it to read the supplied
-note or conversation history.
+Herdr; factory enables that catalog, and research excludes it. Skills are not
+copied. Inside a Herdr pane, guided and factory can use `/skill:herdr` to inspect
+panes, start agents, submit work, and read results through the Herdr CLI.
 Run `/reload` in an existing Pi session after applying skill changes.
 Packages are pinned and installed separately in each environment by native Pi.
 All three initially use `openai/gpt-6.1-sol` and medium thinking. Each profile's
