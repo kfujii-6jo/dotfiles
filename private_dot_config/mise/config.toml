@@ -1,3 +1,6 @@
+[settings]
+npm.package_manager = "npm"
+
 [tools]
 # Languages & Runtimes
 go = "1.27.3"
@@ -5,16 +8,25 @@ node = "26.12.1"
 python = "3.15.1"
 rust = "1.99.1"
 bun = "1.4.4"
+"npm:typescript" = "latest"
 
-# Python Package Manager
+# Package Managers
 uv = "latest"
+"npm:pnpm" = "latest"
 
 # Dotfiles
 chezmoi = "latest"
 "pipx:apm-cli" = "0.33.0"
 
 # Coding Agents
+"npm:@earendil-works/pi-coding-agent" = { version = "latest", allow_builds = ["@google/genai", "protobufjs"] }
 "github:can1357/oh-my-pi" = "18.10.3"
+"npm:takt" = { version = "latest", allow_builds = ["takt", "protobufjs"] }
+
+# Development Workflow
+# bd downloads its native binary in postinstall.
+"npm:@beads/bd" = { version = "latest", allow_builds = ["@beads/bd"] }
+"npm:@fission-ai/openspec" = "latest"
 
 # Git
 gh = "latest"
@@ -36,6 +48,8 @@ stylua = "latest"
 tree-sitter = "latest"
 
 # Language Servers (nvim-dev native LSP)
+"npm:pyright" = "latest"
+"npm:typescript-language-server" = "latest"
 lua-language-server = "latest"
 rust-analyzer = "latest"
 "go:golang.org/x/tools/gopls" = "latest"

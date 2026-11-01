@@ -331,6 +331,8 @@ local servers = {
   },
   ts_ls = {
     cmd = { "typescript-language-server", "--stdio" },
+    -- Use mise's TypeScript when the project has no local installation.
+    init_options = { tsserver = { fallbackPath = "tsserver" } },
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
     root_markers = { "package.json", "tsconfig.json", ".git" },
   },

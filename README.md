@@ -1,8 +1,7 @@
 # dotfiles
 
 Personal macOS dotfiles managed with [chezmoi](https://www.chezmoi.io/).
-Runtimes and binary tools use [mise](https://mise.jdx.dev/); npm globals are
-tracked in [package.json](package.json).
+Runtimes and CLI tools, including npm packages, use [mise](https://mise.jdx.dev/).
 
 Includes zsh, tmux, Neovim, Ghostty, lazygit, gitui, Karabiner-Elements,
 Zed, Herdr, Claude Code, Codex, Pi, and oh-my-pi.
@@ -16,8 +15,8 @@ curl -fsSL https://raw.githubusercontent.com/kfujii-6jo/dotfiles/main/scripts/se
 source ~/.zshrc
 ```
 
-The script installs Homebrew, mise, ghq, managed tools, and npm globals, then
-leaves the checkout at `~/ghq/github.com/kfujii-6jo/dotfiles`.
+The script installs Homebrew, mise, and managed tools, and keeps the checkout
+at `~/ghq/github.com/kfujii-6jo/dotfiles`.
 
 For manual setup, install [chezmoi](https://www.chezmoi.io/install/), mise,
 and [ghq](https://github.com/x-motemen/ghq), then:
@@ -82,8 +81,7 @@ Start new Pi/OMP sessions inside Herdr after installation.
 
 | Area | Source |
 | --- | --- |
-| Runtimes and binary tools | [mise config](private_dot_config/mise/config.toml) |
-| npm globals | [package.json](package.json) |
+| Runtimes and CLI tools | [mise config](private_dot_config/mise/config.toml) |
 | App settings | [private_dot_config/](private_dot_config/) |
 | Shell and tmux | [zsh](dot_zshrc.tmpl), [tmux](dot_tmux.conf.tmpl) |
 | Launchers | [dot_local/bin/](dot_local/bin/) |

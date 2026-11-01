@@ -1,8 +1,8 @@
 # dotfiles agent instructions
 
-Personal dotfiles are managed with chezmoi. Runtimes and binary tools come
-from mise (`private_dot_config/mise/config.toml`); npm globals are tracked in
-`package.json`. `scripts/setup-macos.sh` bootstraps a fresh machine.
+Personal dotfiles are managed with chezmoi. Runtimes and CLI tools, including
+npm packages, come from mise (`private_dot_config/mise/config.toml`).
+`scripts/setup-macos.sh` bootstraps a fresh machine.
 
 ## Conventions
 
@@ -50,8 +50,9 @@ chezmoi last wrote it. Confirm the diff is safe, then re-run with `--force`.
 
 ## Adding tools
 
-- mise tool: edit `private_dot_config/mise/config.toml`, then run `mise install`.
-- npm global: add it to `package.json`, then run `npm install -g <package>`.
+Edit `private_dot_config/mise/config.toml`; use `npm:<package>` for npm CLIs
+and `allow_builds` for required install scripts. Apply it with
+`chezmoi apply ~/.config/mise/config.toml`, then run `mise install`.
 
 ## Shared skills and Claude Code configuration
 

@@ -36,9 +36,9 @@ if ! grep -q 'mise activate' ~/.zshrc 2>/dev/null; then
   echo 'eval "$(~/.local/bin/mise activate zsh)"' >>~/.zshrc
 fi
 
-# Install ghq first to clone dotfiles
-echo "Installing ghq..."
-~/.local/bin/mise use -g ghq@latest
+# Install the tools needed to clone and apply dotfiles
+echo "Installing ghq and chezmoi..."
+~/.local/bin/mise use -g ghq@latest chezmoi@latest
 
 # Clone dotfiles repository with ghq
 echo "Cloning dotfiles repository..."
@@ -49,12 +49,8 @@ fi
 
 DOTFILES_DIR=~/ghq/$DOTFILES_REPO
 
-# Install mise-managed tools from dotfiles config
-echo "Installing mise-managed tools..."
-cd "$DOTFILES_DIR"
-~/.local/bin/mise install
-
 # Initialize and apply chezmoi
+cd "$DOTFILES_DIR"
 echo "Applying dotfiles with chezmoi..."
 if [ ! -d ~/.local/share/chezmoi ]; then
   echo "Initializing chezmoi with $DOTFILES_DIR"
@@ -64,15 +60,10 @@ fi
 echo "Running chezmoi apply..."
 ~/.local/bin/mise exec -- chezmoi apply
 
-# Reload mise config and install tools again after chezmoi apply
-echo "Reloading mise configuration from dotfiles..."
+# Install tools after chezmoi deploys the mise config
+echo "Installing mise-managed tools..."
 cd ~
 ~/.local/bin/mise install
-
-# Install global npm packages from package.json
-echo "Installing global npm packages..."
-NPM_PACKAGES=$(~/.local/bin/mise exec -- node -e "const p=require('${DOTFILES_DIR}/package.json');console.log(Object.keys(p.dependencies).join(' '))")
-~/.local/bin/mise exec -- npm install -g $NPM_PACKAGES
 
 echo "=== Setup complete ==="
 echo "Run 'source ~/.zshrc' or restart your shell"
