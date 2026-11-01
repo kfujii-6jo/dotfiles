@@ -15,7 +15,7 @@
 .local/bin/hs
 .config/herdr/repo-space.sh
 
-# Factory now belongs only to its native Pi environment.
+# Retired shared factory prompts and reviewer.
 .pi/agent/prompts/factory-plan.md
 .pi/agent/prompts/factory-run.md
 .pi/agent/prompts/factory-improve.md
@@ -95,3 +95,13 @@
 .local/bin/claude.d/flow
 .local/bin/claude.d/pr
 .local/bin/claude.d/review
+
+# Retired Pi profiles: remove managed files, preserving auth and session history.
+.pi/profiles/factory/AGENTS.md
+.pi/profiles/factory/agents/factory-reviewer.md
+.pi/profiles/factory/settings.json
+.pi/profiles/factory/prompts/factory-improve.md
+.pi/profiles/factory/prompts/factory-plan.md
+.pi/profiles/factory/prompts/factory-run.md
+.pi/profiles/guided/AGENTS.md
+.pi/profiles/guided/settings.json

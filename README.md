@@ -61,11 +61,10 @@ the previous manifest and lockfile, then run the install script again.
 
 ## Agents
 
-Run `pi` or `omp` directly, or choose a Pi profile with
-`pp guided` (proposal approval), `pp factory` (local plan/run/review),
-`pp research` (read-only research), or `pp default` (ordinary Pi).
-Run `/login` separately in each named profile; do not copy OAuth credentials
-between them. Workflow instructions live in [the profiles](dot_pi/private_profiles/).
+Run `pi` or `omp` directly. Use `pp research` for read-only research or
+`pp default` for ordinary Pi. Run `/login` separately in the research profile;
+do not copy OAuth credentials between environments. See the
+[research instructions](dot_pi/private_profiles/research/AGENTS.md).
 
 After installing or upgrading Herdr, install the integrations you use:
 

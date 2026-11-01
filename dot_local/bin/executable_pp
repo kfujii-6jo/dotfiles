@@ -2,14 +2,14 @@
 set -euo pipefail
 
 usage() {
-  echo 'Usage: pp {guided|factory|research|default} [--] [pi arguments...]'
+  echo 'Usage: pp {research|default} [--] [pi arguments...]'
   echo 'Each named profile has its own instructions, settings, packages, and sessions.'
 }
 
 profile=${1:-}
 case "$profile" in
   ''|-h|--help) usage; exit 0 ;;
-  guided|factory|research|default) shift ;;
+  research|default) shift ;;
   *) echo "Unknown Pi profile: $profile" >&2; usage >&2; exit 2 ;;
 esac
 if [[ "${1:-}" == -- ]]; then shift; fi
