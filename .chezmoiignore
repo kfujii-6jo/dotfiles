@@ -9,6 +9,14 @@ scripts/
 .agents/skills
 .codex/skills
 
+# Allow removal of retired custom skill entrypoints via .chezmoiremove.
+!.agents/skills/herdr-implement-review/SKILL.md
+!.agents/skills/herdr-meta-handoff/SKILL.md
+!.agents/skills/herdr-worktree-finish/SKILL.md
+!.claude/skills/herdr-implement-review/SKILL.md
+!.claude/skills/herdr-meta-handoff/SKILL.md
+!.claude/skills/herdr-worktree-finish/SKILL.md
+
 # Codex integration files are installed and updated by Herdr.
 .codex/herdr-agent-state.sh
 .codex/hooks.json

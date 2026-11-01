@@ -105,3 +105,11 @@
 .pi/profiles/factory/prompts/factory-run.md
 .pi/profiles/guided/AGENTS.md
 .pi/profiles/guided/settings.json
+
+# Retired custom Herdr skills; keep the official Herdr skill.
+.agents/skills/herdr-implement-review/SKILL.md
+.agents/skills/herdr-meta-handoff/SKILL.md
+.agents/skills/herdr-worktree-finish/SKILL.md
+.claude/skills/herdr-implement-review/SKILL.md
+.claude/skills/herdr-meta-handoff/SKILL.md
+.claude/skills/herdr-worktree-finish/SKILL.md
