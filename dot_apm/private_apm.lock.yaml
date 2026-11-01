@@ -1112,24 +1112,6 @@ dependencies:
     .claude/skills/commit-push-pr/SKILL.md: sha256:1f5fc40b2e7525d7d382d6daa9a5230a636b7e6ae969b5519252fe8c479c03c5
   content_hash: sha256:39b9d03928e0f921cc659feb93a787c181d8292685e08cc5f76534a6f1fa449f
 - repo_url: kfujii-6jo/skills
-  name: jev-review
-  host: github.com
-  resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
-  resolved_ref: main
-  version: unknown
-  virtual_path: jev-review
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/jev-review
-  - .agents/skills/jev-review/SKILL.md
-  - .claude/skills/jev-review
-  - .claude/skills/jev-review/SKILL.md
-  deployed_file_hashes:
-    .agents/skills/jev-review/SKILL.md: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
-    .claude/skills/jev-review/SKILL.md: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
-  content_hash: sha256:10228abd0de6cdca6b6c1023285d324138770efab5ce040d31e92ad7e48c4ef0
-- repo_url: kfujii-6jo/skills
   name: rebase-branch
   host: github.com
   resolved_commit: 4974a5e14de78a1725560ccebde0ab76786954f8
@@ -3288,24 +3270,6 @@ deployments:
   - herdrdev/herdr/skills/herdr
   active_owner: herdrdev/herdr/skills/herdr
   content_hash: sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984
-- kind: project-relative
-  target: claude
-  value: .claude/skills/jev-review
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/jev-review
-  active_owner: kfujii-6jo/skills/jev-review
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/jev-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/jev-review
-  active_owner: kfujii-6jo/skills/jev-review
-  content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
 - kind: project-relative
   target: claude
   value: .claude/skills/natural-japanese
@@ -5907,24 +5871,6 @@ deployments:
   - herdrdev/herdr/skills/herdr
   active_owner: herdrdev/herdr/skills/herdr
   content_hash: sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984
-- kind: project-relative
-  target: codex
-  value: .agents/skills/jev-review
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/jev-review
-  active_owner: kfujii-6jo/skills/jev-review
-  content_hash: null
-- kind: project-relative
-  target: codex
-  value: .agents/skills/jev-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - kfujii-6jo/skills/jev-review
-  active_owner: kfujii-6jo/skills/jev-review
-  content_hash: sha256:e8408a5c3f394c7be21200e7c0d43c186b13dc732c6d460153e10a56c327a5c4
 - kind: project-relative
   target: codex
   value: .agents/skills/natural-japanese

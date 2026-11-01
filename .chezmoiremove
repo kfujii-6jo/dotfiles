@@ -113,3 +113,8 @@
 .claude/skills/herdr-implement-review/SKILL.md
 .claude/skills/herdr-meta-handoff/SKILL.md
 .claude/skills/herdr-worktree-finish/SKILL.md
+
+# Retired Jev extension and skill entrypoints.
+.pi/extensions/jev-review.ts
+.agents/skills/jev-review/SKILL.md
+.claude/skills/jev-review/SKILL.md

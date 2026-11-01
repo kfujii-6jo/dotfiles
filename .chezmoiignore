@@ -16,7 +16,8 @@ scripts/
 !.claude/skills/herdr-implement-review/SKILL.md
 !.claude/skills/herdr-meta-handoff/SKILL.md
 !.claude/skills/herdr-worktree-finish/SKILL.md
-
+!.agents/skills/jev-review/SKILL.md
+!.claude/skills/jev-review/SKILL.md
 # Codex integration files are installed and updated by Herdr.
 .codex/herdr-agent-state.sh
 .codex/hooks.json

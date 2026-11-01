@@ -1,9 +1,6 @@
 {
   "name": "dotfiles",
   "private": true,
-  "scripts": {
-    "test:jev": "node --test scripts/test-jev-review.mjs"
-  },
   "dependencies": {
     "@beads/bd": "latest",
     "@earendil-works/pi-coding-agent": "latest",
