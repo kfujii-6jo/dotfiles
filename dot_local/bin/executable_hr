@@ -118,7 +118,7 @@ print("\n".join(targets))
       [[ -n "$rows" ]] || exit 0
       selected=$(printf '%s\n' "$rows" | pick --multi \
         --header='Tab: select | Enter: close selected Spaces' \
-        --with-nth=2,1 --delimiter=$'\t' --prompt='Space > ')
+        --with-nth=2.. --delimiter=$'\t' --prompt='Space > ')
       [[ -n "$selected" ]] || exit 0
       targets=$(printf '%s\n' "$selected" | cut -f1)
     fi
