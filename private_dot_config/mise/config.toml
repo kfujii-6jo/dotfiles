@@ -23,6 +23,14 @@ chezmoi = "latest"
 "github:can1357/oh-my-pi" = "18.10.3"
 "npm:takt" = { version = "latest", allow_builds = ["takt", "protobufjs"] }
 
+# Oxc Development
+just = "latest"
+cmake = "latest"
+watchexec = "latest"
+cargo-insta = "latest"
+typos = "latest"
+"cargo:cargo-shear" = "1.13.1"
+
 # Development Workflow
 # bd downloads its native binary in postinstall.
 "npm:@beads/bd" = { version = "latest", allow_builds = ["@beads/bd"] }
