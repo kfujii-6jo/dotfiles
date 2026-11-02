@@ -1,5 +1,7 @@
 {
   "env": {
+    "SSL_CERT_FILE": "/opt/homebrew/etc/ca-certificates/cert.pem",
+    "CARGO_HTTP_CAINFO": "/opt/homebrew/etc/ca-certificates/cert.pem",
     "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "MAX_THINKING_TOKENS": "31999",

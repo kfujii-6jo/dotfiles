@@ -8,10 +8,13 @@ npm packages, come from mise (`private_dot_config/mise/config.toml`).
 
 - **The repository is the source of truth, not `~`.** Edit files here and run
   `chezmoi apply`. Do not edit the deployed copy in the home directory.
-- **Exception: app-owned files.** Karabiner-Elements, Claude Code, and similar
+- **Exception: app-owned files.** Karabiner-Elements and similar
   apps rewrite their own configuration. When the home copy is ahead, pull it
   in with `chezmoi add <path>`; `chezmoi apply` would overwrite it. Check the
   direction with `chezmoi diff` before either.
+- **Merge-managed files:** Claude Code, Codex, and Pi settings use `modify_`
+  templates to preserve app-owned and machine-specific settings. Edit their
+  shared defaults here; do not `chezmoi add` the deployed settings files.
 - This clone must stay at `~/ghq/github.com/kfujii-6jo/dotfiles`, because the
   chezmoi source directory points here.
 - Filename prefixes are chezmoi's: `dot_` becomes `.`, `private_` is not
@@ -25,7 +28,7 @@ npm packages, come from mise (`private_dot_config/mise/config.toml`).
 chezmoi diff
 chezmoi apply
 chezmoi apply ~/.config/nvim/init.lua
-chezmoi add ~/.claude/settings.json
+chezmoi apply ~/.claude/settings.json
 git pull && chezmoi apply
 ```
 
@@ -64,9 +67,14 @@ and `allow_builds` for required install scripts. Apply it with
   skills to chezmoi or recreate separate copies under `~/.codex/skills`.
 - Run `bash scripts/update-skills.sh` to update all skills from their upstream
   branches and save the new lockfile into chezmoi. Review and commit the diff.
-- `dot_claude/settings.json` carries `enabledPlugins` and
-  `extraKnownMarketplaces`. Claude Code writes it itself, so follow the
-  `chezmoi add` rule above. Plugin-provided skills keep their plugin lifecycle.
+- `.chezmoitemplates/claude-settings.json` declares shared Claude Code settings,
+  including `enabledPlugins` and `extraKnownMarketplaces`.
+  `dot_claude/modify_private_settings.json` merges them into
+  `~/.claude/settings.json`, preserving extra machine-specific keys. Shared
+  values win conflicts; permission and hook arrays retain local entries and
+  deduplicate exact matches. Remove retired entries from both the defaults and
+  affected machines. Do not `chezmoi add` the deployed settings, which can contain
+  company credentials. Plugin-provided skills keep their plugin lifecycle.
 
 ## Codex configuration (`dot_codex/`)
 
@@ -75,7 +83,8 @@ and `allow_builds` for required install scripts. Apply it with
   enables Codex hooks, while preserving the trusted projects, plugins, runtime
   paths, notifications, and UI state that Codex Desktop writes.
 - `dot_codex/private_rules/default.rules` holds the shared command allow/deny
-  policy. Update it alongside `dot_claude/settings.json` when the policy changes.
+  policy. Update it alongside `.chezmoitemplates/claude-settings.json` when the
+  policy changes.
 - Herdr owns `~/.codex/herdr-agent-state.sh` and `~/.codex/hooks.json`;
   both are excluded from chezmoi. After installing or upgrading Herdr, run
   `herdr integration install codex`. Do not vendor or `chezmoi add` these files.

@@ -1,0 +1,12 @@
+{{/* chezmoi:modify-template */}}
+{{- $defaults := includeTemplate "claude-settings.json" . | mustFromJson -}}
+{{- $current := .chezmoi.stdin | default "{}" | mustFromJson -}}
+{{- range $key, $rules := $defaults.permissions -}}
+  {{- if kindIs "slice" $rules -}}
+    {{- $_ := set $defaults.permissions $key (concat $rules (dig "permissions" $key list $current) | uniq) -}}
+  {{- end -}}
+{{- end -}}
+{{- range $event, $hooks := $defaults.hooks -}}
+  {{- $_ := set $defaults.hooks $event (concat $hooks (dig "hooks" $event list $current) | uniq) -}}
+{{- end -}}
+{{ mergeOverwrite $current $defaults | toPrettyJson }}

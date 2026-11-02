@@ -85,6 +85,6 @@ Start new Pi/OMP sessions inside Herdr after installation.
 | App settings | [private_dot_config/](private_dot_config/) |
 | Shell and tmux | [zsh](dot_zshrc.tmpl), [tmux](dot_tmux.conf.tmpl) |
 | Launchers | [dot_local/bin/](dot_local/bin/) |
-| Agent defaults | [Codex](.chezmoitemplates/codex-config.toml), [Pi](dot_pi/private_agent/modify_private_settings.json), [OMP](.chezmoitemplates/omp-config.yml) |
+| Agent defaults | [Claude Code](.chezmoitemplates/claude-settings.json), [Codex](.chezmoitemplates/codex-config.toml), [Pi](dot_pi/private_agent/modify_private_settings.json), [OMP](.chezmoitemplates/omp-config.yml) |
 | Agent instructions | [shared fragments](dot_agents/instructions/) |
 | Skills | [APM manifest](dot_apm/apm.yml) |
