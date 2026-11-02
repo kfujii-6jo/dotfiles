@@ -1,4 +1,4 @@
-# Derived from dot_claude/settings.json.
+# Based on .chezmoitemplates/claude-settings.json, with Codex-specific exceptions.
 #
 # Codex applies these rules to commands that would otherwise need to run
 # outside its workspace sandbox. A more restrictive matching rule wins.
@@ -49,7 +49,14 @@ prefix_rule(
     justification = "Allowed by the shared Claude Code settings.",
 )
 
-# The Claude denylist blocks these command families outright.
+# curl is explicitly allowed for Codex.
+prefix_rule(
+    pattern = ["curl"],
+    decision = "allow",
+    justification = "The user explicitly permits curl in Codex.",
+)
+
+# The remaining Claude denylist command families stay blocked.
 prefix_rule(
     pattern = ["sudo"],
     decision = "forbidden",
@@ -57,7 +64,7 @@ prefix_rule(
 )
 
 prefix_rule(
-    pattern = [["curl", "wget", "dd", "mkfs", "fdisk", "npx", "pnpx"]],
+    pattern = [["wget", "dd", "mkfs", "fdisk", "npx", "pnpx"]],
     decision = "forbidden",
     justification = "This command is prohibited by the shared Claude Code settings.",
 )
@@ -111,3 +118,7 @@ prefix_rule(
     decision = "forbidden",
     justification = "Publishing packages is prohibited.",
 )
+prefix_rule(pattern=["/bin/zsh", "-lc", "chezmoi apply --exclude scripts --error-on-conflict ~/.codex/config.toml ~/.codex/AGENTS.md ~/.config/herdr/config.toml ~/.config/herdr/repo-space.sh"], decision="allow")
+prefix_rule(pattern=["codex", "plugin", "marketplace", "add"], decision="allow")
+prefix_rule(pattern=["codex", "plugin", "add"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "chezmoi apply --exclude scripts --error-on-conflict ~/.codex/config.toml"], decision="allow")

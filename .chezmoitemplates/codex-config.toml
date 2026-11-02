@@ -7,5 +7,9 @@ sandbox_mode = "workspace-write"
 service_tier = "default"
 project_doc_fallback_filenames = ["AGENT.md", "CLAUDE.md"]
 
+[shell_environment_policy.set]
+SSL_CERT_FILE = "/opt/homebrew/etc/ca-certificates/cert.pem"
+CARGO_HTTP_CAINFO = "/opt/homebrew/etc/ca-certificates/cert.pem"
+
 [features]
 hooks = true
