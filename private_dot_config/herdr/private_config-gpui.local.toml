@@ -4,4 +4,12 @@
 # New installs start with the roomy rounded sidebar. Remove this line for
 # the managed default, or pick another layout listed in config-gpui.toml.
 layout = "comfortable-rounded"
-theme = "Charcoal"
+theme = "GitHub Dark Dimmed"
+
+[terminal]
+fallback = ["Symbols Nerd Font Mono"]
+
+# Inherited prefix defaults would shadow the existing repository and document commands.
+[keybindings]
+settings = "cmd-,"
+open_notification_target = "cmd-alt-n"

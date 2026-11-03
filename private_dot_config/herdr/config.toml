@@ -44,6 +44,12 @@ previous_workspace = "prefix+p"
 goto = ""
 
 [[keys.command]]
+key = "prefix+d"
+type = "shell"
+command = "/Applications/Herdr.app/Contents/MacOS/Herdr run review_changes"
+description = "review changes in Herdr UI"
+
+[[keys.command]]
 key = "prefix+e"
 type = "popup"
 command = "exec \"$HOME/.config/herdr/read-scrollback.sh\""
