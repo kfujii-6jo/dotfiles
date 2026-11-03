@@ -29,6 +29,7 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border"
 alias vim="nvim"
 alias gvim='/Applications/Ghostty.app/Contents/MacOS/ghostty --font-size=16 -e nvim'
 alias gu="gitui"
+alias gj='git clean -fd && git restore --source=HEAD --staged --worktree .'
 alias rp='cd $(ghq list -p | fzf --with-nth=5.. -d/) && ls -la'
 alias trel="tmux source-file ~/.tmux.conf && echo 'Reloaded!'"
 alias taf='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
