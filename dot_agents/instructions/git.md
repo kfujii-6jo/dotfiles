@@ -13,3 +13,10 @@
      commit even when there is no hook manager config.
   3. Otherwise, the repository's own commands: `package.json` scripts,
      `mise.toml` tasks, `justfile`, `Makefile`, README.
+
+### Worktrees
+
+- Before changing a repository, create a new worktree with `git wt` and work there.
+- After completing the task, preserve all changes before removing the worktree
+  with `git wt -d`. Do not discard uncommitted work or commit without explicit
+  authorization.

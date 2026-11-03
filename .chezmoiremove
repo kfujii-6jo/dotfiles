@@ -121,3 +121,8 @@
 .pi/extensions/jev-review.ts
 .agents/skills/jev-review/SKILL.md
 .claude/skills/jev-review/SKILL.md
+
+# Instruction fragments consolidated under Git and responsibility-based names.
+.agents/instructions/worktrees.md
+.agents/instructions/mise.md
+.agents/instructions/herdr.md
