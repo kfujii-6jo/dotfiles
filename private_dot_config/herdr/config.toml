@@ -10,7 +10,7 @@ focus_pane_right = "prefix+l"
 
 resize_mode = "prefix+r"
 copy_mode = "prefix+v"
-edit_scrollback = ""
+edit_scrollback = "prefix+e"
 
 split_horizontal = "prefix+minus"
 split_vertical = "prefix+="
@@ -48,14 +48,6 @@ key = "prefix+d"
 type = "shell"
 command = "/Applications/Herdr.app/Contents/MacOS/Herdr run review_changes"
 description = "review changes in Herdr UI"
-
-[[keys.command]]
-key = "prefix+e"
-type = "popup"
-command = "exec \"$HOME/.config/herdr/read-scrollback.sh\""
-description = "read pane scrollback in Neovim"
-width = "100%"
-height = "100%"
 
 [[keys.command]]
 key = "prefix+s"

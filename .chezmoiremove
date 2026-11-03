@@ -15,6 +15,9 @@
 .local/bin/hs
 .config/herdr/repo-space.sh
 
+# Herdr's native scrollback action replaces the popup reader.
+.config/herdr/read-scrollback.sh
+
 # Retired shared factory prompts and reviewer.
 .pi/agent/prompts/factory-plan.md
 .pi/agent/prompts/factory-run.md
