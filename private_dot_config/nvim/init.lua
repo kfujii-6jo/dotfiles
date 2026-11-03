@@ -236,9 +236,9 @@ require("lazy").setup({
     keys = {
       { "<leader>e", function() require("snacks").explorer() end, desc = "File explorer" },
       { "<leader>ff", function() require("snacks").picker.files() end, desc = "Find files" },
+      { "<leader>fF", function() require("snacks").picker.git_status() end, desc = "Find changed files" },
       { "<leader>fg", function() require("snacks").picker.grep() end, desc = "Live grep" },
       { "<leader>/", function() require("snacks").picker.lines() end, desc = "Search buffer lines" },
-      { "<leader>gg", function() require("snacks").lazygit() end, desc = "Lazygit" },
       { "<leader>fd", function() require("snacks").picker.diagnostics() end, desc = "Diagnostics" },
       { "<leader>fr", function() require("snacks").picker.lsp_references() end, desc = "LSP references" },
     },
