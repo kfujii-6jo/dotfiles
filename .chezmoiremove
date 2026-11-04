@@ -126,3 +126,6 @@
 .agents/instructions/worktrees.md
 .agents/instructions/mise.md
 .agents/instructions/herdr.md
+# Per-agent launch rules are no longer prescribed globally.
+.agents/instructions/claude-agent-launch.md
+.agents/instructions/codex-agent-launch.md
