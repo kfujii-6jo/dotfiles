@@ -10,6 +10,7 @@ dependencies:
     - kfujii-6jo/skills/clean-gone#main
     - kfujii-6jo/skills/cleanup-branch#main
     - kfujii-6jo/skills/rebase-branch#main
+    - kfujii-6jo/skills/lazy#main
     - kfujii-6jo/skills/typescript-type-design#main
     - mizchi/skills/empirical-prompt-tuning#main
     - herdrdev/herdr/skills/herdr#master
