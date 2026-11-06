@@ -1150,7 +1150,7 @@ dependencies:
 - repo_url: kfujii-6jo/skills
   name: lazy
   host: github.com
-  resolved_commit: 788e6a2e8110965b24149f4ae0c0aa6ea8734d01
+  resolved_commit: 6caf598e4d3a35d34c9412c9fbb4c29096603cf6
   resolved_ref: main
   version: unknown
   virtual_path: lazy
@@ -1180,27 +1180,27 @@ dependencies:
   - .claude/skills/lazy/tools/package-lock.json
   - .claude/skills/lazy/tools/package.json
   deployed_file_hashes:
-    .agents/skills/lazy/SKILL.md: sha256:db1451245cd8b22bba35f3e74ebdcc37e6c3067cba18b268f690292ebd3f9aa9
-    .agents/skills/lazy/references/evaluation.md: sha256:dd6435a001a26a55e009af4ca4cf5ae052f034189b9a0b0e8cb17a62126400ec
-    .agents/skills/lazy/scripts/analyze.mjs: sha256:139e4944f03a8f5d9f81a96b140571c44a459d23d02de6ea37657185254a4b78
+    .agents/skills/lazy/SKILL.md: sha256:eb6886774f3b1241fb992ce20522e6ee60f69dff2e8507e1e52059d0d21e6844
+    .agents/skills/lazy/references/evaluation.md: sha256:e2b8b5cdc0e38e8868141b7f70e38eca02bc27aa139ec2dc8369f506cb7fe1de
+    .agents/skills/lazy/scripts/analyze.mjs: sha256:475089aad8596477a1b4b6fbd27b9194f85ad2ceaa22ac482396812bc9a3b1e2
     .agents/skills/lazy/scripts/analyze.sh: sha256:8e075beeaf1dccb293d87e863bab33732757d4b16c83397fdf05f41350cb68e1
-    .agents/skills/lazy/scripts/analyze.test.mjs: sha256:77a0a86ecb5e1f8881ac49180b4e7b907faa3f9f7af7552f05e744996abe1210
+    .agents/skills/lazy/scripts/analyze.test.mjs: sha256:74d2257baf8042bb02bb35de5709133ef6da11c2867bcf45ff1624ef99056eb8
     .agents/skills/lazy/scripts/common.mjs: sha256:5ca0d39b395894a5775cd52a10a767dd60c527b26275c2c1f79568fcda58bd40
     .agents/skills/lazy/scripts/setup.mjs: sha256:4b120d1df67993d418bad6e2837fbbf55b308d4d40bbcb28202a2a05e30c3590
     .agents/skills/lazy/scripts/setup.sh: sha256:fd8551786f991733f7fa262cd2ed63c31af2355b5dc08f2b730050854c095d7f
     .agents/skills/lazy/tools/package-lock.json: sha256:c8beb62f2c1693c634619b102204f723854d77598abb51854d9990be835e5eb2
     .agents/skills/lazy/tools/package.json: sha256:151bd594cb051273146b85c56f67dedb3da0d7bcd9d17f2dd51d6f513820bf69
-    .claude/skills/lazy/SKILL.md: sha256:db1451245cd8b22bba35f3e74ebdcc37e6c3067cba18b268f690292ebd3f9aa9
-    .claude/skills/lazy/references/evaluation.md: sha256:dd6435a001a26a55e009af4ca4cf5ae052f034189b9a0b0e8cb17a62126400ec
-    .claude/skills/lazy/scripts/analyze.mjs: sha256:139e4944f03a8f5d9f81a96b140571c44a459d23d02de6ea37657185254a4b78
+    .claude/skills/lazy/SKILL.md: sha256:eb6886774f3b1241fb992ce20522e6ee60f69dff2e8507e1e52059d0d21e6844
+    .claude/skills/lazy/references/evaluation.md: sha256:e2b8b5cdc0e38e8868141b7f70e38eca02bc27aa139ec2dc8369f506cb7fe1de
+    .claude/skills/lazy/scripts/analyze.mjs: sha256:475089aad8596477a1b4b6fbd27b9194f85ad2ceaa22ac482396812bc9a3b1e2
     .claude/skills/lazy/scripts/analyze.sh: sha256:8e075beeaf1dccb293d87e863bab33732757d4b16c83397fdf05f41350cb68e1
-    .claude/skills/lazy/scripts/analyze.test.mjs: sha256:77a0a86ecb5e1f8881ac49180b4e7b907faa3f9f7af7552f05e744996abe1210
+    .claude/skills/lazy/scripts/analyze.test.mjs: sha256:74d2257baf8042bb02bb35de5709133ef6da11c2867bcf45ff1624ef99056eb8
     .claude/skills/lazy/scripts/common.mjs: sha256:5ca0d39b395894a5775cd52a10a767dd60c527b26275c2c1f79568fcda58bd40
     .claude/skills/lazy/scripts/setup.mjs: sha256:4b120d1df67993d418bad6e2837fbbf55b308d4d40bbcb28202a2a05e30c3590
     .claude/skills/lazy/scripts/setup.sh: sha256:fd8551786f991733f7fa262cd2ed63c31af2355b5dc08f2b730050854c095d7f
     .claude/skills/lazy/tools/package-lock.json: sha256:c8beb62f2c1693c634619b102204f723854d77598abb51854d9990be835e5eb2
     .claude/skills/lazy/tools/package.json: sha256:151bd594cb051273146b85c56f67dedb3da0d7bcd9d17f2dd51d6f513820bf69
-  content_hash: sha256:c7ab65c40ccb7a99fd290f192fdcbbdac0d1b8e26088119a2bfcb5ab82d8b6ad
+  content_hash: sha256:b78d662127a4781d5fe11a73e42816f780d7dafd00594ccee3f73d6ed1cb8d77
 - repo_url: mattpocock/skills
   name: codebase-design
   host: github.com
@@ -3341,7 +3341,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/lazy
   active_owner: kfujii-6jo/skills/lazy
-  content_hash: sha256:db1451245cd8b22bba35f3e74ebdcc37e6c3067cba18b268f690292ebd3f9aa9
+  content_hash: sha256:eb6886774f3b1241fb992ce20522e6ee60f69dff2e8507e1e52059d0d21e6844
 - kind: project-relative
   target: claude
   value: .claude/skills/lazy/references/evaluation.md
@@ -3350,7 +3350,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/lazy
   active_owner: kfujii-6jo/skills/lazy
-  content_hash: sha256:dd6435a001a26a55e009af4ca4cf5ae052f034189b9a0b0e8cb17a62126400ec
+  content_hash: sha256:e2b8b5cdc0e38e8868141b7f70e38eca02bc27aa139ec2dc8369f506cb7fe1de
 - kind: project-relative
   target: claude
   value: .claude/skills/lazy/scripts/analyze.mjs
@@ -3359,7 +3359,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/lazy
   active_owner: kfujii-6jo/skills/lazy
-  content_hash: sha256:139e4944f03a8f5d9f81a96b140571c44a459d23d02de6ea37657185254a4b78
+  content_hash: sha256:475089aad8596477a1b4b6fbd27b9194f85ad2ceaa22ac482396812bc9a3b1e2
 - kind: project-relative
   target: claude
   value: .claude/skills/lazy/scripts/analyze.sh
@@ -3377,7 +3377,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/lazy
   active_owner: kfujii-6jo/skills/lazy
-  content_hash: sha256:77a0a86ecb5e1f8881ac49180b4e7b907faa3f9f7af7552f05e744996abe1210
+  content_hash: sha256:74d2257baf8042bb02bb35de5709133ef6da11c2867bcf45ff1624ef99056eb8
 - kind: project-relative
   target: claude
   value: .claude/skills/lazy/scripts/common.mjs
@@ -6041,7 +6041,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/lazy
   active_owner: kfujii-6jo/skills/lazy
-  content_hash: sha256:db1451245cd8b22bba35f3e74ebdcc37e6c3067cba18b268f690292ebd3f9aa9
+  content_hash: sha256:eb6886774f3b1241fb992ce20522e6ee60f69dff2e8507e1e52059d0d21e6844
 - kind: project-relative
   target: codex
   value: .agents/skills/lazy/references/evaluation.md
@@ -6050,7 +6050,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/lazy
   active_owner: kfujii-6jo/skills/lazy
-  content_hash: sha256:dd6435a001a26a55e009af4ca4cf5ae052f034189b9a0b0e8cb17a62126400ec
+  content_hash: sha256:e2b8b5cdc0e38e8868141b7f70e38eca02bc27aa139ec2dc8369f506cb7fe1de
 - kind: project-relative
   target: codex
   value: .agents/skills/lazy/scripts/analyze.mjs
@@ -6059,7 +6059,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/lazy
   active_owner: kfujii-6jo/skills/lazy
-  content_hash: sha256:139e4944f03a8f5d9f81a96b140571c44a459d23d02de6ea37657185254a4b78
+  content_hash: sha256:475089aad8596477a1b4b6fbd27b9194f85ad2ceaa22ac482396812bc9a3b1e2
 - kind: project-relative
   target: codex
   value: .agents/skills/lazy/scripts/analyze.sh
@@ -6077,7 +6077,7 @@ deployments:
   owners:
   - kfujii-6jo/skills/lazy
   active_owner: kfujii-6jo/skills/lazy
-  content_hash: sha256:77a0a86ecb5e1f8881ac49180b4e7b907faa3f9f7af7552f05e744996abe1210
+  content_hash: sha256:74d2257baf8042bb02bb35de5709133ef6da11c2867bcf45ff1624ef99056eb8
 - kind: project-relative
   target: codex
   value: .agents/skills/lazy/scripts/common.mjs
