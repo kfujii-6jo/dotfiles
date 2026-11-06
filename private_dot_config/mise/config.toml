@@ -32,6 +32,7 @@ typos = "latest"
 "cargo:cargo-shear" = "1.13.1"
 
 # Development Workflow
+"go:github.com/kfujii-6jo/gev/cmd/gev" = "path:{{env.HOME}}/.local/share/gev"
 # bd downloads its native binary in postinstall.
 "npm:@beads/bd" = { version = "latest", allow_builds = ["@beads/bd"] }
 "npm:@fission-ai/openspec" = "latest"
